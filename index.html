@@ -45,9 +45,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .mb-items span:first-child{font-weight:700;}
 .mb-right{display:flex;align-items:center;gap:12px;font-size:11.5px;color:var(--text-dark);opacity:0.8;}
 
-/* CALENDAR */
-
-
 /* LEFT FOLDERS */
 #folders{
   position:fixed;left:20px;top:56px;bottom:96px;
@@ -98,7 +95,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   object-fit: cover;
   border-radius: 10px;
   display: block;
-  transition: transform 0.25s cubic-bezier(0.34,1.2,0.64,1);  /* pop up effect */
+  transition: transform 0.25s cubic-bezier(0.34,1.2,0.64,1);
 }
 
 .gallery-item {
@@ -107,7 +104,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 }
 
 .gallery-item:hover img {
-  transform: scale(1.07);  /* slightly bigger on hover */
+  transform: scale(1.07);
 }
 
 .gallery-tooltip {
@@ -117,11 +114,11 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   transform: translate(-50%, -50%) scale(0.9);
   pointer-events: none;
   z-index: 9999;
-  background: rgba(229,229,234,0.70);   /* iMessage grey */
+  background: rgba(229,229,234,0.70);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: #1c1c1e;                        /* dark text for contrast */
-  border-radius: 18px;                   /* iMessage bubble roundness */
+  color: #1c1c1e;
+  border-radius: 18px;
   padding: 8px 16px;
   white-space: nowrap;
   opacity: 0;
@@ -153,8 +150,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   padding-left:4px;
 }
 
-
-/* DOCK */
 /* DOCK */
 #dock{
   position:fixed;bottom:8px;left:50%;transform:translateX(-50%);
@@ -162,21 +157,21 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   backdrop-filter:blur(28px) saturate(1.8);
   -webkit-backdrop-filter:blur(28px) saturate(1.8);
   border:1px solid rgba(255,255,255,0.8);
-  border-radius:26px;padding:9px 20px;   /* ⬆ was 22px / 7px 16px */
-  display:flex;align-items:flex-end;gap:10px;z-index:1000;  /* ⬆ gap was 8px */
+  border-radius:26px;padding:9px 20px;
+  display:flex;align-items:flex-end;gap:10px;z-index:1000;
   box-shadow:0 6px 28px rgba(100,80,70,0.12),inset 0 1px 0 rgba(255,255,255,0.9);
 }
-.dock-divider{width:1px;height:58px;background:rgba(100,80,70,0.12);align-self:center;margin:0 4px;} /* ⬆ was 46px */
+.dock-divider{width:1px;height:58px;background:rgba(100,80,70,0.12);align-self:center;margin:0 4px;}
 .dock-item{display:flex;flex-direction:column;align-items:center;position:relative;cursor:pointer}
 .dock-item:hover .dock-label{opacity:1;transform:translateX(-50%) translateY(0);}
 .dock-img{
-  width:64px;height:64px;border-radius:16px;  /* ⬆ was 50px / 13px */
-  display:flex;align-items:center;justify-content:center;font-size:46px;  /* ⬆ was 36px */
+  width:64px;height:64px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;font-size:46px;
   filter:drop-shadow(0 3px 6px rgba(0,0,0,0.22)) drop-shadow(0 1px 2px rgba(0,0,0,0.14));
   transition:transform 0.18s cubic-bezier(0.34,1.5,0.64,1), filter 0.18s;
 }
-.dock-item:hover .dock-img{transform:translateY(-14px) scale(1.2);filter:drop-shadow(0 6px 12px rgba(0,0,0,0.28)) drop-shadow(0 2px 4px rgba(0,0,0,0.16));} /* ⬆ was -12px */
-.dock-label{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(4px);background:rgba(60,50,45,0.82);backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:500;padding:4px 12px;border-radius:7px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s,transform 0.15s;} /* ⬆ font/padding bumped */
+.dock-item:hover .dock-img{transform:translateY(-14px) scale(1.2);filter:drop-shadow(0 6px 12px rgba(0,0,0,0.28)) drop-shadow(0 2px 4px rgba(0,0,0,0.16));}
+.dock-label{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(4px);background:rgba(60,50,45,0.82);backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:500;padding:4px 12px;border-radius:7px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.15s,transform 0.15s;}
 
 /* WINDOW */
 .window{
@@ -299,7 +294,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .c-title    { font-size:13px; font-weight:500; color:#fff; }
 .c-sub      { font-size:10px; color:rgba(255,255,255,0.7); margin-top:1px; }
 
-/* Case Study — Third Places */
+/* Case Study */
 .cs-hero{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;margin-bottom:32px;position:relative;box-shadow:0 6px 24px rgba(0,0,0,0.1);}
 .cs-hero img{width:100%;height:100%;object-fit:cover;}
 .cs-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(40,76,47,0.55) 0%,transparent 60%);}
@@ -328,7 +323,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .cs-hmw{background:rgba(40,76,47,0.07);border-left:3px solid #284C2F;border-radius:0 10px 10px 0;padding:16px 20px;margin:16px 0 16px 34px;font-size:15px;font-style:italic;color:#284C2F;font-weight:400;line-height:1.6;}
 
 .cs-highlight{background:linear-gradient(135deg,rgba(40,76,47,0.06),rgba(40,76,47,0.03));border:1px solid rgba(40,76,47,0.15);border-radius:14px;padding:22px 26px;margin:20px 0;position:relative;overflow:hidden;}
-/* Lemonlight-scoped gold overrides */
 #wn-lemonlight .cs-title{color:#7a6010;}
 #wn-lemonlight .cs-title em{color:#7a6010;}
 #wn-lemonlight .cs-subtitle{color:#7a6010;}
@@ -342,7 +336,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 #wn-lemonlight .cs-highlight cite{color:#d4a017;}
 #wn-lemonlight .cs-tool{background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;}
 #wn-lemonlight .cs-meta-label{color:#d4a017;}
-/* Cozymeal-scoped orange overrides */
 #wn-cozymeal .cs-title{color:#E78A24;}
 #wn-cozymeal .cs-title em{color:#E78A24;}
 #wn-cozymeal .cs-subtitle{color:#c4721a;}
@@ -398,24 +391,1073 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   position:fixed;top:34px;right:14px;z-index:3000;
   background:rgba(245,239,230,0.94);backdrop-filter:blur(20px);
   border:1px solid rgba(255,255,255,0.6);border-radius:14px;
-  padding:18px 24px;        /* ⬆ was 12px 16px — more inner space */
-  min-width:340px;          /* ⬆ was 260px — wider box */
+  padding:18px 24px;
+  min-width:340px;
   box-shadow:0 8px 28px rgba(80,60,50,0.2);
-  display:flex;gap:14px;align-items:flex-start;  /* ⬆ gap was 10px */
+  display:flex;gap:14px;align-items:flex-start;
   animation:nIn 0.4s cubic-bezier(0.34,1.2,0.64,1) both,nOut 0.3s 3.5s ease forwards;
 }
-.n-icon{font-size:30px;flex-shrink:0;}           /* ⬆ was 24px */
-.n-title{font-size:14px;font-weight:600;color:var(--text-dark);}  /* ⬆ was 12px */
-.n-body{font-size:13px;color:var(--text-light);margin-top:2px;line-height:1.4;}  /* ⬆ was 11px */
+.n-icon{font-size:30px;flex-shrink:0;}
+.n-title{font-size:14px;font-weight:600;color:var(--text-dark);}
+.n-body{font-size:13px;color:var(--text-light);margin-top:2px;line-height:1.4;}
 
 /* Context menu */
 #ctx{position:fixed;z-index:2000;display:none;background:rgba(240,232,222,0.93);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.6);border-radius:10px;padding:4px 0;min-width:190px;box-shadow:0 12px 40px rgba(80,60,50,0.25);font-size:12.5px;}
 .ci{padding:7px 16px;color:var(--text-dark);border-radius:6px;transition:background 0.1s;cursor:pointer}
 .ci:hover{background:rgba(143,173,136,0.3);}
 .cs{height:1px;background:rgba(143,173,136,0.22);margin:3px 0;}
+
+/* ════════════════════════════════════════════════
+   MOBILE VIEW  (≤ 768px only)
+   ════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html, body {
+    overflow: auto !important;
+    height: auto !important;
+  }
+  #wallpaper, #menubar, #folders, #folders-right, #dock, #ctx {
+    display: none !important;
+  }
+  #mobile-view {
+    display: flex !important;
+  }
+}
+
+#mobile-view {
+  display: none;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: #f0ede8;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  color: #3d3530;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mv-hero {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+.mv-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.mv-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(240,237,232,0) 0%,
+    rgba(240,237,232,0.1) 40%,
+    rgba(240,237,232,0.75) 70%,
+    rgba(240,237,232,1) 100%
+  );
+}
+.mv-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 28px;
+  width: 100%;
+}
+.mv-hero-name {
+  font-size: 2.6rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #1c1c1e;
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+.mv-hero-role {
+  font-size: 0.9rem;
+  color: #6b5c54;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+.mv-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(52,199,89,0.18);
+  border: 1px solid rgba(52,199,89,0.35);
+  color: #1a7a3a;
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.mv-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34c759;
+  animation: mvpulse 2s ease-in-out infinite;
+}
+@keyframes mvpulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+.mv-cta-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.mv-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.mv-cta:active { transform: scale(0.96); }
+.mv-cta-primary { background: #3d3530; color: #fff; }
+.mv-cta-ghost {
+  background: rgba(255,255,255,0.7);
+  color: #3d3530;
+  border: 1px solid rgba(61,53,48,0.2);
+  backdrop-filter: blur(8px);
+}
+
+.mv-section { padding: 32px 22px 8px; }
+.mv-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9c8a82;
+  margin-bottom: 14px;
+}
+
+.mv-meta-row {
+  display: flex;
+  gap: 8px;
+  padding: 0 22px 20px;
+  flex-wrap: wrap;
+}
+.mv-meta-pill {
+  background: #fff;
+  border: 1px solid rgba(61,53,48,0.12);
+  border-radius: 30px;
+  padding: 7px 16px;
+  font-size: 0.82rem;
+  color: #3d3530;
+}
+
+.mv-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0 22px 28px;
+}
+.mv-skill {
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.mv-bio-card {
+  margin: 0 22px 12px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 20px;
+  border: 1px solid rgba(61,53,48,0.08);
+}
+.mv-bio-text {
+  font-size: 0.93rem;
+  line-height: 1.8;
+  color: #6b5c54;
+  font-weight: 300;
+}
+
+.mv-edu-card {
+  margin: 0 22px 10px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid rgba(61,53,48,0.08);
+}
+.mv-edu-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #f5f0ea;
+}
+.mv-edu-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1c1c1e;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.mv-edu-deg {
+  font-size: 0.78rem;
+  color: #9c8a82;
+  line-height: 1.4;
+  margin-bottom: 7px;
+}
+.mv-edu-badge {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 3px 11px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mv-project-card {
+  margin: 0 22px 14px;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(61,53,48,0.08);
+  -webkit-tap-highlight-color: transparent;
+}
+.mv-project-thumb {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+.mv-project-thumb-fallback {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+.mv-project-body { padding: 16px 18px 20px; }
+.mv-project-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.mv-project-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1c1c1e;
+  letter-spacing: -0.02em;
+  margin-bottom: 7px;
+  line-height: 1.2;
+}
+.mv-project-desc {
+  font-size: 0.83rem;
+  color: #9c8a82;
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+.mv-project-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.mv-pm-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #c0b0a8;
+  margin-bottom: 2px;
+}
+.mv-pm-val {
+  font-size: 0.8rem;
+  color: #3d3530;
+  font-weight: 500;
+}
+.mv-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mv-social {
+  margin: 8px 22px 0;
+  background: #fff;
+  border-radius: 20px;
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(61,53,48,0.08);
+  position: sticky;
+  bottom: 16px;
+  box-shadow: 0 8px 32px rgba(61,53,48,0.12);
+}
+.mv-social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  flex: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+.mv-social-item:active { background: rgba(61,53,48,0.06); }
+.mv-social-emoji { font-size: 1.5rem; }
+.mv-social-label {
+  font-size: 0.62rem;
+  color: #9c8a82;
+  font-weight: 500;
+}
+
+.mv-footer {
+  text-align: center;
+  padding: 32px 22px 100px;
+  font-size: 0.75rem;
+  color: #c0b0a8;
+}
+
+/* ── Profile bottom sheet ── */
+#mv-profile-sheet {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+}
+#mv-profile-sheet.open { display: block; }
+#mv-profile-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  animation: mvFadeIn 0.25s ease;
+}
+@keyframes mvFadeIn { from { opacity:0; } to { opacity:1; } }
+#mv-profile-panel {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: #f5efe6;
+  border-radius: 24px 24px 0 0;
+  padding: 12px 22px 0;
+  box-shadow: 0 -8px 40px rgba(61,53,48,0.18);
+  animation: mvSlideUp 0.32s cubic-bezier(0.34,1.1,0.64,1);
+}
+@keyframes mvSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+#mv-profile-handle {
+  width: 36px; height: 4px;
+  background: rgba(61,53,48,0.18);
+  border-radius: 4px;
+  margin: 0 auto 20px;
+}
+#mv-profile-top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+#mv-profile-photo {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+#mv-profile-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1c1c1e;
+  letter-spacing: -0.02em;
+}
+#mv-profile-role {
+  font-size: 0.75rem;
+  color: #9c8a82;
+  margin-top: 2px;
+}
+#mv-profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(52,199,89,0.14);
+  border: 1px solid rgba(52,199,89,0.3);
+  color: #1a7a3a;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+#mv-profile-bio {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #6b5c54;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+#mv-profile-links {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.mv-profile-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid rgba(61,53,48,0.14);
+  border-radius: 50px;
+  padding: 9px 18px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #3d3530;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.mv-profile-link-btn:active { background: #f0ede8; }
+#mv-profile-edu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid rgba(61,53,48,0.08);
+  padding-top: 18px;
+}
+.mv-profile-edu-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.mv-profile-edu-logo {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+  flex-shrink: 0;
+}
+.mv-profile-edu-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1c1c1e;
+}
+.mv-profile-edu-deg {
+  font-size: 0.75rem;
+  color: #9c8a82;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* scrollable inner */
+#mv-profile-scroll {
+  max-height: 80dvh;
+  overflow-y: auto;
+  padding-bottom: 12px;
+  scrollbar-width: none;
+}
+#mv-profile-scroll::-webkit-scrollbar { display: none; }
+
+/* two photos side by side */
+.mv-profile-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.mv-profile-photo-wrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 130px;
+}
+.mv-profile-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.mv-profile-photo-wrap span {
+  position: absolute;
+  bottom: 7px;
+  left: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.mv-profile-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);
+}
+
+/* section labels */
+.mv-profile-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9c8a82;
+  margin: 18px 0 10px;
+}
+
+/* skills */
+.mv-profile-skills-group { margin-bottom: 10px; }
+.mv-profile-skills-sub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #c0b8b0;
+  margin-bottom: 6px;
+}
+.mv-profile-skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.mv-profile-skills-row span {
+  border-radius: 20px;
+  padding: 4px 11px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ── Project bottom sheet ── */
+#mv-project-sheet {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+}
+#mv-project-sheet.open { display: block; }
+#mv-project-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  animation: mvFadeIn 0.25s ease;
+}
+#mv-project-panel {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: #f5efe6;
+  border-radius: 24px 24px 0 0;
+  padding: 12px 0 0;
+  max-height: 92dvh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -8px 40px rgba(61,53,48,0.18);
+  animation: mvSlideUp 0.32s cubic-bezier(0.34,1.1,0.64,1);
+}
+.mv-project-sheet-handle {
+  width: 36px; height: 4px;
+  background: rgba(61,53,48,0.18);
+  border-radius: 4px;
+  margin: 0 auto 4px;
+  flex-shrink: 0;
+}
+#mv-project-panel-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px 48px;
+  scrollbar-width: none;
+}
+#mv-project-panel-scroll::-webkit-scrollbar { display: none; }
+
+/* Case study styles inside sheet */
+.mcs-hero {
+  width: calc(100% + 40px);
+  margin: 0 -20px 24px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.mcs-hero img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mcs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+}
+.mcs-hero-tag {
+  position: absolute;
+  bottom: 14px; left: 16px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+.mcs-title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+.mcs-subtitle {
+  font-size: 0.82rem;
+  color: #9c8a82;
+  font-weight: 300;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.mcs-meta-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(61,53,48,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.mcs-meta-item {
+  background: rgba(255,255,255,0.6);
+  padding: 10px 14px;
+}
+.mcs-meta-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9c8a82;
+  margin-bottom: 3px;
+}
+.mcs-meta-val {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #3d3530;
+}
+.mcs-divider {
+  height: 1px;
+  background: rgba(61,53,48,0.1);
+  margin: 20px 0;
+}
+.mcs-section { margin-bottom: 20px; }
+.mcs-section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.mcs-num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mcs-section-title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.mcs-body {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #6b5c54;
+}
+.mcs-body strong { font-weight: 600; }
+.mcs-hmw {
+  border-left: 3px solid;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  margin: 12px 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+.mcs-highlight {
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 12px 0;
+  border: 1px solid rgba(61,53,48,0.12);
+}
+.mcs-highlight p {
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: #3d3530;
+}
+.mcs-sol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0;
+}
+.mcs-sol-card {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(200,185,175,0.3);
+  border-radius: 10px;
+  padding: 12px;
+}
+.mcs-sol-icon { font-size: 1.2rem; margin-bottom: 5px; }
+.mcs-sol-title { font-size: 0.78rem; font-weight: 600; color: #3d3530; margin-bottom: 3px; }
+.mcs-sol-desc { font-size: 0.72rem; font-weight: 300; color: #9c8a82; line-height: 1.5; }
+.mcs-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.mcs-tool {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.mcs-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 12px 0;
+  display: block;
+}
+.mcs-img-half {
+  width: 60%;
+  border-radius: 10px;
+  margin: 12px auto;
+  display: block;
+}
+.mcs-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid rgba(61,53,48,0.1);
+  margin-top: 8px;
+}
+.mcs-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
 </style>
 </head>
 <body>
+
+<!-- ══════════════════════════════════════════
+     MOBILE VIEW — only visible on phones/tablets
+     ══════════════════════════════════════════ -->
+<div id="mobile-view">
+
+  <!-- Hero -->
+  <div class="mv-hero">
+    <img class="mv-hero-img" src="me2.jpg" alt="Aashwini Vachhani"
+         onerror="this.style.background='linear-gradient(135deg,#b5c9b0,#f5dde0)'">
+    <div class="mv-hero-overlay"></div>
+    <div class="mv-hero-content">
+      <div class="mv-hero-name">Aashwini Vachhani</div>
+      <div class="mv-hero-role">Product Designer · UI/UX · Branding</div>
+      <div class="mv-status-pill">
+        <span class="mv-status-dot"></span>
+        Open to opportunities
+      </div>
+      <div class="mv-cta-row">
+        <a href="https://drive.google.com/file/d/1RfvwZCYCiM_-TVgjw9M2oniSN-dhQVWX/view?usp=sharing"
+           target="_blank" class="mv-cta mv-cta-primary">📄 Resume</a>
+        <a href="https://www.linkedin.com/in/aashwini-vachhani/" target="_blank"
+           class="mv-cta mv-cta-ghost">💼 LinkedIn</a>
+        <a href="mailto:vachhaniaashwini@gmail.com" class="mv-cta mv-cta-ghost">✉️ Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pronouns / MBTI -->
+  <div class="mv-meta-row">
+    <span class="mv-meta-pill">She/Her</span>
+    <span class="mv-meta-pill">ENFJ</span>
+    <span class="mv-meta-pill">☕ Fueled by coffee</span>
+  </div>
+
+  <!-- Bio -->
+  <div class="mv-section" style="padding-bottom:4px;">
+    <div class="mv-section-label">About Me</div>
+  </div>
+  <div class="mv-bio-card">
+    <p class="mv-bio-text">I'm a product designer who believes great design lives where strategy meets empathy 🤝. With a foundation in UX and a master's focus in design, business, and technology, I create experiences that are intuitive, purposeful, and built to scale — designing systems that help people connect through digital platforms 💻, brands ✨, and everyday third spaces 🌿.</p>
+  </div>
+
+  <!-- Skills -->
+  <div class="mv-section" style="padding-bottom:4px;">
+    <div class="mv-section-label">My Strengths</div>
+  </div>
+  <div class="mv-skills-wrap">
+    <span class="mv-skill" style="background:#e8f4ff;color:#3a7abf;">Figma</span>
+    <span class="mv-skill" style="background:#f3eeff;color:#7a4abf;">AI Tools</span>
+    <span class="mv-skill" style="background:#edfff4;color:#2a8a52;">Social Media</span>
+    <span class="mv-skill" style="background:#fff5e8;color:#bf6a20;">Branding</span>
+    <span class="mv-skill" style="background:#ffe8e8;color:#c0392b;">Prototyping</span>
+    <span class="mv-skill" style="background:#e8fff8;color:#51b1ed;">Content Creation</span>
+    <span class="mv-skill" style="background:#fef9e0;color:#a07810;">Wireframing</span>
+    <span class="mv-skill" style="background:#fde8f5;color:#a0308a;">Design Systems</span>
+    <span class="mv-skill" style="background:#e8f4ff;color:#3a7abf;">User Research</span>
+    <span class="mv-skill" style="background:#edfff4;color:#2a8a52;">Usability Testing</span>
+  </div>
+
+  <!-- Education -->
+  <div class="mv-section" style="padding-bottom:4px;">
+    <div class="mv-section-label">Education 🎓</div>
+  </div>
+  <div class="mv-edu-card">
+    <div style="flex:1;">
+      <div class="mv-edu-name">University of Southern California</div>
+      <div class="mv-edu-deg">Los Angeles, CA · May 2026<br>M.S. Integrated Design, Business & Technology</div>
+      <span class="mv-edu-badge" style="background:#ffe8e8;color:#c0392b;">GPA: 4.00</span>
+    </div>
+    <img class="mv-edu-logo" src="usclogo.png" alt="USC" onerror="this.style.display='none'">
+  </div>
+  <div class="mv-edu-card">
+    <div style="flex:1;">
+      <div class="mv-edu-name">Purdue University</div>
+      <div class="mv-edu-deg">West Lafayette, IN · May 2024<br>B.S. Computer Graphics — UX Design</div>
+      <span class="mv-edu-badge" style="background:#f5ede0;color:#8b5e3c;">GPA: 3.84</span>
+    </div>
+    <img class="mv-edu-logo" src="purduelogo.png" alt="Purdue" onerror="this.style.display='none'">
+  </div>
+
+  <!-- Projects -->
+  <div class="mv-section" style="padding-bottom:4px;">
+    <div class="mv-section-label">Projects</div>
+  </div>
+
+  <div class="mv-project-card" onclick="openProjectSheet('thirdplaces')">
+    <div class="mv-project-thumb" style="background-image:url('https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900');background-size:cover;background-position:center;"></div>
+    <div class="mv-project-body">
+      <span class="mv-project-tag" style="background:rgba(143,173,136,0.18);color:#5a7a54;">UI/UX Design</span>
+      <div class="mv-project-title">Third Places</div>
+      <p class="mv-project-desc">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p>
+      <div class="mv-project-meta">
+        <div><div class="mv-pm-label">Year</div><div class="mv-pm-val">2024</div></div>
+        <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">UX/UI Designer</div></div>
+        <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Mobile App</div></div>
+      </div>
+      <button class="mv-project-link" style="background:rgba(143,173,136,0.18);color:#5a7a54;" onclick="event.stopPropagation();openProjectSheet('thirdplaces')">Read Case Study →</button>
+    </div>
+  </div>
+
+  <div class="mv-project-card" onclick="openProjectSheet('lemonlight')">
+    <div class="mv-project-thumb" style="background-image:url('lemonlightcover.png');background-size:cover;background-position:center;"></div>
+    <div class="mv-project-body">
+      <span class="mv-project-tag" style="background:rgba(240,217,138,0.2);color:#7a6010;">Product Design</span>
+      <div class="mv-project-title">Lemonlight Studios</div>
+      <p class="mv-project-desc">An AI-powered video intelligence platform that helps brands instantly discover and repurpose their video assets.</p>
+      <div class="mv-project-meta">
+        <div><div class="mv-pm-label">Year</div><div class="mv-pm-val">2024</div></div>
+        <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">Product Designer</div></div>
+        <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Web Platform</div></div>
+      </div>
+      <button class="mv-project-link" style="background:rgba(240,217,138,0.2);color:#7a6010;" onclick="event.stopPropagation();openProjectSheet('lemonlight')">Read Case Study →</button>
+    </div>
+  </div>
+
+  <div class="mv-project-card" onclick="openProjectSheet('cozymeal')">
+    <div class="mv-project-thumb" style="background-image:url('cozymealcover.png');background-size:cover;background-position:center;"></div>
+    <div class="mv-project-body">
+      <span class="mv-project-tag" style="background:rgba(232,180,188,0.2);color:#c47e8a;">Branding</span>
+      <div class="mv-project-title">Cozymeal Rebrand</div>
+      <p class="mv-project-desc">A full rebranding featuring a new logo, brand assets, physical product design, and a complete style guide.</p>
+      <div class="mv-project-meta">
+        <div><div class="mv-pm-label">Year</div><div class="mv-pm-val">2023</div></div>
+        <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">Brand Designer</div></div>
+        <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Brand Identity</div></div>
+      </div>
+      <button class="mv-project-link" style="background:rgba(232,180,188,0.2);color:#c47e8a;" onclick="event.stopPropagation();openProjectSheet('cozymeal')">Read Case Study →</button>
+    </div>
+  </div>
+
+  <div class="mv-project-card" onclick="openProjectSheet('bestbuy')">
+    <div class="mv-project-thumb" style="background-image:url('bbcoverpic.png');background-size:cover;background-position:center;"></div>
+    <div class="mv-project-body">
+      <span class="mv-project-tag" style="background:rgba(168,188,232,0.2);color:#3a5a9a;">UI/UX Design</span>
+      <div class="mv-project-title">Best Buy Internal</div>
+      <p class="mv-project-desc">A platform to improve internal communication for Best Buy employees — connect, share knowledge, ask questions.</p>
+      <div class="mv-project-meta">
+        <div><div class="mv-pm-label">Year</div><div class="mv-pm-val">2023</div></div>
+        <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">UI/UX Designer</div></div>
+        <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Web App</div></div>
+      </div>
+      <button class="mv-project-link" style="background:rgba(168,188,232,0.2);color:#3a5a9a;" onclick="event.stopPropagation();openProjectSheet('bestbuy')">Read Case Study →</button>
+    </div>
+  </div>
+
+  <div class="mv-footer">Designed with ♡ by Aashwini Vachhani</div>
+
+  <!-- Sticky social dock -->
+  <div class="mv-social">
+    <a class="mv-social-item" href="https://www.instagram.com/aashwini.v/" target="_blank">
+      <span class="mv-social-emoji">📸</span>
+      <span class="mv-social-label">Instagram</span>
+    </a>
+    <div class="mv-social-item" onclick="document.getElementById('mv-profile-sheet').classList.add('open')">
+      <img src="profile.png" class="mv-social-emoji" style="width:1.5rem;height:1.5rem;border-radius:50%;object-fit:cover;" onerror="this.style.visibility='hidden'">
+      <span class="mv-social-label">Profile</span>
+    </div>
+    <a class="mv-social-item" href="https://www.youtube.com/channel/UCT3ZZOLSMKxBfWOi9GoBxVQ" target="_blank">
+      <span class="mv-social-emoji">▶️</span>
+      <span class="mv-social-label">YouTube</span>
+    </a>
+  </div>
+
+  <!-- Profile bottom sheet -->
+  <div id="mv-profile-sheet">
+    <div id="mv-profile-backdrop" onclick="document.getElementById('mv-profile-sheet').classList.remove('open')"></div>
+    <div id="mv-profile-panel">
+      <div id="mv-profile-handle"></div>
+      <div id="mv-profile-scroll">
+        <div id="mv-profile-top">
+          <img src="me2.jpg" id="mv-profile-photo" onerror="this.style.display='none'">
+          <div>
+            <div id="mv-profile-name">Aashwini Vachhani</div>
+            <div id="mv-profile-role">UI/UX · Product Designer · Branding</div>
+            <span id="mv-profile-status"><span class="mv-status-dot" style="width:6px;height:6px;"></span> Open to opportunities</span>
+            <div id="mv-profile-links">
+              <a class="mv-profile-link-btn" href="https://drive.google.com/file/d/1RfvwZCYCiM_-TVgjw9M2oniSN-dhQVWX/view?usp=sharing" target="_blank">📄 Resume</a>
+              <a class="mv-profile-link-btn" href="https://www.linkedin.com/in/aashwini-vachhani/" target="_blank">💼 LinkedIn</a>
+              <a class="mv-profile-link-btn" href="mailto:vachhaniaashwini@gmail.com">✉️ Email</a>
+            </div>
+          </div>
+        </div>
+        <div class="mv-profile-photos">
+          <div class="mv-profile-photo-wrap">
+            <img src="me4.jpg" onerror="this.style.background='#c9d9c4'">
+            <span>Photographer</span>
+          </div>
+          <div class="mv-profile-photo-wrap">
+            <img src="coldcoffee.jpg" style="transform:scaleX(-1)" onerror="this.style.background='#d9cec4'">
+            <span>Fueled by coffee</span>
+          </div>
+        </div>
+        <p id="mv-profile-bio">I'm a product designer who believes great design lives where strategy meets empathy 🤝. With a foundation in UX and a master's focus in design, business, and technology, I create experiences that are intuitive, purposeful, and built to scale, designing systems that help people connect through digital platforms 💻 , brands ✨ , and everyday third spaces 🌿.</p>
+        <div style="height:1px;background:rgba(61,53,48,0.08);margin:18px 0 14px;"></div>
+        <div class="mv-profile-section-label" style="margin-top:0;">Education 🎓</div>
+        <div id="mv-profile-edu">
+          <div class="mv-profile-edu-row">
+            <img src="usclogo.png" class="mv-profile-edu-logo" onerror="this.style.display='none'">
+            <div>
+              <div class="mv-profile-edu-name">University of Southern California</div>
+              <div class="mv-profile-edu-deg">M.S. Integrated Design, Business &amp; Technology · GPA 4.00</div>
+            </div>
+          </div>
+          <div class="mv-profile-edu-row">
+            <img src="purduelogo.png" class="mv-profile-edu-logo" onerror="this.style.display='none'">
+            <div>
+              <div class="mv-profile-edu-name">Purdue University</div>
+              <div class="mv-profile-edu-deg">B.S. Computer Graphics — UX Design · GPA 3.84</div>
+            </div>
+          </div>
+        </div>
+        <div style="height:1px;background:rgba(61,53,48,0.08);margin:18px 0 14px;"></div>
+        <div class="mv-profile-section-label" style="margin-top:0;">Skills</div>
+        <div class="mv-profile-skills-group">
+          <div class="mv-profile-skills-sub">Design &amp; Prototyping</div>
+          <div class="mv-profile-skills-row">
+            <span style="background:#e8f4ff;color:#3a7abf;">Figma</span>
+            <span style="background:#e8f4ff;color:#3a7abf;">Photoshop</span>
+            <span style="background:#e8f4ff;color:#3a7abf;">Illustrator</span>
+            <span style="background:#e8f4ff;color:#3a7abf;">Framer</span>
+            <span style="background:#e8f4ff;color:#3a7abf;">Miro</span>
+          </div>
+        </div>
+        <div class="mv-profile-skills-group">
+          <div class="mv-profile-skills-sub">AI-Powered Tools</div>
+          <div class="mv-profile-skills-row">
+            <span style="background:#f3eeff;color:#7a4abf;">ChatGPT</span>
+            <span style="background:#f3eeff;color:#7a4abf;">Claude</span>
+            <span style="background:#f3eeff;color:#7a4abf;">Gemini</span>
+            <span style="background:#f3eeff;color:#7a4abf;">UX Pilot</span>
+            <span style="background:#f3eeff;color:#7a4abf;">Uizard</span>
+          </div>
+        </div>
+        <div class="mv-profile-skills-group">
+          <div class="mv-profile-skills-sub">UX Research</div>
+          <div class="mv-profile-skills-row">
+            <span style="background:#edfff4;color:#2a8a52;">User Research</span>
+            <span style="background:#edfff4;color:#2a8a52;">Usability Testing</span>
+            <span style="background:#edfff4;color:#2a8a52;">A/B Testing</span>
+            <span style="background:#edfff4;color:#2a8a52;">Wireframing</span>
+            <span style="background:#edfff4;color:#2a8a52;">Journey Mapping</span>
+            <span style="background:#edfff4;color:#2a8a52;">Personas</span>
+          </div>
+        </div>
+        <div class="mv-profile-skills-group">
+          <div class="mv-profile-skills-sub">Brand &amp; Visual Design</div>
+          <div class="mv-profile-skills-row">
+            <span style="background:#fff5e8;color:#bf6a20;">Visual Identity</span>
+            <span style="background:#fff5e8;color:#bf6a20;">Logo Design</span>
+            <span style="background:#fff5e8;color:#bf6a20;">Brand Strategy</span>
+            <span style="background:#fff5e8;color:#bf6a20;">Design Systems</span>
+            <span style="background:#fff5e8;color:#bf6a20;">Typography</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project bottom sheet -->
+  <div id="mv-project-sheet">
+    <div id="mv-project-backdrop" onclick="closeProjectSheet()"></div>
+    <div id="mv-project-panel">
+      <div class="mv-project-sheet-handle"></div>
+      <div id="mv-project-panel-scroll"></div>
+    </div>
+  </div>
+
+</div>
+<!-- ══ END MOBILE VIEW ══ -->
+
 
 <!-- MENU BAR -->
 <div id="menubar">
@@ -424,7 +1466,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
     <div class="mb-items">
       <span>Aashwini Vachhani</span>
       <span>Welcome to my Portfolio!</span>
-      
     </div>
   </div>
   <div class="mb-right">
@@ -437,28 +1478,26 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;pointer-events:none;z-index:1;transform:scale(0.72);transform-origin:center center;">
  
     <div id="typewriter-name" class="cursor" style="font-size:clamp(48px,7vw,88px);font-weight:500;color:#1c1c1e;letter-spacing:-2px;line-height:1;min-height:1em;"></div>
-<div id="typewriter-sub" style="font-size:clamp(16px,2.2vw,26px);font-weight:400;color:#6b5c54;margin-top:8px;letter-spacing:-0.3px;min-height:1em;"></div> 
-<div style="position:relative;width:100%;max-width:1100px;height:620px;margin-top:32px;">
- 
+    <div id="typewriter-sub" style="font-size:clamp(16px,2.2vw,26px);font-weight:400;color:#6b5c54;margin-top:8px;letter-spacing:-0.3px;min-height:1em;"></div>
+    <div style="position:relative;width:100%;max-width:1100px;height:620px;margin-top:32px;">
+
       <!-- Central portrait -->
       <div style="position:absolute;left:50%;top:0;transform:translateX(-50%);">
-  <div style="width:280px;height:420px;border-radius:28px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.18);pointer-events:auto;animation:float5 7s ease-in-out infinite;">
-    <img src="me2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;" onerror="this.style.display='none'">
-  </div>
-</div>
- 
+        <div style="width:280px;height:420px;border-radius:28px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.18);pointer-events:auto;animation:float5 7s ease-in-out infinite;">
+          <img src="me2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;" onerror="this.style.display='none'">
+        </div>
+      </div>
+
       <!-- She/Her / ENFJ pill row -->
       <div style="position:absolute;left:50%;bottom:110px;transform:translateX(-50%);">
-  <div style="background:#fff;border-radius:40px;padding:6px 6px;display:flex;gap:2px;box-shadow:0 4px 20px rgba(0,0,0,0.1);pointer-events:auto;animation:float5 4s ease-in-out infinite;">
-    <div style="color:#6b5c54;padding:8px 22px;font-size:15px;">She/Her</div>
-    <div style="color:#6b5c54;padding:8px 1px;font-size:12px;">|</div>
-    <div style="color:#6b5c54;padding:8px 22px;font-size:15px;">ENFJ</div>
-  </div>
-</div>
- 
+        <div style="background:#fff;border-radius:40px;padding:6px 6px;display:flex;gap:2px;box-shadow:0 4px 20px rgba(0,0,0,0.1);pointer-events:auto;animation:float5 4s ease-in-out infinite;">
+          <div style="color:#6b5c54;padding:8px 22px;font-size:15px;">She/Her</div>
+          <div style="color:#6b5c54;padding:8px 1px;font-size:12px;">|</div>
+          <div style="color:#6b5c54;padding:8px 22px;font-size:15px;">ENFJ</div>
+        </div>
+      </div>
+
       <!-- LEFT SIDE -->
- 
-      <!-- Skills pills card -->
       <div style="position:absolute;left:5%;top:30px;width:290px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float1 4s ease-in-out infinite;">
         <div style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:14px;">My Strengths</div>
         <div style="display:flex;flex-wrap:wrap;gap:7px;">
@@ -472,30 +1511,28 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
           <span style="background:#fde8f5;color:#a0308a;border-radius:20px;padding:5px 13px;font-size:13px;">Design Systems</span>
         </div>
       </div>
- 
+
       <!-- Photographer photo -->
       <div style="position:absolute;left:9%;top:330px;width:190px;height:190px;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.14);pointer-events:auto;animation:float2 5s ease-in-out infinite;">
         <img src="me4.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;">
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);"></div>
         <div style="position:absolute;bottom:8px;left:10px;font-size:11px;font-weight:500;color:#fff;">Photographer</div>
       </div>
- 
+
       <!-- Hobbies pills -->
       <div style="position:absolute;right:67%;top:260px;display:flex;flex-direction:row;gap:8px;width:260px;pointer-events:auto;animation:float3 3.5s ease-in-out infinite;">
         <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">Social Media</div>
         <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">Branding</div>
         <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">UI/UX</div>
       </div>
- 
+
       <!-- RIGHT SIDE -->
- 
-      <!-- Contact buttons card -->
       <div style="position:absolute;right:3%;top:80px;display:flex;flex-direction:row;gap:8px;pointer-events:auto;animation:float5 4s ease-in-out infinite;">
         <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;font-size:17px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)';" onclick="window.open('https://drive.google.com/file/d/1RfvwZCYCiM_-TVgjw9M2oniSN-dhQVWX/view?usp=sharing','_blank')">📄 Resume</div>
         <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 17px;font-size:17px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)';" onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank')">💼 LinkedIn</div>
         <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 17px;font-size:17px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)';" onclick="window.open('mailto:vachhaniaashwini@gmail.com')">✉️ Email</div>
       </div>
- 
+
       <!-- Education card -->
       <div style="position:absolute;right:5%;top:175px;width:290px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float4 4.5s ease-in-out infinite;">
         <div style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Education 🎓</div>
@@ -507,46 +1544,40 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
         <div style="font-size:12px;color:#8a7a74;margin-top:2px;">B.S. Computer Graphics — UX Design</div>
         <div style="margin-top:6px;"><span style="background:#f5ede0;color:#8b5e3c;border-radius:20px;padding:5px 13px;font-size:12px;font-weight:500;">GPA: 3.84</span></div>
       </div>
- 
+
       <!-- Cold coffee photo -->
       <div style="position:absolute;right:-7%;bottom:320px;width:150px;height:140px;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.14);pointer-events:auto;animation:float2 6s ease-in-out infinite;">
         <img src="coldcoffee.jpg" style="width:100%;height:100%;object-fit:cover;transform:scaleX(-1);">
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);"></div>
         <div style="position:absolute;bottom:8px;left:10px;font-size:11px;font-weight:500;color:#fff;">Fueled by coffee</div>
       </div>
- 
+
       <!-- Open to opportunities pill -->
       <div style="position:absolute;right:28%;top:15px;background:rgba(52,199,89,0.82);color:#fff;border-radius:20px;padding:6px 16px;font-size:13px;font-weight:600;box-shadow:0 4px 16px rgba(52,199,89,0.3);pointer-events:auto;animation:float3 3s ease-in-out infinite;">Open to opportunities</div>
- 
+
     </div>
   </div>
 </div>
 
 <!-- FOLDERS — left -->
 <div id="folders">
-
   <div class="folder" data-project="thirdplaces" style="animation-delay:0.05s" ondblclick="openWin('thirdplaces')">
     <div class="folder-icon">☕</div>
     <span class="folder-label">Third Places</span>
   </div>
-
   <div class="folder" data-project="lemonlight" style="animation-delay:0.09s" ondblclick="openWin('lemonlight')">
     <div class="folder-icon">🎬</div>
     <span class="folder-label">Lemonlight</span>
   </div>
-
   <div class="folder" data-project="cozymeal" style="animation-delay:0.13s" ondblclick="openWin('cozymeal')">
     <div class="folder-icon">🥗</div>
     <span class="folder-label">Cozymeal</span>
   </div>
-
   <div class="folder" data-project="bestbuy" style="animation-delay:0.17s" ondblclick="openWin('bestbuy')">
     <div class="folder-icon">💻</div>
     <span class="folder-label">Best Buy</span>
   </div>
-
 </div>
-
 
 <!-- FOLDERS — right -->
 <div id="folders-right">
@@ -556,7 +1587,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   </div>
 </div>
 
-<!-- DOCK — social + quick links -->
+<!-- DOCK -->
 <div id="dock">
   <div class="dock-item" onclick="showNotif('✉️' , 'Email', 'vachhaniaashwini@gmail.com')">
     <div class="dock-img">✉️</div>
@@ -592,14 +1623,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 </div>
 
 <script>
-
 // ── Clock ─────────────────────────────────────────────────
 function tick(){const n=new Date(),d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];let h=n.getHours(),mi=n.getMinutes(),ap=h>=12?'PM':'AM';h=h%12||12;document.getElementById('mb-time').textContent=`${d[n.getDay()]} ${m[n.getMonth()]} ${n.getDate()}  ${h}:${String(mi).padStart(2,'0')} ${ap}`;}
 tick();setInterval(tick,15000);
-
-// ── Calendar ──────────────────────────────────────────────
-
-
 
 // ── Project Data ──────────────────────────────────────────
 const projects={
@@ -642,8 +1668,6 @@ const projects={
     year:'2023',role:'UI/UX Designer',platform:'Web Application',
     tools:['Figma','FigJam','Usability Testing','Wireframing'],
     link:'https://aashwinivachhani.framer.ai/work/bestbuy',
-    
-    
   },
 };
 
@@ -659,7 +1683,8 @@ function openWin(id){
   const lft=Math.round((window.innerWidth-ww)/2);
   const top=Math.round((window.innerHeight-wh)/2) - 40;
   w.style.cssText=`left:${lft}px;top:${top}px;z-index:${++zTop};width:${ww}px;height:${wh}px;`;
-w.innerHTML=id==='about'?buildAbout():id==='thirdplaces'?buildThirdPlaces():id==='lemonlight'?buildLemonlight():id==='cozymeal'?buildCozymeal():id==='bestbuy'?buildBestBuy():buildProj(projects[id]);  dragWin(w);
+  w.innerHTML=id==='about'?buildAbout():id==='thirdplaces'?buildThirdPlaces():id==='lemonlight'?buildLemonlight():id==='cozymeal'?buildCozymeal():id==='bestbuy'?buildBestBuy():buildProj(projects[id]);
+  dragWin(w);
   w.querySelector('.tb-r').onclick=()=>{w.classList.add('closing');setTimeout(()=>{w.remove();delete wins[id];},200);};
   w.querySelector('.tb-y').onclick=()=>{w.style.display='none';};
   w.querySelector('.tb-g').onclick=()=>{
@@ -668,16 +1693,14 @@ w.innerHTML=id==='about'?buildAbout():id==='thirdplaces'?buildThirdPlaces():id==
   };
   document.body.appendChild(w);
   if(id==='about'){
-  w.querySelectorAll('#about-pg > div > div').forEach(tile=>{
-    tile.style.transition='transform 0.2s cubic-bezier(0.34,1.5,0.64,1)';
-    tile.addEventListener('mouseenter',()=>{ tile.style.transform='scale(1.03)'; tile.style.zIndex='10'; });
-    tile.addEventListener('mouseleave',()=>{ tile.style.transform=''; tile.style.zIndex=''; });
-  });
-}
+    w.querySelectorAll('#about-pg > div > div').forEach(tile=>{
+      tile.style.transition='transform 0.2s cubic-bezier(0.34,1.5,0.64,1)';
+      tile.addEventListener('mouseenter',()=>{ tile.style.transform='scale(1.03)'; tile.style.zIndex='10'; });
+      tile.addEventListener('mouseleave',()=>{ tile.style.transform=''; tile.style.zIndex=''; });
+    });
+  }
   wins[id]=w;
 }
-
-
 
 function buildProj(d){
   if(!d)return'';
@@ -710,181 +1733,64 @@ function buildCozymeal(){
     <div class="win-title">Cozymeal Rebrand</div>
   </div>
   <div class="win-body">
-
     <div class="cs-hero">
       <img src="cozymealcover.png" alt="Cozymeal Rebrand"/>
       <div class="cs-hero-overlay"></div>
       <span class="cs-hero-tag" style="background:#E78A24;color:#fff;">Branding · Case Study</span>
     </div>
-
     <h2 class="cs-title">Cozymeal <em>Rebrand</em></h2>
     <p class="cs-subtitle">A full rebranding for Cozymeal — new logo, brand assets, physical product design, and a complete design & branding style guide.</p>
-
     <div class="cs-meta-bar">
       <div class="cs-meta-item"><div class="cs-meta-label">Client</div><div class="cs-meta-val">Cozymeal</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">Industry</div><div class="cs-meta-val">Hospitality, Food Services</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">12 Weeks</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">Solo Project</div></div>
     </div>
-
-    <!-- 01 Overview -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">01</div>
-        <div class="cs-section-title">Project <em>Overview</em></div>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num">01</div><div class="cs-section-title">Project <em>Overview</em></div></div>
       <p class="cs-body">This rebranding project for Cozymeal features a <strong>new logo, brand assets, physical product design</strong>, and a complete design & branding style guide. The refreshed identity uses <strong>earthy greens and warm oranges</strong> to convey a professional yet inviting aesthetic, supported by redesigned stationery, social media kits, and a user-friendly website UI.</p>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 02 Challenge -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">02</div>
-        <div class="cs-section-title">The <em>Challenge</em></div>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num">02</div><div class="cs-section-title">The <em>Challenge</em></div></div>
       <div class="cs-hmw">How do you build a brand identity that feels both premium and warmly inviting?</div>
-      <p class="cs-body">The goal was to rebrand Cozymeal with a <strong>cohesive and modern brand identity</strong> that truly reflects the company's mission and values while differentiating it in a competitive market. This involved extensive research into the company's background and core values, identifying unique benefits, evaluating competitors, and understanding the target audience.</p>
-      <p class="cs-body" style="margin-top:10px;">The process required synthesizing these insights into a <strong>brand narrative</strong>, developing design elements, and ensuring consistency across all visual and marketing assets to create a <strong>premium, inviting, and versatile brand experience</strong>.</p>
-
-
+      <p class="cs-body">The goal was to rebrand Cozymeal with a <strong>cohesive and modern brand identity</strong> that truly reflects the company's mission and values while differentiating it in a competitive market.</p>
     <div class="cs-divider"></div>
-
-    <!-- 03 Color Palette -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">03</div>
-        <div class="cs-section-title">Color <em>Palette</em></div>
-      </div>
-      <p class="cs-body">The color palette was built with purpose. <strong><span style="color:#3A5F41;">Deep green (<span style="color:#3A5F41;">#3A5F41</span>)</span></strong> represents freshness, trust, and sustainability. <strong><span style="color:#C6DAD0;">Minty green (<span style="color:#C6DAD0;">#C6DAD0</span>)</span></strong> adds a light, airy balance. <strong><span style="color:#E78A24;">Warm orange (<span style="color:#E78A24;">#E78A24</span>)</span></strong> introduces energy, warmth, and gourmet appeal — making the overall aesthetic both cozy and vibrant.</p>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px;">
-        <div class="cs-sol-card" style="border-top:3px solid #3A5F41;margin:0;">
-          <div class="cs-sol-icon" style="font-size:1.4rem;background:#3A5F41;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;">🌿</div>
-          <div class="cs-sol-title">Deep Green</div>
-          <div class="cs-sol-desc"><strong>#3A5F41</strong> — Freshness, trust, and sustainability.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #C6DAD0;margin:0;">
-          <div class="cs-sol-icon" style="font-size:1.4rem;background:#C6DAD0;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;">🍃</div>
-          <div class="cs-sol-title">Minty Green</div>
-          <div class="cs-sol-desc"><strong>#C6DAD0</strong> — Light, airy balance and approachability.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;margin:0;">
-          <div class="cs-sol-icon" style="font-size:1.4rem;background:#E78A24;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;">🍊</div>
-          <div class="cs-sol-title">Warm Orange</div>
-          <div class="cs-sol-desc"><strong>#E78A24</strong> — Energy, warmth, and gourmet appeal.</div>
-        </div>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num">03</div><div class="cs-section-title">Color <em>Palette</em></div></div>
+      <p class="cs-body">The color palette was built with purpose. <strong>Deep green (#3A5F41)</strong> represents freshness, trust, and sustainability. <strong>Minty green (#C6DAD0)</strong> adds a light, airy balance. <strong>Warm orange (#E78A24)</strong> introduces energy, warmth, and gourmet appeal.</p>
       </div>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 04 The Logo -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">04</div>
-        <div class="cs-section-title">The <em>Logo</em></div>
-      </div>
-      <p class="cs-body">The redesigned Cozymeal logo moves away from the casual orange script wordmark toward an identity that feels distinctly culinary and refined. The updated mark pairs a <strong>bold, leaf-shaped "C" icon</strong> in deep green with warm orange and minty green accents, nodding to the shared, communal nature of food experiences. Clean, grounded typography below reinforces a sense of <strong style="color:#E78A24;">trust, freshness, and approachability</strong>.</p>
-      <img src="cozymeallogo.png" alt="Old Logo vs New Logo" style="width:60%;border-radius:10px;margin-top:16px; display:block;margin-left:auto;margin-right:auto;"/>
+      <div class="cs-section-label"><div class="cs-section-num">04</div><div class="cs-section-title">The <em>Logo</em></div></div>
+      <p class="cs-body">The redesigned logo pairs a <strong>bold, leaf-shaped "C" icon</strong> in deep green with warm orange and minty green accents. Clean, grounded typography reinforces a sense of <strong style="color:#E78A24;">trust, freshness, and approachability</strong>.</p>
+      <img src="cozymeallogo.png" alt="Logo" style="width:60%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 05 Social Media Kit -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">05</div>
-        <div class="cs-section-title">Social Media <em>Kit</em></div>
-      </div>
-      <p class="cs-body">The social media posts were designed to emphasize a <strong>cozy, hands-on, and immersive experience</strong> for food and drink enthusiasts. The mix of <strong>real-life imagery and illustrations</strong> caters to different audience preferences while maintaining a consistent color palette and inviting tone.</p>
-            
-      <img src="cozymealsm.png" alt="Cozymeal Social Media Kit Posts" style="width:90%;border-radius:10px;margin-top:16px; display:block;margin-left:auto;margin-right:auto;"/>
-    <div class="cs-divider"></div>
-
-    <!-- 06 Website Redesign -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">06</div>
-        <div class="cs-section-title">Website <em>Redesign</em></div>
-      </div>
-      <p class="cs-body">The website redesign enhances the <strong>user experience</strong> with a modern, clean aesthetic — a sophisticated dark green and neutral color palette accented by <strong>warm orange CTA buttons</strong>. High-quality imagery highlights the immersive and social nature of the experiences, while strong visual hierarchy and intuitive navigation make it easy for users to explore.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card">
-          <div class="cs-sol-icon">🎨</div>
-          <div class="cs-sol-title">Visual Hierarchy</div>
-          <div class="cs-sol-desc">A clean layout with a sophisticated dark green palette guides users naturally through the experience.</div>
-        </div>
-        <div class="cs-sol-card">
-          <div class="cs-sol-icon">🖼️</div>
-          <div class="cs-sol-title">High-Quality Imagery</div>
-          <div class="cs-sol-desc">Real photography highlights the immersive, social nature of Cozymeal's food experiences.</div>
-        </div>
-        <div class="cs-sol-card">
-          <div class="cs-sol-icon">🧭</div>
-          <div class="cs-sol-title">Intuitive Navigation</div>
-          <div class="cs-sol-desc">Clear, user-friendly structure makes it effortless to explore classes, events, and experiences.</div>
-        </div>
-        <div class="cs-sol-card">
-          <div class="cs-sol-icon">🟠</div>
-          <div class="cs-sol-title">Warm CTA Buttons</div>
-          <div class="cs-sol-desc">Orange CTAs add energy and draw the eye, encouraging users to take action without feeling pushy.</div>
-        </div>
-      </div>
-      <img src="cozymealwebsite.png" alt="Cozymeal Website Redesign" style="width:90%;border-radius:10px;margin-top:16px; display:block;margin-left:auto;margin-right:auto;"/>
-
-    <div class="cs-divider"></div>
-
-    <!-- 07 Merch -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">07</div>
-        <div class="cs-section-title">Merch <em>Design</em></div>
-      </div>
-      <p class="cs-body">The merchandise line translates the Cozymeal brand into tangible, everyday objects — turning customers into brand ambassadors. From tote bags to stickers and mugs, each piece carries the refreshed logo and <strong>earthy green and warm orange palette</strong>, creating a cohesive set of items that feel both functional and distinctly <strong>on-brand</strong>.</p>
-      <img src="cozymealmerch.png" alt="Cozymeal Merch" style="width:90%;border-radius:10px;margin-top:16px; display:block;margin-left:auto;margin-right:auto;"/>
+      <div class="cs-section-label"><div class="cs-section-num">05</div><div class="cs-section-title">Social Media <em>Kit</em></div></div>
+      <img src="cozymealsm.png" alt="Social Media Kit" style="width:90%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- Tools -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">✦</div>
-        <div class="cs-section-title">Tools <em>Used</em></div>
-      </div>
-      <div class="cs-tools-row">
-        <span class="cs-tool">Illustrator</span>
-        <span class="cs-tool">Photoshop</span>
-        <span class="cs-tool">Figma</span>
-        <span class="cs-tool">InDesign</span>
-        <span class="cs-tool">Brand Strategy</span>
-        <span class="cs-tool">Competitive Analysis</span>
-        <span class="cs-tool">Style Guide</span>
-        <span class="cs-tool">Social Media Design</span>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num">06</div><div class="cs-section-title">Website <em>Redesign</em></div></div>
+      <img src="cozymealwebsite.png" alt="Website" style="width:90%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- Takeaway -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">💡</div>
-        <div class="cs-section-title">Learning <em>Takeaway</em></div>
-      </div>
-      <div class="cs-highlight">
-        <p>"I learned that <strong>thorough research and strategic planning are essential</strong>. By assessing the current brand, understanding market and stakeholder needs, and defining clear visual and messaging guidelines, I can design a new identity that is authentic, consistent, and connects meaningfully with its intended audience."</p>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num">07</div><div class="cs-section-title">Merch <em>Design</em></div></div>
+      <img src="cozymealmerch.png" alt="Merch" style="width:90%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
     </div>
-
+    <div class="cs-divider"></div>
+    <div class="cs-section">
+      <div class="cs-section-label"><div class="cs-section-num">💡</div><div class="cs-section-title">Learning <em>Takeaway</em></div></div>
+      <div class="cs-highlight"><p>"I learned that <strong>thorough research and strategic planning are essential</strong>. By assessing the current brand, understanding market and stakeholder needs, and defining clear visual and messaging guidelines, I can design a new identity that is authentic and consistent."</p></div>
+    </div>
     <div class="cs-footer">
       <a href="https://drive.google.com/file/d/14o0P2Z45qc0-qlwXcLmVUrSqkhUbb-ZQ/view?usp=sharing" target="_blank" class="cs-btn" style="background:#E78A24;color:#fff;">Brand Style Guide ↗</a>
       <a href="https://www.figma.com/proto/XY44PDKTDTDdGR4z0CI7Xu/COZYMEAL-Rebranding?node-id=127-357&p=f&t=dLrp6FByHudRUuuI-1&scaling=min-zoom&content-scaling=fixed&page-id=81%3A2&starting-point-node-id=86%3A1419" target="_blank" class="cs-btn" style="background:transparent;border:2px solid #E78A24;color:#E78A24;">View Website Prototype ↗</a>
     </div>
-
   </div>`;
 }
 
@@ -892,159 +1798,52 @@ function buildLemonlight(){
   return`
   <div class="win-titlebar">
     <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title"style="color:#d4a017;" >Lemonlight Studios</div>
+    <div class="win-title" style="color:#d4a017;">Lemonlight Studios</div>
   </div>
   <div class="win-body">
-
     <div class="cs-hero">
       <img src="lemonlightcover.png" alt="Lemonlight Studios"/>
       <div class="cs-hero-overlay"></div>
       <span class="cs-hero-tag" style="background:#d4a017;color:#fff;">Product Design · Case Study</span>
     </div>
-
     <h2 class="cs-title">Lemonlight <em>Studios</em></h2>
     <p class="cs-subtitle">Designing an AI-powered video intelligence platform that helps brands instantly discover, understand, and repurpose their video assets.</p>
-
     <div class="cs-meta-bar">
       <div class="cs-meta-item"><div class="cs-meta-label">Client</div><div class="cs-meta-val">Lemonlight Studios</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">Industry</div><div class="cs-meta-val">Video Production</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">5-Day Sprint</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">Product Researcher</div></div>
     </div>
-
-    <!-- 01 Overview -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">01</div>
-        <div class="cs-section-title" style="color:#d4a017;">Project <em>Overview</em></div>
-      </div>
-      <p class="cs-body">This project explores how we designed a system that <strong>analyzes raw footage</strong>, generates rich contextual insights, and empowers marketing teams to produce polished, on-brand videos in seconds — without needing traditional editing expertise.</p>
-      <p class="cs-body" style="margin-top:10px;">The project also highlights a phased roadmap for evolving <strong>HeroFlow</strong> from an internal MVP to a scalable enterprise SaaS solution.</p>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#d4a017;">01</div><div class="cs-section-title" style="color:#d4a017;">Project <em>Overview</em></div></div>
+      <p class="cs-body">This project explores how we designed a system that <strong>analyzes raw footage</strong>, generates rich contextual insights, and empowers marketing teams to produce polished, on-brand videos in seconds.</p>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 02 Challenge -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">02</div>
-        <div class="cs-section-title" style="color:#d4a017;">The <em>Challenge</em></div>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#d4a017;">02</div><div class="cs-section-title" style="color:#d4a017;">The <em>Challenge</em></div></div>
       <div class="cs-hmw" style="border-left-color:#d4a017;">How can we turn large video libraries into instantly usable creative assets?</div>
-      <p class="cs-body">Video teams struggle to scale post-production because their workflows rely heavily on <strong>manual searching, tagging, and editor memory</strong>. High-end brands like Apple, Rolex, and Delta need fast, consistent, premium outputs that generic AI tools cannot deliver.</p>
-      <p class="cs-body" style="margin-top:10px;">Without an intelligent system, repurposing footage for new formats — like social edits or TikTok cuts — becomes <strong>slow and inefficient</strong>.</p>
+      <p class="cs-body">Video teams struggle to scale post-production because their workflows rely heavily on <strong>manual searching, tagging, and editor memory</strong>.</p>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 03 Research -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">03</div>
-        <div class="cs-section-title" style="color:#d4a017;">Research & <em>Discovery</em></div>
-      </div>
-      <p class="cs-body">We analyzed production workflows and compared emerging AI video tools. While exploring platforms like <strong>Runway, Pika Labs, Synthesia, Descript,</strong> and <strong>Adobe Firefly</strong>, it became clear that most focus on <em>generating</em> new content — not understanding or organizing existing footage.</p>
-      <p class="cs-body" style="margin-top:10px;">Editors emphasized the time lost searching through raw assets, while marketers stressed the need for <strong>speed and brand consistency</strong>. This highlighted a major gap: <strong>no current tool provides deep, intelligent asset analysis at an enterprise level.</strong></p>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 04 Solution -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">04</div>
-        <div class="cs-section-title" style="color:#d4a017;">Solution — <em>HeroFlow</em></div>
-      </div>
-      <p class="cs-body">We designed <strong>HeroFlow</strong>, an AI data-driven video intelligence platform that analyzes footage, generates rich metadata, and makes assets instantly searchable. With semantic search, contextual "HeroFacts," and prompt-based editing, teams can quickly produce new, on-brand content without digging through folders.</p>
-      <img src="heroflowlogo.png" alt="HeroFlow Logo"; style="width:60%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#d4a017;">03</div><div class="cs-section-title" style="color:#d4a017;">Solution — <em>HeroFlow</em></div></div>
+      <img src="heroflowlogo.png" alt="HeroFlow Logo" style="width:60%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
       <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">🔍</div>
-          <div class="cs-sol-title">Semantic Search</div>
-          <div class="cs-sol-desc">Instantly surface the right footage using natural language queries — no manual tagging or folder hunting required.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">🎬</div>
-          <div class="cs-sol-title">HeroFacts & Insights</div>
-          <div class="cs-sol-desc">Contextual metadata automatically generated from footage — identifying brand elements, shot types, and key moments.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">⚡</div>
-          <div class="cs-sol-title">Prompt-Based Editing</div>
-          <div class="cs-sol-desc">Create social-ready edits in seconds using simple prompts — no traditional editing expertise needed.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">🏷️</div>
-          <div class="cs-sol-title">Automated Tagging</div>
-          <div class="cs-sol-desc">AI-driven tagging of every asset to keep libraries organized and discoverable at enterprise scale.</div>
-        </div>
-      </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 05 Roadmap -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">05</div>
-        <div class="cs-section-title"style="color:#d4a017;">Product <em>Roadmap</em></div>
-      </div>
-      <p class="cs-body">The roadmap visualizes the phased growth of HeroFlow, moving from an internal MVP to a fully scalable enterprise platform.</p>
-      <div class="cs-solution-grid" style="grid-template-columns:1fr 1fr 1fr;">
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">🌱</div>
-          <div class="cs-sol-title">Phase 1: MVP Launch</div>
-          <div class="cs-sol-desc">Build and release the minimum viable product for Lemonlight's internal teams. Validate the core idea with automated tagging, basic search, and simple edit generation.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">📊</div>
-          <div class="cs-sol-title">Phase 2: Insights & Intelligence</div>
-          <div class="cs-sol-desc">Enhance HeroFlow with advanced analytics — deeper footage understanding, richer metadata, smart recommendations, and improved search precision.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;">
-          <div class="cs-sol-icon">🚀</div>
-          <div class="cs-sol-title">Phase 3: Integration & Scale</div>
-          <div class="cs-sol-desc">Launch externally as a full enterprise SaaS platform — API integrations, secure access controls, multi-team workflows, and large-scale asset support.</div>
-        </div>
+        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🔍</div><div class="cs-sol-title">Semantic Search</div><div class="cs-sol-desc">Surface the right footage using natural language queries.</div></div>
+        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🎬</div><div class="cs-sol-title">HeroFacts & Insights</div><div class="cs-sol-desc">Contextual metadata automatically generated from footage.</div></div>
+        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">⚡</div><div class="cs-sol-title">Prompt-Based Editing</div><div class="cs-sol-desc">Create social-ready edits in seconds using simple prompts.</div></div>
+        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🏷️</div><div class="cs-sol-title">Automated Tagging</div><div class="cs-sol-desc">AI-driven tagging to keep libraries organized at enterprise scale.</div></div>
       </div>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- Tools -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">✦</div>
-        <div class="cs-section-title">Tools <em>Used</em></div>
-      </div>
-      <div class="cs-tools-row">
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">Figma</span>
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">AI Integration</span>
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">Design Systems</span>
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">Prototyping</span>
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">Competitive Analysis</span>
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">User Research</span>
-        <span class="cs-tool" style="background:rgba(212,160,23,0.12);color:#d4a017;">Information Architecture</span>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#d4a017;">💡</div><div class="cs-section-title">Learning <em>Takeaway</em></div></div>
+      <div class="cs-highlight" style="border-left-color:#d4a017;background:rgba(212,160,23,0.06);"><p>"I learned the value of <strong>designing for the entire ecosystem</strong>, not just the end user interface."</p></div>
     </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- Takeaway -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#d4a017;">💡</div>
-        <div class="cs-section-title">Learning <em>Takeaway</em></div>
-      </div>
-      <div class="cs-highlight" style="border-left-color:#d4a017;background:rgba(212,160,23,0.06);">
-        <p>"I learned the value of <strong>designing for the entire ecosystem</strong>, not just the end user interface. By understanding editors, marketers, and enterprise constraints, I realized that the strongest solutions come from aligning technology, workflow, and user needs — especially when working with AI-powered tools."</p>
-      </div>
-    </div>
-
     <div class="cs-footer">
       <a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" class="cs-btn" style="background:#d4a017;color:#fff;">Pitch Deck ↗</a>
       <a href="https://drive.google.com/file/d/1xZ_lVLbTl3BRGuxdIhK99RZvnk-pwJ7L/view?usp=sharing" target="_blank" class="cs-btn" style="background:transparent;border:2px solid #d4a017;color:#d4a017;">HeroFlow Demo ↗</a>
     </div>
-
   </div>`;
 }
 
@@ -1055,128 +1854,50 @@ function buildThirdPlaces(){
     <div class="win-title">Third Places</div>
   </div>
   <div class="win-body">
-
     <div class="cs-hero">
       <img src="https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=1200" alt="Third Places"/>
       <div class="cs-hero-overlay"></div>
       <span class="cs-hero-tag">UI/UX Design · Case Study</span>
     </div>
-
     <h2 class="cs-title">Third <em>Places</em></h2>
     <p class="cs-subtitle">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p>
-
     <div class="cs-meta-bar">
       <div class="cs-meta-item"><div class="cs-meta-label">Client</div><div class="cs-meta-val">Class Project</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">12 Weeks</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">UI/UX Designer & Researcher</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label">Deliverable</div><div class="cs-meta-val">Mobile App + Physical</div></div>
     </div>
-
-    <!-- 01 Problem -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">01</div>
-        <div class="cs-section-title">Defining the <em>Problem</em></div>
-      </div>
-      <p class="cs-body">The main challenge was to address the <strong>lack of "third places" in the U.S.</strong> — the social spaces beyond home and work where community naturally forms. While there's a strong cultural desire for these hubs, they are difficult for people to <strong>discover</strong>, and their absence contributes to a <strong>cultural disparity</strong> when compared to other countries.</p>
-      <p class="cs-body" style="margin-top:10px;">The project's goal was to tackle this <strong>multi-faceted problem</strong> by making these valuable spaces more <strong>accessible and sustainable</strong>.</p>
+      <div class="cs-section-label"><div class="cs-section-num">01</div><div class="cs-section-title">Defining the <em>Problem</em></div></div>
+      <p class="cs-body">The main challenge was to address the <strong>lack of "third places" in the U.S.</strong> — the social spaces beyond home and work where community naturally forms.</p>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 02 Research -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">02</div>
-        <div class="cs-section-title">Research & <em>Discovery</em></div>
-      </div>
-      <div class="cs-hmw">How might we understand what makes third places sustainable?</div>
-      <p class="cs-body">The research process began with a deep dive into understanding the "third place dilemma" through a <strong>morphological grid</strong> and <strong>secondary research</strong>. This surfaced a strong user desire for <strong>curated, community-driven content</strong> and <strong>personalized recommendations</strong>.</p>
-      <p class="cs-body" style="margin-top:10px;">To make findings tangible, a <strong>user persona</strong> was created that guided the <strong>problem definition</strong> and ideation phases — keeping real human needs at the center of every decision.</p>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 03 Ideation -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">03</div>
-        <div class="cs-section-title">Collaborative <em>Ideation</em></div>
-      </div>
-      <p class="cs-body">Following the <strong>Creative Problem Solving framework</strong>, the team used <strong>morphological grids</strong>, <strong>dot voting</strong>, and <strong>decision-making charts</strong> to collaboratively refine ideas. All concepts were objectively evaluated against criteria like <strong>market potential</strong> and <strong>technical feasibility</strong>.</p>
-      <p class="cs-body" style="margin-top:10px;">The process surfaced the strongest signal clearly — the final selected solution, <strong>Agora</strong>, emerged from this rigorous evaluation and was brought to life in the implementation phase.</p>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 04 Solution -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num">04</div>
-        <div class="cs-section-title">Introducing <em>Agora</em></div>
-      </div>
-      <p class="cs-body">Named after the Greek word for "gathering place," Agora is a <strong>dual digital + physical solution</strong> designed not only to help people <strong>discover</strong> third places, but to encourage a culture of <strong>returning</strong> to them as part of everyday routine.</p>
+      <div class="cs-section-label"><div class="cs-section-num">02</div><div class="cs-section-title">Introducing <em>Agora</em></div></div>
+      <p class="cs-body">Named after the Greek word for "gathering place," Agora is a <strong>dual digital + physical solution</strong> designed to help people discover third places and build a culture of returning to them.</p>
       <div style="display:flex;justify-content:center;margin:20px 0 8px;">
         <img src="agoralogo.png" alt="Agora Logo" style="max-width:320px;width:100%;height:auto;object-fit:contain;" />
       </div>
       <div class="cs-solution-grid">
-        <div class="cs-sol-card">
-          <div class="cs-sol-icon">📱</div>
-          <div class="cs-sol-title">Digital Platform</div>
-          <div class="cs-sol-desc">A <strong>mobile app</strong> with a home screen, a discovery page, and a <strong>roulette feature</strong> to encourage serendipity — turning finding a third place into something fun and unexpected.</div>
-        </div>
-        <div class="cs-sol-card">
-          <div class="cs-sol-icon">🛍️</div>
-          <div class="cs-sol-title">Physical Component</div>
-          <div class="cs-sol-desc">Branded merchandise — tote bags, coffee cups — designed to organically foster <strong>real-world interaction</strong> and <strong>community building</strong> beyond the screen.</div>
-        </div>
+        <div class="cs-sol-card"><div class="cs-sol-icon">📱</div><div class="cs-sol-title">Digital Platform</div><div class="cs-sol-desc">A mobile app with a discovery page and roulette feature to encourage serendipity.</div></div>
+        <div class="cs-sol-card"><div class="cs-sol-icon">🛍️</div><div class="cs-sol-title">Physical Component</div><div class="cs-sol-desc">Branded merchandise to organically foster real-world community building.</div></div>
       </div>
-      <p class="cs-body"><strong>High-fidelity wireframes</strong> were built in <strong>Figma</strong>, alongside <strong>prototyping</strong> of physical components to validate how the two touchpoints work together in the real world.</p>
-   <div class="cs-solution-grid" style="margin-top:18px;">
+      <div class="cs-solution-grid" style="margin-top:18px;">
         <img src="agoratote.png" alt="Agora Tote" style="width:100%;border-radius:12px;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.1);" />
         <img src="agoracup.png" alt="Agora Cup" style="width:100%;border-radius:12px;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.1);" />
       </div>
       <div style="display:flex;justify-content:center;margin:20px 0 8px;">
-        <img src="agorascreens.png" alt="Agora Screeens" style="max-width:800px;width:100%;height:100%;object-fit:contain;" />
+        <img src="agorascreens.png" alt="Agora Screens" style="max-width:800px;width:100%;height:100%;object-fit:contain;" />
       </div>
     </div>
     <div class="cs-divider"></div>
-
-    <!-- Tools -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#284C2F;">✦</div>
-        <div class="cs-section-title">Tools <em>Used</em></div>
-      </div>
-      <div class="cs-tools-row">
-        <span class="cs-tool">Figma</span>
-        <span class="cs-tool">FigJam</span>
-        <span class="cs-tool">Morphological Grid</span>
-        <span class="cs-tool">User Personas</span>
-        <span class="cs-tool">CPS Framework</span>
-        <span class="cs-tool">Dot Voting</span>
-        <span class="cs-tool">Prototyping</span>
-        <span class="cs-tool">Secondary Research</span>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#284C2F;">💡</div><div class="cs-section-title">Learning <em>Takeaway</em></div></div>
+      <div class="cs-highlight"><p>"I learned that solutions to <strong>complex cultural challenges</strong> rarely achieve perfection, but by embracing <strong>collaboration</strong> and <strong>grounding design in user needs</strong>, we can craft a meaningful approach."</p></div>
     </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- Takeaway -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#284C2F;">💡</div>
-        <div class="cs-section-title">Learning <em>Takeaway</em></div>
-      </div>
-      <div class="cs-highlight">
-        <p>"I learned that solutions to <strong>complex cultural challenges</strong> rarely achieve perfection, but by embracing <strong>collaboration</strong>, <strong>iteration</strong>, and <strong>grounding design in user needs</strong>, we can craft a feasible & meaningful approach that balances innovation with practicality."</p>
-      </div>
-    </div>
-
     <div class="cs-footer">
       <a href="#" onclick="return false" class="cs-btn cs-btn-ghost" style="background:#284C2F;color:#fff;">Slide Deck</a>
     </div>
-
   </div>`;
 }
 
@@ -1187,173 +1908,42 @@ function buildBestBuy(){
     <div class="win-title">Best Buy</div>
   </div>
   <div class="win-body">
-
     <div class="cs-hero">
       <img src="bbcoverpic.png" alt="Best Buy"/>
       <div class="cs-hero-overlay" style="background:linear-gradient(to top,rgba(0,88,163,0.55) 0%,transparent 60%);"></div>
       <span class="cs-hero-tag" style="background:#0058a3;color:#fff;">UI/UX Design · Case Study</span>
     </div>
-
     <h2 class="cs-title" style="color:#0058a3;">Best Buy <em>Internal</em></h2>
-    <p class="cs-subtitle" style="color:#3a3a3c;">Designing a platform to improve internal communication for Best Buy employees — a space to connect, share, and ask questions.</p>
-
+    <p class="cs-subtitle" style="color:#3a3a3c;">Designing a platform to improve internal communication for Best Buy employees.</p>
     <div class="cs-meta-bar">
       <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">Client</div><div class="cs-meta-val">Best Buy (Class Project)</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">Timeline</div><div class="cs-meta-val">12 Weeks</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">My Role</div><div class="cs-meta-val">UI/UX Designer & Researcher</div></div>
       <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">Platform</div><div class="cs-meta-val">Web Application</div></div>
     </div>
-
-    <!-- 01 Overview -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">01</div>
-        <div class="cs-section-title" style="color:#0058a3;">Project <em>Overview</em></div>
-      </div>
-      <p class="cs-body">This project focuses on designing a platform to improve <strong style="color:#0058a3;">internal communication</strong> for Best Buy employees — a place to connect, share knowledge, and ask questions across teams. Existing platforms like "Best Buy Answers" and "Employee Hub" were outdated and underutilized, pushing employees to external platforms instead.</p>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">01</div><div class="cs-section-title" style="color:#0058a3;">Project <em>Overview</em></div></div>
+      <p class="cs-body">This project focuses on designing a platform to improve <strong style="color:#0058a3;">internal communication</strong> for Best Buy employees — a place to connect, share knowledge, and ask questions across teams.</p>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 02 Challenge -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">02</div>
-        <div class="cs-section-title" style="color:#0058a3;">The <em>Challenge</em></div>
-      </div>
-      <div class="cs-hmw" style="border-left-color:#0058a3;background:rgba(58,58,60,0.06);color:#0058a3;">How might we bridge the gap between Legacy Tools & Modern Needs?</div>
-      <p class="cs-body">Employees were not using the provided systems and were instead turning to <strong style="color:#0058a3;">external platforms</strong> for communication and community building. There was a significant need for a more organized, concise, and engaging platform that could better connect employees across the organization.</p>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">02</div><div class="cs-section-title" style="color:#0058a3;">The Design <em>System</em></div></div>
+      <img src="bbdesignsystem.png" alt="Best Buy Design System" style="width:90%;border-radius:10px;margin-top:16px;display:block;margin-left:auto;margin-right:auto;"/>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- 03 Research -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">03</div>
-        <div class="cs-section-title" style="color:#0058a3;">Uncovering the Real <em>Communication Breakdown</em></div>
-      </div>
-      <p class="cs-body">The research began with a <strong style="color:#0058a3;">competitive analysis</strong> of existing workplace communication platforms. User interviews with Best Buy and other retail employees revealed that the primary need was for an <strong style="color:#0058a3;">out-of-store communication platform</strong> — a finding that led the team to pivot the project's focus to a data-driven approach.</p>
-      <p class="cs-body" style="margin-top:10px;">After research, the team focused on creating a high-fidelity prototype featuring a homepage for updates, a groups page for discussions, and individual profiles with privacy settings.</p>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 04 Ideation -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">04</div>
-        <div class="cs-section-title" style="color:#0058a3;">Ideation & <em>Validation</em></div>
-      </div>
-      <p class="cs-body">Following the <strong style="color:#0058a3;">Creative Problem Solving framework</strong>, the team used morphological grids, dot voting, and decision-making charts to refine ideas collaboratively. All ideas were objectively evaluated based on criteria like <strong style="color:#0058a3;">market potential</strong> and <strong style="color:#0058a3;">technical feasibility</strong>.</p>
-      <div class="cs-solution-grid" style="margin-top:16px;">
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">🗺️</div>
-          <div class="cs-sol-title">Morphological Grids</div>
-          <div class="cs-sol-desc">Systematically explored solution spaces across multiple dimensions of the problem.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">🗳️</div>
-          <div class="cs-sol-title">Dot Voting</div>
-          <div class="cs-sol-desc">Collaborative prioritization to surface the most impactful ideas from the team.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">📊</div>
-          <div class="cs-sol-title">Decision-Making Charts</div>
-          <div class="cs-sol-desc">Objective evaluation of ideas against market potential and technical feasibility.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">🧪</div>
-          <div class="cs-sol-title">User Validation</div>
-          <div class="cs-sol-desc">Final design was a direct result of user feedback, ensuring it met employees' core needs.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 05 Design System -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">05</div>
-        <div class="cs-section-title" style="color:#0058a3;">The <em>Design System</em></div>
-      </div>
-      <p class="cs-body">The design process included creating a <strong style="color:#0058a3;">design system</strong> to ensure a consistent look and feel across all high-fidelity prototypes. The team drew inspiration from Best Buy's existing brand colors but chose to <strong style="color:#0058a3;">mute them</strong> to better match the casual, community-focused purpose of the new platform.</p>
-      <img src="bbdesignsystem.png" alt="Best Buy Design System" style="width:90%;border-radius:10px;margin-top:16px; display:block;margin-left:auto;margin-right:auto;"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- 06 Final Design -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">06</div>
-        <div class="cs-section-title" style="color:#0058a3;">A Unified Employee <em>Communication Hub</em></div>
-      </div>
-      <p class="cs-body">The final design combines the purposes of the existing platforms to connect employees and provide support. The <strong style="color:#0058a3;">high-fidelity prototype</strong> includes:</p>
-      <div class="cs-solution-grid" style="margin-top:16px;">
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">🏠</div>
-          <div class="cs-sol-title">Homepage</div>
-          <div class="cs-sol-desc">A central feed for company updates, announcements, and employee activity.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">👥</div>
-          <div class="cs-sol-title">Groups Page</div>
-          <div class="cs-sol-desc">Dedicated spaces for team discussions, knowledge sharing, and Q&A.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">📢</div>
-          <div class="cs-sol-title">Announcements</div>
-          <div class="cs-sol-desc">A dedicated page for managers to post official updates to their teams.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;">
-          <div class="cs-sol-icon">🔒</div>
-          <div class="cs-sol-title">Private Profiles</div>
-          <div class="cs-sol-desc">Individual profiles with the option to hide group memberships for anonymity.</div>
-        </div>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">03</div><div class="cs-section-title" style="color:#0058a3;">Final <em>Screens</em></div></div>
       <img src="bbscreens.png" alt="Best Buy Final Design" style="width:100%;border-radius:10px;margin-top:16px;"/>
     </div>
-
     <div class="cs-divider"></div>
-
-    <!-- Tools -->
     <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">✦</div>
-        <div class="cs-section-title" style="color:#0058a3;">Tools <em>Used</em></div>
-      </div>
-      <div class="cs-tools-row">
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">Figma</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">FigJam</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">Usability Testing</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">Wireframing</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">User Interviews</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">Competitive Analysis</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">Design Systems</span>
-        <span class="cs-tool" style="background:rgba(0,88,163,0.08);border-color:rgba(0,88,163,0.2);color:#0058a3;">CPS Framework</span>
-      </div>
+      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">💡</div><div class="cs-section-title" style="color:#0058a3;">Learning <em>Takeaway</em></div></div>
+      <div class="cs-highlight" style="background:rgba(0,88,163,0.05);border-left-color:#0058a3;"><p>"This project made me realize how crucial <strong>user research</strong> is. <strong>Listening to users is the most important step</strong> in creating a solution that truly works."</p></div>
     </div>
-
-    <div class="cs-divider"></div>
-
-    <!-- Takeaway -->
-    <div class="cs-section">
-      <div class="cs-section-label">
-        <div class="cs-section-num" style="background:#0058a3;">💡</div>
-        <div class="cs-section-title" style="color:#0058a3;">Learning <em>Takeaway</em></div>
-      </div>
-      <div class="cs-highlight" style="background:rgba(0,88,163,0.05);border-left-color:#0058a3;">
-        <p>"This project made me realize how crucial <strong>user research</strong> is. I went into the project with some assumptions about what Best Buy employees needed, but after conducting interviews, I learned that the real problem wasn't what I expected. This experience taught me that <strong>listening to users is the most important step</strong> in creating a solution that truly works."</p>
-      </div>
-    </div>
-
     <div class="cs-footer">
       <a href="https://www.figma.com/proto/sZFZ1HB87fuLe7gXrG9cV2/Best-Buy?node-id=155-728&t=Gzld0k5WHKnkud4j-1" target="_blank" class="cs-btn" style="background:#0058a3;color:#fff;">View Prototype ↗</a>
       <a href="https://docs.google.com/document/d/1PYqWj0IvDUyd6PCPNtMeNfKYhhPw_uiUFnNRRPVm2sI/edit?usp=sharing" target="_blank" class="cs-btn" style="background:transparent;border:2px solid #0058a3;color:#0058a3;">Documentation ↗</a>
     </div>
-
   </div>`;
 }
 
@@ -1364,157 +1954,54 @@ function buildAbout(){
     <div class="win-title">Aashwini Vachhani — About</div>
   </div>
   <div class="about-body" style="flex:1;overflow:hidden;display:flex;width:100%;height:100%;">
-<div id="about-pg" style="background:#f0ede8;width:100%;height:100%;padding:12px;transform-origin:top left;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;">      <div style="display:grid;width:100%;height:100%;grid-template-columns:2fr 1.4fr 1.4fr 1.2fr;grid-template-rows:150px 140px 1fr;gap:7px;">
-
+    <div id="about-pg" style="background:#f0ede8;width:100%;height:100%;padding:12px;transform-origin:top left;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;">
+      <div style="display:grid;width:100%;height:100%;grid-template-columns:2fr 1.4fr 1.4fr 1.2fr;grid-template-rows:150px 140px 1fr;gap:7px;">
         <div style="grid-column:1/2;grid-row:1/3;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;">
           <img src="me2.jpg" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 50%);"></div>
-          <div style="position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:18px;">✨</div>
           <div style="position:absolute;top:12px;right:12px;background:rgba(52,199,89,0.82);color:#fff;border-radius:20px;padding:4px 14px;font-size:10px;font-weight:600;">Open to opportunities</div>
-<div style="position:absolute;bottom:14px;left:14px;">
-  <div style="font-size:18px;font-weight:500;color:#fff;letter-spacing:-0.3px;">Aashwini Vachhani</div>
-  <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:3px;">UI/UX · Product Designer · Branding</div>
-</div>
+          <div style="position:absolute;bottom:14px;left:14px;">
+            <div style="font-size:18px;font-weight:500;color:#fff;letter-spacing:-0.3px;">Aashwini Vachhani</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:3px;">UI/UX · Product Designer · Branding</div>
+          </div>
         </div>
-
         <div style="grid-column:2/3;grid-row:1/2;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px;text-align:center;">
           <div style="font-size:13px;font-weight:500;color:#1c1c1e;line-height:1.5;">Blending <span style="color:#7a4abf;">Strategy</span>,<br><span style="color:#3a7abf;">Creativity</span> & <span style="color:#2a8a52;">Usability</span></div>
         </div>
-
         <div style="grid-column:3/4;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;">
           <img src="me1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 20%" onerror="this.style.display='none'">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);"></div>
           <div style="position:absolute;bottom:8px;left:10px;font-size:12px;font-weight:500;color:#fff;">Photographer</div>
         </div>
-
         <div style="grid-column:4/5;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;">
           <img src="coldcoffee.jpg" style="width:100%;height:100%;object-fit:cover;transform:scaleX(-1);" onerror="this.style.display='none'">
           <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);"></div>
           <div style="position:absolute;bottom:8px;left:10px;font-size:12px;font-weight:500;color:#fff;">Fueled by cold coffee</div>
         </div>
-
         <div style="grid-column:2/5;grid-row:2/3;border-radius:18px;background:#fff;padding:20px 24px;display:flex;align-items:center;">
-          <div style="font-size:14px;color:#3a3a3c;line-height:1.8;text-align:center;width:100%;">I'm a product designer who believes great design lives where strategy meets empathy 🤝. With a foundation in UX and a master's focus in design, business, and technology, I create experiences that are intuitive, purposeful, and built to scale, designing systems that help people connect through digital platforms 💻 , brands ✨ , and everyday third spaces 🌿.</div>
+          <div style="font-size:14px;color:#3a3a3c;line-height:1.8;text-align:center;width:100%;">I'm a product designer who believes great design lives where strategy meets empathy 🤝. With a foundation in UX and a master's focus in design, business, and technology, I create experiences that are intuitive, purposeful, and built to scale 💻 ✨ 🌿.</div>
         </div>
-
         <div style="grid-column:1/2;grid-row:3/4;border-radius:18px;background:#fff;padding:10px 12px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-evenly;gap:14px;">
           <div style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Skills</div>
-
-          <div>
-            <div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Design & Prototyping</div>
-            <div style="display:flex;flex-wrap:wrap;gap:3px;">
-              <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Figma</span>
-              <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Photoshop</span>
-              <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Illustrator</span>
-              <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Framer</span>
-              <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Miro</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">AI-Powered Tools</div>
-            <div style="display:flex;flex-wrap:wrap;gap:3px;">
-              <span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">ChatGPT</span>
-              <span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Claude</span>
-              <span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Gemini</span>
-              <span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">UX Pilot</span>
-              <span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Uizard</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">UX Research</div>
-            <div style="display:flex;flex-wrap:wrap;gap:3px;">
-              <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">User Research</span>
-              <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Usability Testing</span>
-              <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">A/B Testing</span>
-              <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Wireframing</span>
-              <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Journey Mapping</span>
-              <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Personas</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Brand & Visual Design</div>
-            <div style="display:flex;flex-wrap:wrap;gap:3px;">
-              <span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Visual Identity</span>
-              <span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Logo Design</span>
-              <span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Brand Strategy</span>
-              <span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Design Systems</span>
-              <span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Typography</span>
-            </div>
-          </div>
+          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Design & Prototyping</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Figma</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Photoshop</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Illustrator</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Framer</span></div></div>
+          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">AI-Powered Tools</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">ChatGPT</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Claude</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Gemini</span></div></div>
+          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">UX Research</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">User Research</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Usability Testing</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Wireframing</span></div></div>
+          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Brand & Visual Design</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Visual Identity</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Logo Design</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Design Systems</span></div></div>
         </div>
-
         <div style="grid-column:2/4;grid-row:3/4;border-radius:18px;background:#fff;padding:16px 18px;display:flex;flex-direction:column;">
-  <div style="font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Education</div>
-  <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:20px;">
-
-    <div style="display:flex;align-items:flex-start;gap:25px;padding-bottom:1px;">
-      <div style="width:52px;height:52px;border-radius:10px;background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#FFD700;letter-spacing:-0.5px;">
-        <img src="usclogo.png" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div>
-        <div style="font-size:16px;font-weight:600;color:#1c1c1e;line-height:1.3;">University of Southern California</div>
-        <div style="font-size:14px;color:#8a7a74;margin-top:5px;">Los Angeles, CA · May 2026 · GPA: 4.00</div>
-        <div style="margin-top:6px;">
-          <span style="background:#ffe8e8;color:#c0392b;border-radius:24px;padding:6px 10px;font-size:12px;font-weight:500;">M.S. Integrated Design, Business & Technology</span>
+          <div style="font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Education</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:20px;">
+            <div style="display:flex;align-items:flex-start;gap:25px;padding-bottom:1px;"><div style="width:52px;height:52px;border-radius:10px;background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;"><img src="usclogo.png" style="width:100%;height:100%;object-fit:cover;"></div><div><div style="font-size:16px;font-weight:600;color:#1c1c1e;line-height:1.3;">University of Southern California</div><div style="font-size:14px;color:#8a7a74;margin-top:5px;">Los Angeles, CA · May 2026 · GPA: 4.00</div><div style="margin-top:6px;"><span style="background:#ffe8e8;color:#c0392b;border-radius:24px;padding:6px 10px;font-size:12px;font-weight:500;">M.S. Integrated Design, Business & Technology</span></div></div></div>
+            <div style="display:flex;align-items:flex-start;gap:11px;padding-top:1px;"><div style="width:52px;height:52px;border-radius:10px;background:#fff;flex-shrink:0;overflow:hidden;"><img src="purduelogo.png" style="width:80%;height:60%;object-fit:fit;"></div><div><div style="font-size:16px;font-weight:600;color:#1c1c1e;line-height:1.3;">Purdue University</div><div style="font-size:14px;color:#8a7a74;margin-top:5px;">West Lafayette, IN · May 2024 · GPA: 3.84</div><div style="margin-top:6px;"><span style="background:#f5ede0;color:#8b5e3c;border-radius:24px;padding:6px 15px;font-size:12px;font-weight:500;">B.S. Computer Graphics — UX Design</span></div></div></div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div style="display:flex;align-items:flex-start;gap:11px;padding-top:1px;">
-      <div style="width:52px;height:52px;border-radius:10px;background:#fff;flex-shrink:0;overflow:hidden;">
-        <img src="purduelogo.png" style="width:80%;height:60%;object-fit:fit;">
-      </div>
-      <div>
-        <div style="font-size:16px;font-weight:600;color:#1c1c1e;line-height:1.3;">Purdue University</div>
-        <div style="font-size:14px;color:#8a7a74;margin-top:5px;">West Lafayette, IN · May 2024 · GPA: 3.84</div>
-        <div style="margin-top:6px;">
-          <span style="background:#f5ede0;color:#8b5e3c;border-radius:24px;padding:6px 15px;font-size:12px;font-weight:500;">B.S. Computer Graphics — UX Design</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
         <div style="grid-column:4/5;grid-row:3/4;display:flex;flex-direction:column;gap:7px;height:100%;">
-
-  <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;"
-    onclick="window.open('https://drive.google.com/file/d/1RfvwZCYCiM_-TVgjw9M2oniSN-dhQVWX/view?usp=sharing','_blank')"
-    onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';"
-    onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';">
-    <div style="font-size:24px;flex-shrink:0;">📄</div>
-    <div>
-      <div style="font-size:15px;font-weight:500;color:#1c1c1e;">Resume</div>
-      <div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">View PDF →</div>
+          <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('https://drive.google.com/file/d/1RfvwZCYCiM_-TVgjw9M2oniSN-dhQVWX/view?usp=sharing','_blank')" onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';" onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';"><div style="font-size:24px;flex-shrink:0;">📄</div><div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">Resume</div><div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">View PDF →</div></div></div>
+          <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank')" onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';" onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';"><div style="font-size:24px;flex-shrink:0;">💼</div><div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">LinkedIn</div><div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">Open Profile →</div></div></div>
+          <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('mailto:vachhaniaashwini@gmail.com')" onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';" onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';"><div style="font-size:24px;flex-shrink:0;">✉️</div><div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">Email</div><div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">vachhaniaashwini@gmail.com</div></div></div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;"
-    onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank')"
-    onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';"
-    onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';">
-    <div style="font-size:24px;flex-shrink:0;">💼</div>
-    <div>
-      <div style="font-size:15px;font-weight:500;color:#1c1c1e;">LinkedIn</div>
-      <div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">Open Profile →</div>
-    </div>
-  </div>
-
-  <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;"
-    onclick="window.open('mailto:vachhaniaashwini@gmail.com')"
-    onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';"
-    onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';">
-    <div style="font-size:24px;flex-shrink:0;">✉️</div>
-    <div>
-      <div style="font-size:15px;font-weight:500;color:#1c1c1e;">Email</div>
-      <div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">vachhaniaashwini@gmail.com</div>
-    </div>
-  </div>
-
-</div>
   </div>`;
 }
 
@@ -1525,27 +2012,295 @@ function dragWin(w){
   document.addEventListener('mouseup',()=>drag=false);
 }
 
-// ── Icon select ───────────────────────────────────────────
 document.querySelectorAll('.folder').forEach(f=>{
   f.addEventListener('click',e=>{e.stopPropagation();document.querySelectorAll('.folder').forEach(x=>x.classList.remove('selected'));f.classList.add('selected');});
 });
 document.addEventListener('click',()=>{document.querySelectorAll('.folder').forEach(x=>x.classList.remove('selected'));closeCtx();});
 
-// ── Context menu ──────────────────────────────────────────
 const ctxEl=document.getElementById('ctx');
 document.addEventListener('contextmenu',e=>{e.preventDefault();ctxEl.style.display='block';ctxEl.style.left=Math.min(e.clientX,innerWidth-210)+'px';ctxEl.style.top=Math.min(e.clientY,innerHeight-160)+'px';});
 function closeCtx(){ctxEl.style.display='none';}
 
-// ── Notifications ─────────────────────────────────────────
 function showNotif(icon,title,body,link){
+  if(window.innerWidth<=768)return;
   const n=document.createElement('div');n.className='notif';
   n.innerHTML=`<div class="n-icon">${icon}</div><div><div class="n-title">${title}</div><div class="n-body">${body}</div></div>`;
   if(link){n.style.cursor='pointer';n.addEventListener('click',()=>window.open(link,'_blank'));}
   document.body.appendChild(n);setTimeout(()=>n.remove(),4200);
 }
-setTimeout(()=>showNotif('🌸','Welcome!','Double-click a folder to explore a project.'),900);
+if(window.innerWidth>768){
+  setTimeout(()=>showNotif('🌸','Welcome!','Double-click a folder to explore a project.'),900);
+}
 
-// ── Dock magnify ──────────────────────────────────────────
+// ── Mobile project sheets ─────────────────────────────────
+const mobileProjectContent = {
+  thirdplaces: `
+    <div class="mcs-hero">
+      <img src="https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900" alt="Third Places">
+      <div class="mcs-hero-overlay"></div>
+      <span class="mcs-hero-tag" style="background:rgba(40,76,47,0.75);">UI/UX Design · Case Study</span>
+    </div>
+    <h2 class="mcs-title" style="color:#284C2F;">Third Places</h2>
+    <p class="mcs-subtitle">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p>
+    <div class="mcs-meta-bar">
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val">Class Project</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">12 Weeks</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">UI/UX Designer & Researcher</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Deliverable</div><div class="mcs-meta-val">Mobile App + Physical</div></div>
+    </div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">01</div><div class="mcs-section-title" style="color:#284C2F;">Defining the Problem</div></div>
+      <p class="mcs-body">The main challenge was to address the <strong>lack of "third places" in the U.S.</strong> — the social spaces beyond home and work where community naturally forms. While there's a strong cultural desire for these hubs, they are difficult to <strong>discover</strong>, and their absence contributes to a <strong>cultural disparity</strong> when compared to other countries.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">02</div><div class="mcs-section-title" style="color:#284C2F;">Research & Discovery</div></div>
+      <div class="mcs-hmw" style="border-color:#284C2F;background:rgba(40,76,47,0.07);color:#284C2F;">How might we understand what makes third places sustainable?</div>
+      <p class="mcs-body">Research began with a <strong>morphological grid</strong> and <strong>secondary research</strong>, surfacing a strong user desire for <strong>curated, community-driven content</strong> and <strong>personalized recommendations</strong>. A user persona guided the problem definition and ideation phases.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">03</div><div class="mcs-section-title" style="color:#284C2F;">Introducing Agora</div></div>
+      <p class="mcs-body">Named after the Greek word for "gathering place," Agora is a <strong>dual digital + physical solution</strong> designed to help people discover third places and build a culture of returning to them.</p>
+      <img src="agoralogo.png" class="mcs-img-half" alt="Agora Logo">
+      <div class="mcs-sol-grid">
+        <div class="mcs-sol-card"><div class="mcs-sol-icon">📱</div><div class="mcs-sol-title">Digital Platform</div><div class="mcs-sol-desc">Mobile app with a roulette feature to encourage serendipitous discovery.</div></div>
+        <div class="mcs-sol-card"><div class="mcs-sol-icon">🛍️</div><div class="mcs-sol-title">Physical Component</div><div class="mcs-sol-desc">Branded merchandise to foster real-world community building.</div></div>
+      </div>
+      <div class="mcs-sol-grid">
+        <img src="agoratote.png" style="width:100%;border-radius:10px;object-fit:cover;" alt="Agora Tote">
+        <img src="agoracup.png" style="width:100%;border-radius:10px;object-fit:cover;" alt="Agora Cup">
+      </div>
+      <img src="agorascreens.png" class="mcs-img" alt="Agora Screens">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">✦</div><div class="mcs-section-title" style="color:#284C2F;">Tools Used</div></div>
+      <div class="mcs-tools">
+        <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Figma</span>
+        <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">FigJam</span>
+        <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">User Personas</span>
+        <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">CPS Framework</span>
+        <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Prototyping</span>
+        <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Secondary Research</span>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">💡</div><div class="mcs-section-title" style="color:#284C2F;">Learning Takeaway</div></div>
+      <div class="mcs-highlight" style="background:rgba(40,76,47,0.05);"><p>"I learned that solutions to <strong>complex cultural challenges</strong> rarely achieve perfection, but by embracing <strong>collaboration</strong> and <strong>grounding design in user needs</strong>, we can craft a meaningful approach."</p></div>
+    </div>
+    <div class="mcs-footer">
+      <a href="#" onclick="return false" class="mcs-btn" style="background:#284C2F;color:#fff;">Slide Deck</a>
+    </div>`,
+
+  lemonlight: `
+    <div class="mcs-hero">
+      <img src="lemonlightcover.png" alt="Lemonlight Studios">
+      <div class="mcs-hero-overlay"></div>
+      <span class="mcs-hero-tag" style="background:#d4a017;">Product Design · Case Study</span>
+    </div>
+    <h2 class="mcs-title" style="color:#7a6010;">Lemonlight Studios</h2>
+    <p class="mcs-subtitle">Designing an AI-powered video intelligence platform that helps brands instantly discover and repurpose their video assets.</p>
+    <div class="mcs-meta-bar">
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val">Lemonlight Studios</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Industry</div><div class="mcs-meta-val">Video Production</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">5-Day Sprint</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">Product Researcher</div></div>
+    </div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">01</div><div class="mcs-section-title" style="color:#d4a017;">Project Overview</div></div>
+      <p class="mcs-body">This project explores how we designed a system that <strong>analyzes raw footage</strong>, generates rich contextual insights, and empowers marketing teams to produce polished, on-brand videos in seconds — without needing traditional editing expertise.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">02</div><div class="mcs-section-title" style="color:#d4a017;">The Challenge</div></div>
+      <div class="mcs-hmw" style="border-color:#d4a017;background:rgba(212,160,23,0.07);color:#a07810;">How can we turn large video libraries into instantly usable creative assets?</div>
+      <p class="mcs-body">Video teams struggle to scale post-production because their workflows rely heavily on <strong>manual searching, tagging, and editor memory</strong>. High-end brands need fast, consistent, premium outputs that generic AI tools cannot deliver.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">03</div><div class="mcs-section-title" style="color:#d4a017;">Solution — HeroFlow</div></div>
+      <p class="mcs-body">We designed <strong>HeroFlow</strong>, an AI data-driven video intelligence platform that analyzes footage, generates rich metadata, and makes assets instantly searchable.</p>
+      <img src="heroflowlogo.png" class="mcs-img-half" alt="HeroFlow Logo">
+      <div class="mcs-sol-grid">
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🔍</div><div class="mcs-sol-title">Semantic Search</div><div class="mcs-sol-desc">Surface footage using natural language — no manual tagging needed.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🎬</div><div class="mcs-sol-title">HeroFacts</div><div class="mcs-sol-desc">Contextual metadata automatically generated from footage.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">⚡</div><div class="mcs-sol-title">Prompt Editing</div><div class="mcs-sol-desc">Create social-ready edits in seconds using simple prompts.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🏷️</div><div class="mcs-sol-title">Auto Tagging</div><div class="mcs-sol-desc">AI-driven tagging keeps libraries organized at enterprise scale.</div></div>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">04</div><div class="mcs-section-title" style="color:#d4a017;">Product Roadmap</div></div>
+      <div class="mcs-sol-grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🌱</div><div class="mcs-sol-title">Phase 1: MVP</div><div class="mcs-sol-desc">Internal launch with core tagging and search.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">📊</div><div class="mcs-sol-title">Phase 2: Insights</div><div class="mcs-sol-desc">Advanced analytics and smart recommendations.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🚀</div><div class="mcs-sol-title">Phase 3: Scale</div><div class="mcs-sol-desc">Full enterprise SaaS with API integrations.</div></div>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">✦</div><div class="mcs-section-title" style="color:#d4a017;">Tools Used</div></div>
+      <div class="mcs-tools">
+        <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Figma</span>
+        <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">AI Integration</span>
+        <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Design Systems</span>
+        <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">User Research</span>
+        <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Competitive Analysis</span>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">💡</div><div class="mcs-section-title" style="color:#d4a017;">Learning Takeaway</div></div>
+      <div class="mcs-highlight" style="background:rgba(212,160,23,0.06);"><p>"I learned the value of <strong>designing for the entire ecosystem</strong>, not just the end user interface. The strongest solutions come from aligning technology, workflow, and user needs."</p></div>
+    </div>
+    <div class="mcs-footer">
+      <a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#d4a017;color:#fff;">Pitch Deck ↗</a>
+      <a href="https://drive.google.com/file/d/1xZ_lVLbTl3BRGuxdIhK99RZvnk-pwJ7L/view?usp=sharing" target="_blank" class="mcs-btn" style="background:transparent;border:2px solid #d4a017;color:#d4a017;">HeroFlow Demo ↗</a>
+    </div>`,
+
+  cozymeal: `
+    <div class="mcs-hero">
+      <img src="cozymealcover.png" alt="Cozymeal Rebrand">
+      <div class="mcs-hero-overlay"></div>
+      <span class="mcs-hero-tag" style="background:#E78A24;">Branding · Case Study</span>
+    </div>
+    <h2 class="mcs-title" style="color:#E78A24;">Cozymeal Rebrand</h2>
+    <p class="mcs-subtitle">A full rebranding — new logo, brand assets, physical product design, and a complete style guide.</p>
+    <div class="mcs-meta-bar">
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val">Cozymeal</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Industry</div><div class="mcs-meta-val">Hospitality</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">12 Weeks</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">Solo Project</div></div>
+    </div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">01</div><div class="mcs-section-title" style="color:#E78A24;">Project Overview</div></div>
+      <p class="mcs-body">This rebranding features a <strong>new logo, brand assets, physical product design</strong>, and a complete style guide. The refreshed identity uses <strong>earthy greens and warm oranges</strong> to convey a professional yet inviting aesthetic.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">02</div><div class="mcs-section-title" style="color:#E78A24;">The Challenge</div></div>
+      <div class="mcs-hmw" style="border-color:#E78A24;background:rgba(231,138,36,0.07);color:#c4721a;">How do you build a brand identity that feels both premium and warmly inviting?</div>
+      <p class="mcs-body">The goal was to create a <strong>cohesive and modern brand identity</strong> that reflects the company's mission while differentiating it in a competitive market.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">03</div><div class="mcs-section-title" style="color:#E78A24;">The Logo</div></div>
+      <p class="mcs-body">The redesigned logo pairs a <strong>bold, leaf-shaped "C" icon</strong> in deep green with warm orange accents, reinforcing a sense of trust, freshness, and approachability.</p>
+      <img src="cozymeallogo.png" class="mcs-img-half" alt="Cozymeal Logo">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">04</div><div class="mcs-section-title" style="color:#E78A24;">Social Media Kit</div></div>
+      <img src="cozymealsm.png" class="mcs-img" alt="Cozymeal Social Media">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">05</div><div class="mcs-section-title" style="color:#E78A24;">Website Redesign</div></div>
+      <img src="cozymealwebsite.png" class="mcs-img" alt="Cozymeal Website">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">06</div><div class="mcs-section-title" style="color:#E78A24;">Merch Design</div></div>
+      <img src="cozymealmerch.png" class="mcs-img" alt="Cozymeal Merch">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">✦</div><div class="mcs-section-title" style="color:#E78A24;">Tools Used</div></div>
+      <div class="mcs-tools">
+        <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Illustrator</span>
+        <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Photoshop</span>
+        <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Figma</span>
+        <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">InDesign</span>
+        <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Brand Strategy</span>
+        <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Style Guide</span>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">💡</div><div class="mcs-section-title" style="color:#E78A24;">Learning Takeaway</div></div>
+      <div class="mcs-highlight" style="background:rgba(231,138,36,0.05);"><p>"I learned that <strong>thorough research and strategic planning are essential</strong>. By assessing the current brand and defining clear guidelines, I can design an identity that is authentic and connects meaningfully with its audience."</p></div>
+    </div>
+    <div class="mcs-footer">
+      <a href="https://drive.google.com/file/d/14o0P2Z45qc0-qlwXcLmVUrSqkhUbb-ZQ/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#E78A24;color:#fff;">Brand Style Guide ↗</a>
+      <a href="https://www.figma.com/proto/XY44PDKTDTDdGR4z0CI7Xu/COZYMEAL-Rebranding?node-id=127-357&p=f&t=dLrp6FByHudRUuuI-1&scaling=min-zoom&content-scaling=fixed&page-id=81%3A2&starting-point-node-id=86%3A1419" target="_blank" class="mcs-btn" style="background:transparent;border:2px solid #E78A24;color:#E78A24;">Website Prototype ↗</a>
+    </div>`,
+
+  bestbuy: `
+    <div class="mcs-hero">
+      <img src="bbcoverpic.png" alt="Best Buy">
+      <div class="mcs-hero-overlay" style="background:linear-gradient(to top,rgba(0,88,163,0.55) 0%,transparent 60%);"></div>
+      <span class="mcs-hero-tag" style="background:#0058a3;">UI/UX Design · Case Study</span>
+    </div>
+    <h2 class="mcs-title" style="color:#0058a3;">Best Buy Internal</h2>
+    <p class="mcs-subtitle">Designing a platform to improve internal communication for Best Buy employees.</p>
+    <div class="mcs-meta-bar">
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val">Best Buy</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">12 Weeks</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">UI/UX Designer</div></div>
+      <div class="mcs-meta-item"><div class="mcs-meta-label">Platform</div><div class="mcs-meta-val">Web Application</div></div>
+    </div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">01</div><div class="mcs-section-title" style="color:#0058a3;">Project Overview</div></div>
+      <p class="mcs-body">This project focuses on designing a platform to improve <strong>internal communication</strong> for Best Buy employees — a place to connect, share knowledge, and ask questions across teams. Existing platforms were outdated and underutilised.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">02</div><div class="mcs-section-title" style="color:#0058a3;">The Challenge</div></div>
+      <div class="mcs-hmw" style="border-color:#0058a3;background:rgba(0,88,163,0.06);color:#0058a3;">How might we bridge the gap between legacy tools and modern needs?</div>
+      <p class="mcs-body">Employees were not using provided systems and were instead turning to <strong>external platforms</strong>. There was a significant need for a more organized, concise, and engaging internal platform.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">03</div><div class="mcs-section-title" style="color:#0058a3;">The Design System</div></div>
+      <img src="bbdesignsystem.png" class="mcs-img" alt="Design System">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">04</div><div class="mcs-section-title" style="color:#0058a3;">Final Design</div></div>
+      <div class="mcs-sol-grid">
+        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🏠</div><div class="mcs-sol-title">Homepage</div><div class="mcs-sol-desc">Central feed for company updates and employee activity.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">👥</div><div class="mcs-sol-title">Groups Page</div><div class="mcs-sol-desc">Spaces for team discussions and knowledge sharing.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">📢</div><div class="mcs-sol-title">Announcements</div><div class="mcs-sol-desc">Dedicated page for managers to post official updates.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🔒</div><div class="mcs-sol-title">Private Profiles</div><div class="mcs-sol-desc">Individual profiles with privacy settings for anonymity.</div></div>
+      </div>
+      <img src="bbscreens.png" class="mcs-img" alt="Best Buy Screens">
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">✦</div><div class="mcs-section-title" style="color:#0058a3;">Tools Used</div></div>
+      <div class="mcs-tools">
+        <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Figma</span>
+        <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">FigJam</span>
+        <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Usability Testing</span>
+        <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">User Interviews</span>
+        <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Design Systems</span>
+        <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">CPS Framework</span>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">💡</div><div class="mcs-section-title" style="color:#0058a3;">Learning Takeaway</div></div>
+      <div class="mcs-highlight" style="background:rgba(0,88,163,0.05);"><p>"This project made me realize how crucial <strong>user research</strong> is. <strong>Listening to users is the most important step</strong> in creating a solution that truly works."</p></div>
+    </div>
+    <div class="mcs-footer">
+      <a href="https://www.figma.com/proto/sZFZ1HB87fuLe7gXrG9cV2/Best-Buy?node-id=155-728&t=Gzld0k5WHKnkud4j-1" target="_blank" class="mcs-btn" style="background:#0058a3;color:#fff;">View Prototype ↗</a>
+      <a href="https://docs.google.com/document/d/1PYqWj0IvDUyd6PCPNtMeNfKYhhPw_uiUFnNRRPVm2sI/edit?usp=sharing" target="_blank" class="mcs-btn" style="background:transparent;border:2px solid #0058a3;color:#0058a3;">Documentation ↗</a>
+    </div>`
+};
+
+function openProjectSheet(id) {
+  const sheet = document.getElementById('mv-project-sheet');
+  const scroll = document.getElementById('mv-project-panel-scroll');
+  scroll.innerHTML = mobileProjectContent[id] || '';
+  scroll.scrollTop = 0;
+  sheet.classList.add('open');
+}
+function closeProjectSheet() {
+  document.getElementById('mv-project-sheet').classList.remove('open');
+}
+
 const dockEl=document.getElementById('dock');
 dockEl.addEventListener('mousemove',e=>{
   document.querySelectorAll('.dock-item').forEach(di=>{
@@ -1559,6 +2314,7 @@ dockEl.addEventListener('mouseleave',()=>document.querySelectorAll('.dock-item')
 <script>
 function typeWriter(elementId, text, speed, callback) {
   const el = document.getElementById(elementId);
+  if(!el)return;
   let i = 0;
   function type() {
     if (i < text.length) {
@@ -1573,18 +2329,14 @@ function typeWriter(elementId, text, speed, callback) {
 }
 
 window.addEventListener('load', () => {
+  if(window.innerWidth<=768)return;
   const nameEl = document.getElementById('typewriter-name');
   const subEl = document.getElementById('typewriter-sub');
-
-  // Start name typing
   typeWriter('typewriter-name', 'Aashwini Vachhani', 80, () => {
-    // Remove cursor from name, add to subtitle
     nameEl.classList.remove('cursor');
     subEl.classList.add('cursor');
-    // Small pause then type subtitle
     setTimeout(() => {
       typeWriter('typewriter-sub', 'Product Designer specialized in UI/UX', 50, () => {
-        // Remove cursor after done
         setTimeout(() => subEl.classList.remove('cursor'), 1500);
       });
     }, 300);
