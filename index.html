@@ -8,7 +8,7 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --sage:#8fad88;--sage-light:#b5c9b0;--sage-dark:#5a7a54;
+  --sage:#e8a0b0;--sage-light:#f2c5cf;--sage-dark:#c4607a;
   --pink:#e8b4bc;--pink-light:#f5dde0;--pink-dark:#c47e8a;
   --cream:#f5efe6;--warm:#e8ddd0;
   --text-dark:#3d3530;--text-mid:#6b5c54;--text-light:#9c8a82;
@@ -58,6 +58,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 }
 .folder:hover{background:rgba(255,255,255,0.3);}
 .folder.selected{background:rgba(255,255,255,0.4);}
+#cursor-pill{position:fixed;pointer-events:none;z-index:99999;background:rgba(30,20,15,0.82);color:#fff;font-size:11px;font-weight:500;letter-spacing:0.06em;padding:6px 14px;border-radius:30px;white-space:nowrap;opacity:0;transform:scale(0.85);transition:opacity 0.15s ease,transform 0.15s ease;backdrop-filter:blur(6px);}
 @keyframes iconPop{from{opacity:0;transform:scale(0.7);}to{opacity:1;transform:scale(1);}}
 
 .folder-icon{
@@ -70,7 +71,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 }
 .folder:hover .folder-icon{transform:scale(1.15) translateY(-4px);filter:drop-shadow(0 8px 16px rgba(0,0,0,0.22));}
 .folder-label{font-size:10.5px;font-weight:400;color:var(--text-dark);text-align:center;line-height:1.3;max-width:82px;text-shadow:0 1px 3px rgba(255,255,255,0.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;}
-.folder.selected .folder-label{background:rgba(90,122,84,0.75);color:#fff;border-radius:4px;padding:1px 5px;}
+.folder.selected .folder-label{background:rgba(196,96,122,0.75);color:#fff;border-radius:4px;padding:1px 5px;}
 
 .photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:24px 0 28px;border-radius:14px;overflow:hidden;}
 .photo-strip img{width:100%;height:130px;object-fit:cover;display:block;transition:transform 0.3s ease;}
@@ -128,7 +129,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .tb:hover{font-size:8px;filter:brightness(0.82);}
 .tb-r{background:#FF5F56;}.tb-y{background:#FFBD2E;}.tb-g{background:#27C93F;}
 .win-title{flex:1;text-align:center;font-size:12.5px;font-weight:500;color:var(--text-mid);}
-.win-body{flex:1;overflow-y:auto;padding:36px 44px;scrollbar-width:thin;scrollbar-color:rgba(143,173,136,0.4) transparent;}
+.win-body{flex:1;overflow-y:auto;padding:36px 44px;scrollbar-width:thin;scrollbar-color:rgba(232,160,176,0.4) transparent;}
 
 .pw-tag{font-size:10.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:3px 12px;border-radius:20px;display:inline-block;margin-bottom:12px;}
 .pw-title{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1;letter-spacing:-0.02em;color:#3a3a3c;margin-bottom:14px;}
@@ -141,11 +142,11 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .pm-label{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-light);margin-bottom:3px;}
 .pm-val{font-size:13px;color:var(--text-dark);}
 .pw-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
-.pw-pill{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid rgba(143,173,136,0.35);color:var(--text-mid);background:rgba(143,173,136,0.08);}
+.pw-pill{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid rgba(232,160,176,0.35);color:var(--text-mid);background:rgba(232,160,176,0.08);}
 .pw-btn{display:inline-block;margin-top:28px;background:var(--sage);color:#fff;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',Arial,sans-serif;font-size:11.5px;font-weight:500;letter-spacing:0.06em;padding:10px 28px;border-radius:8px;text-decoration:none;border:none;transition:background 0.2s,transform 0.15s;cursor:pointer}
 .pw-btn:hover{background:var(--sage-dark);transform:translateY(-1px);}
 
-.aw-top{display:flex;gap:24px;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(143,173,136,0.18);margin-bottom:24px;}
+.aw-top{display:flex;gap:24px;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(232,160,176,0.18);margin-bottom:24px;}
 .aw-photo{width:90px;height:90px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid rgba(255,255,255,0.8);box-shadow:0 4px 16px rgba(0,0,0,0.12);}
 .aw-photo img{width:100%;height:100%;object-fit:cover;}
 .aw-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;background:linear-gradient(135deg,var(--pink-light),var(--sage-light));}
@@ -156,7 +157,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 .skills-section{margin-top:8px;}
 .sk-heading{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;font-size:1.1rem;color:#3a3a3c;margin-bottom:14px;}
 .skills-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
-.sk-tag{font-size:11.5px;padding:5px 14px;border-radius:20px;background:rgba(143,173,136,0.12);border:1px solid rgba(143,173,136,0.3);color:var(--sage-dark);font-weight:500;}
+.sk-tag{font-size:11.5px;padding:5px 14px;border-radius:20px;background:rgba(232,160,176,0.12);border:1px solid rgba(232,160,176,0.3);color:var(--sage-dark);font-weight:500;}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px;}
 .contact-card{background:rgba(255,255,255,0.6);border:1px solid rgba(200,185,175,0.3);border-radius:10px;padding:14px;text-align:center;text-decoration:none;transition:transform 0.15s,border-color 0.15s;cursor:pointer}
 .contact-card:hover{transform:translateY(-2px);border-color:var(--sage);cursor:pointer}
@@ -256,6 +257,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 #wn-lemonlight .cs-meta-item:not(:last-child){border-right-color:rgba(212,160,23,0.15);}
 /* Cozymeal overrides */
 #wn-cozymeal .cs-title{color:#E78A24;}
+#wn-cozymeal .cs-title em{color:#E78A24;}
 #wn-cozymeal .cs-section-title{color:#E78A24;}
 #wn-cozymeal .cs-section-title em{color:#E78A24;}
 #wn-cozymeal .cs-section-num{background:#E78A24;}
@@ -293,8 +295,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 
 #ctx{position:fixed;z-index:2000;display:none;background:rgba(240,232,222,0.93);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.6);border-radius:10px;padding:4px 0;min-width:190px;box-shadow:0 12px 40px rgba(80,60,50,0.25);font-size:12.5px;}
 .ci{padding:7px 16px;color:var(--text-dark);border-radius:6px;transition:background 0.1s;cursor:pointer}
-.ci:hover{background:rgba(143,173,136,0.3);}
-.cs{height:1px;background:rgba(143,173,136,0.22);margin:3px 0;}
+.ci:hover{background:rgba(232,160,176,0.3);}
+.cs{height:1px;background:rgba(232,160,176,0.22);margin:3px 0;}
 
 /* ── MOBILE VIEW ── */
 @media (max-width: 768px) {
@@ -468,7 +470,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
     <span>Profile</span>
   </div>
   <div class="mv-hero">
-    <img class="mv-hero-img" src="me2.jpg" alt="Aashwini Vachhani" onerror="this.style.background='linear-gradient(135deg,#b5c9b0,#f5dde0)'">
+    <img class="mv-hero-img" src="me2.jpg" alt="Aashwini Vachhani" onerror="this.style.background='linear-gradient(135deg,#f2c5cf,#fce8ed)'">
     <div class="mv-hero-overlay"></div>
     <div class="mv-hero-content">
       <div class="mv-hero-name cursor" id="mv-hero-name"></div>
@@ -497,7 +499,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
     <span class="mv-skill" style="background:#fef9e0;color:#a07810;">Wireframing</span>
     <span class="mv-skill" style="background:#fde8f5;color:#a0308a;">Design Systems</span>
     <span class="mv-skill" style="background:#e8f4ff;color:#3a7abf;">User Research</span>
-    <span class="mv-skill" style="background:#edfff4;color:#2a8a52;">Usability Testing</span>
   </div>
   <div class="mv-section" style="padding-bottom:4px;"><div class="mv-section-label">Education 🎓</div></div>
   <div class="mv-edu-card">
@@ -513,7 +514,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   <div class="mv-project-card" onclick="openProjectSheet('lemonlight')">
     <div class="mv-project-thumb" style="background-image:url('lemonlightcover.png');background-size:cover;background-position:center;height:190px;"></div>
     <div class="mv-project-body">
-      <span class="mv-project-tag" style="background:rgba(240,217,138,0.2);color:#7a6010;">Product Design</span>
+      <span class="mv-project-tag" style="background:rgba(212,160,23,0.12);color:#b8880f;">Product Design</span>
       <div class="mv-project-title">Lemonlight Studios</div>
       <p class="mv-project-desc">An AI-powered video intelligence platform that helps brands instantly discover and repurpose their video assets.</p>
       <div class="mv-project-meta">
@@ -521,14 +522,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
         <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">Product Designer</div></div>
         <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Web Platform</div></div>
       </div>
-      <button class="mv-project-link" style="background:rgba(240,217,138,0.2);color:#7a6010;" onclick="event.stopPropagation();openProjectSheet('lemonlight')">Read Case Study →</button>
+      <button class="mv-project-link" style="background:rgba(212,160,23,0.12);color:#b8880f;" onclick="event.stopPropagation();openProjectSheet('lemonlight')">Read Case Study →</button>
     </div>
   </div>
 
   <div class="mv-project-card" onclick="openProjectSheet('thirdplaces')">
     <div class="mv-project-thumb" style="background-image:url('https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900');background-size:cover;background-position:center;height:190px;"></div>
     <div class="mv-project-body">
-      <span class="mv-project-tag" style="background:rgba(143,173,136,0.18);color:#5a7a54;">UI/UX Design</span>
+      <span class="mv-project-tag" style="background:rgba(40,76,47,0.1);color:#284C2F;">UI/UX Design</span>
       <div class="mv-project-title">Third Places</div>
       <p class="mv-project-desc">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p>
       <div class="mv-project-meta">
@@ -536,14 +537,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
         <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">UX/UI Designer</div></div>
         <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Mobile App</div></div>
       </div>
-      <button class="mv-project-link" style="background:rgba(143,173,136,0.18);color:#5a7a54;" onclick="event.stopPropagation();openProjectSheet('thirdplaces')">Read Case Study →</button>
+      <button class="mv-project-link" style="background:rgba(40,76,47,0.1);color:#284C2F;" onclick="event.stopPropagation();openProjectSheet('thirdplaces')">Read Case Study →</button>
     </div>
   </div>
 
   <div class="mv-project-card" onclick="openProjectSheet('cozymeal')">
     <div class="mv-project-thumb" style="background-image:url('cozymealcover.png');background-size:cover;background-position:center;height:190px;"></div>
     <div class="mv-project-body">
-      <span class="mv-project-tag" style="background:rgba(232,180,188,0.2);color:#c47e8a;">Branding</span>
+      <span class="mv-project-tag" style="background:rgba(231,138,36,0.1);color:#c4721a;">Branding</span>
       <div class="mv-project-title">Cozymeal Rebrand</div>
       <p class="mv-project-desc">A full rebranding featuring a new logo, brand assets, physical product design, and a complete style guide.</p>
       <div class="mv-project-meta">
@@ -551,14 +552,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
         <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">Brand Designer</div></div>
         <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Brand Identity</div></div>
       </div>
-      <button class="mv-project-link" style="background:rgba(232,180,188,0.2);color:#c47e8a;" onclick="event.stopPropagation();openProjectSheet('cozymeal')">Read Case Study →</button>
+      <button class="mv-project-link" style="background:rgba(231,138,36,0.1);color:#c4721a;" onclick="event.stopPropagation();openProjectSheet('cozymeal')">Read Case Study →</button>
     </div>
   </div>
 
   <div class="mv-project-card" onclick="openProjectSheet('bestbuy')">
     <div class="mv-project-thumb" style="background-image:url('bbcoverpic.png');background-size:cover;background-position:center;height:190px;"></div>
     <div class="mv-project-body">
-      <span class="mv-project-tag" style="background:rgba(168,188,232,0.2);color:#3a5a9a;">UI/UX Design</span>
+      <span class="mv-project-tag" style="background:rgba(0,88,163,0.1);color:#0058a3;">UI/UX Design</span>
       <div class="mv-project-title">Best Buy Internal</div>
       <p class="mv-project-desc">A platform to improve internal communication for Best Buy employees — connect, share knowledge, ask questions.</p>
       <div class="mv-project-meta">
@@ -566,16 +567,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
         <div><div class="mv-pm-label">Role</div><div class="mv-pm-val">UI/UX Designer</div></div>
         <div><div class="mv-pm-label">Platform</div><div class="mv-pm-val">Web App</div></div>
       </div>
-      <button class="mv-project-link" style="background:rgba(168,188,232,0.2);color:#3a5a9a;" onclick="event.stopPropagation();openProjectSheet('bestbuy')">Read Case Study →</button>
+      <button class="mv-project-link" style="background:rgba(0,88,163,0.1);color:#0058a3;" onclick="event.stopPropagation();openProjectSheet('bestbuy')">Read Case Study →</button>
     </div>
   </div>
 
   <div class="mv-footer">Designed with ♡ by Aashwini Vachhani</div>
 
   <div class="mv-social">
-    <a class="mv-social-item" href="https://www.instagram.com/aashwini.v/" target="_blank"><span class="mv-social-emoji">📸</span><span class="mv-social-label">Instagram</span></a>
-    <div class="mv-social-item mv-social-item--profile" onclick="document.getElementById('mv-profile-sheet').classList.add('open')"><img src="profile.png" class="mv-profile-dock-img" onerror="this.style.visibility='hidden'"><span class="mv-social-label">Profile</span></div>
     <a class="mv-social-item" href="https://www.youtube.com/channel/UCT3ZZOLSMKxBfWOi9GoBxVQ" target="_blank"><span class="mv-social-emoji">▶️</span><span class="mv-social-label">YouTube</span></a>
+    <div class="mv-social-item" onclick="alert('Library — coming soon!')"><span class="mv-social-emoji">📚</span><span class="mv-social-label">Library</span></div>
+    <div class="mv-social-item" onclick="alert('Photography — coming soon!')"><span class="mv-social-emoji">📷</span><span class="mv-social-label">Photography</span></div>
   </div>
 
   <!-- Profile sheet -->
@@ -648,9 +649,27 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
     <div style="position:relative;width:100%;max-width:1100px;height:620px;margin-top:32px;">
       <div style="position:absolute;left:50%;top:0;transform:translateX(-50%);"><div style="width:280px;height:420px;border-radius:28px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.18);pointer-events:auto;animation:float5 7s ease-in-out infinite;"><img src="me2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;" onerror="this.style.display='none'"></div></div>
       <div style="position:absolute;left:50%;bottom:110px;transform:translateX(-50%);"><div style="background:#fff;border-radius:40px;padding:6px 6px;display:flex;gap:2px;box-shadow:0 4px 20px rgba(0,0,0,0.1);pointer-events:auto;animation:float5 4s ease-in-out infinite;"><div style="color:#6b5c54;padding:8px 22px;font-size:15px;">She/Her</div><div style="color:#6b5c54;padding:8px 1px;font-size:12px;">|</div><div style="color:#6b5c54;padding:8px 22px;font-size:15px;">ENFJ</div></div></div>
-      <div style="position:absolute;left:5%;top:30px;width:290px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float1 4s ease-in-out infinite;">
+      <div style="position:absolute;left:5%;top:30px;width:250px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float1 4s ease-in-out infinite;">
         <div style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:14px;">My Strengths 💪</div>
-        <div style="display:flex;flex-wrap:wrap;gap:7px;"><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:5px 13px;font-size:13px;">Figma</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:5px 13px;font-size:13px;">AI Tools</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:5px 13px;font-size:13px;">Social Media</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:5px 13px;font-size:13px;">Branding</span><span style="background:#ffe8e8;color:#c0392b;border-radius:20px;padding:5px 13px;font-size:13px;">Prototyping</span><span style="background:#e8fff8;color:#51b1ed;border-radius:20px;padding:5px 13px;font-size:13px;">Content Creation</span><span style="background:#fef9e0;color:#a07810;border-radius:20px;padding:5px 13px;font-size:13px;">Wireframing</span><span style="background:#fde8f5;color:#a0308a;border-radius:20px;padding:5px 13px;font-size:13px;">Design Systems</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;gap:6px;flex-wrap:nowrap;">
+            <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Figma</span>
+            <span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">AI Tools</span>
+            <span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Branding</span>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:nowrap;">
+            <span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Social Media</span>
+            <span style="background:#e8fff8;color:#51b1ed;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Content Creation</span>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:nowrap;">
+            <span style="background:#fef9e0;color:#a07810;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Wireframing</span>
+            <span style="background:#fde8f5;color:#a0308a;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Design Systems</span>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:nowrap;">
+            <span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">User Research</span>
+            <span style="background:#ffe8e8;color:#c0392b;border-radius:20px;padding:4px 11px;font-size:11.5px;white-space:nowrap;">Prototyping</span>
+          </div>
+        </div>
       </div>
       <div style="position:absolute;left:9%;top:330px;width:190px;height:190px;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.14);pointer-events:auto;animation:float2 5s ease-in-out infinite;"><img src="me4.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:11px;font-weight:500;color:#fff;">Photographer</div></div>
       <div style="position:absolute;right:67%;top:260px;display:flex;flex-direction:row;gap:8px;width:260px;pointer-events:auto;animation:float3 3.5s ease-in-out infinite;"><div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">Social Media</div><div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">Branding</div><div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">UI/UX</div></div>
@@ -683,7 +702,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   <div class="folder" data-project="bestbuy" style="animation-delay:0.17s" ondblclick="openWin('bestbuy')"><div class="folder-icon">💻</div><span class="folder-label">Best Buy</span></div>
 </div>
 <div id="folders-right">
-  <div class="folder" style="animation-delay:0.05s" ondblclick="openWin('about')"><div class="folder-icon"><img height="90px" width="80px" src="profile.png"></div><span class="folder-label">Profile</span></div>
+  <div class="folder" data-label="Open Profile" style="animation-delay:0.05s" ondblclick="openWin('about')"><div class="folder-icon"><img height="90px" width="80px" src="profile.png"></div><span class="folder-label">Profile</span></div>
+  <div class="folder" data-label="Open Library" style="animation-delay:0.09s" ondblclick="openWin('library')"><div class="folder-icon">📚</div><span class="folder-label">Library</span></div>
+  <div class="folder" data-label="Open Photography" style="animation-delay:0.13s" ondblclick="openWin('photography')"><div class="folder-icon">📷</div><span class="folder-label">Photography</span></div>
 </div>
 
 <!-- DOCK -->
@@ -692,13 +713,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   <div class="dock-item" onclick="showNotif('💼','LinkedIn','Aashwini Vachhani','https://www.linkedin.com/in/aashwini-vachhani/')"><div class="dock-img">💼</div><div class="dock-label">LinkedIn</div></div>
   <div class="dock-item" onclick="showNotif('📄','Resume','Open File','https://drive.google.com/file/d/1pzhnpRq62Q_IkJ9fZwZcyRipVdNOfecc/view?usp=drive_link')"><div class="dock-img">📄</div><div class="dock-label">Resume</div></div>
   <div class="dock-divider"></div>
-  <div class="dock-item" onclick="showNotif('📸','Instagram','@aashwini.v','https://www.instagram.com/aashwini.v/')"><div class="dock-img">📸</div><div class="dock-label">Instagram</div></div>
   <div class="dock-item" onclick="showNotif('▶️','YouTube','Aashwini Vachhani','https://www.youtube.com/channel/UCT3ZZOLSMKxBfWOi9GoBxVQ')"><div class="dock-img">▶️</div><div class="dock-label">YouTube</div></div>
 </div>
 
 <!-- CONTEXT MENU -->
+<div id="cursor-pill">Open Project</div>
 <div id="ctx">
-  <div class="ci" onclick="openWin('about');closeCtx()">Open About Me</div>
   <div class="cs"></div>
   <div class="ci" onclick="window.open('mailto:vachhaniaashwini@gmail.com');closeCtx()">Send Email</div>
   <div class="ci" onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank');closeCtx()">View LinkedIn</div>
@@ -711,7 +731,7 @@ function tick(){const n=new Date(),d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 tick();setInterval(tick,15000);
 
 const projects={
-  thirdplaces:{title:'Third <em>Places</em>',tag:'UI/UX Design',tagBg:'rgba(143,173,136,0.18)',tagColor:'#5a7a54',desc:'This project explored the scarcity of "third places" in the U.S. — the social spaces beyond home and work where community forms.',img:'https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900',fallback:'☕',previewBg:'linear-gradient(135deg,#b5c9b0,#ddecd8)',year:'2024',role:'UX/UI Designer',platform:'Mobile App',tools:['Figma','FigJam','User Research','Prototyping'],link:'https://aashwinivachhani.framer.ai/work/thirdplaces'},
+  thirdplaces:{title:'Third <em>Places</em>',tag:'UI/UX Design',tagBg:'rgba(232,160,176,0.18)',tagColor:'#c4607a',desc:'This project explored the scarcity of "third places" in the U.S. — the social spaces beyond home and work where community forms.',img:'https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900',fallback:'☕',previewBg:'linear-gradient(135deg,#f2c5cf,#fce8ed)',year:'2024',role:'UX/UI Designer',platform:'Mobile App',tools:['Figma','FigJam','User Research','Prototyping'],link:'https://aashwinivachhani.framer.ai/work/thirdplaces'},
   lemonlight:{title:'Lemonlight <em>Studios</em>',tag:'Product Design',tagBg:'rgba(240,217,138,0.2)',tagColor:'#7a6010',desc:'Designed an AI-powered video intelligence platform that helps brands instantly discover, understand, and repurpose their video assets.',img:'https://framerusercontent.com/images/vXKnpy60LA7rARzR5qgThVbwzfE.png?width=900',fallback:'🎬',previewBg:'linear-gradient(135deg,#f0d98a,#faf0c0)',year:'2024',role:'Product Designer',platform:'Web Platform',tools:['Figma','AI Integration','Design Systems','Prototyping'],link:'https://aashwinivachhani.framer.ai/work/lemonlightstudios'},
   cozymeal:{title:'<em>Cozymeal</em> Rebrand',tag:'Branding',tagBg:'rgba(232,180,188,0.2)',tagColor:'#c47e8a',desc:'A full rebranding project for Cozymeal featuring a new logo, comprehensive brand assets, and a complete design style guide.',img:'https://framerusercontent.com/images/VmRC1jreYlLcE0LSwJyDvauaUTA.png?width=900',fallback:'🍽️',previewBg:'linear-gradient(135deg,#e8b4bc,#f5dde0)',year:'2023',role:'Brand Designer',platform:'Brand Identity',tools:['Illustrator','Photoshop','Figma','InDesign'],link:'https://aashwinivachhani.framer.ai/work/cozymeal'},
   bestbuy:{title:'Best Buy <em>Internal</em>',tag:'UI/UX Design',tagBg:'rgba(168,188,232,0.2)',tagColor:'#3a5a9a',desc:'Designed a platform to improve internal communication for Best Buy employees — a space to connect, share knowledge, and ask questions.',img:'https://framerusercontent.com/images/CWMlGuvM6tWdRFhnbQj2SWvF37Y.png?width=900',fallback:'🛒',previewBg:'linear-gradient(135deg,#a8bce8,#d0ddf5)',year:'2023',role:'UI/UX Designer',platform:'Web Application',tools:['Figma','FigJam','Usability Testing','Wireframing'],link:'https://aashwinivachhani.framer.ai/work/bestbuy'},
@@ -728,7 +748,7 @@ function openWin(id){
   const lft=Math.round((window.innerWidth-ww)/2);
   const top=Math.round((window.innerHeight-wh)/2)-40;
   w.style.cssText=`left:${lft}px;top:${top}px;z-index:${++zTop};width:${ww}px;height:${wh}px;`;
-  w.innerHTML=id==='about'?buildAbout():id==='thirdplaces'?buildThirdPlaces():id==='lemonlight'?buildLemonlight():id==='cozymeal'?buildCozymeal():id==='bestbuy'?buildBestBuy():buildProj(projects[id]);
+  w.innerHTML=id==='about'?buildAbout():id==='library'?buildLibrary():id==='photography'?buildPhotography():id==='thirdplaces'?buildThirdPlaces():id==='lemonlight'?buildLemonlight():id==='cozymeal'?buildCozymeal():id==='bestbuy'?buildBestBuy():buildProj(projects[id]);
   dragWin(w);
   w.querySelector('.tb-r').onclick=()=>{w.classList.add('closing');setTimeout(()=>{w.remove();delete wins[id];},200);};
   w.querySelector('.tb-y').onclick=()=>{w.style.display='none';};
@@ -857,7 +877,7 @@ function buildThirdPlaces(){
 
     <div class="cs-section">
       <div class="cs-section-label"><div class="cs-section-num">06</div><div class="cs-section-title">App <em>Screens</em></div></div>
-      <p class="cs-body">Wireframes were built collaboratively in Figma. The three core screens reflect the key user journey: arriving, discovering, and choosing spontaneously.</p>
+      <p class="cs-body">Wireframes were built collaboratively in Figma. The two core screens reflect the key user journey: arriving and discovering.</p>
       <div style="display:flex;justify-content:center;margin:20px 0;">
         <img src="agorascreens.png" alt="Agora App Screens" style="max-width:100%;width:100%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);"/>
       </div>
@@ -1427,6 +1447,32 @@ function buildBestBuy(){
   </div>`;
 }
 
+function buildPhotography(){
+  return`
+  <div class="win-titlebar">
+    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
+    <div class="win-title">Photography</div>
+  </div>
+  <div class="win-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:14px;">
+    <div style="font-size:56px;">📷</div>
+    <div style="font-size:18px;font-weight:500;color:var(--text-dark);">Coming Soon</div>
+    <div style="font-size:14px;color:var(--text-light);text-align:center;max-width:280px;line-height:1.6;">A collection of photographs is being curated here. Check back soon.</div>
+  </div>`;
+}
+
+function buildLibrary(){
+  return`
+  <div class="win-titlebar">
+    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
+    <div class="win-title">Library</div>
+  </div>
+  <div class="win-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:14px;">
+    <div style="font-size:56px;">📚</div>
+    <div style="font-size:18px;font-weight:500;color:var(--text-dark);">Coming Soon</div>
+    <div style="font-size:14px;color:var(--text-light);text-align:center;max-width:280px;line-height:1.6;">Something is being curated here. Check back soon.</div>
+  </div>`;
+}
+
 function buildAbout(){
   return`
   <div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Aashwini Vachhani — About</div></div>
@@ -1441,7 +1487,7 @@ function buildAbout(){
         <div style="grid-column:1/2;grid-row:3/4;border-radius:18px;background:#fff;padding:10px 12px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-evenly;gap:14px;">
           <div style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Skills</div>
           <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Design &amp; Prototyping</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Figma</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Photoshop</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Illustrator</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Framer</span></div></div>
-          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">AI-Powered Tools</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">ChatGPT</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Claude</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Gemini</span></div></div>
+          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">AI-Powered Tools</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">ChatGPT</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Claude</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Gemini</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">CSS</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">HTML</span></div></div>
           <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">UX Research</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">User Research</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Usability Testing</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Wireframing</span></div></div>
           <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Brand &amp; Visual Design</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Visual Identity</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Logo Design</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Design Systems</span></div></div>
         </div>
@@ -1548,7 +1594,13 @@ const mobileProjectContent = {
     </div>
     <div class="mcs-divider"></div>
     <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">04</div><div class="mcs-section-title" style="color:#284C2F;">Introducing Agora</div></div>
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">04</div><div class="mcs-section-title" style="color:#284C2F;">Defining the Challenge</div></div>
+      <div class="mcs-hmw" style="border-color:#284C2F;background:rgba(40,76,47,0.07);color:#284C2F;">How might we make third places discoverable and financially sustainable for both users and owners?</div>
+      <p class="mcs-body">The team identified a <strong>dual-sided problem</strong>: discoverability for users and financial viability for owners. Any solution had to serve both sides of the equation.</p>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">05</div><div class="mcs-section-title" style="color:#284C2F;">Introducing Agora</div></div>
       <p class="mcs-body">Named after the Greek word for "gathering place," Agora is a <strong>dual digital + physical solution</strong> designed to help people discover third places and build a culture of returning to them.</p>
       <img src="agoralogo.png" class="mcs-img-half" alt="Agora Logo">
       <div class="mcs-sol-grid">
@@ -1560,12 +1612,12 @@ const mobileProjectContent = {
     </div>
     <div class="mcs-divider"></div>
     <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">05</div><div class="mcs-section-title" style="color:#284C2F;">App Screens</div></div>
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">06</div><div class="mcs-section-title" style="color:#284C2F;">App Screens</div></div>
       <img src="agorascreens.png" class="mcs-img" alt="Agora App Screens">
     </div>
     <div class="mcs-divider"></div>
     <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">06</div><div class="mcs-section-title" style="color:#284C2F;">Physical Prototypes</div></div>
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">07</div><div class="mcs-section-title" style="color:#284C2F;">Physical Prototypes</div></div>
       <div class="mcs-sol-grid">
         <img src="agoratote.png" style="width:100%;border-radius:10px;object-fit:cover;" alt="Agora Tote">
         <img src="agoracup.png" style="width:100%;border-radius:10px;object-fit:cover;" alt="Agora Cup">
@@ -1574,7 +1626,7 @@ const mobileProjectContent = {
     </div>
     <div class="mcs-divider"></div>
     <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">07</div><div class="mcs-section-title" style="color:#284C2F;">Success Metrics</div></div>
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">08</div><div class="mcs-section-title" style="color:#284C2F;">Success Metrics</div></div>
       <div class="mcs-stat-row">
         <div class="mcs-stat-card"><div class="mcs-stat-num">DAU</div><div class="mcs-stat-label">Daily active users as primary retention metric</div></div>
         <div class="mcs-stat-card"><div class="mcs-stat-num">★ Rate</div><div class="mcs-stat-label">Satisfaction scores per third place visited</div></div>
@@ -1680,7 +1732,18 @@ const mobileProjectContent = {
     </div>
     <div class="mcs-divider"></div>
     <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">07</div><div class="mcs-section-title" style="color:#7a6010;">Success Metrics</div></div>
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">07</div><div class="mcs-section-title" style="color:#7a6010;">Business Model</div></div>
+      <p class="mcs-body">HeroFlow targets a <strong>$48B video production market</strong> with a recurring SaaS model built around time savings — 6 hours per campaign reduced to minutes.</p>
+      <div class="mcs-sol-grid">
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">💼</div><div class="mcs-sol-title">Agency Licensing</div><div class="mcs-sol-desc">Per-seat SaaS for video production teams.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🏢</div><div class="mcs-sol-title">Enterprise API</div><div class="mcs-sol-desc">Integrations with Frame.io, Bynder, Brandfolder.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">📊</div><div class="mcs-sol-title">Analytics Add-on</div><div class="mcs-sol-desc">Performance insights by platform and format.</div></div>
+        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🤝</div><div class="mcs-sol-title">White-Label</div><div class="mcs-sol-desc">Agencies resell HeroFlow under their own brand.</div></div>
+      </div>
+    </div>
+    <div class="mcs-divider"></div>
+    <div class="mcs-section">
+      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">08</div><div class="mcs-section-title" style="color:#7a6010;">Success Metrics</div></div>
       <div class="mcs-stat-row">
         <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.85rem;">6h → 10m</div><div class="mcs-stat-label">Footage retrieval time per campaign</div></div>
         <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.85rem;">DAU/WAU</div><div class="mcs-stat-label">Daily and weekly retention signals</div></div>
@@ -1901,15 +1964,34 @@ document.addEventListener('click',function(e){const img=e.target.closest('#mv-pr
 const dockEl=document.getElementById('dock');
 dockEl.addEventListener('mousemove',e=>{document.querySelectorAll('.dock-item').forEach(di=>{const r=di.getBoundingClientRect(),c=r.left+r.width/2,dist=Math.abs(e.clientX-c),maxD=100;const s=dist<maxD?1+(1-dist/maxD)*0.36:1,ty=dist<maxD?-(dist<45?11:5):0;di.style.transform=`translateY(${ty}px) scale(${s})`;});});
 dockEl.addEventListener('mouseleave',()=>document.querySelectorAll('.dock-item').forEach(di=>di.style.transform=''));
+
+// Cursor pill on folder hover
+const pill=document.getElementById('cursor-pill');
+let pillActive=false;
+document.addEventListener('mousemove',e=>{
+  if(pillActive){pill.style.left=(e.clientX+16)+'px';pill.style.top=(e.clientY-14)+'px';}
+});
+document.querySelectorAll('.folder[data-project], .folder[data-label]').forEach(f=>{
+  f.addEventListener('mouseenter',()=>{
+    pill.textContent=f.dataset.label||(f.dataset.project?'Open Project':'');
+    pillActive=true;pill.style.opacity='1';pill.style.transform='scale(1)';
+  });
+  f.addEventListener('mouseleave',()=>{pillActive=false;pill.style.opacity='0';pill.style.transform='scale(0.85)';});
+});
 </script>
 <script>
-function typeWriter(elementId,text,speed,callback){const el=document.getElementById(elementId);if(!el)return;let i=0;function type(){if(i<text.length){el.textContent+=text.charAt(i);i++;setTimeout(type,speed);}else{if(callback)callback();}}type();}
-window.addEventListener('load',()=>{
-  if(window.innerWidth>768){
-    const nameEl=document.getElementById('typewriter-name');
-    const subEl=document.getElementById('typewriter-sub');
-    if(nameEl){typeWriter('typewriter-name','Aashwini Vachhani',80,()=>{nameEl.classList.remove('cursor');subEl.classList.add('cursor');setTimeout(()=>{typeWriter('typewriter-sub','Product Designer specialized in UI/UX',50,()=>{setTimeout(()=>subEl.classList.remove('cursor'),1500);});},300);});}
-  }else{
-    const mNameEl=document.getElementById('mv-hero-name');
-    const mRoleEl=document.getElementById('mv-hero-role');
-    if(mNameEl){typeWriter('mv-hero-name','Aashwini Vachhani',80,()=>{mNameEl.classList.remove('cursor');setTimeout(()=>{mRole
+function typeWriter(elementId,text,speed,callback){const el=document.getElementById(elementId);if(!el)return;if(el.textContent!=='')return;let i=0;function type(){if(i<text.length){el.textContent+=text.charAt(i);i++;setTimeout(type,speed);}else{if(callback)callback();}}type();}
+function initTypewriter(){
+  // Desktop
+  const nameEl=document.getElementById('typewriter-name');
+  const subEl=document.getElementById('typewriter-sub');
+  if(nameEl){typeWriter('typewriter-name','Aashwini Vachhani',80,()=>{nameEl.classList.remove('cursor');if(subEl){subEl.classList.add('cursor');setTimeout(()=>{typeWriter('typewriter-sub','Product Designer specialized in UI/UX',50,()=>{setTimeout(()=>subEl.classList.remove('cursor'),1500);});},300);}});}
+  // Mobile
+  const mNameEl=document.getElementById('mv-hero-name');
+  const mRoleEl=document.getElementById('mv-hero-role');
+  if(mNameEl){typeWriter('mv-hero-name','Aashwini Vachhani',80,()=>{mNameEl.classList.remove('cursor');if(mRoleEl){mRoleEl.classList.add('cursor');setTimeout(()=>{typeWriter('mv-hero-role','Product Designer · UI/UX · Branding',45,()=>{setTimeout(()=>mRoleEl.classList.remove('cursor'),1200);});},200);}});}
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>setTimeout(initTypewriter,120));}else{setTimeout(initTypewriter,120);}
+</script>
+</body>
+</html>
