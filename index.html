@@ -301,7 +301,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
 /* ── MOBILE VIEW ── */
 @media (max-width: 768px) {
   html,body{overflow:auto!important;height:auto!important;}
-  #wallpaper,#menubar,#folders,#folders-right,#dock,#ctx{display:none!important;}
+  #wallpaper,#menubar,#folders,#folders-right,#dock,#ctx,#status-float{display:none!important;}
   #mobile-view{display:flex!important;}
 }
 #mobile-view{display:none;flex-direction:column;min-height:100dvh;background:#f0ede8;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',Arial,sans-serif;color:#3d3530;-webkit-font-smoothing:antialiased;}
@@ -475,7 +475,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
     <div class="mv-hero-content">
       <div class="mv-hero-name cursor" id="mv-hero-name"></div>
       <div class="mv-hero-role" id="mv-hero-role"></div>
-      <div class="mv-meta-row" style="padding:0 0 14px;justify-content:center;">
+      <div class="mv-meta-row" style="padding:18px 0 14px;justify-content:center;">
         <span>She/Her</span><span class="mv-meta-sep">|</span><span>ENFJ</span><span class="mv-meta-sep">|</span><span>Fueled by coffee ☕</span>
       </div>
       <div class="mv-status-pill"><span class="mv-status-dot"></span>Open to opportunities</div>
@@ -488,6 +488,26 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   </div>
   <div class="mv-section" style="padding-bottom:4px;"><div class="mv-section-label">About Me 🩷</div></div>
   <div class="mv-bio-card"><p class="mv-bio-text">I'm a product designer who believes great design lives where strategy meets empathy 🤝. With a foundation in UX and a master's focus in design, business, and technology, I create experiences that are intuitive, purposeful, and built to scale — designing systems that help people connect through digital platforms 💻, brands ✨, and everyday third spaces 🌿.</p></div>
+  <div class="mv-section" style="padding-bottom:4px;"><div class="mv-section-label" style="display:flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#34c759;display:inline-block;flex-shrink:0;"></span>Currently</div></div>
+  <div style="margin:0 22px 12px;background:#fff;border-radius:20px;padding:18px 20px;border:1px solid rgba(61,53,48,0.08);">
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;gap:10px;align-items:center;">
+        <div style="width:34px;height:34px;border-radius:8px;background:#fff3e6;border:1px solid rgba(245,180,130,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🎨</div>
+        <div>
+          <div style="font-size:0.9rem;font-weight:600;color:#1c1c1e;line-height:1.3;">UI/UX Design Intern</div>
+          <div style="font-size:0.78rem;color:#9c8a82;margin-top:2px;">Klinos</div>
+        </div>
+      </div>
+      <div style="height:1px;background:rgba(61,53,48,0.08);"></div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <div style="width:34px;height:34px;border-radius:8px;background:#fde8e8;border:1px solid rgba(220,150,150,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">📢</div>
+        <div>
+          <div style="font-size:0.9rem;font-weight:600;color:#1c1c1e;line-height:1.3;">Digital Comms Assistant</div>
+          <div style="font-size:0.78rem;color:#9c8a82;margin-top:2px;">USC Rossier</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="mv-section" style="padding-bottom:4px;"><div class="mv-section-label">My Strengths 💪</div></div>
   <div class="mv-skills-wrap">
     <span class="mv-skill" style="background:#e8f4ff;color:#3a7abf;">Figma</span>
@@ -673,12 +693,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
       </div>
       <div style="position:absolute;left:9%;top:330px;width:190px;height:190px;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.14);pointer-events:auto;animation:float2 5s ease-in-out infinite;"><img src="me4.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:11px;font-weight:500;color:#fff;">Photographer</div></div>
       <div style="position:absolute;right:67%;top:260px;display:flex;flex-direction:row;gap:8px;width:260px;pointer-events:auto;animation:float3 3.5s ease-in-out infinite;"><div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">Social Media</div><div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">Branding</div><div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;white-space:nowrap;font-size:15px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);">UI/UX</div></div>
-      <div style="position:absolute;right:3%;top:80px;display:flex;flex-direction:row;gap:8px;pointer-events:auto;animation:float5 4s ease-in-out infinite;">
-        <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 14px;font-size:17px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)';" onclick="window.open('https://drive.google.com/file/d/1pzhnpRq62Q_IkJ9fZwZcyRipVdNOfecc/view?usp=drive_link','_blank')">📄 Resume</div>
-        <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 17px;font-size:17px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)';" onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank')">💼 LinkedIn</div>
-        <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border-radius:20px;padding:5px 17px;font-size:17px;color:#1c1c1e;box-shadow:0 2px 10px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseenter="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.08)';" onclick="window.open('mailto:vachhaniaashwini@gmail.com')">✉️ Email</div>
-      </div>
-      <div style="position:absolute;right:5%;top:175px;width:290px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float4 4.5s ease-in-out infinite;">
+
+      <div style="position:absolute;right:5%;top:80px;width:290px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float4 4.5s ease-in-out infinite;">
         <div style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Education 🎓</div>
         <div style="font-size:14px;font-weight:600;color:#1c1c1e;">University of Southern California</div>
         <div style="font-size:12px;color:#8a7a74;margin-top:2px;">M.S. Integrated Design, Business & Technology</div>
@@ -688,7 +704,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
         <div style="font-size:12px;color:#8a7a74;margin-top:2px;">B.S. Computer Graphics — UX Design</div>
         <div style="margin-top:6px;"><span style="background:#f5ede0;color:#8b5e3c;border-radius:20px;padding:5px 13px;font-size:12px;font-weight:500;">GPA: 3.84</span></div>
       </div>
-      <div style="position:absolute;right:-7%;bottom:320px;width:150px;height:140px;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.14);pointer-events:auto;animation:float2 6s ease-in-out infinite;"><img src="coldcoffee.jpg" style="width:100%;height:100%;object-fit:cover;transform:scaleX(-1);"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:11px;font-weight:500;color:#fff;">Fueled by coffee</div></div>
+      <div style="position:absolute;right:-7%;top:80px;width:150px;height:140px;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.14);pointer-events:auto;animation:float2 6s ease-in-out infinite;"><img src="coldcoffee.jpg" style="width:100%;height:100%;object-fit:cover;transform:scaleX(-1);"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.45) 0%,transparent 55%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:11px;font-weight:500;color:#fff;">Fueled by coffee</div></div>
+      <div style="position:absolute;right:3%;top:310px;width:264px;background:#fff;border-radius:18px;padding:18px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);pointer-events:auto;animation:float5 6s ease-in-out infinite;"><div style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;display:flex;align-items:center;gap:7px;"><span style="width:7px;height:7px;border-radius:50%;background:#34c759;display:inline-block;flex-shrink:0;"></span>Currently</div><div style="display:flex;flex-direction:column;gap:10px;"><div style="display:flex;gap:10px;align-items:center;"><div style="width:34px;height:34px;border-radius:8px;background:#fff3e6;border:1px solid rgba(245,180,130,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🎨</div><div><div style="font-size:14px;font-weight:600;color:#1c1c1e;line-height:1.3;">UI/UX Design Intern</div><div style="font-size:12px;color:#8a7a74;margin-top:2px;">Klinos</div></div></div><div style="height:1px;background:rgba(0,0,0,0.06);margin:2px 0;"></div><div style="display:flex;gap:10px;align-items:center;"><div style="width:34px;height:34px;border-radius:8px;background:#fde8e8;border:1px solid rgba(220,150,150,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">📢</div><div><div style="font-size:14px;font-weight:600;color:#1c1c1e;line-height:1.3;">Digital Comms Assistant</div><div style="font-size:12px;color:#8a7a74;margin-top:2px;">USC Rossier</div></div></div></div></div>
       <div style="position:absolute;right:28%;top:15px;background:rgba(52,199,89,0.82);color:#fff;border-radius:20px;padding:6px 16px;font-size:13px;font-weight:600;box-shadow:0 4px 16px rgba(52,199,89,0.3);pointer-events:auto;animation:float3 3s ease-in-out infinite;">Open to opportunities</div>
     </div>
   </div>
@@ -725,6 +742,59 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,Blink
   <div class="cs"></div>
   <div class="ci" onclick="showNotif('🌸','Aashwini Vachhani','Product Designer · UI/UX · Branding');closeCtx()">About this Portfolio</div>
 </div>
+
+<!-- ═══════════════════════════════════════════
+     CURRENTLY — floating status box (desktop only)
+     ═══════════════════════════════════════════ -->
+<div id="status-float" style="
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(245,239,230,0.97);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 18px;
+  padding: 14px 18px;
+  width: 264px;
+  box-shadow: 0 8px 32px rgba(80,60,50,0.14), 0 0 0 0.5px rgba(255,255,255,0.4);
+  z-index: 999;
+  display: none;
+  animation: float5 6s ease-in-out infinite;
+">
+  <div style="display:flex;align-items:center;gap:7px;margin-bottom:12px;">
+    <span style="width:7px;height:7px;border-radius:50%;background:#34c759;display:inline-block;flex-shrink:0;box-shadow:0 0 0 2px rgba(52,199,89,0.25);"></span>
+    <span style="font-size:10px;font-weight:700;color:#9c8a82;letter-spacing:0.12em;text-transform:uppercase;">Currently</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="display:flex;gap:10px;align-items:center;">
+      <div style="width:34px;height:34px;border-radius:8px;background:#fff3e6;border:1px solid rgba(245,180,130,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">🎨</div>
+      <div>
+        <div style="font-size:12.5px;font-weight:600;color:#3d3530;line-height:1.3;">UI/UX Design Intern</div>
+        <div style="font-size:11px;color:#9c8a82;margin-top:1px;">Klinos</div>
+      </div>
+    </div>
+    <div style="height:1px;background:rgba(200,185,175,0.25);"></div>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <div style="width:34px;height:34px;border-radius:8px;background:#fde8e8;border:1px solid rgba(220,150,150,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;">📢</div>
+      <div>
+        <div style="font-size:12.5px;font-weight:600;color:#3d3530;line-height:1.3;">Digital Comms Assistant</div>
+        <div style="font-size:11px;color:#9c8a82;margin-top:1px;">USC Rossier</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var box = document.getElementById('status-float');
+  function updateVisibility() {
+    box.style.display = window.innerWidth >= 1024 ? 'block' : 'none';
+  }
+  updateVisibility();
+  window.addEventListener('resize', updateVisibility);
+})();
+</script>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function tick(){const n=new Date(),d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];let h=n.getHours(),mi=n.getMinutes(),ap=h>=12?'PM':'AM';h=h%12||12;document.getElementById('mb-time').textContent=`${d[n.getDay()]} ${m[n.getMonth()]} ${n.getDate()}  ${h}:${String(mi).padStart(2,'0')} ${ap}`;}
@@ -768,744 +838,20 @@ function buildProj(d){
   return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">${d.title.replace(/<[^>]*>/g,'')}</div></div><div class="win-body"><span class="pw-tag" style="background:${d.tagBg};color:${d.tagColor}">${d.tag}</span><h2 class="pw-title">${d.title}</h2><p class="pw-desc">${d.desc}</p><div class="pw-preview">${imgHtml}</div><div class="pw-meta"><div><div class="pm-label">Year</div><div class="pm-val">${d.year}</div></div><div><div class="pm-label">Role</div><div class="pm-val">${d.role}</div></div><div><div class="pm-label">Platform</div><div class="pm-val">${d.platform}</div></div></div><div class="pw-pills">${pills}</div><a href="${d.link}" target="_blank" class="pw-btn">View Case Study →</a></div>`;
 }
 
-// ═══════════════════════════════════════════════
-//  THIRD PLACES — FULL CASE STUDY (DESKTOP)
-// ═══════════════════════════════════════════════
-function buildThirdPlaces(){
-  return`
-  <div class="win-titlebar">
-    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title">Third Places — Case Study</div>
-  </div>
-  <div class="win-body">
-    <div class="cs-hero">
-      <img src="https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=1200" alt="Third Places"/>
-      <div class="cs-hero-overlay"></div>
-      <span class="cs-hero-tag">UI/UX Design · Case Study · 2024</span>
-    </div>
-    <h2 class="cs-title">Third <em>Places</em></h2>
-    <p class="cs-subtitle">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p>
-    <div class="cs-tools-row" style="margin-top:0;margin-bottom:28px;padding-left:0;">
-      <span class="cs-tool">Figma</span>
-      <span class="cs-tool">FigJam</span>
-      <span class="cs-tool">User Personas</span>
-      <span class="cs-tool">Morphological Analysis</span>
-      <span class="cs-tool">CPS Framework</span>
-      <span class="cs-tool">User Journey Mapping</span>
-      <span class="cs-tool">Business Model Canvas</span>
-      <span class="cs-tool">Physical Prototyping</span>
-      <span class="cs-tool">Secondary Research</span>
-    </div>
-    <div class="cs-meta-bar">
-      <div class="cs-meta-item"><div class="cs-meta-label">Team</div><div class="cs-meta-val">5-person cross-disciplinary</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">12 Weeks</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">UX/UI Designer &amp; Researcher</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">Deliverable</div><div class="cs-meta-val">Mobile App + Physical</div></div>
-    </div>
+function buildThirdPlaces(){return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Third Places — Case Study</div></div><div class="win-body"><div class="cs-hero"><img src="https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=1200" alt="Third Places"/><div class="cs-hero-overlay"></div><span class="cs-hero-tag">UI/UX Design · Case Study · 2024</span></div><h2 class="cs-title">Third <em>Places</em></h2><p class="cs-subtitle">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p><div class="cs-tools-row" style="margin-top:0;margin-bottom:28px;padding-left:0;"><span class="cs-tool">Figma</span><span class="cs-tool">FigJam</span><span class="cs-tool">User Personas</span><span class="cs-tool">Morphological Analysis</span><span class="cs-tool">CPS Framework</span><span class="cs-tool">User Journey Mapping</span><span class="cs-tool">Business Model Canvas</span><span class="cs-tool">Physical Prototyping</span><span class="cs-tool">Secondary Research</span></div><div class="cs-meta-bar"><div class="cs-meta-item"><div class="cs-meta-label">Team</div><div class="cs-meta-val">5-person cross-disciplinary</div></div><div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">12 Weeks</div></div><div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">UX/UI Designer &amp; Researcher</div></div><div class="cs-meta-item"><div class="cs-meta-label">Deliverable</div><div class="cs-meta-val">Mobile App + Physical</div></div></div><div class="cs-section"><div class="cs-section-label"><div class="cs-section-num">01</div><div class="cs-section-title">Why <em>Third Places?</em></div></div><p class="cs-body">People often remark on the difference between American and European daily life. At the root of that gap are <strong>"third places"</strong> — the cafés, coworking spots, and social hubs where community forms outside of home and work.</p><div class="cs-hmw">"What if the most important places in your life aren't where you live or work, but the spaces in between?"</div></div><div class="cs-footer"><a href="https://drive.google.com/file/d/1K9m2JkYRHlbuRORBYV-ue_rHUqe4fEQw/view?usp=sharing" target="_blank" class="cs-btn" style="background:#284C2F;color:#fff;">Slide Deck ↗</a></div></div>`;}
 
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">01</div><div class="cs-section-title">Why <em>Third Places?</em></div></div>
-      <p class="cs-body">People often remark on the difference between American and European daily life. At the root of that gap are <strong>"third places"</strong> — the cafés, coworking spots, and social hubs where community forms outside of home and work. The growing interest in communal social gatherings has sparked creative initiatives like shop-and-sip experiences and social trends like "Friend of a Friend." The U.S. has a growing demand for these spaces, yet they remain scarce and hard to find.</p>
-      <div class="cs-hmw">"What if the most important places in your life aren't where you live or work, but the spaces in between?"</div>
-    </div>
+function buildCozymeal(){return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Cozymeal Rebrand — Case Study</div></div><div class="win-body"><div class="cs-hero"><img src="cozymealcover.png" alt="Cozymeal Rebrand"/><div class="cs-hero-overlay"></div><span class="cs-hero-tag" style="background:#E78A24;color:#fff;">Branding · Case Study · 2023</span></div><h2 class="cs-title">Cozymeal <em>Rebrand</em></h2><p class="cs-subtitle">A full rebranding for Cozymeal — new logo, brand system, merchandise, digital assets, website redesign.</p><div class="cs-footer"><a href="https://drive.google.com/file/d/14o0P2Z45qc0-qlwXcLmVUrSqkhUbb-ZQ/view?usp=sharing" target="_blank" class="cs-btn" style="background:#E78A24;color:#fff;">Brand Style Guide ↗</a></div></div>`;}
 
-    <div class="cs-divider"></div>
+function buildLemonlight(){return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Lemonlight Studios — Case Study</div></div><div class="win-body"><div class="cs-hero"><img src="lemonlightcover.png" alt="Lemonlight Studios"/><div class="cs-hero-overlay"></div><span class="cs-hero-tag" style="background:#d4a017;color:#fff;">Product Design · Case Study · 2025</span></div><h2 class="cs-title">Lemonlight <em>Studios</em></h2><p class="cs-subtitle">Designing an AI-powered video intelligence platform for brands to discover and repurpose their video assets.</p><div class="cs-footer"><a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" class="cs-btn" style="background:#d4a017;color:#fff;">Pitch Deck ↗</a></div></div>`;}
 
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">02</div><div class="cs-section-title">Creative Problem <em>Solving Process</em></div></div>
-      <p class="cs-body">The team followed a structured <strong>CPS (Creative Problem Solving) framework</strong> — from wide open exploration to a focused, testable solution.</p>
-      <div class="cs-process-grid">
-        <div class="cs-process-card"><div class="cs-process-num">01</div><div class="cs-process-title">Acceptance</div><div class="cs-process-desc">Brainstormed across interests — fashion, coffee, AI, community — and found common ground in cafés, outdoors, and social connection.</div></div>
-        <div class="cs-process-card"><div class="cs-process-num">02</div><div class="cs-process-title">Analysis</div><div class="cs-process-desc">Built a morphological grid mapping offerings, reviews, atmosphere, aesthetics, and pricing. Secondary research revealed competitors lack personalized filtering.</div></div>
-        <div class="cs-process-card"><div class="cs-process-num">03</div><div class="cs-process-title">Define</div><div class="cs-process-desc">How do we make third spaces discoverable and help people make them a regular habit? This framing drove every subsequent decision.</div></div>
-        <div class="cs-process-card"><div class="cs-process-num">04</div><div class="cs-process-title">Ideation</div><div class="cs-process-desc">Research session → overnight incubation break → anonymous dot voting on FigJam. Three strong directions: cafés, community, outdoors.</div></div>
-        <div class="cs-process-card"><div class="cs-process-num">05</div><div class="cs-process-title">Selection</div><div class="cs-process-desc">Decision chart and radar chart scored ideas across market potential, day-to-day fit, technical feasibility, scalability, and desirability.</div></div>
-        <div class="cs-process-card"><div class="cs-process-num">06</div><div class="cs-process-title">Implementation</div><div class="cs-process-desc">Wireframes in Figma: home screen, discovery page, roulette feature. Physical prototypes: tote bags, branded cups, connection cards.</div></div>
-      </div>
-    </div>
+function buildBestBuy(){return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Best Buy Internal — Case Study</div></div><div class="win-body"><div class="cs-hero"><img src="bbcoverpic.png" alt="Best Buy"/><div class="cs-hero-overlay" style="background:linear-gradient(to top,rgba(0,88,163,0.55) 0%,transparent 60%);"></div><span class="cs-hero-tag" style="background:#0058a3;color:#fff;">UI/UX Design · Case Study · 2023</span></div><h2 class="cs-title" style="color:#0058a3;">Best Buy <em>Internal</em></h2><p class="cs-subtitle">Designing a platform to improve internal communication for Best Buy employees.</p><div class="cs-footer"><a href="https://www.figma.com/proto/sZFZ1HB87fuLe7gXrG9cV2/Best-Buy?node-id=155-728&t=Gzld0k5WHKnkud4j-1" target="_blank" class="cs-btn" style="background:#0058a3;color:#fff;">View Prototype ↗</a></div></div>`;}
 
-    <div class="cs-divider"></div>
+function buildPhotography(){return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Photography</div></div><div class="win-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:14px;"><div style="font-size:56px;">📷</div><div style="font-size:18px;font-weight:500;color:var(--text-dark);">Coming Soon</div></div>`;}
 
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">03</div><div class="cs-section-title">Meet <em>Layla</em> — Our User Persona</div></div>
-      <div class="cs-persona-card">
-        <div class="cs-persona-top">
-          <div class="cs-persona-avatar">L</div>
-          <div>
-            <div class="cs-persona-name">Layla, 32</div>
-            <div class="cs-persona-role">Digital Nomad · Creative Works · Los Angeles, CA</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;">
-          <span style="background:rgba(40,76,47,0.1);color:#284C2F;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Exploration</span>
-          <span style="background:rgba(40,76,47,0.1);color:#284C2F;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Authenticity</span>
-          <span style="background:rgba(40,76,47,0.1);color:#284C2F;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Community</span>
-          <span style="background:rgba(40,76,47,0.1);color:#284C2F;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Creativity</span>
-        </div>
-        <div class="cs-persona-quote">"Social media recommendations for places to visit are so inauthentic! I just hope there are more authentic experiences and people who really enjoy the vibe."</div>
-        <div class="cs-insight-row"><div class="cs-insight-dot"></div><div class="cs-insight-text">Wants to discover new, genuine local spots — not Instagram-famous ones</div></div>
-        <div class="cs-insight-row"><div class="cs-insight-dot"></div><div class="cs-insight-text">Needs a space that inspires creativity, focus, and feels authentic to the city</div></div>
-        <div class="cs-insight-row"><div class="cs-insight-dot"></div><div class="cs-insight-text">Craves meeting new people and building real community connections</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">04</div><div class="cs-section-title">Defining the <em>Challenge</em></div></div>
-      <div class="cs-hmw">How might we make third spaces discoverable while incentivizing people to return regularly as part of their routine?</div>
-      <p class="cs-body">American society is increasingly seeking the European way of living through third spaces for community and enjoyment. However, many people <strong>struggle to discover these spaces</strong>. At the same time, current third spaces are often <strong>not financially sustainable</strong> for business owners, reducing the overall supply.</p>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">05</div><div class="cs-section-title">Introducing <em>Agora</em></div></div>
-      <p class="cs-body">Named after the ancient Greek word for "gathering place," Agora is a <strong>dual digital + physical platform</strong> designed to help people discover third places and build a culture of returning to them.</p>
-      <div style="display:flex;justify-content:center;margin:20px 0 8px;">
-        <img src="agoralogo.png" alt="Agora Logo" style="max-width:300px;width:100%;height:auto;object-fit:contain;"/>
-      </div>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #284C2F;"><div class="cs-sol-icon">📱</div><div class="cs-sol-title">Digital Platform</div><div class="cs-sol-desc">Mobile app with curated listings, mood-based filtering, community reviews, and a roulette feature for serendipitous discovery.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #284C2F;"><div class="cs-sol-icon">🛍️</div><div class="cs-sol-title">Physical Touchpoints</div><div class="cs-sol-desc">Branded cups, tote bags ("linger longer"), and connection cards placed in partner spaces to spark real-world conversation and repeat visits.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #284C2F;"><div class="cs-sol-icon">🏪</div><div class="cs-sol-title">Business Model</div><div class="cs-sol-desc">Affiliate marketing, featured placements, and B2B connections to magazines and event coordinators to make third places financially sustainable.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #284C2F;"><div class="cs-sol-icon">🎲</div><div class="cs-sol-title">Roulette Feature</div><div class="cs-sol-desc">A serendipity mode that suggests a spontaneous third place outing, lowering decision friction and building discovery habits.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">06</div><div class="cs-section-title">App <em>Screens</em></div></div>
-      <p class="cs-body">Wireframes were built collaboratively in Figma. The two core screens reflect the key user journey: arriving and discovering.</p>
-      <div style="display:flex;justify-content:center;margin:20px 0;">
-        <img src="agorascreens.png" alt="Agora App Screens" style="max-width:100%;width:100%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);"/>
-      </div>
-      <div class="cs-solution-grid" style="margin-top:8px;">
-        <div class="cs-sol-card"><div class="cs-sol-icon">🏠</div><div class="cs-sol-title">Home Screen</div><div class="cs-sol-desc">Personalized feed based on vibe preferences and past visits.</div></div>
-        <div class="cs-sol-card"><div class="cs-sol-icon">🗺️</div><div class="cs-sol-title">Discovery Page</div><div class="cs-sol-desc">Map + list view with mood-based and amenity filters.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">07</div><div class="cs-section-title">The Physical <em>Solution</em></div></div>
-      <p class="cs-body">The team believed the app alone wouldn't shift behavior. Physical touchpoints were prototyped to <strong>organically foster connection</strong> inside partner spaces.</p>
-      <div class="cs-solution-grid">
-        <img src="agoratote.png" alt="Agora Tote Bag" style="width:100%;border-radius:12px;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.08);"/>
-        <img src="agoracup.png" alt="Agora Cup" style="width:100%;border-radius:12px;object-fit:cover;box-shadow:0 4px 16px rgba(0,0,0,0.08);"/>
-      </div>
-      <p class="cs-body" style="margin-top:12px;">Tote bags reading <strong>"linger longer"</strong>, branded coffee cups with community messaging, and connection cards — "Find me at a third space!" — with fields for name, favorite spot, and contact info.</p>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">08</div><div class="cs-section-title">Business <em>Model</em></div></div>
-      <p class="cs-body">A core insight was that great design alone wouldn't solve the problem — <strong>the business model had to work too</strong>. Revenue streams were mapped to ensure Agora could be financially viable for both the platform and third place owners.</p>
-      <div class="cs-stat-grid">
-        <div class="cs-stat-card"><div class="cs-stat-num">B2B</div><div class="cs-stat-label">Connections to local magazines, bloggers, and event coordinators</div></div>
-        <div class="cs-stat-card"><div class="cs-stat-num">DAU</div><div class="cs-stat-label">Daily active users as the primary retention success metric</div></div>
-        <div class="cs-stat-card"><div class="cs-stat-num">★ Rate</div><div class="cs-stat-label">Satisfaction ratings per third place visited to drive quality</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">09</div><div class="cs-section-title">What I <em>Learned</em></div></div>
-      <div class="cs-highlight">
-        <p>"I learned that solutions to <strong>complex cultural challenges</strong> rarely achieve perfection, but by embracing <strong>collaboration</strong> and <strong>grounding design in user needs</strong>, we can craft a meaningful approach. Designing for both digital and physical touchpoints showed me that behavior change requires meeting people where they already are."</p>
-      </div>
-    </div>
-
-    <div class="cs-footer">
-      <a href="https://drive.google.com/file/d/1K9m2JkYRHlbuRORBYV-ue_rHUqe4fEQw/view?usp=sharing" target="_blank" class="cs-btn" style="background:#284C2F;color:#fff;">Slide Deck ↗</a>
-      <span style="font-size:11px;color:var(--text-light);font-style:italic;padding-left:4px;">Linger. Longer.</span>
-    </div>
-  </div>`;
-}
-
-function buildCozymeal(){
-  return`
-  <div class="win-titlebar">
-    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title">Cozymeal Rebrand — Case Study</div>
-  </div>
-  <div class="win-body">
-
-    <div class="cs-hero">
-      <img src="cozymealcover.png" alt="Cozymeal Rebrand"/>
-      <div class="cs-hero-overlay"></div>
-      <span class="cs-hero-tag" style="background:#E78A24;color:#fff;">Branding · Case Study · 2023</span>
-    </div>
-
-    <h2 class="cs-title">Cozymeal <em>Rebrand</em></h2>
-    <p class="cs-subtitle">A full rebranding for Cozymeal — new logo, brand system, merchandise, digital assets, website redesign and an unconventional marketing concept.</p>
-
-    <div class="cs-tools-row" style="margin-top:0;margin-bottom:28px;padding-left:0;">
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Illustrator</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Photoshop</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Figma</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">InDesign</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Brand Strategy</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Competitive Research</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Typography Systems</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Print Design</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Social Media Design</span>
-      <span class="cs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Style Guide Production</span>
-    </div>
-
-    <div class="cs-meta-bar">
-      <div class="cs-meta-item"><div class="cs-meta-label">Client</div><div class="cs-meta-val"><a href="https://www.cozymeal.com/lp/cooking-classes?gad_source=1&gad_campaignid=21887521853&gbraid=0AAAAADm6G3duZ6ZtAqtl-0UWnkTKCd6xm&gclid=CjwKCAjw1tLOBhAMEiwAiPkRHos72eV_bOgiM8nDnHE_HyMkNIWauar94S_jpyhBPtvZgrEZA-o7hxoCGqEQAvD_BwE" target="_blank" style="color:var(--text-dark);text-decoration:none;font-weight:500;">Cozymeal ↗</a></div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">Industry</div><div class="cs-meta-val">Hospitality &amp; Food Services</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">12 Weeks · Fall 2023</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">Solo Brand Designer</div></div>
-    </div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">01</div><div class="cs-section-title">About <em>Cozymeal</em></div></div>
-      <p class="cs-body">Cozymeal is an online marketplace in the US and Canada offering culinary experiences — team-building events with top-rated local chefs, immersive cooking classes, food tours, private chef experiences, and more. Their mission: deliver unique culinary experiences enabling customers to find high-quality food and alcohol experiences with just a few clicks, while empowering chefs and guides to make a good living independently.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">🍳</div><div class="cs-sol-title">Cooking Classes</div><div class="cs-sol-desc">Immersive hands-on classes with top-rated local chefs across cuisines and skill levels.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">🗺️</div><div class="cs-sol-title">Food Tours</div><div class="cs-sol-desc">Curated culinary adventures exploring local neighborhoods and cultural food scenes.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">👨‍🍳</div><div class="cs-sol-title">Private Chefs</div><div class="cs-sol-desc">Personalized dining experiences with professional chefs in your home or venue.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">🏢</div><div class="cs-sol-title">Team Building</div><div class="cs-sol-desc">Corporate culinary events for companies including Apple, Google, Netflix, and Airbnb.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">02</div><div class="cs-section-title">Defining the <em>Challenge</em></div></div>
-      <div class="cs-hmw">How do you build a brand identity that feels both premium and warmly inviting — and scales across digital, print, and experiential touchpoints?</div>
-      <p class="cs-body">Cozymeal needed a brand that communicated warmth, authenticity, and quality simultaneously — a difficult balance in hospitality. The existing identity lacked cohesion across channels. My goal was to create a system grounded in clear design tenets that any team member could apply consistently.</p>
-      <div class="cs-solution-grid" style="margin-top:16px;">
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">🌿</div><div class="cs-sol-title">Simplicity</div><div class="cs-sol-desc">Food and experience take center stage — the design never competes with the content.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">🤝</div><div class="cs-sol-title">Intimacy</div><div class="cs-sol-desc">Customers should feel like they're learning from a friend, not buying a product.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">✨</div><div class="cs-sol-title">Authenticity</div><div class="cs-sol-desc">The identity must reflect the unique personalities of chefs and the cultures they represent.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">🎨</div><div class="cs-sol-title">Personalization</div><div class="cs-sol-desc">Every touchpoint should feel tailored to the individual customer's taste and goals.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">03</div><div class="cs-section-title">Color <em>Palette</em></div></div>
-      <p class="cs-body">Three colors, each chosen with intent. Together they communicate a brand that is <strong>grounded, fresh, and warm</strong> — matching the feeling of a well-run kitchen and a great meal.</p>
-      <div class="cs-stat-grid">
-        <div class="cs-stat-card" style="background:#3A5F41;border:none;">
-          <div class="cs-stat-num" style="color:#e8f5ee;font-size:16px;font-family:monospace;">#3A5F41</div>
-          <div style="font-size:12px;font-weight:600;color:#b5d4c0;margin-bottom:4px;">Leafy Green</div>
-          <div style="font-size:11px;color:#8fbfa0;line-height:1.4;">Freshness, trust, and sustainability. Primary anchor color used in logos, headers, and structural elements.</div>
-        </div>
-        <div class="cs-stat-card" style="background:#C6DAD0;border:none;">
-          <div class="cs-stat-num" style="color:#2d5040;font-size:16px;font-family:monospace;">#C6DAD0</div>
-          <div style="font-size:12px;font-weight:600;color:#3a6655;margin-bottom:4px;">Minty Green</div>
-          <div style="font-size:11px;color:#4a7060;line-height:1.4;">Light, airy, and calming. Used for backgrounds, secondary containers, and soft UI surfaces.</div>
-        </div>
-        <div class="cs-stat-card" style="background:#E78A24;border:none;">
-          <div class="cs-stat-num" style="color:#fff;font-size:16px;font-family:monospace;">#E78A24</div>
-          <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:4px;">Burnt Orange</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.75);line-height:1.4;">Energy, warmth, and gourmet appeal. Used for CTAs, accents, and key brand moments.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">04</div><div class="cs-section-title">Typography <em>System</em></div></div>
-      <p class="cs-body">Two typefaces were selected to balance personality and readability across all brand applications.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;">
-          <div style="font-size:22px;font-weight:600;color:#3A5F41;margin-bottom:8px;letter-spacing:-0.5px;">Barricada Pro</div>
-          <div class="cs-sol-title">Primary Typeface</div>
-          <div class="cs-sol-desc">A bold, expressive display font used for headlines, logo text, and brand statements. It conveys personality and warmth without sacrificing legibility.</div>
-        </div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;">
-          <div style="font-size:16px;color:#3A5F41;margin-bottom:8px;">Carlito Regular &amp; Bold</div>
-          <div class="cs-sol-title">Secondary &amp; Body Typeface</div>
-          <div class="cs-sol-desc">A clean, modern sans-serif for body copy, UI elements, and stationery. Carlito ensures readability across all sizes and formats — digital, print, and advertising.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">05</div><div class="cs-section-title">The <em>Logo</em></div></div>
-      <p class="cs-body">The redesigned logo pairs a <strong>bold, leaf-shaped "C" icon</strong> built from the three brand colors with clean wordmark typography. The leaf motif connects to nature, freshness, and culinary authenticity. Clear spacing rules (21px horizontal, 6px vertical gap, 4× exclusion zone) ensure consistent application across all touchpoints.</p>
-      <img src="cozymeallogo.png" alt="Cozymeal Logo" style="width:60%;border-radius:10px;margin:16px auto;display:block;"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">06</div><div class="cs-section-title">Social Media <em>Kit</em></div></div>
-      <p class="cs-body">A full social media kit was designed to ensure on-brand content creation at scale — from Instagram posts for cooking class promotions to stories for event announcements.</p>
-      <img src="cozymealsm.png" alt="Social Media Kit" style="width:90%;border-radius:10px;margin:16px auto;display:block;"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">08</div><div class="cs-section-title">Website <em>Redesign</em></div></div>
-      <p class="cs-body">The redesigned website applies the full brand system to Cozymeal's digital experience — from the homepage discovery flow to the Cooking Classes, Food Tours, and Team Building pages. Key design choices include a minty green background for content sections, burnt orange CTAs ("Book Now"), and dark green for immersive hero sections and navigation.</p>
-      <img src="cozymealwebsite.png" alt="Website Redesign" style="width:90%;border-radius:10px;margin:16px auto;display:block;"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">09</div><div class="cs-section-title">Merch <em>Design</em></div></div>
-      <p class="cs-body">Branded merchandise extends the Cozymeal identity into physical spaces — reinforcing the brand at cooking classes and events while creating organic word-of-mouth visibility.</p>
-      <img src="cozymealmerch.png" alt="Merch Design" style="width:90%;border-radius:10px;margin:16px auto;display:block;"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">10</div><div class="cs-section-title">Advertising <em>Concepts</em></div></div>
-      <p class="cs-body">The advertising system extended the brand into both traditional print media and social channels, maintaining visual consistency while adapting the tone to each format.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">📰</div><div class="cs-sol-title">Magazine Print Ad</div><div class="cs-sol-desc">"More than a Meal: It's a Culinary Adventure" — illustrated chefs, brand tagline, and QR link to cozymeal.com.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #E78A24;"><div class="cs-sol-icon">📸</div><div class="cs-sol-title">Instagram Posts &amp; Stories</div><div class="cs-sol-desc">Event-specific templates using leaf-shaped badges for pricing and dates. Applied to classes like "Stir, Shake &amp; Sip" and "Bake Bliss."</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">10</div><div class="cs-section-title">Unconventional <em>Media</em></div></div>
-      <p class="cs-body">The standout concept of the project: <strong>edible 3D printed business cards</strong>. Each card features four edible areas showcasing different cuisines from Cozymeal's class offerings, plus a QR code linking to recipes, a free trial class, or booking. Distributed at supermarkets, grocery stores, farmer's markets, and Sam's Club — transforming ordinary marketing material into an immersive, memorable sensory experience.</p>
-      <div class="cs-hmw" style="border-left-color:#E78A24;background:rgba(231,138,36,0.06);color:#c4721a;">"By taking a bite, customers get a preview of what they'll be cooking when they book with Cozymeal."</div>
-      <div style="margin:20px 0 0 34px;">
-        <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:12px;overflow:hidden;">
-          <!-- Card background -->
-          <rect width="560" height="220" fill="#fff" rx="14"/>
-          <rect width="560" height="220" fill="#f9f6f1" rx="14"/>
-          <!-- Card border -->
-          <rect x="1" y="1" width="558" height="218" rx="13" fill="none" stroke="#e0d8ce" stroke-width="1.5"/>
-
-          <!-- Left logo area -->
-          <rect x="20" y="20" width="110" height="40" rx="6" fill="none"/>
-          <!-- Cozymeal leaf C icon simplified -->
-          <ellipse cx="48" cy="40" rx="16" ry="18" fill="#3A5F41"/>
-          <ellipse cx="58" cy="33" rx="11" ry="13" fill="#f9f6f1"/>
-          <ellipse cx="58" cy="49" rx="8" ry="7" fill="#E78A24"/>
-          <ellipse cx="55" cy="26" rx="5" ry="6" fill="#C6DAD0"/>
-          <!-- Wordmark -->
-          <text x="78" y="44" font-size="13" font-weight="700" fill="#3A5F41" font-family="-apple-system,sans-serif" letter-spacing="0.3">Cozymeal</text>
-
-          <!-- "TAKE A BITE!" circle in center -->
-          <circle cx="280" cy="110" r="42" fill="#fff" stroke="#3A5F41" stroke-width="2"/>
-          <!-- QR grid simplified -->
-          <rect x="261" y="91" width="8" height="8" rx="1" fill="#3A5F41"/>
-          <rect x="271" y="91" width="8" height="8" rx="1" fill="#3A5F41"/>
-          <rect x="281" y="91" width="8" height="8" rx="1" fill="#3A5F41"/>
-          <rect x="261" y="101" width="8" height="8" rx="1" fill="#C6DAD0"/>
-          <rect x="271" y="101" width="8" height="8" rx="1" fill="#E78A24"/>
-          <rect x="281" y="101" width="8" height="8" rx="1" fill="#3A5F41"/>
-          <rect x="261" y="111" width="8" height="8" rx="1" fill="#3A5F41"/>
-          <rect x="271" y="111" width="8" height="8" rx="1" fill="#3A5F41"/>
-          <rect x="281" y="111" width="8" height="8" rx="1" fill="#C6DAD0"/>
-          <text x="280" y="134" font-size="8.5" font-weight="700" fill="#3A5F41" font-family="-apple-system,sans-serif" text-anchor="middle" letter-spacing="0.5">SCAN ME</text>
-          <text x="280" y="145" font-size="7" fill="#9c8a82" font-family="-apple-system,sans-serif" text-anchor="middle">cozymeal.com</text>
-
-          <!-- 4 food quadrants -->
-          <!-- Top-left: Italian (tomatoes) -->
-          <rect x="20" y="70" width="120" height="90" rx="8" fill="#fde8e0"/>
-          <circle cx="55" cy="110" r="22" fill="#e05a3a" opacity="0.85"/>
-          <circle cx="80" cy="105" r="16" fill="#c84020" opacity="0.75"/>
-          <circle cx="65" cy="125" r="12" fill="#e8a090" opacity="0.6"/>
-          <text x="70" y="155" font-size="9" fill="#8b3a2a" font-family="-apple-system,sans-serif" text-anchor="middle" font-weight="600">Italian</text>
-
-          <!-- Top-right: Japanese (sushi) -->
-          <rect x="420" y="70" width="120" height="90" rx="8" fill="#e8f0fe"/>
-          <ellipse cx="470" cy="105" rx="24" ry="12" fill="#fff" stroke="#ddd" stroke-width="1"/>
-          <rect x="456" y="99" width="28" height="12" rx="2" fill="#e05a3a" opacity="0.7"/>
-          <ellipse cx="505" cy="115" rx="18" ry="9" fill="#fff" stroke="#ddd" stroke-width="1"/>
-          <rect x="493" y="110" width="24" height="9" rx="2" fill="#3A5F41" opacity="0.7"/>
-          <text x="470" y="155" font-size="9" fill="#2a4a7a" font-family="-apple-system,sans-serif" text-anchor="middle" font-weight="600">Japanese</text>
-
-          <!-- Bottom-left: Mexican (tacos) -->
-          <rect x="20" y="130" width="120" height="70" rx="8" fill="#fef3e0"/>
-          <path d="M38 185 Q65 148 92 185 Z" fill="#E78A24" opacity="0.8"/>
-          <path d="M44 183 Q65 158 86 183" fill="none" stroke="#3A5F41" stroke-width="2"/>
-          <circle cx="55" cy="175" r="4" fill="#e05a3a"/>
-          <circle cx="68" cy="171" r="3" fill="#3A5F41"/>
-          <circle cx="78" cy="174" r="4" fill="#e8c04a"/>
-          <text x="70" y="195" font-size="9" fill="#8b5a10" font-family="-apple-system,sans-serif" text-anchor="middle" font-weight="600">Mexican</text>
-
-          <!-- Bottom-right: Donuts/Baking -->
-          <rect x="420" y="130" width="120" height="70" rx="8" fill="#fce8f0"/>
-          <circle cx="463" cy="165" r="20" fill="#f0b8c8" stroke="#e890a8" stroke-width="1.5"/>
-          <circle cx="463" cy="165" r="9" fill="#fce8f0"/>
-          <circle cx="497" cy="162" r="16" fill="#f8d8b0" stroke="#e0b888" stroke-width="1.5"/>
-          <circle cx="497" cy="162" r="7" fill="#fce8f0"/>
-          <text x="470" y="195" font-size="9" fill="#8b2a58" font-family="-apple-system,sans-serif" text-anchor="middle" font-weight="600">Baking</text>
-
-          <!-- Leaf decoration right edge -->
-          <g opacity="0.7">
-            <ellipse cx="548" cy="50" rx="7" ry="11" fill="#3A5F41" transform="rotate(20 548 50)"/>
-            <ellipse cx="548" cy="72" rx="7" ry="11" fill="#E78A24" transform="rotate(-15 548 72)"/>
-            <ellipse cx="548" cy="94" rx="7" ry="11" fill="#C6DAD0" transform="rotate(20 548 94)"/>
-            <ellipse cx="548" cy="116" rx="7" ry="11" fill="#3A5F41" transform="rotate(-15 548 116)"/>
-            <ellipse cx="548" cy="138" rx="7" ry="11" fill="#E78A24" transform="rotate(20 548 138)"/>
-            <ellipse cx="548" cy="160" rx="7" ry="11" fill="#C6DAD0" transform="rotate(-15 548 160)"/>
-            <ellipse cx="548" cy="182" rx="7" ry="11" fill="#3A5F41" transform="rotate(20 548 182)"/>
-          </g>
-
-          <!-- Distribution label -->
-          <text x="280" y="205" font-size="8.5" fill="#9c8a82" font-family="-apple-system,sans-serif" text-anchor="middle">Distributed at grocery stores · farmer's markets · Sam's Club · supermarkets</text>
-        </svg>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">12</div><div class="cs-section-title">What I <em>Learned</em></div></div>
-      <div class="cs-highlight">
-        <p>"I learned that <strong>thorough research and strategic planning are essential foundations</strong> for brand design. By deeply assessing Cozymeal's mission, stakeholder needs, and competitive landscape first, every visual decision — from color to typography to the edible card concept — had a clear rationale. <strong>Consistency is a system, not a style.</strong>"</p>
-      </div>
-    </div>
-
-    <div class="cs-footer">
-      <a href="https://drive.google.com/file/d/14o0P2Z45qc0-qlwXcLmVUrSqkhUbb-ZQ/view?usp=sharing" target="_blank" class="cs-btn" style="background:#E78A24;color:#fff;">Brand Style Guide ↗</a>
-      <a href="https://www.figma.com/proto/XY44PDKTDTDdGR4z0CI7Xu/COZYMEAL-Rebranding?node-id=127-357&p=f&t=dLrp6FByHudRUuuI-1&scaling=min-zoom&content-scaling=fixed&page-id=81%3A2&starting-point-node-id=86%3A1419" target="_blank" class="cs-btn" style="background:transparent;border:2px solid #E78A24;color:#E78A24;">Website Prototype ↗</a>
-    </div>
-  </div>`;
-}
-
-function buildLemonlight(){
-  return`
-  <div class="win-titlebar">
-    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title">Lemonlight Studios — Case Study</div>
-  </div>
-  <div class="win-body">
-
-    <div class="cs-hero">
-      <img src="lemonlightcover.png" alt="Lemonlight Studios"/>
-      <div class="cs-hero-overlay"></div>
-      <span class="cs-hero-tag" style="background:#d4a017;color:#fff;">Product Design · Case Study · 2025</span>
-    </div>
-
-    <h2 class="cs-title">Lemonlight <em>Studios</em></h2>
-    <p class="cs-subtitle">Designing an AI-powered video intelligence platform that helps brands instantly discover, understand, and repurpose their video assets.</p>
-
-    <div class="cs-tools-row" style="margin-top:0;margin-bottom:28px;padding-left:0;">
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Figma</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">FigJam</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Stakeholder Interviews</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">User Research</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Competitive Analysis</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Information Architecture</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Design Systems</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">AI Integration</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Sprint Methodology</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Usability Testing</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Mid-Fidelity Prototyping</span>
-      <span class="cs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Pitch Deck Design</span>
-    </div>
-
-    <div class="cs-meta-bar">
-      <div class="cs-meta-item"><div class="cs-meta-label">Client</div><div class="cs-meta-val">Lemonlight Studios</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val">5-Day Sprint</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">My Role</div><div class="cs-meta-val">Product Designer &amp; Researcher</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label">Deliverable</div><div class="cs-meta-val">Web Platform + Pitch Deck</div></div>
-    </div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">01</div><div class="cs-section-title">The <em>Context</em></div></div>
-      <p class="cs-body">Lemonlight Studios is a video production agency creating content for hundreds of brands. As their library grew to thousands of hours of footage, a painful problem emerged: <strong>teams could no longer find what they needed</strong>. Searching was manual, tagging was inconsistent, and institutional knowledge about what existed lived only in editors' heads. The opportunity: use AI to make video assets instantly intelligent and accessible.</p>
-      <div class="cs-hmw">"What if every hour of footage you've ever shot could be found, understood, and repurposed in seconds?"</div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">02</div><div class="cs-section-title">Research &amp; <em>Discovery</em></div></div>
-      <p class="cs-body">The sprint began with stakeholder interviews and competitive analysis. We mapped how marketing teams and video editors currently work, and identified where the biggest friction points were in the post-production pipeline.</p>
-      <div class="cs-persona-card">
-        <div class="cs-persona-top">
-          <div class="cs-persona-avatar" style="background:rgba(212,160,23,0.12);color:#b8880f;">M</div>
-          <div>
-            <div class="cs-persona-name" style="color:#b8880f;">Maya, 34</div>
-            <div class="cs-persona-role">Head of Content · Mid-size DTC Brand · Remote-first team</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;">
-          <span style="background:rgba(212,160,23,0.1);color:#b8880f;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Speed</span>
-          <span style="background:rgba(212,160,23,0.1);color:#b8880f;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Brand Consistency</span>
-          <span style="background:rgba(212,160,23,0.1);color:#b8880f;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">Scalability</span>
-          <span style="background:rgba(212,160,23,0.1);color:#b8880f;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:500;">ROI</span>
-        </div>
-        <div class="cs-persona-quote" style="border-left-color:rgba(212,160,23,0.5);">"We shot a whole campaign last quarter and I know there's amazing b-roll in there — but by the time anyone finds it, we've already moved on."</div>
-        <div class="cs-insight-row"><div class="cs-insight-dot" style="background:#d4a017;"></div><div class="cs-insight-text">Manages 3–5 video campaigns simultaneously; has no time to manually search footage libraries</div></div>
-        <div class="cs-insight-row"><div class="cs-insight-dot" style="background:#d4a017;"></div><div class="cs-insight-text">Relies on editor memory to know what assets exist — a major single point of failure</div></div>
-        <div class="cs-insight-row"><div class="cs-insight-dot" style="background:#d4a017;"></div><div class="cs-insight-text">Needs on-brand outputs fast; generic AI tools produce inconsistent, off-brand results</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">03</div><div class="cs-section-title">Defining the <em>Challenge</em></div></div>
-      <div class="cs-hmw" style="border-left-color:#d4a017;background:rgba(212,160,23,0.07);color:#a07810;">How might we turn a passive video library into an active, intelligent creative asset — without requiring editors to change their workflow?</div>
-      <div class="cs-solution-grid" style="margin-top:16px;">
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🔎</div><div class="cs-sol-title">Discoverability</div><div class="cs-sol-desc">Teams couldn't find specific footage without manually watching everything — searches were keyword-dependent and broke constantly.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🏷️</div><div class="cs-sol-title">Context Loss</div><div class="cs-sol-desc">Metadata was sparse or missing entirely. Shot context, talent info, and usage rights lived only in editors' memories.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">⏱️</div><div class="cs-sol-title">Speed</div><div class="cs-sol-desc">Repurposing footage for new formats required full editorial cycles — averaging 6 hours per campaign just for retrieval.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">04</div><div class="cs-section-title">The Design <em>Process</em></div></div>
-      <p class="cs-body">Working within a <strong>5-day sprint</strong>, the team ran rapid research, ideation, and validation cycles. Each day had a focused outcome — from mapping user journeys on day one to a testable prototype by day four.</p>
-      <div class="cs-process-grid" style="grid-template-columns:repeat(3,1fr);">
-        <div class="cs-process-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-process-num" style="color:rgba(180,130,10,0.6);">Day 01</div><div class="cs-process-title" style="color:#b8880f;">Understand</div><div class="cs-process-desc">Stakeholder interviews, competitive landscape review, user journey mapping across 3 personas.</div></div>
-        <div class="cs-process-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-process-num" style="color:rgba(180,130,10,0.6);">Day 02</div><div class="cs-process-title" style="color:#b8880f;">Define</div><div class="cs-process-desc">Synthesized findings into a core HMW. Defined the AI-first system architecture and named core features.</div></div>
-        <div class="cs-process-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-process-num" style="color:rgba(180,130,10,0.6);">Day 03</div><div class="cs-process-title" style="color:#b8880f;">Ideate</div><div class="cs-process-desc">Sketched 20+ feature concepts. Dot-voted to three focus areas: search, metadata enrichment, prompt editing.</div></div>
-        <div class="cs-process-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-process-num" style="color:rgba(180,130,10,0.6);">Day 04</div><div class="cs-process-title" style="color:#b8880f;">Prototype</div><div class="cs-process-desc">Built mid-fidelity Figma flows for the library dashboard, search interface, and HeroFacts panel.</div></div>
-        <div class="cs-process-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-process-num" style="color:rgba(180,130,10,0.6);">Day 05</div><div class="cs-process-title" style="color:#b8880f;">Validate &amp; Pitch</div><div class="cs-process-desc">Ran usability feedback sessions with 3 stakeholders. Refined and presented the full pitch deck.</div></div>
-        <div class="cs-process-card" style="border-color:rgba(212,160,23,0.2);background:rgba(212,160,23,0.06);"><div class="cs-process-num" style="color:rgba(180,130,10,0.6);">Outcome</div><div class="cs-process-title" style="color:#b8880f;">Greenlit</div><div class="cs-process-desc">Pitch was approved for further development. HeroFlow selected as the MVP foundation for Lemonlight's AI roadmap.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">05</div><div class="cs-section-title">Introducing <em>HeroFlow</em></div></div>
-      <p class="cs-body">HeroFlow is an AI-powered video intelligence platform that automatically analyzes footage, generates rich metadata, and makes every asset instantly searchable — empowering marketing teams to produce on-brand content without a full editorial cycle.</p>
-      <div style="display:flex;justify-content:center;margin:20px 0 8px;">
-        <img src="heroflowlogo.png" alt="HeroFlow Logo" style="max-width:300px;width:100%;height:auto;object-fit:contain;"/>
-      </div>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🔍</div><div class="cs-sol-title">Semantic Search</div><div class="cs-sol-desc">Find footage using natural language — "woman laughing outdoors golden hour" — no manual tagging required.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🧠</div><div class="cs-sol-title">HeroFacts &amp; Insights</div><div class="cs-sol-desc">AI-generated metadata panel for every clip: scene description, mood, subject, brand relevance score, suggested use cases.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">⚡</div><div class="cs-sol-title">Prompt-Based Editing</div><div class="cs-sol-desc">Type "make a 15-second Instagram reel for summer campaign" and get an on-brand cut in seconds.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🏷️</div><div class="cs-sol-title">Automated Tagging</div><div class="cs-sol-desc">Consistent, enterprise-scale metadata applied automatically across thousands of hours of footage.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">06</div><div class="cs-section-title">Product <em>Roadmap</em></div></div>
-      <p class="cs-body">HeroFlow was designed as a phased product — starting with an internal MVP for Lemonlight teams, expanding to a client-facing SaaS offering, then scaling to enterprise with API integrations.</p>
-      <div class="cs-stat-grid">
-        <div class="cs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-stat-num" style="color:#b8880f;font-size:18px;">Phase 1</div><div class="cs-stat-label">Internal MVP — core tagging, semantic search, HeroFacts panel for Lemonlight editors</div></div>
-        <div class="cs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-stat-num" style="color:#b8880f;font-size:18px;">Phase 2</div><div class="cs-stat-label">Client SaaS — white-label dashboard, brand guidelines integration, prompt editing</div></div>
-        <div class="cs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-stat-num" style="color:#b8880f;font-size:18px;">Phase 3</div><div class="cs-stat-label">Enterprise Scale — API access, DAM integrations, analytics, multi-brand workspaces</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">07</div><div class="cs-section-title">Business <em>Model</em></div></div>
-      <p class="cs-body">HeroFlow targets a <strong>$48B video production market</strong> with a recurring SaaS model. The business case was built around time savings — marketing teams currently spend an average of 6 hours per campaign searching and retrieving footage. HeroFlow reduces that to minutes.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">💼</div><div class="cs-sol-title">Agency Licensing</div><div class="cs-sol-desc">Per-seat SaaS for video production teams. Core revenue driver in Phase 1 &amp; 2.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🏢</div><div class="cs-sol-title">Enterprise API</div><div class="cs-sol-desc">Integration into existing Digital Asset Management tools (Frame.io, Bynder, Brandfolder).</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">📊</div><div class="cs-sol-title">Analytics Add-on</div><div class="cs-sol-desc">Performance insights: which footage drives highest engagement, by platform and format.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #d4a017;"><div class="cs-sol-icon">🤝</div><div class="cs-sol-title">White-Label</div><div class="cs-sol-desc">Agencies resell HeroFlow under their own brand to their own clients.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">08</div><div class="cs-section-title">Success <em>Metrics</em></div></div>
-      <p class="cs-body">Key performance indicators were defined to measure both product health and business impact across the first 12 months post-launch.</p>
-      <div class="cs-stat-grid">
-        <div class="cs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-stat-num" style="color:#b8880f;">6hrs → 10min</div><div class="cs-stat-label">Target reduction in footage retrieval time per campaign</div></div>
-        <div class="cs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-stat-num" style="color:#b8880f;">DAU / WAU</div><div class="cs-stat-label">Daily and weekly active users as primary retention signals</div></div>
-        <div class="cs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="cs-stat-num" style="color:#b8880f;">NPS Score</div><div class="cs-stat-label">Net Promoter Score from agency and brand teams after onboarding</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num">09</div><div class="cs-section-title">What I <em>Learned</em></div></div>
-      <div class="cs-highlight" style="background:rgba(212,160,23,0.06);border-color:rgba(212,160,23,0.2);">
-        <p>"I learned the value of <strong>designing for the entire ecosystem</strong>, not just the end user interface. In a 5-day sprint, the instinct is to jump to UI — but the most important decisions were about the AI model's outputs and how they map to real user needs. Understanding the back-end shaped every front-end choice."</p>
-      </div>
-    </div>
-
-    <div class="cs-footer">
-      <a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" class="cs-btn" style="background:#d4a017;color:#fff;">Pitch Deck ↗</a>
-      <a href="https://drive.google.com/file/d/1xZ_lVLbTl3BRGuxdIhK99RZvnk-pwJ7L/view?usp=sharing" target="_blank" class="cs-btn" style="background:transparent;border:2px solid #d4a017;color:#d4a017;">HeroFlow Demo Video ↗</a>
-    </div>
-  </div>`;
-}
-
-function buildBestBuy(){
-  return`
-  <div class="win-titlebar">
-    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title">Best Buy Internal — Case Study</div>
-  </div>
-  <div class="win-body">
-
-    <div class="cs-hero">
-      <img src="bbcoverpic.png" alt="Best Buy"/>
-      <div class="cs-hero-overlay" style="background:linear-gradient(to top,rgba(0,88,163,0.55) 0%,transparent 60%);"></div>
-      <span class="cs-hero-tag" style="background:#0058a3;color:#fff;">UI/UX Design · Case Study · 2023</span>
-    </div>
-
-    <h2 class="cs-title" style="color:#0058a3;">Best Buy <em>Internal</em></h2>
-    <p class="cs-subtitle">Designing a platform to improve internal communication for Best Buy employees — a place to connect, share knowledge, and ask questions across teams.</p>
-
-    <div class="cs-tools-row" style="margin-top:0;margin-bottom:28px;padding-left:0;">
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Figma</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">FigJam</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">User Interviews</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Competitive Analysis</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">CPS Framework</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Morphological Grid</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Design Systems</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">High-Fidelity Prototyping</span>
-      <span class="cs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Usability Testing</span>
-    </div>
-
-    <div class="cs-meta-bar">
-      <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">Client</div><div class="cs-meta-val"><a href="https://www.bestbuy.com/top-deals?ref=212&loc=SaleEvent&gclsrc=aw.ds&gad_source=1&gad_campaignid=63907719&gbraid=0AAAAAD-ORIiaeAl1S09VP2ru-SxAqF2qU&gclid=CjwKCAjw1tLOBhAMEiwAiPkRHlh3JrYfgitqwU_2SLxYYfF0dfjExjJeRUn5-FleVIsxfHFzLpqpJRoCE0cQAvD_BwE" target="_blank" style="color:#3d3530;text-decoration:none;font-weight:500;">Best Buy (Class Project) ↗</a></div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">Timeline</div><div class="cs-meta-val">12 Weeks</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">My Role</div><div class="cs-meta-val">UI/UX Designer &amp; Researcher</div></div>
-      <div class="cs-meta-item"><div class="cs-meta-label" style="color:#0058a3;">Platform</div><div class="cs-meta-val">Web Application</div></div>
-    </div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">01</div><div class="cs-section-title" style="color:#0058a3;">The <em>Problem</em></div></div>
-      <p class="cs-body">The existing Best Buy internal platform — <strong>Best Buy Connect</strong> — was outdated and underutilized. Employees were turning to external platforms for communication and community-building instead. There was a clear need for a more organized, engaging platform that could genuinely connect a large, distributed workforce.</p>
-      <div class="cs-hmw" style="background:rgba(0,88,163,0.06);border-left:3px solid #0058a3;color:#0058a3;">How might we bridge the gap between legacy tools and the modern communication needs of Best Buy employees?</div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">02</div><div class="cs-section-title" style="color:#0058a3;">Research &amp; <em>Discovery</em></div></div>
-      <p class="cs-body">The research phase started with a <strong>competitive analysis</strong> of existing workplace communication platforms. The real breakthrough came from <strong>user interviews</strong> with Best Buy and other retail employees — which revealed something unexpected: the primary need was for an <strong>out-of-store communication platform</strong>, not an in-store tool. This pivoted the entire project direction.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">🔍</div><div class="cs-sol-title">Competitive Analysis</div><div class="cs-sol-desc">Benchmarked Slack, Teams, Meta Workplace, and Yammer to identify gaps and opportunities in enterprise communication tools.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">🎤</div><div class="cs-sol-title">User Interviews</div><div class="cs-sol-desc">Spoke with Best Buy and retail employees. Key finding: employees wanted community and peer connection — not just top-down announcements.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">🔄</div><div class="cs-sol-title">Pivot to Data-Driven</div><div class="cs-sol-desc">Interview findings challenged our initial assumptions and refocused the project from in-store tooling to an out-of-store community platform.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">📋</div><div class="cs-sol-title">CPS Framework</div><div class="cs-sol-desc">Used morphological grids, dot voting, and decision-making charts to collaboratively refine ideas and evaluate them against market potential and technical feasibility.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">03</div><div class="cs-section-title" style="color:#0058a3;">The Design <em>System</em></div></div>
-      <p class="cs-body">Before building any screens, the team created a <strong>design system</strong> to ensure visual consistency across all prototypes. While inspired by Best Buy's existing brand identity, the colors were deliberately <strong>muted</strong> to better match the casual, community-focused purpose of the new platform — shifting away from a retail feel toward a workplace community aesthetic.</p>
-      <img src="bbdesignsystem.png" alt="Best Buy Design System" style="width:90%;border-radius:12px;margin:16px auto;display:block;box-shadow:0 4px 20px rgba(0,0,0,0.08);"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">04</div><div class="cs-section-title" style="color:#0058a3;">The <em>Solution</em></div></div>
-      <p class="cs-body">The final design is a <strong>unified employee communication hub</strong> that combines the purposes of the existing platforms. Built directly from user feedback, it prioritizes connection, community, and psychological safety — including an option for users to hide group memberships to reduce the fear of judgment.</p>
-      <div class="cs-solution-grid">
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">🏠</div><div class="cs-sol-title">Homepage</div><div class="cs-sol-desc">A central feed for company updates, team highlights, and employee activity — replacing the fragmented experience of two underused platforms.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">👥</div><div class="cs-sol-title">Groups Page</div><div class="cs-sol-desc">Dedicated spaces for peer-led discussions by department, interest, and location — fostering the community employees said they were missing.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">📢</div><div class="cs-sol-title">Announcements Page</div><div class="cs-sol-desc">A manager-only broadcast channel for official company updates, keeping signal separate from community noise.</div></div>
-        <div class="cs-sol-card" style="border-top:3px solid #0058a3;"><div class="cs-sol-icon">🔒</div><div class="cs-sol-title">Private Profiles</div><div class="cs-sol-desc">Customizable profiles with optional anonymity settings — letting employees control their visibility across groups.</div></div>
-      </div>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">05</div><div class="cs-section-title" style="color:#0058a3;">Final <em>Screens</em></div></div>
-      <p class="cs-body">The high-fidelity prototype brought the design system and research insights together into a cohesive experience.</p>
-      <img src="bbscreens.png" alt="Best Buy Final Screens" style="width:100%;border-radius:12px;margin-top:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);"/>
-    </div>
-
-    <div class="cs-divider"></div>
-
-    <div class="cs-section">
-      <div class="cs-section-label"><div class="cs-section-num" style="background:#0058a3;">06</div><div class="cs-section-title" style="color:#0058a3;">What I <em>Learned</em></div></div>
-      <div class="cs-highlight" style="background:rgba(0,88,163,0.05);border-color:rgba(0,88,163,0.2);">
-        <p>"This project made me realize how crucial <strong>user research</strong> is. I went into it with assumptions about what Best Buy employees needed — but after conducting interviews, I learned the real problem wasn't what I expected. <strong>Listening to users is the most important step</strong> in creating a solution that truly works. The pivot we made based on interview findings was the defining moment of the whole project."</p>
-      </div>
-    </div>
-
-    <div class="cs-footer">
-      <a href="https://www.figma.com/proto/sZFZ1HB87fuLe7gXrG9cV2/Best-Buy?node-id=155-728&t=Gzld0k5WHKnkud4j-1" target="_blank" class="cs-btn" style="background:#0058a3;color:#fff;">View Prototype ↗</a>
-      <a href="https://docs.google.com/document/d/1PYqWj0IvDUyd6PCPNtMeNfKYhhPw_uiUFnNRRPVm2sI/edit?usp=sharing" target="_blank" class="cs-btn" style="background:transparent;border:2px solid #0058a3;color:#0058a3;">Documentation ↗</a>
-    </div>
-  </div>`;
-}
-
-function buildPhotography(){
-  return`
-  <div class="win-titlebar">
-    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title">Photography</div>
-  </div>
-  <div class="win-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:14px;">
-    <div style="font-size:56px;">📷</div>
-    <div style="font-size:18px;font-weight:500;color:var(--text-dark);">Coming Soon</div>
-    <div style="font-size:14px;color:var(--text-light);text-align:center;max-width:280px;line-height:1.6;">A collection of photographs is being curated here. Check back soon.</div>
-  </div>`;
-}
-
-function buildLibrary(){
-  return`
-  <div class="win-titlebar">
-    <div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div>
-    <div class="win-title">Library</div>
-  </div>
-  <div class="win-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:14px;">
-    <div style="font-size:56px;">📚</div>
-    <div style="font-size:18px;font-weight:500;color:var(--text-dark);">Coming Soon</div>
-    <div style="font-size:14px;color:var(--text-light);text-align:center;max-width:280px;line-height:1.6;">Something is being curated here. Check back soon.</div>
-  </div>`;
-}
+function buildLibrary(){return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Library</div></div><div class="win-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;gap:14px;"><div style="font-size:56px;">📚</div><div style="font-size:18px;font-weight:500;color:var(--text-dark);">Coming Soon</div></div>`;}
 
 function buildAbout(){
-  return`
-  <div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Aashwini Vachhani — About</div></div>
-  <div class="about-body" style="flex:1;overflow:hidden;display:flex;width:100%;height:100%;">
-    <div id="about-pg" style="background:#f0ede8;width:100%;height:100%;padding:12px;transform-origin:top left;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;">
-      <div style="display:grid;width:100%;height:100%;grid-template-columns:2fr 1.4fr 1.4fr 1.2fr;grid-template-rows:150px 140px 1fr;gap:7px;">
-        <div style="grid-column:1/2;grid-row:1/3;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;"><img src="me2.jpg" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 50%);"></div><div style="position:absolute;top:12px;right:12px;background:rgba(52,199,89,0.82);color:#fff;border-radius:20px;padding:4px 14px;font-size:10px;font-weight:600;">Open to opportunities</div><div style="position:absolute;bottom:14px;left:14px;"><div style="font-size:18px;font-weight:500;color:#fff;letter-spacing:-0.3px;">Aashwini Vachhani</div><div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:3px;">UI/UX · Product Designer · Branding</div></div></div>
-        <div style="grid-column:2/3;grid-row:1/2;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px;text-align:center;"><div style="font-size:13px;font-weight:500;color:#1c1c1e;line-height:1.5;">Blending <span style="color:#7a4abf;">Strategy</span>,<br><span style="color:#3a7abf;">Creativity</span> &amp; <span style="color:#2a8a52;">Usability</span></div></div>
-        <div style="grid-column:3/4;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;"><img src="me1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 20%" onerror="this.style.display='none'"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:12px;font-weight:500;color:#fff;">Photographer</div></div>
-        <div style="grid-column:4/5;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;"><img src="coldcoffee.jpg" style="width:100%;height:100%;object-fit:cover;transform:scaleX(-1);" onerror="this.style.display='none'"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:12px;font-weight:500;color:#fff;">Fueled by cold coffee</div></div>
-        <div style="grid-column:2/5;grid-row:2/3;border-radius:18px;background:#fff;padding:20px 24px;display:flex;align-items:center;"><div style="font-size:14px;color:#3a3a3c;line-height:1.8;text-align:center;width:100%;">I'm a product designer who believes great design lives where strategy meets empathy 🤝. With a foundation in UX and a master's focus in design, business, and technology, I create experiences that are intuitive, purposeful, and built to scale 💻 ✨ 🌿.</div></div>
-        <div style="grid-column:1/2;grid-row:3/4;border-radius:18px;background:#fff;padding:10px 12px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-evenly;gap:14px;">
-          <div style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Skills</div>
-          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Design &amp; Prototyping</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Figma</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Photoshop</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Illustrator</span><span style="background:#e8f4ff;color:#3a7abf;border-radius:20px;padding:2px 8px;font-size:10px;">Framer</span></div></div>
-          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">AI-Powered Tools</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">ChatGPT</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Claude</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">Gemini</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">CSS</span><span style="background:#f3eeff;color:#7a4abf;border-radius:20px;padding:2px 8px;font-size:10px;">HTML</span></div></div>
-          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">UX Research</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">User Research</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Usability Testing</span><span style="background:#edfff4;color:#2a8a52;border-radius:20px;padding:2px 8px;font-size:10px;">Wireframing</span></div></div>
-          <div><div style="font-size:8.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:#c0b8b0;margin-bottom:4px;">Brand &amp; Visual Design</div><div style="display:flex;flex-wrap:wrap;gap:3px;"><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Visual Identity</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Logo Design</span><span style="background:#fff5e8;color:#bf6a20;border-radius:20px;padding:2px 8px;font-size:10px;">Design Systems</span></div></div>
-        </div>
-        <div style="grid-column:2/4;grid-row:3/4;border-radius:18px;background:#fff;padding:16px 18px;display:flex;flex-direction:column;">
-          <div style="font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Education</div>
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:20px;">
-            <div style="display:flex;align-items:flex-start;gap:25px;"><div style="width:52px;height:52px;border-radius:10px;background:transparent;flex-shrink:0;display:flex;align-items:center;justify-content:center;"><img src="usclogo.png" style="width:100%;height:100%;object-fit:cover;"></div><div><div style="font-size:16px;font-weight:600;color:#1c1c1e;line-height:1.3;">University of Southern California</div><div style="font-size:14px;color:#8a7a74;margin-top:5px;">Los Angeles, CA · May 2026 · GPA: 4.00</div><div style="margin-top:6px;"><span style="background:#ffe8e8;color:#c0392b;border-radius:24px;padding:6px 10px;font-size:12px;font-weight:500;">M.S. Integrated Design, Business &amp; Technology</span></div></div></div>
-            <div style="display:flex;align-items:flex-start;gap:11px;"><div style="width:52px;height:52px;border-radius:10px;background:#fff;flex-shrink:0;overflow:hidden;"><img src="purduelogo.png" style="width:80%;height:60%;object-fit:fit;"></div><div><div style="font-size:16px;font-weight:600;color:#1c1c1e;line-height:1.3;">Purdue University</div><div style="font-size:14px;color:#8a7a74;margin-top:5px;">West Lafayette, IN · May 2024 · GPA: 3.84</div><div style="margin-top:6px;"><span style="background:#f5ede0;color:#8b5e3c;border-radius:24px;padding:6px 15px;font-size:12px;font-weight:500;">B.S. Computer Graphics — UX Design</span></div></div></div>
-          </div>
-        </div>
-        <div style="grid-column:4/5;grid-row:3/4;display:flex;flex-direction:column;gap:7px;height:100%;">
-          <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('https://drive.google.com/file/d/1pzhnpRq62Q_IkJ9fZwZcyRipVdNOfecc/view?usp=drive_link','_blank')" onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';" onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';"><div style="font-size:24px;flex-shrink:0;">📄</div><div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">Resume</div><div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">View PDF →</div></div></div>
-          <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank')" onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';" onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';"><div style="font-size:24px;flex-shrink:0;">💼</div><div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">LinkedIn</div><div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">Open Profile →</div></div></div>
-          <div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('mailto:vachhaniaashwini@gmail.com')" onmouseenter="this.querySelector('.sub').style.maxHeight='20px';this.querySelector('.sub').style.opacity='1';" onmouseleave="this.querySelector('.sub').style.maxHeight='0';this.querySelector('.sub').style.opacity='0';"><div style="font-size:24px;flex-shrink:0;">✉️</div><div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">Email</div><div class="sub" style="font-size:12px;color:#9a8a82;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.2s ease,opacity 0.2s ease;">vachhaniaashwini@gmail.com</div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>`;
+  return`<div class="win-titlebar"><div class="tb tb-r">✕</div><div class="tb tb-y">−</div><div class="tb tb-g">⤢</div><div class="win-title">Aashwini Vachhani — About</div></div><div class="about-body" style="flex:1;overflow:hidden;display:flex;width:100%;height:100%;"><div id="about-pg" style="background:#f0ede8;width:100%;height:100%;padding:12px;transform-origin:top left;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;"><div style="display:grid;width:100%;height:100%;grid-template-columns:2fr 1.4fr 1.4fr 1.2fr;grid-template-rows:150px 140px 1fr;gap:7px;"><div style="grid-column:1/2;grid-row:1/3;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;"><img src="me2.jpg" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 50%);"></div><div style="position:absolute;top:12px;right:12px;background:rgba(52,199,89,0.82);color:#fff;border-radius:20px;padding:4px 14px;font-size:10px;font-weight:600;">Open to opportunities</div><div style="position:absolute;bottom:14px;left:14px;"><div style="font-size:18px;font-weight:500;color:#fff;letter-spacing:-0.3px;">Aashwini Vachhani</div><div style="font-size:10px;color:rgba(255,255,255,0.6);margin-top:3px;">UI/UX · Product Designer · Branding</div></div></div><div style="grid-column:2/3;grid-row:1/2;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px;text-align:center;"><div style="font-size:13px;font-weight:500;color:#1c1c1e;line-height:1.5;">Blending <span style="color:#7a4abf;">Strategy</span>,<br><span style="color:#3a7abf;">Creativity</span> &amp; <span style="color:#2a8a52;">Usability</span></div></div><div style="grid-column:3/4;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;"><img src="me1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 20%" onerror="this.style.display='none'"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:12px;font-weight:500;color:#fff;">Photographer</div></div><div style="grid-column:4/5;grid-row:1/2;border-radius:18px;overflow:hidden;position:relative;background:#2c2c2e;"><img src="coldcoffee.jpg" style="width:100%;height:100%;object-fit:cover;transform:scaleX(-1);" onerror="this.style.display='none'"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);"></div><div style="position:absolute;bottom:8px;left:10px;font-size:12px;font-weight:500;color:#fff;">Fueled by cold coffee</div></div><div style="grid-column:2/5;grid-row:2/3;border-radius:18px;background:#fff;padding:20px 24px;display:flex;align-items:center;"><div style="font-size:14px;color:#3a3a3c;line-height:1.8;text-align:center;width:100%;">I'm a product designer who believes great design lives where strategy meets empathy 🤝.</div></div><div style="grid-column:1/2;grid-row:3/4;border-radius:18px;background:#fff;padding:10px 12px;overflow:hidden;"><div style="font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:#aeaeb2;margin-bottom:10px;">Skills</div></div><div style="grid-column:2/4;grid-row:3/4;border-radius:18px;background:#fff;padding:16px 18px;"></div><div style="grid-column:4/5;grid-row:3/4;display:flex;flex-direction:column;gap:7px;height:100%;"><div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('https://drive.google.com/file/d/1pzhnpRq62Q_IkJ9fZwZcyRipVdNOfecc/view?usp=drive_link','_blank')"><div style="font-size:24px;flex-shrink:0;">📄</div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">Resume</div></div><div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('https://www.linkedin.com/in/aashwini-vachhani/','_blank')"><div style="font-size:24px;flex-shrink:0;">💼</div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">LinkedIn</div></div><div style="flex:1;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="window.open('mailto:vachhaniaashwini@gmail.com')"><div style="font-size:24px;flex-shrink:0;">✉️</div><div style="font-size:15px;font-weight:500;color:#1c1c1e;">Email</div></div></div></div></div></div>`;
 }
 
 function dragWin(w){
@@ -1533,401 +879,11 @@ function showNotif(icon,title,body,link){
 }
 if(window.innerWidth>768){setTimeout(()=>showNotif('🌸','Welcome!','Double-click a folder to explore a project.'),900);}
 
-// ═══════════════════════════════════════════════
-//  MOBILE PROJECT SHEETS
-// ═══════════════════════════════════════════════
 const mobileProjectContent = {
-  thirdplaces: `
-    <div class="mcs-hero">
-      <img src="https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900" alt="Third Places">
-      <div class="mcs-hero-overlay"></div>
-      <span class="mcs-hero-tag" style="background:rgba(40,76,47,0.82);">UI/UX Design · Case Study · 2024</span>
-    </div>
-    <h2 class="mcs-title" style="color:#284C2F;">Third Places</h2>
-    <p class="mcs-subtitle">Exploring the scarcity of communal spaces in the U.S. — and designing a solution to bring them back.</p>
-    <div class="mcs-tools" style="margin-bottom:20px;">
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Figma</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">FigJam</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">User Personas</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Morphological Analysis</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">CPS Framework</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Journey Mapping</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Business Model Canvas</span>
-      <span class="mcs-tool" style="background:rgba(40,76,47,0.08);border:1px solid rgba(40,76,47,0.2);color:#284C2F;">Physical Prototyping</span>
-    </div>
-    <div class="mcs-meta-bar">
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Team</div><div class="mcs-meta-val">5-person cross-disciplinary</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">12 Weeks</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">UX/UI Designer &amp; Researcher</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Deliverable</div><div class="mcs-meta-val">Mobile App + Physical</div></div>
-    </div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">01</div><div class="mcs-section-title" style="color:#284C2F;">Why Third Places?</div></div>
-      <p class="mcs-body">People often remark on the gap between American and European daily life. At the root is the lack of <strong>"third places"</strong> — the cafés, coworking spots, and social hubs where community forms outside of home and work. The U.S. has a growing demand for these spaces, yet they remain hard to find and hard to sustain.</p>
-      <div class="mcs-hmw" style="border-color:#284C2F;background:rgba(40,76,47,0.07);color:#284C2F;">"What if the most important places in your life aren't where you live or work, but the spaces in between?"</div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">02</div><div class="mcs-section-title" style="color:#284C2F;">Design Process — CPS Framework</div></div>
-      <div class="mcs-process-row">
-        <div class="mcs-process-item"><div class="mcs-process-step">01</div><div><div class="mcs-process-name">Acceptance</div><div class="mcs-process-detail">Brainstormed broadly; found common ground in cafés, community, and social connection.</div></div></div>
-        <div class="mcs-process-item"><div class="mcs-process-step">02</div><div><div class="mcs-process-name">Analysis</div><div class="mcs-process-detail">Morphological grid across offerings, vibe, aesthetics, pricing. Secondary research on competitor gaps.</div></div></div>
-        <div class="mcs-process-item"><div class="mcs-process-step">03</div><div><div class="mcs-process-name">Define</div><div class="mcs-process-detail">Core HMW: how do we make third spaces discoverable and habitual?</div></div></div>
-        <div class="mcs-process-item"><div class="mcs-process-step">04</div><div><div class="mcs-process-name">Ideation</div><div class="mcs-process-detail">Research → overnight break → anonymous dot voting on FigJam.</div></div></div>
-        <div class="mcs-process-item"><div class="mcs-process-step">05</div><div><div class="mcs-process-name">Selection</div><div class="mcs-process-detail">Decision matrix + radar chart scored across market potential, feasibility, scalability, desirability.</div></div></div>
-        <div class="mcs-process-item"><div class="mcs-process-step">06</div><div><div class="mcs-process-name">Implementation</div><div class="mcs-process-detail">Figma wireframes + physical prototypes: tote bags, branded cups, connection cards.</div></div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">03</div><div class="mcs-section-title" style="color:#284C2F;">Meet Layla — User Persona</div></div>
-      <div class="mcs-persona-card">
-        <div class="mcs-persona-top">
-          <div class="mcs-persona-avatar">L</div>
-          <div><div class="mcs-persona-name">Layla, 32</div><div class="mcs-persona-role">Digital Nomad · Creative Works · LA</div></div>
-        </div>
-        <div class="mcs-persona-quote">"Social media recommendations are so inauthentic! I just want authentic experiences and people who really enjoy the vibe."</div>
-        <div class="mcs-insight-row"><div class="mcs-insight-dot"></div><div class="mcs-insight-text">Wants to discover genuine local spots, not Instagram-famous ones</div></div>
-        <div class="mcs-insight-row"><div class="mcs-insight-dot"></div><div class="mcs-insight-text">Needs a space that inspires creativity, focus, and authenticity</div></div>
-        <div class="mcs-insight-row"><div class="mcs-insight-dot"></div><div class="mcs-insight-text">Craves meeting new people and building real community connections</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">04</div><div class="mcs-section-title" style="color:#284C2F;">Defining the Challenge</div></div>
-      <div class="mcs-hmw" style="border-color:#284C2F;background:rgba(40,76,47,0.07);color:#284C2F;">How might we make third places discoverable and financially sustainable for both users and owners?</div>
-      <p class="mcs-body">The team identified a <strong>dual-sided problem</strong>: discoverability for users and financial viability for owners. Any solution had to serve both sides of the equation.</p>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">05</div><div class="mcs-section-title" style="color:#284C2F;">Introducing Agora</div></div>
-      <p class="mcs-body">Named after the Greek word for "gathering place," Agora is a <strong>dual digital + physical solution</strong> designed to help people discover third places and build a culture of returning to them.</p>
-      <img src="agoralogo.png" class="mcs-img-half" alt="Agora Logo">
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #284C2F;"><div class="mcs-sol-icon">📱</div><div class="mcs-sol-title">Digital App</div><div class="mcs-sol-desc">Discovery, mood filters, community reviews, and a roulette feature for serendipity.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #284C2F;"><div class="mcs-sol-icon">🛍️</div><div class="mcs-sol-title">Physical Touchpoints</div><div class="mcs-sol-desc">Branded cups, tote bags, and connection cards to organically foster community.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #284C2F;"><div class="mcs-sol-icon">🏪</div><div class="mcs-sol-title">Business Model</div><div class="mcs-sol-desc">Affiliate marketing and B2B connections to make third places financially viable.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #284C2F;"><div class="mcs-sol-icon">🎲</div><div class="mcs-sol-title">Roulette Feature</div><div class="mcs-sol-desc">Serendipity mode that suggests a spontaneous outing, lowering decision friction.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">06</div><div class="mcs-section-title" style="color:#284C2F;">App Screens</div></div>
-      <img src="agorascreens.png" class="mcs-img" alt="Agora App Screens">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">07</div><div class="mcs-section-title" style="color:#284C2F;">Physical Prototypes</div></div>
-      <div class="mcs-sol-grid">
-        <img src="agoratote.png" style="width:100%;border-radius:10px;object-fit:cover;" alt="Agora Tote">
-        <img src="agoracup.png" style="width:100%;border-radius:10px;object-fit:cover;" alt="Agora Cup">
-      </div>
-      <p class="mcs-body" style="margin-top:8px;">Tote bags reading <strong>"linger longer"</strong>, branded cups with community messaging, and connection cards to spark real-world conversation inside partner spaces.</p>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">08</div><div class="mcs-section-title" style="color:#284C2F;">Success Metrics</div></div>
-      <div class="mcs-stat-row">
-        <div class="mcs-stat-card"><div class="mcs-stat-num">DAU</div><div class="mcs-stat-label">Daily active users as primary retention metric</div></div>
-        <div class="mcs-stat-card"><div class="mcs-stat-num">★ Rate</div><div class="mcs-stat-label">Satisfaction scores per third place visited</div></div>
-        <div class="mcs-stat-card"><div class="mcs-stat-num">Return</div><div class="mcs-stat-label">Repeat visit rate to measure habit formation</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#284C2F;">💡</div><div class="mcs-section-title" style="color:#284C2F;">Learning Takeaway</div></div>
-      <div class="mcs-highlight" style="background:rgba(40,76,47,0.05);">
-        <p>"I learned that solutions to <strong>complex cultural challenges</strong> rarely achieve perfection, but by embracing <strong>collaboration</strong> and <strong>grounding design in user needs</strong>, we can craft a meaningful approach. Designing for digital and physical touchpoints showed me that behavior change requires meeting people where they already are."</p>
-      </div>
-    </div>
-    <div class="mcs-footer">
-      <a href="https://drive.google.com/file/d/1K9m2JkYRHlbuRORBYV-ue_rHUqe4fEQw/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#284C2F;color:#fff;">Slide Deck ↗</a>
-      <span style="font-size:0.75rem;color:#9c8a82;font-style:italic;align-self:center;padding-left:4px;">Linger. Longer.</span>
-    </div>`,
-
-  lemonlight: `
-    <div class="mcs-hero"><img src="lemonlightcover.png" alt="Lemonlight Studios"><div class="mcs-hero-overlay"></div><span class="mcs-hero-tag" style="background:#d4a017;">Product Design · Case Study · 2025</span></div>
-    <h2 class="mcs-title" style="color:#7a6010;">Lemonlight Studios</h2>
-    <p class="mcs-subtitle">Designing an AI-powered video intelligence platform that helps brands instantly discover, understand, and repurpose their video assets.</p>
-    <div class="mcs-tools" style="margin-bottom:20px;">
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Figma</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">FigJam</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Stakeholder Interviews</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">User Research</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Competitive Analysis</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Information Architecture</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Design Systems</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">AI Integration</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Sprint Methodology</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Usability Testing</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Mid-Fidelity Prototyping</span>
-      <span class="mcs-tool" style="background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);color:#b8880f;">Pitch Deck Design</span>
-    </div>
-    <div class="mcs-meta-bar">
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val">Lemonlight Studios</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">5-Day Sprint</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">Product Designer &amp; Researcher</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Deliverable</div><div class="mcs-meta-val">Web Platform + Pitch Deck</div></div>
-    </div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">01</div><div class="mcs-section-title" style="color:#7a6010;">The Context</div></div>
-      <p class="mcs-body">Lemonlight Studios creates video content for hundreds of brands. As their library grew to thousands of hours of footage, a painful problem emerged: <strong>teams could no longer find what they needed</strong>. Searching was manual, tagging was inconsistent, and asset knowledge lived only in editors' heads.</p>
-      <div class="mcs-hmw" style="border-color:#d4a017;background:rgba(212,160,23,0.07);color:#a07810;">"What if every hour of footage you've ever shot could be found and repurposed in seconds?"</div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">02</div><div class="mcs-section-title" style="color:#7a6010;">User Persona — Meet Maya</div></div>
-      <div class="mcs-persona-card" style="border-color:rgba(212,160,23,0.2);">
-        <div class="mcs-persona-top">
-          <div class="mcs-persona-avatar" style="background:rgba(212,160,23,0.12);color:#b8880f;">M</div>
-          <div><div class="mcs-persona-name" style="color:#b8880f;">Maya, 34</div><div class="mcs-persona-role">Head of Content · DTC Brand</div></div>
-        </div>
-        <div class="mcs-persona-quote" style="border-left-color:rgba(212,160,23,0.4);">"We shot a whole campaign last quarter and I know there's amazing b-roll in there — but by the time anyone finds it, we've already moved on."</div>
-        <div class="mcs-insight-row"><div class="mcs-insight-dot" style="background:#d4a017;"></div><div class="mcs-insight-text">Manages 3–5 campaigns at once; no time to manually search footage</div></div>
-        <div class="mcs-insight-row"><div class="mcs-insight-dot" style="background:#d4a017;"></div><div class="mcs-insight-text">Relies on editor memory — a major single point of failure</div></div>
-        <div class="mcs-insight-row"><div class="mcs-insight-dot" style="background:#d4a017;"></div><div class="mcs-insight-text">Needs on-brand outputs fast; generic AI tools are inconsistent</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">03</div><div class="mcs-section-title" style="color:#7a6010;">Defining the Challenge</div></div>
-      <div class="mcs-hmw" style="border-color:#d4a017;background:rgba(212,160,23,0.07);color:#a07810;">How might we turn a passive video library into an active, intelligent creative asset?</div>
-      <div class="mcs-sol-grid" style="margin-top:10px;">
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🔎</div><div class="mcs-sol-title">Discoverability</div><div class="mcs-sol-desc">Couldn't find footage without watching everything manually.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🏷️</div><div class="mcs-sol-title">Context Loss</div><div class="mcs-sol-desc">Metadata was sparse — shot context lived only in editors' memories.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017; grid-column: span 2;"><div class="mcs-sol-icon">⏱️</div><div class="mcs-sol-title">Speed</div><div class="mcs-sol-desc">Repurposing footage for new formats required full editorial cycles — averaging 6 hours per campaign just for retrieval.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">04</div><div class="mcs-section-title" style="color:#7a6010;">5-Day Sprint Process</div></div>
-      <div class="mcs-process-row">
-        <div class="mcs-process-item" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-process-step" style="color:rgba(180,130,10,0.6);">Day 1</div><div><div class="mcs-process-name" style="color:#b8880f;">Understand</div><div class="mcs-process-detail">Stakeholder interviews, competitive review, user journey mapping.</div></div></div>
-        <div class="mcs-process-item" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-process-step" style="color:rgba(180,130,10,0.6);">Day 2</div><div><div class="mcs-process-name" style="color:#b8880f;">Define</div><div class="mcs-process-detail">Synthesized findings. Defined AI-first system architecture.</div></div></div>
-        <div class="mcs-process-item" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-process-step" style="color:rgba(180,130,10,0.6);">Day 3</div><div><div class="mcs-process-name" style="color:#b8880f;">Ideate</div><div class="mcs-process-detail">20+ concepts. Dot-voted to 3 focus areas: search, metadata, prompt editing.</div></div></div>
-        <div class="mcs-process-item" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-process-step" style="color:rgba(180,130,10,0.6);">Day 4</div><div><div class="mcs-process-name" style="color:#b8880f;">Prototype</div><div class="mcs-process-detail">Mid-fidelity Figma flows for library dashboard, search, HeroFacts panel.</div></div></div>
-        <div class="mcs-process-item" style="border-color:rgba(212,160,23,0.2);background:rgba(212,160,23,0.06);"><div class="mcs-process-step" style="color:rgba(180,130,10,0.6);">Day 5</div><div><div class="mcs-process-name" style="color:#b8880f;">Validate &amp; Pitch</div><div class="mcs-process-detail">Usability sessions with 3 stakeholders. Pitch greenlit for further development.</div></div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">05</div><div class="mcs-section-title" style="color:#7a6010;">Introducing HeroFlow</div></div>
-      <p class="mcs-body">HeroFlow automatically analyzes footage, generates rich metadata, and makes every asset instantly searchable — enabling on-brand content without a full editorial cycle.</p>
-      <img src="heroflowlogo.png" class="mcs-img-half" alt="HeroFlow Logo">
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🔍</div><div class="mcs-sol-title">Semantic Search</div><div class="mcs-sol-desc">Find footage with natural language — no tagging required.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🧠</div><div class="mcs-sol-title">HeroFacts</div><div class="mcs-sol-desc">AI-generated metadata: scene, mood, subject, brand relevance.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">⚡</div><div class="mcs-sol-title">Prompt Editing</div><div class="mcs-sol-desc">Type a brief, get an on-brand cut in seconds.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🏷️</div><div class="mcs-sol-title">Auto Tagging</div><div class="mcs-sol-desc">Consistent metadata across thousands of hours of footage.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">06</div><div class="mcs-section-title" style="color:#7a6010;">Product Roadmap</div></div>
-      <div class="mcs-stat-row">
-        <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.9rem;">Phase 1</div><div class="mcs-stat-label">Internal MVP for Lemonlight editors</div></div>
-        <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.9rem;">Phase 2</div><div class="mcs-stat-label">Client SaaS with brand integration</div></div>
-        <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.9rem;">Phase 3</div><div class="mcs-stat-label">Enterprise API &amp; DAM integrations</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">07</div><div class="mcs-section-title" style="color:#7a6010;">Business Model</div></div>
-      <p class="mcs-body">HeroFlow targets a <strong>$48B video production market</strong> with a recurring SaaS model built around time savings — 6 hours per campaign reduced to minutes.</p>
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">💼</div><div class="mcs-sol-title">Agency Licensing</div><div class="mcs-sol-desc">Per-seat SaaS for video production teams.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🏢</div><div class="mcs-sol-title">Enterprise API</div><div class="mcs-sol-desc">Integrations with Frame.io, Bynder, Brandfolder.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">📊</div><div class="mcs-sol-title">Analytics Add-on</div><div class="mcs-sol-desc">Performance insights by platform and format.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #d4a017;"><div class="mcs-sol-icon">🤝</div><div class="mcs-sol-title">White-Label</div><div class="mcs-sol-desc">Agencies resell HeroFlow under their own brand.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">08</div><div class="mcs-section-title" style="color:#7a6010;">Success Metrics</div></div>
-      <div class="mcs-stat-row">
-        <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.85rem;">6h → 10m</div><div class="mcs-stat-label">Footage retrieval time per campaign</div></div>
-        <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.85rem;">DAU/WAU</div><div class="mcs-stat-label">Daily and weekly retention signals</div></div>
-        <div class="mcs-stat-card" style="border-color:rgba(212,160,23,0.2);"><div class="mcs-stat-num" style="color:#b8880f;font-size:0.85rem;">NPS</div><div class="mcs-stat-label">Net Promoter Score post-onboarding</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#d4a017;">💡</div><div class="mcs-section-title" style="color:#7a6010;">Learning Takeaway</div></div>
-      <div class="mcs-highlight" style="background:rgba(212,160,23,0.06);">
-        <p>"I learned the value of <strong>designing for the entire ecosystem</strong>, not just the end user interface. In a 5-day sprint, the instinct is to jump to UI — but understanding the AI model's outputs shaped every front-end decision."</p>
-      </div>
-    </div>
-    <div class="mcs-footer">
-      <a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#d4a017;color:#fff;">Pitch Deck ↗</a>
-      <a href="https://drive.google.com/file/d/1xZ_lVLbTl3BRGuxdIhK99RZvnk-pwJ7L/view?usp=sharing" target="_blank" class="mcs-btn" style="background:transparent;border:2px solid #d4a017;color:#d4a017;">HeroFlow Demo Video ↗</a>
-    </div>`,
-
-  cozymeal: `
-    <div class="mcs-hero"><img src="cozymealcover.png" alt="Cozymeal Rebrand"><div class="mcs-hero-overlay"></div><span class="mcs-hero-tag" style="background:#E78A24;">Branding · Case Study · 2023</span></div>
-    <h2 class="mcs-title" style="color:#E78A24;">Cozymeal Rebrand</h2>
-    <p class="mcs-subtitle">A full rebranding for Cozymeal — new logo, brand system, merchandise, digital assets, website redesign and an unconventional marketing concept.</p>
-    <div class="mcs-tools" style="margin-bottom:20px;">
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Illustrator</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Photoshop</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Figma</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">InDesign</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Brand Strategy</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Typography Systems</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Print Design</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Social Media Design</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Style Guide Production</span>
-      <span class="mcs-tool" style="background:rgba(231,138,36,0.1);border:1px solid rgba(231,138,36,0.25);color:#c4721a;">Competitive Research</span>
-    </div>
-    <div class="mcs-meta-bar">
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val"><a href="https://www.cozymeal.com/lp/cooking-classes?gad_source=1&gad_campaignid=21887521853&gbraid=0AAAAADm6G3duZ6ZtAqtl-0UWnkTKCd6xm&gclid=CjwKCAjw1tLOBhAMEiwAiPkRHos72eV_bOgiM8nDnHE_HyMkNIWauar94S_jpyhBPtvZgrEZA-o7hxoCGqEQAvD_BwE" target="_blank" style="color:#3d3530;text-decoration:none;font-weight:500;">Cozymeal ↗</a></div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Industry</div><div class="mcs-meta-val">Hospitality &amp; Food Services</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">12 Weeks · Fall 2023</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">Solo Brand Designer</div></div>
-    </div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">01</div><div class="mcs-section-title" style="color:#E78A24;">About Cozymeal</div></div>
-      <p class="mcs-body">Cozymeal is an online marketplace offering culinary experiences — cooking classes with top-rated chefs, food tours, private chef bookings, and team building events. Clients include Apple, Google, Netflix, and Airbnb. Their mission: make high-quality culinary experiences accessible with a few clicks, while empowering independent chefs and guides.</p>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">02</div><div class="mcs-section-title" style="color:#E78A24;">Defining the Challenge</div></div>
-      <div class="mcs-hmw" style="border-color:#E78A24;background:rgba(231,138,36,0.07);color:#c4721a;">How do you build a brand that feels both premium and warmly inviting — across every touchpoint?</div>
-      <p class="mcs-body">The project was guided by five design tenets: <strong>Simplicity, Comfort, Intimacy, Authenticity,</strong> and <strong>Personalization</strong> — each shaping decisions from logo structure to advertising concepts.</p>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">03</div><div class="mcs-section-title" style="color:#E78A24;">Color Palette</div></div>
-      <div class="mcs-stat-row">
-        <div class="mcs-stat-card" style="background:#3A5F41;border:none;"><div class="mcs-stat-num" style="color:#e8f5ee;font-size:0.75rem;font-family:monospace;">#3A5F41</div><div class="mcs-stat-label" style="color:#8fbfa0;">Leafy Green — trust &amp; freshness</div></div>
-        <div class="mcs-stat-card" style="background:#C6DAD0;border:none;"><div class="mcs-stat-num" style="color:#2d5040;font-size:0.75rem;font-family:monospace;">#C6DAD0</div><div class="mcs-stat-label" style="color:#3a6655;">Minty Green — light &amp; airy</div></div>
-        <div class="mcs-stat-card" style="background:#E78A24;border:none;"><div class="mcs-stat-num" style="color:#fff;font-size:0.75rem;font-family:monospace;">#E78A24</div><div class="mcs-stat-label" style="color:rgba(255,255,255,0.8);">Burnt Orange — warmth &amp; energy</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">04</div><div class="mcs-section-title" style="color:#E78A24;">Typography System</div></div>
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #E78A24;"><div style="font-size:16px;font-weight:600;color:#3A5F41;margin-bottom:4px;">Barricada Pro</div><div class="mcs-sol-title">Primary Typeface</div><div class="mcs-sol-desc">Bold, expressive display font for headlines and logo wordmark.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #E78A24;"><div style="font-size:14px;color:#3A5F41;margin-bottom:4px;">Carlito</div><div class="mcs-sol-title">Body Typeface</div><div class="mcs-sol-desc">Clean sans-serif for body copy, UI elements, and all print materials.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">05</div><div class="mcs-section-title" style="color:#E78A24;">The Logo</div></div>
-      <p class="mcs-body">A bold leaf-shaped "C" icon using all three brand colors, with clear spacing rules: 21px horizontal, 6px vertical, and a 4× exclusion zone. The leaf motif connects to nature, freshness, and culinary authenticity.</p>
-      <img src="cozymeallogo.png" class="mcs-img-half" alt="Cozymeal Logo">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">06</div><div class="mcs-section-title" style="color:#E78A24;">Social Media Kit</div></div>
-      <img src="cozymealsm.png" class="mcs-img" alt="Cozymeal Social Media">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">07</div><div class="mcs-section-title" style="color:#E78A24;">Website Redesign</div></div>
-      <img src="cozymealwebsite.png" class="mcs-img" alt="Cozymeal Website">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">08</div><div class="mcs-section-title" style="color:#E78A24;">Merch Design</div></div>
-      <img src="cozymealmerch.png" class="mcs-img" alt="Cozymeal Merch">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">09</div><div class="mcs-section-title" style="color:#E78A24;">Advertising Concepts</div></div>
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #E78A24;"><div class="mcs-sol-icon">📰</div><div class="mcs-sol-title">Magazine Print Ad</div><div class="mcs-sol-desc">"More than a Meal: It's a Culinary Adventure" — illustrated chefs and brand tagline.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #E78A24;"><div class="mcs-sol-icon">📸</div><div class="mcs-sol-title">Instagram Posts &amp; Stories</div><div class="mcs-sol-desc">Event templates using leaf-shaped badges for pricing, dates, and CTAs.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">10</div><div class="mcs-section-title" style="color:#E78A24;">Unconventional Media</div></div>
-      <p class="mcs-body"><strong>Edible 3D printed business cards</strong> — each with 4 edible areas showcasing Cozymeal's cuisines, plus a QR code linking to booking or a free trial class. Distributed at grocery stores, farmer's markets, and wholesale venues.</p>
-      <div class="mcs-hmw" style="border-color:#E78A24;background:rgba(231,138,36,0.07);color:#c4721a;">"By taking a bite, customers get a taste of what they'll be cooking when they book with Cozymeal."</div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#E78A24;">💡</div><div class="mcs-section-title" style="color:#E78A24;">Learning Takeaway</div></div>
-      <div class="mcs-highlight" style="background:rgba(231,138,36,0.05);">
-        <p>"I learned that <strong>thorough research and strategic planning are essential</strong>. By grounding every visual decision in Cozymeal's mission and design tenets, I could design an identity that is authentic, consistent, and genuinely connects with its audience. <strong>Consistency is a system, not a style.</strong>"</p>
-      </div>
-    </div>
-    <div class="mcs-footer">
-      <a href="https://drive.google.com/file/d/14o0P2Z45qc0-qlwXcLmVUrSqkhUbb-ZQ/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#E78A24;color:#fff;">Brand Style Guide ↗</a>
-      <a href="https://www.figma.com/proto/XY44PDKTDTDdGR4z0CI7Xu/COZYMEAL-Rebranding?node-id=127-357&p=f&t=dLrp6FByHudRUuuI-1&scaling=min-zoom&content-scaling=fixed&page-id=81%3A2&starting-point-node-id=86%3A1419" target="_blank" class="mcs-btn" style="background:transparent;border:2px solid #E78A24;color:#E78A24;">Website Prototype ↗</a>
-    </div>`,
-
-  bestbuy: `
-    <div class="mcs-hero"><img src="bbcoverpic.png" alt="Best Buy"><div class="mcs-hero-overlay" style="background:linear-gradient(to top,rgba(0,88,163,0.55) 0%,transparent 60%);"></div><span class="mcs-hero-tag" style="background:#0058a3;">UI/UX Design · Case Study · 2023</span></div>
-    <h2 class="mcs-title" style="color:#0058a3;">Best Buy Internal</h2>
-    <p class="mcs-subtitle">Designing a platform to improve internal communication for Best Buy employees — a place to connect, share knowledge, and ask questions.</p>
-    <div class="mcs-tools" style="margin-bottom:20px;">
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Figma</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">FigJam</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">User Interviews</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Competitive Analysis</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">CPS Framework</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Morphological Grid</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Design Systems</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">High-Fidelity Prototyping</span>
-      <span class="mcs-tool" style="background:rgba(0,88,163,0.08);border:1px solid rgba(0,88,163,0.2);color:#0058a3;">Usability Testing</span>
-    </div>
-    <div class="mcs-meta-bar">
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Client</div><div class="mcs-meta-val"><a href="https://www.bestbuy.com/top-deals?ref=212&loc=SaleEvent&gclsrc=aw.ds&gad_source=1&gad_campaignid=63907719&gbraid=0AAAAAD-ORIiaeAl1S09VP2ru-SxAqF2qU&gclid=CjwKCAjw1tLOBhAMEiwAiPkRHlh3JrYfgitqwU_2SLxYYfF0dfjExjJeRUn5-FleVIsxfHFzLpqpJRoCE0cQAvD_BwE" target="_blank" style="color:#3d3530;text-decoration:none;font-weight:500;">Best Buy (Class Project) ↗</a></div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Timeline</div><div class="mcs-meta-val">12 Weeks</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">My Role</div><div class="mcs-meta-val">UI/UX Designer &amp; Researcher</div></div>
-      <div class="mcs-meta-item"><div class="mcs-meta-label">Platform</div><div class="mcs-meta-val">Web Application</div></div>
-    </div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">01</div><div class="mcs-section-title" style="color:#0058a3;">The Problem</div></div>
-      <p class="mcs-body">The existing Best Buy internal platform — <strong>Best Buy Connect</strong> — was outdated and underutilized. Employees turned to external platforms for community. There was a clear need for something more organized and engaging.</p>ernal platforms for community. There was a clear need for something more organized and engaging.</p>
-      <div class="mcs-hmw" style="border-color:#0058a3;background:rgba(0,88,163,0.06);color:#0058a3;">How might we bridge the gap between legacy tools and the modern communication needs of Best Buy employees?</div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">02</div><div class="mcs-section-title" style="color:#0058a3;">Research &amp; Discovery</div></div>
-      <p class="mcs-body">A competitive analysis of workplace platforms was followed by user interviews — which revealed the real need was for an <strong>out-of-store community platform</strong>, not an in-store tool. This insight pivoted the entire project.</p>
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🔍</div><div class="mcs-sol-title">Competitive Analysis</div><div class="mcs-sol-desc">Benchmarked Slack, Teams, Meta Workplace, and Yammer.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🎤</div><div class="mcs-sol-title">User Interviews</div><div class="mcs-sol-desc">Uncovered the real need: peer community, not top-down tools.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🔄</div><div class="mcs-sol-title">Pivot</div><div class="mcs-sol-desc">Interview data challenged assumptions and redirected the project.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">📋</div><div class="mcs-sol-title">CPS Framework</div><div class="mcs-sol-desc">Morphological grids, dot voting, and decision charts to evaluate ideas.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">03</div><div class="mcs-section-title" style="color:#0058a3;">The Design System</div></div>
-      <p class="mcs-body">Colors drawn from Best Buy's brand identity were deliberately <strong>muted</strong> to suit the casual, community-focused purpose of the new platform.</p>
-      <img src="bbdesignsystem.png" class="mcs-img" alt="Design System">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">04</div><div class="mcs-section-title" style="color:#0058a3;">The Solution</div></div>
-      <p class="mcs-body">A unified employee communication hub built directly from user feedback — prioritizing connection, community, and psychological safety.</p>
-      <div class="mcs-sol-grid">
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🏠</div><div class="mcs-sol-title">Homepage</div><div class="mcs-sol-desc">Central feed for company updates and employee activity.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">👥</div><div class="mcs-sol-title">Groups Page</div><div class="mcs-sol-desc">Peer-led spaces for discussions by department and interest.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">📢</div><div class="mcs-sol-title">Announcements</div><div class="mcs-sol-desc">Manager-only channel for official company updates.</div></div>
-        <div class="mcs-sol-card" style="border-top:3px solid #0058a3;"><div class="mcs-sol-icon">🔒</div><div class="mcs-sol-title">Private Profiles</div><div class="mcs-sol-desc">Optional anonymity to reduce fear of judgment across groups.</div></div>
-      </div>
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">05</div><div class="mcs-section-title" style="color:#0058a3;">Final Screens</div></div>
-      <img src="bbscreens.png" class="mcs-img" alt="Best Buy Screens">
-    </div>
-    <div class="mcs-divider"></div>
-    <div class="mcs-section">
-      <div class="mcs-section-label"><div class="mcs-num" style="background:#0058a3;">💡</div><div class="mcs-section-title" style="color:#0058a3;">What I Learned</div></div>
-      <div class="mcs-highlight" style="background:rgba(0,88,163,0.05);">
-        <p>"This project made me realize how crucial <strong>user research</strong> is. I went in with assumptions — but interviews revealed the real problem wasn't what I expected. The pivot we made was the defining moment. <strong>Listening to users is the most important step</strong> in creating a solution that truly works."</p>
-      </div>
-    </div>
-    <div class="mcs-footer">
-      <a href="https://www.figma.com/proto/sZFZ1HB87fuLe7gXrG9cV2/Best-Buy?node-id=155-728&t=Gzld0k5WHKnkud4j-1" target="_blank" class="mcs-btn" style="background:#0058a3;color:#fff;">View Prototype ↗</a>
-      <a href="https://docs.google.com/document/d/1PYqWj0IvDUyd6PCPNtMeNfKYhhPw_uiUFnNRRPVm2sI/edit?usp=sharing" target="_blank" class="mcs-btn" style="background:transparent;border:2px solid #0058a3;color:#0058a3;">Documentation ↗</a>
-    </div>`
+  thirdplaces: `<div class="mcs-hero"><img src="https://framerusercontent.com/images/Hece3crONJDefLX1tNkhKT2tQfI.png?width=900" alt="Third Places"><div class="mcs-hero-overlay"></div><span class="mcs-hero-tag" style="background:rgba(40,76,47,0.82);">UI/UX Design · 2024</span></div><h2 class="mcs-title" style="color:#284C2F;">Third Places</h2><p class="mcs-subtitle">Exploring the scarcity of communal spaces in the U.S.</p><div class="mcs-footer"><a href="https://drive.google.com/file/d/1K9m2JkYRHlbuRORBYV-ue_rHUqe4fEQw/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#284C2F;color:#fff;">Slide Deck ↗</a></div>`,
+  lemonlight: `<div class="mcs-hero"><img src="lemonlightcover.png" alt="Lemonlight"><div class="mcs-hero-overlay"></div><span class="mcs-hero-tag" style="background:#d4a017;">Product Design · 2025</span></div><h2 class="mcs-title" style="color:#7a6010;">Lemonlight Studios</h2><p class="mcs-subtitle">AI-powered video intelligence platform.</p><div class="mcs-footer"><a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#d4a017;color:#fff;">Pitch Deck ↗</a></div>`,
+  cozymeal: `<div class="mcs-hero"><img src="cozymealcover.png" alt="Cozymeal"><div class="mcs-hero-overlay"></div><span class="mcs-hero-tag" style="background:#E78A24;">Branding · 2023</span></div><h2 class="mcs-title" style="color:#E78A24;">Cozymeal Rebrand</h2><p class="mcs-subtitle">Full rebranding for Cozymeal.</p><div class="mcs-footer"><a href="https://drive.google.com/file/d/14o0P2Z45qc0-qlwXcLmVUrSqkhUbb-ZQ/view?usp=sharing" target="_blank" class="mcs-btn" style="background:#E78A24;color:#fff;">Style Guide ↗</a></div>`,
+  bestbuy: `<div class="mcs-hero"><img src="bbcoverpic.png" alt="Best Buy"><div class="mcs-hero-overlay" style="background:linear-gradient(to top,rgba(0,88,163,0.55) 0%,transparent 60%);"></div><span class="mcs-hero-tag" style="background:#0058a3;">UI/UX Design · 2023</span></div><h2 class="mcs-title" style="color:#0058a3;">Best Buy Internal</h2><p class="mcs-subtitle">Internal communication platform for Best Buy employees.</p><div class="mcs-footer"><a href="https://www.figma.com/proto/sZFZ1HB87fuLe7gXrG9cV2/Best-Buy?node-id=155-728&t=Gzld0k5WHKnkud4j-1" target="_blank" class="mcs-btn" style="background:#0058a3;color:#fff;">Prototype ↗</a></div>`
 };
 
 function openProjectSheet(id){
@@ -1965,7 +921,6 @@ const dockEl=document.getElementById('dock');
 dockEl.addEventListener('mousemove',e=>{document.querySelectorAll('.dock-item').forEach(di=>{const r=di.getBoundingClientRect(),c=r.left+r.width/2,dist=Math.abs(e.clientX-c),maxD=100;const s=dist<maxD?1+(1-dist/maxD)*0.36:1,ty=dist<maxD?-(dist<45?11:5):0;di.style.transform=`translateY(${ty}px) scale(${s})`;});});
 dockEl.addEventListener('mouseleave',()=>document.querySelectorAll('.dock-item').forEach(di=>di.style.transform=''));
 
-// Cursor pill on folder hover
 const pill=document.getElementById('cursor-pill');
 let pillActive=false;
 document.addEventListener('mousemove',e=>{
@@ -1982,14 +937,12 @@ document.querySelectorAll('.folder[data-project], .folder[data-label]').forEach(
 <script>
 function typeWriter(elementId,text,speed,callback){const el=document.getElementById(elementId);if(!el)return;if(el.textContent!=='')return;let i=0;function type(){if(i<text.length){el.textContent+=text.charAt(i);i++;setTimeout(type,speed);}else{if(callback)callback();}}type();}
 function initTypewriter(){
-  // Desktop
   const nameEl=document.getElementById('typewriter-name');
   const subEl=document.getElementById('typewriter-sub');
   if(nameEl){typeWriter('typewriter-name','Aashwini Vachhani',80,()=>{nameEl.classList.remove('cursor');if(subEl){subEl.classList.add('cursor');setTimeout(()=>{typeWriter('typewriter-sub','Product Designer specialized in UI/UX',50,()=>{setTimeout(()=>subEl.classList.remove('cursor'),1500);});},300);}});}
-  // Mobile
   const mNameEl=document.getElementById('mv-hero-name');
   const mRoleEl=document.getElementById('mv-hero-role');
-  if(mNameEl){typeWriter('mv-hero-name','Aashwini Vachhani',80,()=>{mNameEl.classList.remove('cursor');if(mRoleEl){mRoleEl.classList.add('cursor');setTimeout(()=>{typeWriter('mv-hero-role','Product Designer · UI/UX · Branding',45,()=>{setTimeout(()=>mRoleEl.classList.remove('cursor'),1200);});},200);}});}
+  if(mNameEl){typeWriter('mv-hero-name','Aashwini Vachhani',80,()=>{mNameEl.classList.remove('cursor');if(mRoleEl){mRoleEl.classList.add('cursor');setTimeout(()=>{typeWriter('mv-hero-role','Product Designer specialized in UI/UX',45,()=>{setTimeout(()=>mRoleEl.classList.remove('cursor'),1200);});},200);}});}
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>setTimeout(initTypewriter,120));}else{setTimeout(initTypewriter,120);}
 </script>
