@@ -160,6 +160,22 @@
     width:100%; height:100%; object-fit:cover;
     border-radius:8px; display:block;
   }
+
+   .sticker-img .img-pill{
+    position:absolute;
+    background:var(--ink); color:#fff;
+    font-weight:700; font-size:.85rem;
+    padding:.5rem 1.2rem; border-radius:999px;
+    white-space:nowrap;
+    pointer-events:none;
+    opacity:0;
+    transform:translate(-50%, -50%) scale(0.85);
+    transition:opacity .15s ease, transform .15s ease;
+    z-index:20;
+  }
+  .sticker-img:hover .img-pill{
+    opacity:1; transform:translate(-50%, -50%) scale(1);
+  
   .sticker-img-1{
     top:8%; left:10%;
     width:170px; height:170px;
