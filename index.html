@@ -83,12 +83,12 @@
   .hero-photo-wrap{
     position:relative; z-index:2;
     display:flex; justify-content:center;
-    margin-top:-6rem;
+    margin-top:-8rem;
   }
   .hero-photo{
-    width:min(30vw, 380px);
-    height:calc(min(30vw, 380px) * 1.25 + 60px);
-    object-fit:contain;
+    width:min(52vw, 560px);
+    height:calc(min(52vw, 560px) * 1.25 + 100px);
+    object-fit:cover;
   }
 
   /* Sticker base */
@@ -107,8 +107,8 @@
     padding:1.6rem 1.8rem;
     text-align:center;
   }
-  .sticker-card h3{font-size:1.00rem; font-weight:700; margin-bottom:.7rem;}
-  .sticker-card p{font-size:.78rem; line-height:1.65; color:#555; margin-bottom:1rem;}
+  .sticker-card h3{font-size:1.15rem; font-weight:700; margin-bottom:.7rem;}
+  .sticker-card p{font-size:.88rem; line-height:1.65; color:#555; margin-bottom:1rem;}
   .sticker-card .hire-link{
     display:block; text-align:center;
     border-top:1px solid var(--line);
@@ -119,7 +119,7 @@
 
   /* Skills tab */
   .sticker-skills-tab{
-    top:calc(6% + 70px); right:14%;
+    top:calc(6% + 140px); right:14%;
     background:var(--ink); color:#fff;
     border-radius:14px;
     padding:1rem 2.4rem;
@@ -129,7 +129,7 @@
 
   /* Skills list */
   .sticker-skills-list{
-    top:calc(12% + 70px); right:4%;
+    top:calc(12% + 140px); right:4%;
     width:280px;
     background:#fdfbf6;
     color:var(--ink);
@@ -157,13 +157,13 @@
     overflow:visible;
     cursor:pointer;
     position:absolute;
-}
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
   .sticker-img img{
     width:100%; height:100%; object-fit:cover;
     border-radius:8px; display:block;
   }
-
-   .sticker-img .img-pill{
+  .sticker-img .img-pill{
     position:absolute;
     background:var(--ink); color:#fff;
     font-weight:700; font-size:.85rem;
@@ -178,7 +178,18 @@
   .sticker-img:hover .img-pill{
     opacity:1; transform:translate(-50%, -50%) scale(1);
   }
-  
+  .sticker-img-1:hover{
+    transform:rotate(-4deg) translateY(-6px) scale(1.04);
+    box-shadow:0 18px 36px rgba(0,0,0,0.18);
+  }
+  .sticker-img-2:hover{
+    transform:rotate(3deg) translateY(-6px) scale(1.04);
+    box-shadow:0 18px 36px rgba(0,0,0,0.18);
+  }
+  .sticker-img-3:hover{
+    transform:rotate(-2deg) translateY(-6px) scale(1.04);
+    box-shadow:0 18px 36px rgba(0,0,0,0.18);
+  }
   .sticker-img-1{
     top:8%; left:10%;
     width:170px; height:170px;
@@ -193,12 +204,13 @@
     top:60%; right:6%;
     width:200px; height:160px;
     transform:rotate(-2deg);
+    z-index:5;
   }
 
   /* Tools dock */
   .tools-dock{
     position:relative; z-index:3;
-    max-width:900px; margin:8rem auto 0;
+    max-width:900px; margin:0 auto 0;
     background:#fdfbf6;
     border-radius:24px;
     padding:1.2rem 1.6rem;
@@ -677,7 +689,12 @@
   </div>
 
   <div class="hero-photo-wrap">
-    <img class="hero-photo" src="herophoto.png" alt="Portrait of Aashwini.">
+    <img class="hero-photo" src="hero-photo.jpeg" alt="Portrait of Aashwini, a multimedia designer.">
+  </div>
+
+  <div class="sticker sticker-img sticker-img-1" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
+    <span class="img-pill">Explorer ✈️</span>
+    <img src="metravel.jpg" alt="Travelling.">
   </div>
 
   <div class="sticker sticker-card">
@@ -686,19 +703,9 @@
     <a href="#connect" class="hire-link">Let's connect!</a>
   </div>
 
- <div class="sticker sticker-img sticker-img-1" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
-    <span class="img-pill">Explorer ✈️</span>
-    <img src="metravel.jpg" alt="explorer">
-  </div>
- 
-   <div class="sticker sticker-img sticker-img-3" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
-    <span class="img-pill">Photographer 📸</span>
-    <img src="mecamera.jpg" alt="photographer">
-  </div>
- 
   <div class="sticker sticker-img sticker-img-2" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
-    <span class="img-pill">Dog Lover 🐶</span>
-    <img src="medog.jpg" alt="dogperson">
+    <span class="img-pill">Dog Lover 🐾</span>
+    <img src="medog.jpg" alt="With my dog.">
   </div>
 
   <div class="sticker sticker-skills-tab">Skills</div>
@@ -712,38 +719,39 @@
     <div class="skill-row"><span>Figma</span><span class="star">★</span></div>
   </div>
 
-  <div class="sticker sticker-img sticker-img-3">
-   <img src="mecamera.jpg" alt="Photographer">
+  <div class="sticker sticker-img sticker-img-3" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
+    <span class="img-pill">Photographer 📷</span>
+    <img src="mecamera.jpg" alt="With my camera.">
   </div>
 
   <div class="tools-dock" aria-label="Design tools">
     <span class="tools-dock-label">My Stack</span>
     <div class="tool-icon figma" style="background:#fff;">
-      <img src="figma.png" alt="Figma" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/figma.png" alt="Figma" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon ps" style="background:#001e36;">
-      <img src="photoshop.png" alt="Photoshop" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/photoshop.png" alt="Photoshop" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon ai" style="background:#330000;">
-      <img src="illustrator.png" alt="Illustrator" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/illustrator.png" alt="Illustrator" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon canva" style="background:#fff;">
-      <img src="canva.png" alt="Canva" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/canva.png" alt="Canva" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon claude" style="background:#fff;">
-      <img src="claude.png" alt="Claude" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/claude.png" alt="Claude" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon chatgpt" style="background:#fff;">
-      <img src="chatgpt.png" alt="ChatGPT" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/chatgpt.png" alt="ChatGPT" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon gemini" style="background:#fff;">
-      <img src="gemini.png" alt="Gemini" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/gemini.png" alt="Gemini" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon googlelabs" style="background:#fff;">
-      <img src="googlelab.png" alt="Google Labs" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/google-labs.png" alt="Google Labs" style="width:28px; height:28px;">
     </div>
     <div class="tool-icon notion" style="background:#fff;">
-      <img src="notion.png" alt="Notion" style="width:100%; height:100%; object-fit:contain; border-radius:14px;">
+      <img src="images/notion.png" alt="Notion" style="width:28px; height:28px;">
     </div>
   </div>
 </header>
