@@ -16,21 +16,11 @@
     --purple:#e4d4f7;
     --green:#d4f1d4;
     --line:#e3ddd0;
+    --rose:#e8547a;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    font-family:'Plus Jakarta Sans', sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    overflow-x:hidden;
-  }
-  .serif{font-family:'DM Serif Display', serif; font-style:italic;}
-  .highlight{
-    background:var(--yellow);
-    padding:0.1em 0.3em;
-    border-radius:2px;
-    display:inline-block;
-  }
+  body{font-family:'Plus Jakarta Sans',sans-serif; color:var(--ink); background:var(--cream); overflow-x:hidden;}
+  .serif{font-family:'DM Serif Display',serif; font-style:italic;}
   img{max-width:100%; display:block;}
 
   /* NAV */
@@ -38,7 +28,7 @@
     position:sticky; top:0; z-index:50;
     display:flex; justify-content:center; gap:.6rem;
     padding:1.2rem 1rem;
-    background:linear-gradient(180deg, rgba(247,242,233,0.92), rgba(247,242,233,0));
+    background:linear-gradient(180deg,rgba(247,242,233,0.92),rgba(247,242,233,0));
     flex-wrap:wrap;
   }
   nav a{
@@ -46,635 +36,307 @@
     background:rgba(255,255,255,0.75);
     border:1px solid rgba(0,0,0,0.06);
     padding:.5rem 1.1rem; border-radius:999px;
-    font-size:.85rem; font-weight:500;
-    transition:.2s;
+    font-size:.85rem; font-weight:500; transition:.2s;
   }
   nav a:hover{background:#fff; transform:translateY(-1px);}
   nav a.active{background:#e0ddd5;}
 
-  /* ===================== HERO COLLAGE ===================== */
+  /* ===================== HERO ===================== */
   .hero{
     position:relative;
     background:var(--cream);
     min-height:100vh;
     overflow:hidden;
-    padding-bottom:12rem;
+    padding-bottom:4rem;
   }
-  .hero-headline{
-    position:relative; z-index:1;
-    text-align:center;
-    padding:2.5rem 6vw 0;
+
+  .hero-inner{
+    display:grid;
+    grid-template-columns:260px 1fr 260px;
+    gap:1.5rem;
+    max-width:1300px;
+    margin:0 auto;
+    padding:2rem 3vw 0;
+    align-items:start;
+  }
+
+  /* LEFT */
+  .hero-left{
+    display:flex; flex-direction:column; gap:1.2rem;
+    padding-top:1rem;
+  }
+  .hero-travel-photo{
+    width:170px;
+    background:#fff;
+    border-radius:14px;
+    padding:.5rem;
+    box-shadow:0 8px 24px rgba(0,0,0,0.13);
+    transform:rotate(-4deg);
+    margin-bottom:.2rem;
+  }
+  .hero-travel-photo img{
+    width:100%; height:150px; object-fit:cover; border-radius:10px;
+  }
+  .photo-caption{
+    font-size:.68rem; color:var(--soft); text-align:center;
+    margin-top:.35rem; font-style:italic; line-height:1.3;
+  }
+  .info-card{
+    background:#fff; border-radius:16px;
+    padding:.85rem 1rem;
+    display:flex; align-items:center; gap:.8rem;
+    box-shadow:0 3px 14px rgba(0,0,0,0.07);
+  }
+  .info-icon{
+    width:42px; height:42px; border-radius:13px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.25rem; flex-shrink:0;
+  }
+  .ic-pink{background:#fde8ef;}
+  .ic-yellow{background:#fef6e4;}
+  .ic-blue{background:#e8f0fe;}
+  .ic-green{background:#e6f4ea;}
+  .ic-purple{background:#f3eeff;}
+  .info-label{font-weight:800; font-size:.88rem; color:var(--ink);}
+  .info-sub{font-size:.75rem; color:var(--soft); margin-top:.1rem; line-height:1.35;}
+
+  /* CENTER */
+  .hero-center{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
   }
   .hero-eyebrow{
-    font-size:1.1rem; letter-spacing:.5em; text-transform:uppercase;
-    font-weight:500; color:var(--soft); opacity:.85;
-    margin-bottom:.4rem;
+    font-size:.95rem; letter-spacing:.5em; text-transform:uppercase;
+    font-weight:600; color:var(--rose); margin-bottom:.25rem;
   }
-  .hero-headline h1{
-    font-family:'Plus Jakarta Sans', sans-serif;
-    font-weight:800;
-    font-size:clamp(2.8rem, 10vw, 7.5rem);
-    line-height:.95;
-    letter-spacing:-0.02em;
-    text-transform:uppercase;
-    color:var(--ink);
+  .hero-h1{
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:800;
+    font-size:clamp(3rem,9vw,7rem);
+    line-height:.92; letter-spacing:-0.02em;
+    text-transform:uppercase; color:var(--ink);
   }
+  .hero-sub{
+    font-family:'DM Serif Display',serif; font-style:italic;
+    font-size:clamp(1.3rem,2.5vw,2rem);
+    color:var(--ink); margin:.5rem 0 0;
+    display:inline-block;
+  }
+  .hero-sub-line{
+    display:block; width:55%; margin:.2rem auto 0;
+  }
+  .hero-sub-line svg{width:100%; height:auto;}
 
-  .hero-photo-wrap{
-    position:relative; z-index:2;
-    display:flex; justify-content:center;
-    margin-top:-5rem;
+  /* Info card alternating tilts */
+  .info-card:nth-child(2){transform:rotate(-1.5deg);}
+  .info-card:nth-child(3){transform:rotate(1.5deg);}
+  .info-card:nth-child(4){transform:rotate(-1deg);}
+  .info-card:nth-child(5){transform:rotate(1.2deg);}
+
+  /* Skill card alternating tilts */
+  .skill-card:nth-child(1){transform:rotate(1.5deg);}
+  .skill-card:nth-child(2){transform:rotate(-1.2deg);}
+  .skill-card:nth-child(3){transform:rotate(1deg);}
+
+  .hero-arch-wrap{
+    position:relative; margin-top:1rem;
+    display:flex; justify-content:center; width:100%;
+    max-height:500px; overflow:hidden;
+  }
+  .hero-arch-bg{
+    position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+    width:320px; height:360px;
+    background:linear-gradient(180deg,#fde8ef 0%,#fce4b0 100%);
+    border-radius:180px 180px 0 0; z-index:0;
   }
   .hero-photo{
-    width:min(45vw, 450px);
-    height:auto;
-    object-fit:contain;
-}
-
-  /* Sticker base */
-  .sticker{
-    position:absolute;
-    z-index:3;
-    box-shadow:0 10px 26px rgba(0,0,0,0.12);
+    position:relative; z-index:1;
+    width:min(34vw,340px); height:auto; object-fit:contain;
   }
 
-  /* Designer, Thinker, Creator card */
-  .sticker-card{
-    width:330px;
-    background:#fdfbf6; color:var(--ink);
-    top:calc(34% - 50px); left:6%;
-    border-radius:18px;
-    padding:1.6rem 1.8rem;
-    text-align:center;
+  .hero-tagline-box{
+    background:#fff; border-radius:20px;
+    padding:1.3rem 1.8rem; margin-top:0;
+    box-shadow:0 4px 20px rgba(0,0,0,0.07);
+    max-width:440px; text-align:center;
   }
-  .sticker-card h3{font-size:1.15rem; font-weight:700; margin-bottom:.7rem;}
-  .sticker-card p{font-size:.88rem; line-height:1.65; color:#555; margin-bottom:1rem;}
-  .sticker-card .hire-link{
-    display:block; text-align:center;
-    border-top:1px solid var(--line);
-    padding-top:.9rem;
-    font-weight:700; color:#4a7cb5; text-decoration:none;
+  .tagline-main{font-weight:800; font-size:1.15rem; color:var(--ink); line-height:1.35;}
+  .tagline-main span{color:var(--rose);}
+  .tagline-sub{font-size:.86rem; color:var(--soft); margin-top:.45rem; line-height:1.6;}
+  .hire-link{
+    display:inline-block; margin-top:.85rem;
+    font-weight:700; color:var(--rose); text-decoration:none; font-size:.92rem;
   }
-  .sticker-card .hire-link:hover{text-decoration:underline;}
+  .hire-link:hover{text-decoration:underline;}
 
-  /* Skills tab */
-  .sticker-skills-tab{
-    top:calc(6% + 90px); right:14%;
-    background:var(--ink); color:#fff;
-    border-radius:14px;
-    padding:1rem 2.4rem;
-    font-weight:700; font-size:1.05rem;
-    transform:rotate(-2deg);
+  /* RIGHT */
+  .hero-right{
+    display:flex; flex-direction:column; gap:1.2rem;
+    padding-top:4rem;
   }
-
-  /* Skills list */
-  .sticker-skills-list{
-    top:calc(12% + 90px); right:4%;
-    width:280px;
-    background:#fdfbf6;
-    color:var(--ink);
-    border-radius:14px;
-    overflow:hidden;
-    transform:rotate(1deg);
+  .skill-card{
+    background:#fff; border-radius:16px;
+    padding:.85rem 1rem;
+    display:flex; align-items:center; gap:.8rem;
+    box-shadow:0 3px 14px rgba(0,0,0,0.07);
   }
-  .skill-row{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:.85rem 1.4rem; font-size:.95rem;
-    border-bottom:1px solid var(--line);
-  }
-  .skill-row:last-child{border-bottom:none;}
-  .skill-row.featured{
-    background:var(--pink); color:#b0436b; font-weight:700;
-  }
-  .skill-row .star{font-size:.85rem; opacity:.5;}
-  .skill-row.featured .star{opacity:1;}
-
-  /* Scattered white image boxes */
-  .sticker-img{
-    background:#fdfbf6;
-    border-radius:14px;
-    padding:.6rem;
-    overflow:visible;
-    cursor:pointer;
-    position:absolute;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .sticker-img img{
-    width:100%; height:100%; object-fit:cover;
-    border-radius:8px; display:block;
-  }
-  .sticker-img .img-pill{
-    position:absolute;
-    background:var(--ink); color:#fff;
-    font-weight:700; font-size:.85rem;
-    padding:.5rem 1.2rem; border-radius:999px;
-    white-space:nowrap;
-    pointer-events:none;
-    opacity:0;
-    transform:translate(-50%, -50%) scale(0.85);
-    transition:opacity .15s ease, transform .15s ease;
-    z-index:20;
-  }
-  .sticker-img:hover .img-pill{
-    opacity:1; transform:translate(-50%, -50%) scale(1);
-  }
-  .sticker-img-1:hover{
-    transform:rotate(-4deg) translateY(-6px) scale(1.04);
-    box-shadow:0 18px 36px rgba(0,0,0,0.18);
-  }
-  .sticker-img-2:hover{
-    transform:rotate(3deg) translateY(-6px) scale(1.04);
-    box-shadow:0 18px 36px rgba(0,0,0,0.18);
-  }
-  .sticker-img-3:hover{
-    transform:rotate(-2deg) translateY(-6px) scale(1.04);
-    box-shadow:0 18px 36px rgba(0,0,0,0.18);
-  }
-  .sticker-img-1{
-    top:4%; left:10%;
-    width:170px; height:170px;
-    transform:rotate(-4deg);
-  }
-  .sticker-img-2{
-    top:69%; left:9%;
-    width:190px; height:150px;
-    transform:rotate(3deg);
-  }
-  .sticker-img-3{
-    top:70%; right:6%;
-    width:200px; height:160px;
-    transform:rotate(-2deg);
-    z-index:5;
-  }
-
-  /* Tools dock */
-  .tools-dock{
-    position:relative; z-index:3;
-    max-width:900px; margin:18rem auto 0;
-    background:#fdfbf6;
-    border-radius:24px;
-    padding:1.2rem 1.6rem;
-    display:flex; gap:1.5rem; align-items:center; justify-content:center;
-    flex-wrap:nowrap;
-    box-shadow:0 14px 36px rgba(0,0,0,0.1);
-  }
-  .tools-dock-label{
-    position:absolute; top:-.7rem; left:1.2rem;
-    background:var(--ink); color:#fff;
-    font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
-    padding:.35rem .9rem; border-radius:999px;
-  }
-  .tool-icon{
-    width:56px; height:56px; border-radius:14px;
+  .skill-icon{
+    width:42px; height:42px; border-radius:13px;
     display:flex; align-items:center; justify-content:center;
-    font-size:1.4rem; font-weight:800; color:#fff;
-    flex-shrink:0; position:relative;
+    font-size:1.25rem; flex-shrink:0;
   }
-  .tool-icon.figma{background:#1e1e1e;}
-  .tool-icon.figma svg{width:24px; height:24px;}
-  .tool-icon.ps{background:#001e36; color:#31c5f4; font-size:1.5rem;}
-  .tool-icon.id{background:#49021f; color:#ff3366; font-size:1.5rem;}
-  .tool-icon.pr{background:#00005b; color:#9999ff; font-size:1.5rem;}
-  .tool-icon.ai{background:#330000; color:#ff9a00; font-size:1.5rem;}
-  .tool-icon.klaviyo{background:#fff; color:var(--ink); border:1px solid var(--line); font-family:'DM Serif Display',serif; font-style:italic; font-size:1.2rem; font-weight:400;}
-  .tool-icon.canva{background:linear-gradient(135deg,#00c4cc,#7d2ae8); font-size:1.4rem; font-style:italic;}
-  .tool-icon.claude{background:#cc785c; font-size:1.4rem;}
-  .tool-icon.chatgpt{background:#10a37f; font-size:1.4rem;}
-  .tool-icon.perplexity{background:#1f1f1f; color:#20b8cd; font-size:1.4rem;}
-  .tool-icon.gemini{background:linear-gradient(135deg,#4285f4,#9b72cb,#d96570); font-size:1.4rem;}
-  .tool-icon.googlelabs{background:#fff; color:#4285f4; border:1px solid var(--line); font-size:1.4rem;}
-  .tool-icon.notion{background:#fff; color:var(--ink); border:1px solid var(--line); font-size:1.4rem;}
-  .tool-icon.workflow{background:#ff6b4a;}
-  .tool-icon.office{background:#fff; color:#d35230; border:1px solid var(--line); font-size:1.4rem;}
-  .tool-icon.office .badge{
-    position:absolute; top:-6px; right:-6px;
-    width:18px; height:18px; border-radius:50%;
-    background:#ff453a; color:#fff; font-size:.65rem;
-    display:flex; align-items:center; justify-content:center; font-weight:700;
+  .skill-label{font-weight:800; font-size:.88rem; color:var(--ink);}
+  .skill-sub{font-size:.75rem; color:var(--soft); margin-top:.1rem; line-height:1.35;}
+
+  .camera-photo-wrap{position:relative; width:fit-content; align-self:flex-end; margin-top:.3rem;}
+  .hero-camera-photo{
+    background:#fff; border-radius:14px;
+    padding:.5rem;
+    box-shadow:0 8px 24px rgba(0,0,0,0.13);
+    transform:rotate(2deg);
+    width:170px;
   }
-  .tool-icon.suite{
-    background:#fff; border:1px solid var(--line);
-    display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr;
-    padding:6px; gap:3px;
+  .hero-camera-photo img{
+    width:100%; height:145px; object-fit:cover; border-radius:10px;
   }
-  .tool-icon.suite span{
-    border-radius:4px; display:flex; align-items:center; justify-content:center;
-    font-size:.6rem; font-weight:800; color:#fff;
-  }
-  .tool-icon.suite .lt{background:#e4405f;}
-  .tool-icon.suite .rt{background:#1877f2;}
-  .tool-icon.suite .lb{background:#9999ff; color:#00005b;}
-  .tool-icon.suite .rb{background:#9999ff; color:#00005b;}
+
   /* ===================== DESIGN WORK ===================== */
   .work-layout{
     max-width:1300px; margin:0 auto;
     padding:2.5rem 6vw 6rem;
-    display:grid;
-    grid-template-columns: 340px 1fr;
-    gap:2.5rem;
-    align-items:start;
+    display:grid; grid-template-columns:340px 1fr;
+    gap:2.5rem; align-items:start;
   }
-
-  /* --- Sidebar --- */
-  .work-sidebar{
-    position:sticky; top:5rem;
-    display:flex; flex-direction:column; gap:1.5rem;
-  }
-  .expertise-box{
-    background:#fdfbf6; border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    padding:1.8rem;
-  }
+  .work-sidebar{position:sticky; top:5rem; display:flex; flex-direction:column; gap:1.5rem;}
+  .expertise-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.8rem;}
   .expertise-box h3{font-size:1.2rem; margin-bottom:.5rem;}
   .expertise-box > p{font-size:.9rem; color:#666; line-height:1.6; margin-bottom:1.2rem;}
   .expertise-list{display:flex; flex-direction:column; gap:.7rem;}
-  .expertise-item{
-    text-align:center; font-weight:700; font-size:.95rem;
-    background:var(--cream); border-radius:999px;
-    padding:.8rem 1rem;
-  }
+  .expertise-item{text-align:center; font-weight:700; font-size:.95rem; background:var(--cream); border-radius:999px; padding:.8rem 1rem;}
   .expertise-item.lead{background:var(--pink); color:#b0436b;}
 
-  .education-box{
-    background:#fdfbf6; border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    padding:1.6rem;
-    display:flex; flex-direction:column; gap:1rem;
-  }
-  .education-item{
-    display:flex; align-items:center; gap:1rem;
-  }
-  .education-badge{
-    width:48px; height:48px; border-radius:50%;
-    flex-shrink:0;
-    overflow:hidden;
-    border:2px solid transparent;
-  }
+  .mystack-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.6rem;}
+  .mystack-box h3{font-size:1.1rem; font-weight:700; margin-bottom:1rem;}
+  .mystack-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;}
+  .mystack-icon{width:75%; aspect-ratio:1; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 auto;}
+  .mystack-icon img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  .education-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.6rem; display:flex; flex-direction:column; gap:1rem;}
+  .education-item{display:flex; align-items:center; gap:1rem;}
+  .education-badge{width:48px; height:48px; border-radius:50%; flex-shrink:0; overflow:hidden; border:2px solid transparent;}
   .education-badge img{width:100%; height:100%; object-fit:cover;}
   .education-item:nth-child(1) .education-badge{border-color:#caa24a;}
   .education-item:nth-child(2) .education-badge{border-color:#990000;}
   .education-info .degree{font-weight:700; font-size:.95rem;}
   .education-info .school{font-size:.85rem; color:var(--soft);}
 
-  .location-card{
-    background:#fdfbf6; border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    padding:1.4rem;
-    position:relative;
-  }
-  .location-photo{
-    border-radius:14px; overflow:hidden;
-    position:relative;
-  }
+  .location-card{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.4rem; position:relative;}
+  .location-photo{border-radius:14px; overflow:hidden; position:relative;}
   .location-photo img{width:100%; height:170px; object-fit:cover;}
-  .location-chat{
-    position:absolute; bottom:.8rem; right:.8rem;
-    display:flex; align-items:center; gap:.6rem;
-  }
-  .location-chat .bubble{
-    background:var(--sky); color:#2b5d80; font-weight:700;
-    border-radius:14px; padding:.6rem 1rem; font-size:.9rem;
-    display:inline-block;
-  }
+  .location-chat{position:absolute; bottom:.8rem; right:.8rem; display:flex; align-items:center; gap:.6rem;}
+  .location-chat .bubble{background:var(--sky); color:#2b5d80; font-weight:700; border-radius:14px; padding:.6rem 1rem; font-size:.9rem; display:inline-block;}
 
-  /* --- Work entries --- */
   .work-entries{display:flex; flex-direction:column; gap:2.5rem;}
-  .work-eyebrow{
-    font-size:.85rem; letter-spacing:.3em; text-transform:uppercase;
-    font-weight:700; color:var(--soft); margin-bottom:.5rem;
-  }
-  .journey-entry{
-    background:#fff; border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    padding:2rem;
-    position:relative;
-  }
-  .case-study-card{
-    cursor:pointer; position:relative;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .case-study-card:hover{
-    transform:translateY(-4px) scale(1.01);
-    box-shadow:0 16px 40px rgba(0,0,0,0.12);
-  }
+  .work-eyebrow{font-size:.85rem; letter-spacing:.3em; text-transform:uppercase; font-weight:700; color:var(--soft); margin-bottom:.5rem;}
+  .journey-entry{background:#fff; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:2rem; position:relative;}
+  .case-study-card{cursor:pointer; position:relative; transition:transform .2s ease, box-shadow .2s ease;}
+  .case-study-card:hover{transform:translateY(-4px) scale(1.01); box-shadow:0 16px 40px rgba(0,0,0,0.12);}
   .view-work-pill{
-    position:absolute;
-    background:#294c2e; color:#fff;
-    font-weight:700; font-size:.95rem;
-    padding:.7rem 1.6rem; border-radius:999px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.18);
-    opacity:0; pointer-events:none;
-    transform:translate(-50%, -50%) scale(0.9);
-    transition:opacity .15s ease, transform .15s ease;
-    z-index:10;
-    white-space:nowrap;
+    position:absolute; background:#294c2e; color:#fff;
+    font-weight:700; font-size:.95rem; padding:.7rem 1.6rem; border-radius:999px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.18); opacity:0; pointer-events:none;
+    transform:translate(-50%,-50%) scale(0.9); transition:opacity .15s ease, transform .15s ease;
+    z-index:10; white-space:nowrap;
   }
-  .case-study-card:hover .view-work-pill{
-    opacity:1; transform:translate(-50%, -50%) scale(1);
-  }
+  .case-study-card:hover .view-work-pill{opacity:1; transform:translate(-50%,-50%) scale(1);}
   .klinos-card .view-work-pill{background:#498cb7;}
   .third-places-card .view-work-pill{background:#294c2e;}
   .heroflow-card .view-work-pill{background:#d4a018;}
+  .bestbuy-card .view-work-pill{background:#153065;}
+  .cozymeal-card .view-work-pill{background:#e78b24;}
 
-  /* Gold theme (HeroFlow) */
-  .theme-gold .case-eyebrow{color:#d4a018;}
-  .theme-gold .cps-num{color:#d4a018;}
-  .theme-gold .case-list li::before{color:#d4a018;}
-  .theme-gold .mood-chip{background:#f7ecd2; color:#a07a10;}
-  .theme-gold .case-pullquote{color:#a07a10; background:#f7ecd2; border-left-color:#d4a018;}
-  .theme-gold .pitch-deck-btn{background:#d4a018;}
-  .theme-gold .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(212,160,24,0.3);}
+  /* Themes */
+  .theme-gold .case-eyebrow{color:#d4a018;} .theme-gold .cps-num{color:#d4a018;} .theme-gold .case-list li::before{color:#d4a018;} .theme-gold .mood-chip{background:#f7ecd2; color:#a07a10;} .theme-gold .case-pullquote{color:#a07a10; background:#f7ecd2; border-left-color:#d4a018;} .theme-gold .pitch-deck-btn{background:#d4a018;} .theme-gold .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(212,160,24,0.3);}
+  .theme-blue .case-eyebrow{color:#498cb7;} .theme-blue .cps-num{color:#498cb7;} .theme-blue .case-list li::before{color:#498cb7;} .theme-blue .mood-chip{background:#dbe9f2; color:#498cb7;} .theme-blue .case-pullquote{color:#498cb7; background:#dbe9f2; border-left-color:#498cb7;} .theme-blue .pitch-deck-btn{background:#498cb7;} .theme-blue .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(73,140,183,0.3);}
+  .theme-purple .case-eyebrow{color:#153065;} .theme-purple .cps-num{color:#153065;} .theme-purple .case-list li::before{color:#153065;} .theme-purple .mood-chip{background:#dbe2ee; color:#153065;} .theme-purple .case-pullquote{color:#153065; background:#dbe2ee; border-left-color:#153065;} .theme-purple .pitch-deck-btn{background:#153065;} .theme-purple .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(21,48,101,0.3);} .theme-purple .pitch-deck-btn.outline{color:#153065; border-color:#153065; background:transparent;}
+  .theme-orange .case-eyebrow{color:#e78b24;} .theme-orange .cps-num{color:#e78b24;} .theme-orange .case-list li::before{color:#e78b24;} .theme-orange .mood-chip{background:#fbe6cf; color:#b5651d;} .theme-orange .case-pullquote{color:#b5651d; background:#fbe6cf; border-left-color:#e78b24;} .theme-orange .pitch-deck-btn{background:#e78b24;} .theme-orange .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(231,139,36,0.3);} .theme-orange .pitch-deck-btn.outline{color:#b5651d; border-color:#e78b24; background:transparent;}
 
   /* MODAL */
-  .modal-overlay{
-    position:fixed; inset:0; z-index:100;
-    background:rgba(0,0,0,0.5);
-    display:flex; align-items:center; justify-content:center;
-    padding:2rem;
-    opacity:0; visibility:hidden;
-    transition:opacity .25s ease, visibility .25s;
-  }
+  .modal-overlay{position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s;}
   .modal-overlay.open{opacity:1; visibility:visible;}
-  .modal-window{
-    background:var(--cream);
-    border-radius:12px;
-    max-width:1120px; width:100%;
-    max-height:90vh; overflow-y:auto;
-    padding:0 2.5rem 2.5rem;
-    position:relative;
-    box-shadow:0 24px 60px rgba(0,0,0,0.25);
-    transform:translateY(20px) scale(0.98);
-    transition:transform .25s ease;
-  }
+  .modal-window{background:var(--cream); border-radius:12px; max-width:1120px; width:100%; max-height:90vh; overflow-y:auto; padding:0 2.5rem 2.5rem; position:relative; box-shadow:0 24px 60px rgba(0,0,0,0.25); transform:translateY(20px) scale(0.98); transition:transform .25s ease;}
   .modal-overlay.open .modal-window{transform:translateY(0) scale(1);}
-  .modal-window h2{
-    font-family:'DM Serif Display', serif; font-weight:400; font-size:2.6rem; margin-bottom:1rem;
-    line-height:1.1;
-  }
+  .modal-window h2{font-family:'DM Serif Display',serif; font-weight:400; font-size:2.6rem; margin-bottom:1rem; line-height:1.1;}
   .modal-intro{line-height:1.75; color:#444; margin-bottom:.9rem; font-size:1rem;}
-  .modal-intro:last-of-type{margin-bottom:1.5rem;}
-  .modal-close{
-    position:sticky; top:0; right:0; left:100%;
-    margin-bottom:-2.5rem;
-    background:var(--cream); border:none; font-size:1.2rem; cursor:pointer;
-    color:var(--ink); width:2rem; height:2rem;
-    display:flex; align-items:center; justify-content:center;
-    border-radius:50%; transition:background .2s;
-    z-index:1;
-  }
+  .modal-close{position:sticky; top:0; right:0; left:100%; margin-bottom:-2.5rem; background:var(--cream); border:none; font-size:1.2rem; cursor:pointer; color:var(--ink); width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:background .2s; z-index:1;}
   .modal-close:hover{background:rgba(0,0,0,0.06);}
-
-  .case-hero-img{
-    width:calc(100% + 5rem); max-width:none;
-    margin:-2.5rem -2.5rem 1.5rem;
-    height:500px; object-fit:cover;
-    border-radius:12px 12px 0 0;
-  }
-
-  /* Section labels & headings */
-  .case-eyebrow{
-    font-size:.78rem; letter-spacing:.25em; text-transform:uppercase;
-    font-weight:800; color:#294c2e;
-    margin-top:2.75rem;
-    padding-top:2.75rem;
-    border-top:1px solid var(--line);
-  }
+  .case-hero-img{width:calc(100% + 5rem); max-width:none; margin:-2.5rem -2.5rem 1.5rem; height:500px; object-fit:cover; border-radius:12px 12px 0 0;}
+  .case-eyebrow{font-size:.78rem; letter-spacing:.25em; text-transform:uppercase; font-weight:800; color:#294c2e; margin-top:2.75rem; padding-top:2.75rem; border-top:1px solid var(--line);}
   .case-eyebrow:first-of-type{margin-top:0; padding-top:0; border-top:none;}
   .case-eyebrow + *{margin-top:1rem;}
-  .case-h3{
-    font-family:'DM Serif Display', serif; font-weight:400;
-    font-size:1.5rem; line-height:1.35; color:var(--ink);
-    margin-bottom:1.2rem;
-  }
-  .case-body{
-    line-height:1.75; color:#444; font-size:.95rem; margin-bottom:.8rem;
-  }
-
-  .case-meta-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem;
-    margin:1.5rem 0;
-  }
-  .case-meta-card{
-    background:#fff; border-radius:12px; padding:1rem .8rem;
-    text-align:center;
-  }
+  .case-h3{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.5rem; line-height:1.35; color:var(--ink); margin-bottom:1.2rem;}
+  .case-body{line-height:1.75; color:#444; font-size:.95rem; margin-bottom:.8rem;}
+  .case-meta-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; margin:1.5rem 0;}
+  .case-meta-card{background:#fff; border-radius:12px; padding:1rem .8rem; text-align:center;}
   .case-meta-icon{font-size:1.4rem; margin-bottom:.4rem;}
-  .case-meta-label{
-    font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--soft); font-weight:700; margin-bottom:.3rem;
-  }
+  .case-meta-label{font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--soft); font-weight:700; margin-bottom:.3rem;}
   .case-meta-value{font-size:.85rem; font-weight:700; line-height:1.3;}
-
-  /* CPS steps */
-  .cps-steps{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
-  }
-  .cps-step{
-    background:#fff; border-radius:14px; padding:1.2rem;
-  }
-  .cps-num{
-    font-family:'DM Serif Display', serif; font-style:italic;
-    font-size:1.6rem; color:#294c2e; margin-bottom:.4rem;
-  }
+  .cps-steps{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;}
+  .cps-step{background:#fff; border-radius:14px; padding:1.2rem;}
+  .cps-num{font-family:'DM Serif Display',serif; font-style:italic; font-size:1.6rem; color:#294c2e; margin-bottom:.4rem;}
   .cps-title{font-weight:800; font-size:1rem; margin-bottom:.4rem;}
   .cps-step p{font-size:.85rem; line-height:1.6; color:#555;}
-
-  /* Persona */
-  .case-persona{
-    display:flex; gap:1.2rem; align-items:center;
-    background:#fff; border-radius:14px; padding:1.2rem;
-    margin-bottom:1rem;
-  }
-  .case-persona img{
-    width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0;
-  }
+  .case-persona{display:flex; gap:1.2rem; align-items:center; background:#fff; border-radius:14px; padding:1.2rem; margin-bottom:1rem;}
+  .case-persona img{width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0;}
   .case-persona-name{font-weight:800; font-size:1.05rem; margin-bottom:.2rem;}
   .case-persona-sub{font-size:.85rem; color:var(--soft);}
-
-  .case-list{
-    list-style:none; display:flex; flex-direction:column; gap:.5rem;
-    margin:1rem 0 0; font-size:.9rem; color:#444; line-height:1.6;
-  }
+  .case-list{list-style:none; display:flex; flex-direction:column; gap:.5rem; margin:1rem 0 0; font-size:.9rem; color:#444; line-height:1.6;}
   .case-list li::before{content:"→ "; color:#294c2e; font-weight:800;}
-
   .mood-grid{display:flex; flex-wrap:wrap; gap:.6rem;}
-  .mood-chip{
-    background:#e3ede4; color:#294c2e;
-    font-weight:600; font-size:.8rem;
-    padding:.4rem .9rem; border-radius:999px;
-  }
-
-  .case-pullquote{
-    font-family:'DM Serif Display', serif; font-style:italic;
-    font-size:1.3rem; line-height:1.7; color:#294c2e;
-    background:#e3ede4;
-    border-left:4px solid #294c2e;
-    border-radius:0 12px 12px 0;
-    padding:1.2rem 1.6rem;
-    margin:1.6rem 0;
-  }
-
-  /* Solution grid */
-  .solution-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:1rem;
-    margin-bottom:1rem;
-  }
-  .solution-card{
-    background:#fff; border-radius:14px; padding:1.2rem;
-  }
+  .mood-chip{background:#e3ede4; color:#294c2e; font-weight:600; font-size:.8rem; padding:.4rem .9rem; border-radius:999px;}
+  .case-pullquote{font-family:'DM Serif Display',serif; font-style:italic; font-size:1.3rem; line-height:1.7; color:#294c2e; background:#e3ede4; border-left:4px solid #294c2e; border-radius:0 12px 12px 0; padding:1.2rem 1.6rem; margin:1.6rem 0;}
+  .solution-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:1rem;}
+  .solution-card{background:#fff; border-radius:14px; padding:1.2rem;}
   .solution-icon{font-size:1.6rem; margin-bottom:.5rem;}
   .solution-title{font-weight:800; font-size:.95rem; margin-bottom:.4rem;}
   .solution-card p{font-size:.85rem; line-height:1.6; color:#555;}
-
-  .pitch-deck-btn{
-    display:inline-block;
-    background:#294c2e; color:#fff;
-    font-weight:700; font-size:.95rem;
-    padding:.9rem 2.2rem; border-radius:999px;
-    text-decoration:none;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .pitch-deck-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(41,76,46,0.3);
-  }
-  .pitch-deck-btn.outline{
-    background:transparent; color:#294c2e;
-    border:2px solid #294c2e;
-  }
+  .pitch-deck-btn{display:inline-block; background:#294c2e; color:#fff; font-weight:700; font-size:.95rem; padding:.9rem 2.2rem; border-radius:999px; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease;}
+  .pitch-deck-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(41,76,46,0.3);}
+  .pitch-deck-btn.outline{background:transparent; color:#294c2e; border:2px solid #294c2e;}
   .theme-blue .pitch-deck-btn.outline{color:#498cb7; border-color:#498cb7; background:transparent;}
   .theme-gold .pitch-deck-btn.outline{color:#a07a10; border-color:#d4a018; background:transparent;}
   .case-btn-group{display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;}
-
-  /* Blue theme (Klinos) */
-  .theme-blue .case-eyebrow{color:#498cb7;}
-  .theme-blue .cps-num{color:#498cb7;}
-  .theme-blue .case-list li::before{color:#498cb7;}
-  .theme-blue .mood-chip{background:#dbe9f2; color:#498cb7;}
-  .theme-blue .case-pullquote{color:#498cb7; background:#dbe9f2; border-left-color:#498cb7;}
-  .theme-blue .pitch-deck-btn{background:#498cb7;}
-  .theme-blue .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(73,140,183,0.3);}
-
-  /* Purple theme (Best Buy) */
-  .theme-purple .case-eyebrow{color:#153065;}
-  .theme-purple .cps-num{color:#153065;}
-  .theme-purple .case-list li::before{color:#153065;}
-  .theme-purple .mood-chip{background:#dbe2ee; color:#153065;}
-  .theme-purple .case-pullquote{color:#153065; background:#dbe2ee; border-left-color:#153065;}
-  .theme-purple .pitch-deck-btn{background:#153065;}
-  .theme-purple .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(21,48,101,0.3);}
-  .theme-purple .pitch-deck-btn.outline{color:#153065; border-color:#153065; background:transparent;}
-  .bestbuy-card .view-work-pill{background:#153065;}
-
-  /* Orange theme (Cozymeal) */
-  .theme-orange .case-eyebrow{color:#e78b24;}
-  .theme-orange .cps-num{color:#e78b24;}
-  .theme-orange .case-list li::before{color:#e78b24;}
-  .theme-orange .mood-chip{background:#fbe6cf; color:#b5651d;}
-  .theme-orange .case-pullquote{color:#b5651d; background:#fbe6cf; border-left-color:#e78b24;}
-  .theme-orange .pitch-deck-btn{background:#e78b24;}
-  .theme-orange .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(231,139,36,0.3);}
-  .theme-orange .pitch-deck-btn.outline{color:#b5651d; border-color:#e78b24; background:transparent;}
-  .cozymeal-card .view-work-pill{background:#e78b24;}
-
-  .journey-header{
-    display:flex; gap:1.2rem; align-items:flex-start;
-    margin-bottom:1.5rem;
-  }
-  .journey-logo{
-    width:48px; height:48px; border-radius:10px;
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; font-size:1.1rem; color:#fff; flex-shrink:0;
-    overflow:hidden;
-  }
+  .journey-header{display:flex; gap:1.2rem; align-items:flex-start; margin-bottom:1.5rem;}
+  .journey-logo{width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.1rem; color:#fff; flex-shrink:0; overflow:hidden;}
   .journey-logo img{width:100%; height:100%; object-fit:cover;}
   .journey-meta{flex:1;}
   .journey-meta .org{font-size:1.2rem; font-weight:700;}
   .journey-meta .role{font-size:.95rem; font-weight:600; color:#555; margin:.2rem 0 .6rem;}
-  .journey-meta .desc{font-size:.9rem; color:#666; line-height:1.7;}
-  .journey-dates{
-    font-size:.85rem; color:var(--soft); white-space:nowrap;
-    flex-shrink:0;
-  }
-
-  .journey-gallery{
-    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px;
-    gap:.8rem;
-    margin-bottom:1.2rem;
-  }
-  .journey-gallery img{
-    width:100%; height:100%; object-fit:cover; border-radius:10px;
-  }
+  .journey-dates{font-size:.85rem; color:var(--soft); white-space:nowrap; flex-shrink:0;}
+  .journey-gallery{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:.8rem; margin-bottom:1.2rem;}
+  .journey-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px;}
   .journey-gallery .wide{grid-column:span 2;}
-
   .journey-tags{display:flex; flex-wrap:wrap; gap:.5rem;}
-  .journey-tag{
-    font-size:.8rem; font-weight:600;
-    padding:.4rem .9rem; border-radius:999px;
-  }
+  .journey-tag{font-size:.8rem; font-weight:600; padding:.4rem .9rem; border-radius:999px;}
+  .journey-entry:nth-child(2) .journey-logo{background:#498cb7;} .journey-entry:nth-child(2) .journey-tag{background:#dbe9f2; color:#498cb7;}
+  .journey-entry:nth-child(3) .journey-logo{background:#294c2e;} .journey-entry:nth-child(3) .journey-tag{background:#dfeee1; color:#294c2e;}
+  .journey-entry:nth-child(4) .journey-logo{background:#d4a018;} .journey-entry:nth-child(4) .journey-tag{background:#f7ecd2; color:#a07a10;}
+  .journey-entry:nth-child(5) .journey-logo{background:#153065;} .journey-entry:nth-child(5) .journey-tag{background:#dbe2ee; color:#153065;}
+  .journey-entry:nth-child(6) .journey-logo{background:#e78b24;} .journey-entry:nth-child(6) .journey-tag{background:#fbe6cf; color:#e78b24;}
 
-  /* org-specific accent colors using the cream/yellow/sky/pink/purple/green palette */
-  .journey-entry:nth-child(2) .journey-logo{background:#498cb7;}
-  .journey-entry:nth-child(2) .journey-tag{background:#dbe9f2; color:#498cb7;}
-  .journey-entry:nth-child(3) .journey-logo{background:#294c2e;}
-  .journey-entry:nth-child(3) .journey-tag{background:#dfeee1; color:#294c2e;}
-  .journey-entry:nth-child(4) .journey-logo{background:#d4a018;}
-  .journey-entry:nth-child(4) .journey-tag{background:#f7ecd2; color:#a07a10;}
-  .journey-entry:nth-child(5) .journey-logo{background:#153065;}
-  .journey-entry:nth-child(5) .journey-tag{background:#dbe2ee; color:#153065;}
-  .journey-entry:nth-child(6) .journey-logo{background:#e78b24;}
-  .journey-entry:nth-child(6) .journey-tag{background:#fbe6cf; color:#e78b24;}
-
-  /* ===================== CONTACT / FOOTER ===================== */
-  .contact-grid{
-    max-width:1300px; margin:0 auto;
-    padding:4rem 6vw 10rem;
-    text-align:center;
-  }
-  .contact-headline{
-    font-family:'Plus Jakarta Sans', sans-serif;
-    font-weight:800; font-size:clamp(2.5rem, 6vw, 4rem);
-    line-height:1.1; text-transform:uppercase; margin-bottom:1.5rem;
-  }
+  /* CONTACT */
+  .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
+  .contact-headline{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(2.5rem,6vw,4rem); line-height:1.1; text-transform:uppercase; margin-bottom:1.5rem;}
   .contact-buttons{display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-bottom:4rem;}
-  .contact-btn{
-    text-decoration:none; font-weight:700; font-size:.95rem;
-    padding:.9rem 1.8rem; border-radius:999px;
-    border:2px solid var(--ink); color:var(--ink);
-    transition:.2s;
-  }
+  .contact-btn{text-decoration:none; font-weight:700; font-size:.95rem; padding:.9rem 1.8rem; border-radius:999px; border:2px solid var(--ink); color:var(--ink); transition:.2s;}
   .contact-btn.primary{background:var(--ink); color:#fff;}
   .contact-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
 
-  .mystack-box{
-  background:#fdfbf6; border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  padding:1.6rem;
-}
-.mystack-box h3{font-size:1.1rem; font-weight:700; margin-bottom:1rem;}
-.mystack-grid{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
-}
-.mystack-icon{
-  width:75%; aspect-ratio:1;
-  border-radius:12px; overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
-  margin:0 auto;
-}
-.mystack-icon img{width:100%; height:100%; object-fit:cover; display:block;}
-
-  /* ===================== RESPONSIVE ===================== */
-  @media (max-width: 1000px){
-    .hero{padding-bottom:3rem;}
-    .hero-headline{padding-top:2rem;}
-    .hero-photo-wrap{margin-top:1rem;}
-    .hero-photo{width:80vw;}
-    .sticker{position:static; transform:none !important; width:100% !important; max-width:380px; margin:1rem auto;}
-    .sticker-skills-tab{width:fit-content !important; margin:1rem auto;}
-    .sticker-img{height:200px !important;}
-    .tools-dock{margin:2rem auto; max-width:90vw; gap:.6rem; padding:1rem .8rem;}
-    .tool-icon{width:42px; height:42px; font-size:1.1rem;}
-    .tool-icon.figma svg{width:18px; height:18px;}
+  /* RESPONSIVE */
+  @media(max-width:1000px){
+    .hero-inner{grid-template-columns:1fr; padding:1.5rem;}
+    .hero-left,.hero-right{flex-direction:row; flex-wrap:wrap; gap:.7rem; padding-top:0;}
+    .info-card,.skill-card{flex:1; min-width:180px;}
+    .hero-travel-photo,.hero-camera-photo{display:none;}
+    .hero-arch-bg{width:240px; height:260px;}
     .work-layout{grid-template-columns:1fr;}
     .work-sidebar{position:static;}
     .journey-header{flex-direction:column;}
@@ -685,7 +347,6 @@
     .solution-grid{grid-template-columns:repeat(2,1fr) !important;}
     .case-hero-img{width:calc(100% + 3rem); margin:-1.5rem -1.5rem 1.5rem; height:180px;}
     .modal-window{padding:1.5rem;}
-    .case-persona{flex-direction:column; text-align:center;}
     .case-eyebrow{margin-top:1.8rem;}
   }
 </style>
@@ -700,48 +361,99 @@
 
 <!-- HERO -->
 <header class="hero" id="hero">
-  <div class="hero-headline">
-    <div class="hero-eyebrow">Product</div>
-    <h1>Designer</h1>
-  </div>
+  <div class="hero-inner">
 
-  <div class="hero-photo-wrap">
-    <img class="hero-photo" src="herophoto.png" alt="Portrait of Aashwini, a multimedia designer.">
-  </div>
+    <!-- LEFT COLUMN -->
+    <div class="hero-left">
+      <div class="hero-travel-photo">
+        <img src="metravel.jpg" alt="Explorer">
+        <div class="photo-caption">exploring new places, always</div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon ic-green">🟢</div>
+        <div>
+          <div class="info-label">Open to Opportunities</div>
+          <div class="info-sub">Available for full-time &amp; freelance roles</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon ic-yellow">☕</div>
+        <div>
+          <div class="info-label">Coffee Lover</div>
+          <div class="info-sub">Powered by coffee, driven by purpose</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon ic-blue">🏎️</div>
+        <div>
+          <div class="info-label">F1 &amp; Cricket Fan</div>
+          <div class="info-sub">Rooting loud, always 🏎️</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon ic-yellow">🐾</div>
+        <div>
+          <div class="info-label">Dog Lover</div>
+          <div class="info-sub">Goldie &amp; Huskies have my &lt;3</div>
+        </div>
+      </div>
+    </div>
 
-  <div class="sticker sticker-img sticker-img-1" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
-    <span class="img-pill">Explorer ✈️</span>
-    <img src="metravel.jpg" alt="Travelling.">
-  </div>
+    <!-- CENTER COLUMN -->
+    <div class="hero-center">
+      <div class="hero-eyebrow">Product</div>
+      <div class="hero-h1">Designer</div>
+      <span class="hero-sub">Designer. Thinker. Creator.</span>
+      <span class="hero-sub-line">
+        <svg viewBox="0 0 200 18" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M 5 12 Q 50 2, 100 10 Q 150 18, 195 8" stroke="#e8547a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
 
-  <div class="sticker sticker-card">
-    <h3>Designer, Thinker, Creator</h3>
-    <p>I'm a UI/UX designer passionate about turning complex problems into simple, seamless experiences. By balancing user needs with business goals, I create intuitive digital products that are meaningful, easy to use, and built to make an impact. ✨</p>
-    <a href="#connect" class="hire-link">Let's connect!</a>
-  </div>
+      <div class="hero-arch-wrap">
+        <div class="hero-arch-bg"></div>
+        <img class="hero-photo" src="herophoto.png" alt="Portrait of Aashwini.">
+      </div>
 
-  <div class="sticker sticker-img sticker-img-2" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
-    <span class="img-pill">Dog Lover 🐾</span>
-    <img src="medog.jpg" alt="With my dog.">
-  </div>
+      <div class="hero-tagline-box">
+        <div class="tagline-main">UI/UX designer passionate about turning complex problems into simple, seamless experiences.</div>
+        <div class="tagline-sub">By balancing user needs with business goals, I create intuitive digital products that are meaningful, easy to use, and built to make an impact. ✨</div>
+        <a href="#connect" class="hire-link">Let's connect!</a>
+      </div>
+    </div>
 
-  <div class="sticker sticker-skills-tab">Skills</div>
+    <!-- RIGHT COLUMN -->
+    <div class="hero-right">
+      <div class="skill-card">
+        <div class="skill-icon ic-pink">🖥️</div>
+        <div>
+          <div class="skill-label">Product Design</div>
+          <div class="skill-sub">Designing seamless digital experiences</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon ic-yellow">✏️</div>
+        <div>
+          <div class="skill-label">Brand Design</div>
+          <div class="skill-sub">Crafting brands that connect &amp; inspire</div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon ic-purple">🤖</div>
+        <div>
+          <div class="skill-label">AI Products</div>
+          <div class="skill-sub">Exploring the future of intelligent experiences</div>
+        </div>
+      </div>
+      <div class="hero-camera-photo" style="align-self:flex-end; margin-top:.3rem;">
+        <img src="mecamera.jpg" alt="Photographer">
+        <div class="photo-caption">capturing moments, telling stories</div>
+      </div>
+    </div>
 
-  <div class="sticker sticker-skills-list">
-    <div class="skill-row"><span>UX/UI Design</span><span class="star">★</span></div>
-    <div class="skill-row"><span>Digital Design</span><span class="star">★</span></div>
-    <div class="skill-row"><span>Social Creatives</span><span class="star">★</span></div>
-    <div class="skill-row"><span>Branding</span><span class="star">★</span></div>
-    <div class="skill-row featured"><span>0→1 Products</span><span class="star">★</span></div>
-    <div class="skill-row"><span>Figma</span><span class="star">★</span></div>
-  </div>
-
-  <div class="sticker sticker-img sticker-img-3" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.img-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';">
-    <span class="img-pill">Photographer 📷</span>
-    <img src="mecamera.jpg" alt="With my camera.">
   </div>
 </header>
-  
+
 <!-- DESIGN WORK -->
 <section class="work-layout" id="journey">
   <aside class="work-sidebar">
@@ -758,49 +470,40 @@
         <span class="expertise-item">AI Optimization</span>
       </div>
     </div>
-
     <div class="mystack-box">
-  <h3>My Stack</h3>
-  <div class="mystack-grid">
-    <div class="mystack-icon"><img src="figma.png" alt="Figma"></div>
-    <div class="mystack-icon"><img src="photoshop.png" alt="Photoshop"></div>
-    <div class="mystack-icon"><img src="illustrator.png" alt="Illustrator"></div>
-    <div class="mystack-icon"><img src="canva.png" alt="Canva"></div>
-    <div class="mystack-icon"><img src="claude.png" alt="Claude"></div>
-    <div class="mystack-icon"><img src="chatgpt.png" alt="ChatGPT"></div>
-    <div class="mystack-icon"><img src="gemini.png" alt="Gemini"></div>
-    <div class="mystack-icon"><img src="googlelab.png" alt="Google Labs"></div>
-    <div class="mystack-icon"><img src="notion.png" alt="Notion"></div>
-  </div>
-</div>
-    
+      <h3>My Stack</h3>
+      <div class="mystack-grid">
+        <div class="mystack-icon"><img src="figma.png" alt="Figma"></div>
+        <div class="mystack-icon"><img src="photoshop.png" alt="Photoshop"></div>
+        <div class="mystack-icon"><img src="illustrator.png" alt="Illustrator"></div>
+        <div class="mystack-icon"><img src="canva.png" alt="Canva"></div>
+        <div class="mystack-icon"><img src="claude.png" alt="Claude"></div>
+        <div class="mystack-icon"><img src="chatgpt.png" alt="ChatGPT"></div>
+        <div class="mystack-icon"><img src="gemini.png" alt="Gemini"></div>
+        <div class="mystack-icon"><img src="googlelab.png" alt="Google Labs"></div>
+        <div class="mystack-icon"><img src="notion.png" alt="Notion"></div>
+      </div>
+    </div>
     <div class="education-box">
       <div class="education-item">
-        <div class="education-badge">
-          <img src="purdue.png" alt="Purdue University campus.">
-        </div>
+        <div class="education-badge"><img src="purdue.png" alt="Purdue"></div>
         <div class="education-info">
           <div class="degree">B.S. in UX Design</div>
           <div class="school">Purdue University '24</div>
         </div>
       </div>
       <div class="education-item">
-        <div class="education-badge">
-          <img src="usc.png" alt="University of Southern California campus.">
-        </div>
+        <div class="education-badge"><img src="usc.png" alt="USC"></div>
         <div class="education-info">
           <div class="degree">M.S. in Integrated Design, Business &amp; Technology</div>
           <div class="school">University of Southern California '26</div>
         </div>
       </div>
     </div>
-
     <div class="location-card">
       <div class="location-photo">
         <img src="la.png" alt="Los Angeles, USA.">
-        <div class="location-chat">
-          <div class="bubble">📍 Los Angeles, USA</div>
-        </div>
+        <div class="location-chat"><div class="bubble">📍 Los Angeles, USA</div></div>
       </div>
     </div>
   </aside>
@@ -812,7 +515,7 @@
     <div class="journey-entry case-study-card klinos-card" onclick="document.getElementById('klinos-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="klinoscoverlogo.png?w=200&q=80" alt="Klinos project icon."></div>
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="klinoscoverlogo.png" alt="Klinos"></div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#498cb7;">Klinos</div>
           <div class="role" style="font-weight:400;">Designing a Healthcare Platform That Eliminates Fragmentation Through Coordination</div>
@@ -820,17 +523,11 @@
         <div class="journey-dates">Spring 2026</div>
       </div>
       <div class="journey-tags">
-        <span class="journey-tag">Figma</span>
-        <span class="journey-tag">User Research</span>
-        <span class="journey-tag">Branding</span>
-        <span class="journey-tag">Pitch Deck</span>
-        <span class="journey-tag">Prototyping</span>
-        <span class="journey-tag">AI Utilization</span>
-        <span class="journey-tag">Design Systems</span>
+        <span class="journey-tag">Figma</span><span class="journey-tag">User Research</span><span class="journey-tag">Branding</span><span class="journey-tag">Pitch Deck</span><span class="journey-tag">Prototyping</span><span class="journey-tag">AI Utilization</span><span class="journey-tag">Design Systems</span>
       </div>
       <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0; grid-template-columns:repeat(2,1fr);">
-  <img src="klinoslaptop.png" alt="klinos web">
-  <img src="klinosscreensbg.png" alt="klinos mobile">
+        <img src="klinoslaptop.png" alt="klinos web">
+        <img src="klinosscreensbg.png" alt="klinos mobile">
       </div>
     </div>
 
@@ -838,7 +535,7 @@
     <div class="journey-entry case-study-card third-places-card" onclick="document.getElementById('third-places-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="agoracoverlogo.png" alt="Third Place (Agora) project icon."></div>
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="agoracoverlogo.png" alt="Agora"></div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#294c2e;">Third Places (Agora)</div>
           <div class="role" style="font-weight:400;">Designing a Platform That Helps People Discover Community Beyond Home and Work</div>
@@ -846,26 +543,20 @@
         <div class="journey-dates">Fall 2024</div>
       </div>
       <div class="journey-tags">
-        <span class="journey-tag">Figma</span>
-        <span class="journey-tag">User Personas</span>
-        <span class="journey-tag">Morphological Analysis</span>
-        <span class="journey-tag">CPS Framework</span>
-        <span class="journey-tag">User Journey Mapping</span>
-        <span class="journey-tag">Business Model Canvas</span>
-        <span class="journey-tag">Physical Prototyping</span>
+        <span class="journey-tag">Figma</span><span class="journey-tag">User Personas</span><span class="journey-tag">Morphological Analysis</span><span class="journey-tag">CPS Framework</span><span class="journey-tag">User Journey Mapping</span><span class="journey-tag">Business Model Canvas</span><span class="journey-tag">Physical Prototyping</span>
       </div>
       <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0;">
         <img class="wide" src="agoracover.png" alt="agora cover">
-        <img src="agoracup.png?w=400&q=80" alt="agora cup">
-        <img src="agoratote.png?w=400&q=80" alt="agora tote">
+        <img src="agoracup.png" alt="agora cup">
+        <img src="agoratote.png" alt="agora tote">
       </div>
     </div>
 
-    <!-- HeroFlow for Lemonlight -->
+    <!-- HeroFlow -->
     <div class="journey-entry case-study-card heroflow-card" onclick="document.getElementById('heroflow-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&q=80" alt="HeroFlow project icon."></div>
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&q=80" alt="HeroFlow"></div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#d4a018;">HeroFlow for Lemonlight Studios</div>
           <div class="role" style="font-weight:400;">Designing an AI-Powered Video Intelligence Platform to Unlock the Value of Untapped Video Content</div>
@@ -873,24 +564,20 @@
         <div class="journey-dates">5 Day Sprint</div>
       </div>
       <div class="journey-tags">
-        <span class="journey-tag">Product Strategy</span>
-        <span class="journey-tag">AI Workflow Mapping</span>
-        <span class="journey-tag">AI Product Design</span>
-        <span class="journey-tag">Pitch Deck Design</span>
-        <span class="journey-tag">Extensive Research</span>
+        <span class="journey-tag">Product Strategy</span><span class="journey-tag">AI Workflow Mapping</span><span class="journey-tag">AI Product Design</span><span class="journey-tag">Pitch Deck Design</span><span class="journey-tag">Extensive Research</span>
       </div>
       <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0;">
-        <img class="wide" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="AI video platform dashboard showing footage library.">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Mobile screen showing AI-tagged video clips.">
-        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="Workflow diagram for AI video repurposing.">
+        <img class="wide" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="HeroFlow dashboard.">
+        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Mobile screen.">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="Workflow diagram.">
       </div>
     </div>
 
-    <!-- Best Buy Internal -->
+    <!-- Best Buy -->
     <div class="journey-entry case-study-card bestbuy-card" onclick="document.getElementById('bestbuy-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=200&q=80" alt="Best Buy Internal project icon."></div>
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=200&q=80" alt="Best Buy"></div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#153065;">Best Buy Connect</div>
           <div class="role" style="font-weight:400;">Redesigning Internal Communication by Listening to What Employees Actually Needed</div>
@@ -898,19 +585,12 @@
         <div class="journey-dates">12 Weeks</div>
       </div>
       <div class="journey-tags">
-        <span class="journey-tag">Figma</span>
-        <span class="journey-tag">FigJam</span>
-        <span class="journey-tag">User Interviews</span>
-        <span class="journey-tag">Competitive Analysis</span>
-        <span class="journey-tag">CPS Framework</span>
-        <span class="journey-tag">Design Systems</span>
-        <span class="journey-tag">High-Fidelity Prototyping</span>
-        <span class="journey-tag">Usability Testing</span>
+        <span class="journey-tag">Figma</span><span class="journey-tag">FigJam</span><span class="journey-tag">User Interviews</span><span class="journey-tag">Competitive Analysis</span><span class="journey-tag">CPS Framework</span><span class="journey-tag">Design Systems</span><span class="journey-tag">High-Fidelity Prototyping</span><span class="journey-tag">Usability Testing</span>
       </div>
       <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0;">
-        <img class="wide" src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=700&q=80" alt="Internal communication platform homepage feed.">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Mobile screen showing employee groups page.">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80" alt="Team collaborating on a design system.">
+        <img class="wide" src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=700&q=80" alt="Best Buy platform.">
+        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Groups page.">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80" alt="Design system.">
       </div>
     </div>
 
@@ -918,7 +598,7 @@
     <div class="journey-entry case-study-card cozymeal-card" onclick="document.getElementById('cozymeal-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=200&q=80" alt="Cozymeal project icon."></div>
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=200&q=80" alt="Cozymeal"></div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#e78b24;">Cozymeal</div>
           <div class="role" style="font-weight:400;">Reimagining a Culinary Marketplace Through a More Human and Memorable Brand Identity</div>
@@ -926,18 +606,12 @@
         <div class="journey-dates">Spring 2023</div>
       </div>
       <div class="journey-tags">
-        <span class="journey-tag">Rebranding</span>
-        <span class="journey-tag">Logo Design</span>
-        <span class="journey-tag">Design System</span>
-        <span class="journey-tag">Merchandise Design</span>
-        <span class="journey-tag">Brand Strategy</span>
-        <span class="journey-tag">Print Design</span>
-        <span class="journey-tag">Social Media Design</span>
+        <span class="journey-tag">Rebranding</span><span class="journey-tag">Logo Design</span><span class="journey-tag">Design System</span><span class="journey-tag">Merchandise Design</span><span class="journey-tag">Brand Strategy</span><span class="journey-tag">Print Design</span><span class="journey-tag">Social Media Design</span>
       </div>
       <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0;">
-        <img class="wide" src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=700&q=80" alt="Cozymeal logo and design system applied to packaging.">
-        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&q=80" alt="Cozymeal brand identity moodboard.">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Cozymeal branded merchandise and print materials.">
+        <img class="wide" src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=700&q=80" alt="Cozymeal packaging.">
+        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&q=80" alt="Brand moodboard.">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="Merchandise.">
       </div>
     </div>
   </div>
@@ -947,9 +621,7 @@
 <div class="modal-overlay" id="third-places-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window">
     <button class="modal-close" onclick="document.getElementById('third-places-modal').classList.remove('open')" aria-label="Close">✕</button>
-
-    <img class="case-hero-img" src="agoracover.png?w=1000&q=80" alt="People gathering and connecting in a community third place space.">
-
+    <img class="case-hero-img" src="agoracover.png" alt="Agora cover.">
     <div class="case-eyebrow">01 - Why Third Places?</div>
     <h2 style="color:#294c2e;">Agora <span class="serif">- Third Places</span></h2>
     <p class="modal-intro">When people talk about what makes cities feel vibrant, they rarely mention infrastructure or technology.</p>
@@ -957,184 +629,74 @@
     <p class="modal-intro">These spaces, often called third places, exist outside of home and work and play a critical role in building community, creativity, and belonging.</p>
     <p class="modal-intro">Yet despite growing interest in meaningful social connection, these spaces are becoming increasingly difficult to find, sustain, and incorporate into everyday life.</p>
     <p class="modal-intro">Our team set out to explore why.</p>
-
-    <div class="case-pullquote">
-      "What if the most important places in your life aren't where you live or work, but the spaces in between?"
-    </div>
-
+    <div class="case-pullquote">"What if the most important places in your life aren't where you live or work, but the spaces in between?"</div>
     <div class="case-meta-grid">
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🎨</div>
-        <div class="case-meta-label">My Role</div>
-        <div class="case-meta-value">UX/UI Designer &amp; Researcher</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">👥</div>
-        <div class="case-meta-label">Team</div>
-        <div class="case-meta-value">5-Person Cross-Disciplinary</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">⏱️</div>
-        <div class="case-meta-label">Timeline</div>
-        <div class="case-meta-value">8 Weeks</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">📦</div>
-        <div class="case-meta-label">Deliverables</div>
-        <div class="case-meta-value">App · Physical Kit · Business Model</div>
-      </div>
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">UX/UI Designer &amp; Researcher</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">👥</div><div class="case-meta-label">Team</div><div class="case-meta-value">5-Person Cross-Disciplinary</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">8 Weeks</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">📦</div><div class="case-meta-label">Deliverables</div><div class="case-meta-value">App · Physical Kit · Business Model</div></div>
     </div>
-
-    <!-- 02 CPS Process -->
     <div class="case-eyebrow">02 - Creative Problem Solving Process</div>
     <h3 class="case-h3">A structured path from open exploration to a testable solution</h3>
     <div class="cps-steps">
-      <div class="cps-step">
-        <div class="cps-num">01</div>
-        <div class="cps-title">Acceptance</div>
-        <p>Brainstormed across interests, fashion, coffee, AI, community, and found common ground in cafés, outdoors, and social connection.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">02</div>
-        <div class="cps-title">Analysis</div>
-        <p>Built a morphological grid mapping offerings, reviews, atmosphere, aesthetics, and pricing. Competitors lacked personalized filtering.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">03</div>
-        <div class="cps-title">Define</div>
-        <p>How do we make third spaces discoverable and help people make them a regular habit? This drove every decision after.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">04</div>
-        <div class="cps-title">Ideation</div>
-        <p>Research → overnight incubation → anonymous dot voting on FigJam. Three directions emerged: cafés, community, outdoors.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">05</div>
-        <div class="cps-title">Selection</div>
-        <p>Decision and radar charts scored ideas on market potential, day-to-day fit, feasibility, scalability, and desirability.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">06</div>
-        <div class="cps-title">Implementation</div>
-        <p>Wireframes in Figma: home, discovery, roulette. Physical prototypes: tote bags, branded cups, connection cards.</p>
-      </div>
+      <div class="cps-step"><div class="cps-num">01</div><div class="cps-title">Acceptance</div><p>Brainstormed across interests, fashion, coffee, AI, community, and found common ground in cafés, outdoors, and social connection.</p></div>
+      <div class="cps-step"><div class="cps-num">02</div><div class="cps-title">Analysis</div><p>Built a morphological grid mapping offerings, reviews, atmosphere, aesthetics, and pricing. Competitors lacked personalized filtering.</p></div>
+      <div class="cps-step"><div class="cps-num">03</div><div class="cps-title">Define</div><p>How do we make third spaces discoverable and help people make them a regular habit? This drove every decision after.</p></div>
+      <div class="cps-step"><div class="cps-num">04</div><div class="cps-title">Ideation</div><p>Research → overnight incubation → anonymous dot voting on FigJam. Three directions emerged: cafés, community, outdoors.</p></div>
+      <div class="cps-step"><div class="cps-num">05</div><div class="cps-title">Selection</div><p>Decision and radar charts scored ideas on market potential, day-to-day fit, feasibility, scalability, and desirability.</p></div>
+      <div class="cps-step"><div class="cps-num">06</div><div class="cps-title">Implementation</div><p>Wireframes in Figma: home, discovery, roulette. Physical prototypes: tote bags, branded cups, connection cards.</p></div>
     </div>
-
-    <!-- 03 Persona -->
     <div class="case-eyebrow">03 - Meet Layla, Our User Persona</div>
     <div class="case-persona">
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Portrait representing the persona Layla, a digital nomad.">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Layla persona.">
       <div>
         <div class="case-persona-name">Layla, 32, Digital Nomad</div>
         <div class="case-persona-sub">Creative Works · Los Angeles, CA</div>
         <div class="mood-grid" style="margin-top:.6rem;">
-          <div class="mood-chip">Exploration</div>
-          <div class="mood-chip">Authenticity</div>
-          <div class="mood-chip">Community</div>
-          <div class="mood-chip">Creativity</div>
+          <div class="mood-chip">Exploration</div><div class="mood-chip">Authenticity</div><div class="mood-chip">Community</div><div class="mood-chip">Creativity</div>
         </div>
       </div>
     </div>
-    <div class="case-pullquote">
-      "Social media recommendations for places to visit are so inauthentic! I just hope there are more authentic experiences and people who really enjoy the vibe."
-    </div>
+    <div class="case-pullquote">"Social media recommendations for places to visit are so inauthentic! I just hope there are more authentic experiences and people who really enjoy the vibe."</div>
     <ul class="case-list">
       <li>Wants to discover new, genuine local spots, not Instagram-famous ones</li>
       <li>Needs a space that inspires creativity, focus, and feels authentic to the city</li>
       <li>Craves meeting new people and building real community connections</li>
     </ul>
-
-    <!-- 04 Challenge -->
     <div class="case-eyebrow">04 - Defining the Challenge</div>
-    <div class="case-pullquote">
-      How might we make third spaces discoverable while incentivizing people to return regularly as part of their routine?
-    </div>
+    <div class="case-pullquote">How might we make third spaces discoverable while incentivizing people to return regularly as part of their routine?</div>
     <p class="case-body">American society is increasingly seeking the European way of living through third spaces for community and enjoyment. However, many people struggle to discover these spaces, and current third spaces are often not financially sustainable for business owners, reducing overall supply.</p>
-
-    <!-- 05 Solution -->
     <div class="case-eyebrow">05 - Introducing Agora</div>
     <h3 class="case-h3">Named after the ancient Greek word for "gathering place," Agora is a dual digital + physical platform.</h3>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">📱</div>
-        <div class="solution-title">Digital Platform</div>
-        <p>Mobile app with curated listings, mood-based filtering, community reviews, and a roulette feature for serendipitous discovery.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🛍️</div>
-        <div class="solution-title">Physical Touchpoints</div>
-        <p>Branded cups, "linger longer" tote bags, and connection cards placed in partner spaces to spark real-world conversation.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🏪</div>
-        <div class="solution-title">Business Model</div>
-        <p>Affiliate marketing, featured placements, and B2B connections to magazines and event coordinators for sustainability.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🎲</div>
-        <div class="solution-title">Roulette Feature</div>
-        <p>A serendipity mode that suggests a spontaneous third place outing, lowering decision friction and building habits.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">📱</div><div class="solution-title">Digital Platform</div><p>Mobile app with curated listings, mood-based filtering, community reviews, and a roulette feature for serendipitous discovery.</p></div>
+      <div class="solution-card"><div class="solution-icon">🛍️</div><div class="solution-title">Physical Touchpoints</div><p>Branded cups, "linger longer" tote bags, and connection cards placed in partner spaces to spark real-world conversation.</p></div>
+      <div class="solution-card"><div class="solution-icon">🏪</div><div class="solution-title">Business Model</div><p>Affiliate marketing, featured placements, and B2B connections to magazines and event coordinators for sustainability.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎲</div><div class="solution-title">Roulette Feature</div><p>A serendipity mode that suggests a spontaneous third place outing, lowering decision friction and building habits.</p></div>
     </div>
-
-    <!-- 06 App Screens -->
     <div class="case-eyebrow">06 - App Screens</div>
-    <p class="case-body">Wireframes were built collaboratively in Figma. The three core screens reflect the key user journey: arriving, discovering & spin the wheel.</p>
-   <img src="agorascreens.png" alt="Homescreen" style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <p class="case-body">Wireframes were built collaboratively in Figma. The three core screens reflect the key user journey: arriving, discovering &amp; spin the wheel.</p>
+    <img src="agorascreens.png" alt="App screens" style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr); margin-top:1rem;">
-  <div class="solution-card">
-    <div class="solution-icon">🏠</div>
-    <div class="solution-title">Home Screen</div>
-    <p>Personalized feed based on vibe preferences and past visits.</p>
-  </div>
-  <div class="solution-card">
-    <div class="solution-icon">🗺️</div>
-    <div class="solution-title">Discovery Page</div>
-    <p>Map + list view with mood-based and amenity filters.</p>
-  </div>
-  <div class="solution-card">
-    <div class="solution-icon">🎲</div>
-    <div class="solution-title">Roulette</div>
-    <p>Gives users a place recommendation upon spinning a virtual wheel — for when they want to try something new.</p>
-  </div>
-</div>
-
-    <!-- 07 Physical -->
+      <div class="solution-card"><div class="solution-icon">🏠</div><div class="solution-title">Home Screen</div><p>Personalized feed based on vibe preferences and past visits.</p></div>
+      <div class="solution-card"><div class="solution-icon">🗺️</div><div class="solution-title">Discovery Page</div><p>Map + list view with mood-based and amenity filters.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎲</div><div class="solution-title">Roulette</div><p>Gives users a place recommendation upon spinning a virtual wheel — for when they want to try something new.</p></div>
+    </div>
     <div class="case-eyebrow">07 - The Physical Solution</div>
     <p class="case-body">The team believed the app alone wouldn't shift behavior. Physical touchpoints were prototyped to organically foster connection inside partner spaces: tote bags reading "linger longer," branded coffee cups with community messaging, and connection cards ("Find me at a third space!") with fields for name, favorite spot, and contact info.</p>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem; overflow:hidden;">
-      <img src="agoratote.png" alt="Agora Tote" style="width:100%; height:420px; object-fit:cover; border-radius:10px;">
-      <img src="agoracup.png" alt="Agora Cup" style="width:100%; height:420px; object-fit:cover; border-radius:10px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem;">
+      <img src="agoratote.png" alt="Agora Tote" style="width:100%; height:380px; object-fit:cover; border-radius:10px;">
+      <img src="agoracup.png" alt="Agora Cup" style="width:100%; height:380px; object-fit:cover; border-radius:10px;">
     </div>
-
-    <!-- 08 Business Model -->
     <div class="case-eyebrow">08 - Business Model</div>
     <h3 class="case-h3">Great design alone wouldn't solve the problem; the business model had to work too.</h3>
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="solution-card">
-        <div class="solution-icon">🤝</div>
-        <div class="solution-title">B2B</div>
-        <p>Connections to local magazines, bloggers, and event coordinators.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📈</div>
-        <div class="solution-title">DAU</div>
-        <p>Daily active users as the primary retention success metric.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">⭐</div>
-        <div class="solution-title">Rate</div>
-        <p>Satisfaction ratings per third place visited to drive quality.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🤝</div><div class="solution-title">B2B</div><p>Connections to local magazines, bloggers, and event coordinators.</p></div>
+      <div class="solution-card"><div class="solution-icon">📈</div><div class="solution-title">DAU</div><p>Daily active users as the primary retention success metric.</p></div>
+      <div class="solution-card"><div class="solution-icon">⭐</div><div class="solution-title">Rate</div><p>Satisfaction ratings per third place visited to drive quality.</p></div>
     </div>
-
-    <!-- 09 Reflection -->
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">
-      "I learned that solutions to complex cultural challenges rarely achieve perfection, but by embracing collaboration and grounding design in user needs, we can craft a meaningful approach. Designing for both digital and physical touchpoints showed me that behavior change requires meeting people where they already are."
-    </div>
-
+    <div class="case-pullquote">"I learned that solutions to complex cultural challenges rarely achieve perfection, but by embracing collaboration and grounding design in user needs, we can craft a meaningful approach. Designing for both digital and physical touchpoints showed me that behavior change requires meeting people where they already are."</div>
     <div style="text-align:center; margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="https://drive.google.com/file/d/1K9m2JkYRHlbuRORBYV-ue_rHUqe4fEQw/view?usp=sharing" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
     </div>
@@ -1145,74 +707,33 @@
 <div class="modal-overlay" id="klinos-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-blue">
     <button class="modal-close" onclick="document.getElementById('klinos-modal').classList.remove('open')" aria-label="Close">✕</button>
-
-    <img class="case-hero-img" src="klinosmodal.png?w=1000&q=80" alt="Healthcare coordination platform dashboard interface.">
-
+    <img class="case-hero-img" src="klinosmodal.png" alt="Klinos dashboard.">
     <div class="case-eyebrow">01 - Why Klinos?</div>
     <h2 style="color:#498cb7;">Klinos</h2>
     <p class="modal-intro">Healthcare isn't broken from a lack of services. The doctors, specialists, and insurance are all there. What's missing is coordination between them.</p>
     <p class="modal-intro">Patients are often left managing referrals, transferring records, scheduling appointments, and navigating disconnected providers on their own. Even individuals with premium insurance and access to top healthcare systems experience delays, duplicated tests, and fragmented care journeys.</p>
     <p class="modal-intro">Klinos was founded to solve this problem by creating a vertically integrated healthcare platform that combines longevity medicine, advanced prevention, and on-demand care under one coordinated experience.</p>
-
     <div class="case-meta-grid">
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🎨</div>
-        <div class="case-meta-label">My Role</div>
-        <div class="case-meta-value">Product Designer</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">⏱️</div>
-        <div class="case-meta-label">Timeline</div>
-        <div class="case-meta-value">12 Weeks</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">📦</div>
-        <div class="case-meta-label">Deliverables</div>
-        <div class="case-meta-value">Website · Mobile App · Design System</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🧭</div>
-        <div class="case-meta-label">Scope</div>
-        <div class="case-meta-value">UX Strategy · Responsive Experience</div>
-      </div>
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">Product Designer</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">12 Weeks</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">📦</div><div class="case-meta-label">Deliverables</div><div class="case-meta-value">Website · Mobile App · Design System</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">🧭</div><div class="case-meta-label">Scope</div><div class="case-meta-value">UX Strategy · Responsive Experience</div></div>
     </div>
-
-    <!-- 02 The Challenge -->
     <div class="case-eyebrow">02 - The Challenge</div>
     <p class="case-body">During discovery, one challenge became immediately apparent: users didn't understand what made Klinos different.</p>
     <p class="case-body">Most healthcare companies focus on individual services, while Klinos was offering something much larger, a coordinated healthcare ecosystem designed around prevention and long-term wellbeing.</p>
     <p class="case-body">The challenge wasn't simply presenting information. It was helping users understand how multiple healthcare services could work together to create a better experience.</p>
-    <div class="case-pullquote">
-      How might we communicate a complex healthcare model in a way that feels intuitive, trustworthy, and valuable?
-    </div>
-
-    <!-- 03 Understanding the User -->
+    <div class="case-pullquote">How might we communicate a complex healthcare model in a way that feels intuitive, trustworthy, and valuable?</div>
     <div class="case-eyebrow">03 - Understanding the User</div>
     <p class="case-body">Through stakeholder discussions, market research, and competitor analysis, I identified a recurring pattern. People weren't frustrated by a lack of healthcare options, they were frustrated by the effort required to coordinate everything themselves.</p>
-    <p class="case-body">Managing appointments, referrals, specialists, records, and preventative screenings often felt like a full-time job.</p>
-    <div class="case-pullquote">
-      People don't need more healthcare services. They need a better way to navigate them.
-    </div>
+    <div class="case-pullquote">People don't need more healthcare services. They need a better way to navigate them.</div>
     <p class="case-body">This shifted the focus from promoting services to designing a system that made healthcare feel simpler and more connected.</p>
-
-    <!-- 04 Designing the Ecosystem -->
     <div class="case-eyebrow">04 - Designing the Ecosystem</div>
-    <p class="case-body">A single touchpoint wouldn't support the entire healthcare journey. Users needed a place to learn about Klinos and begin their journey, and a platform that could support them after onboarding and help them stay engaged with their health over time.</p>
-    <p class="case-body">To address these needs, I designed both a website experience and a companion mobile application, each serving a unique role within the ecosystem.</p>
+    <p class="case-body">A single touchpoint wouldn't support the entire healthcare journey. To address these needs, I designed both a website experience and a companion mobile application, each serving a unique role within the ecosystem.</p>
     <div class="solution-grid" style="grid-template-columns:repeat(2,1fr);">
-      <div class="solution-card">
-        <div class="solution-icon">🌐</div>
-        <div class="solution-title">Website Experience</div>
-        <p>The first introduction to Klinos, focused on educating, building trust, and communicating the value of coordinated healthcare through outcomes rather than medical terminology.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📱</div>
-        <div class="solution-title">Mobile App Experience</div>
-        <p>A centralized hub where members access health information, manage appointments, view recommendations, and stay connected with their care team.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🌐</div><div class="solution-title">Website Experience</div><p>The first introduction to Klinos, focused on educating, building trust, and communicating the value of coordinated healthcare through outcomes rather than medical terminology.</p></div>
+      <div class="solution-card"><div class="solution-icon">📱</div><div class="solution-title">Mobile App Experience</div><p>A centralized hub where members access health information, manage appointments, view recommendations, and stay connected with their care team.</p></div>
     </div>
-
-    <!-- 05 Website Goals -->
     <div class="case-eyebrow">05 - Website Design Goals</div>
     <h3 class="case-h3">Transforming a complex healthcare model into a story users can easily understand and act on.</h3>
     <ul class="case-list">
@@ -1221,84 +742,36 @@
       <li>Creating intuitive navigation across multiple healthcare programs</li>
       <li>Guiding users toward consultations and membership enrollment</li>
     </ul>
-    <div class="journey-gallery" style="margin-top:1.2rem;">
-      <img class="wide" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80" alt="Klinos website homepage design.">
-      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="Website service pathway page.">
-      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80" alt="Website membership enrollment page.">
+    <div class="journey-gallery" style="margin-top:1.2rem; grid-template-columns:repeat(2,1fr);">
+      <img src="klinoslaptop.png" alt="Klinos website homepage design.">
+      <img src="klinosscreensbg.png" alt="Klinos mobile screens.">
     </div>
-
-    <!-- 06 Mobile App -->
     <div class="case-eyebrow">06 - Mobile App Experience</div>
     <p class="case-body">While the website introduces users to Klinos, the mobile app supports them throughout their ongoing healthcare journey, reducing fragmentation and helping members stay engaged with their health over time.</p>
     <div class="solution-grid">
-  <div class="solution-card">
-    <div class="solution-icon">📊</div>
-    <div class="solution-title">Health Dashboard</div>
-    <p>Personalized overview of health status and goals.</p>
-    <img src="klinoshome.png" alt="Health Dashboard" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;">
-  </div>
-  <div class="solution-card">
-    <div class="solution-icon">📅</div>
-    <div class="solution-title">Appointments</div>
-    <p>Scheduling and management across providers.</p>
-    <img src="klinosapts.png" alt="Appointments" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;">
-  </div>
-  <div class="solution-card">
-    <div class="solution-icon">💬</div>
-    <div class="solution-title">Care Coordinator</div>
-    <p>Direct communication with the care team.</p>
-    <img src="klinoscontact.png" alt="Care Coordinator" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;">
-  </div>
-  <div class="solution-card">
-    <div class="solution-icon">🗂️</div>
-    <div class="solution-title">Records &amp; Results</div>
-    <p>Health records and screening results in one place.</p>
-    <img src="klinosprofile.png" alt="Records and Results" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;">
-  </div>
-</div>
-
-    <!-- 07 Key Decisions -->
+      <div class="solution-card"><div class="solution-icon">📊</div><div class="solution-title">Health Dashboard</div><p>Personalized overview of health status and goals.</p><img src="klinoshome.png" alt="Health Dashboard" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;"></div>
+      <div class="solution-card"><div class="solution-icon">📅</div><div class="solution-title">Appointments</div><p>Scheduling and management across providers.</p><img src="klinosapts.png" alt="Appointments" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;"></div>
+      <div class="solution-card"><div class="solution-icon">💬</div><div class="solution-title">Care Coordinator</div><p>Direct communication with the care team.</p><img src="klinoscontact.png" alt="Care Coordinator" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;"></div>
+      <div class="solution-card"><div class="solution-icon">🗂️</div><div class="solution-title">Records &amp; Results</div><p>Health records and screening results in one place.</p><img src="klinosprofile.png" alt="Records and Results" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;"></div>
+    </div>
     <div class="case-eyebrow">07 - Key Design Decisions</div>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">🎯</div>
-        <div class="solution-title">Outcomes Over Services</div>
-        <p>Structured content around user goals and health outcomes, so users understand not just what Klinos offers, but why it matters.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🧩</div>
-        <div class="solution-title">Simplifying Information</div>
-        <p>Used progressive disclosure, clear hierarchy, and simplified language without sacrificing credibility.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🤝</div>
-        <div class="solution-title">Trust Through Transparency</div>
-        <p>Educational content and straightforward navigation helped users feel confident in their decisions.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📐</div>
-        <div class="solution-title">Designing for Scale</div>
-        <p>A reusable design system supports consistency across web and mobile, and enables future growth.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🎯</div><div class="solution-title">Outcomes Over Services</div><p>Structured content around user goals and health outcomes, so users understand not just what Klinos offers, but why it matters.</p></div>
+      <div class="solution-card"><div class="solution-icon">🧩</div><div class="solution-title">Simplifying Information</div><p>Used progressive disclosure, clear hierarchy, and simplified language without sacrificing credibility.</p></div>
+      <div class="solution-card"><div class="solution-icon">🤝</div><div class="solution-title">Trust Through Transparency</div><p>Educational content and straightforward navigation helped users feel confident in their decisions.</p></div>
+      <div class="solution-card"><div class="solution-icon">📐</div><div class="solution-title">Designing for Scale</div><p>A reusable design system supports consistency across web and mobile, and enables future growth.</p></div>
     </div>
-
-    <!-- 08 Outcome & Impact -->
     <div class="case-eyebrow">08 - Outcome &amp; Impact</div>
-    <p class="case-body">The final experience transformed a complex healthcare business model into a clear and approachable digital ecosystem, communicating a unified vision of prevention, longevity, and coordinated care. The website educates and converts prospective members, while the mobile app supports ongoing engagement and health management.</p>
+    <p class="case-body">The final experience transformed a complex healthcare business model into a clear and approachable digital ecosystem, communicating a unified vision of prevention, longevity, and coordinated care.</p>
     <ul class="case-list">
       <li>Established a unified digital ecosystem across web and mobile touchpoints</li>
       <li>Improved understanding of healthcare services through simplified navigation and content architecture</li>
       <li>Built a scalable design system supporting future products and platform growth</li>
       <li>Strengthened trust through clear, educational design</li>
     </ul>
-
-    <!-- 09 Reflection -->
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">
-      "This project taught me that some of the most important design challenges are not interface problems, they are communication problems. The challenge wasn't designing a healthcare website or a mobile app, it was helping people understand an entirely new way of experiencing healthcare."
-    </div>
-    <p class="case-body">By focusing on coordination rather than individual services, I was able to design an ecosystem that simplifies complexity, builds trust, and supports users throughout their healthcare journey. Great design isn't just about making information available, it's about helping people understand what matters, why it matters, and what action they should take next.</p>
-
+    <div class="case-pullquote">"This project taught me that some of the most important design challenges are not interface problems, they are communication problems. The challenge wasn't designing a healthcare website or a mobile app, it was helping people understand an entirely new way of experiencing healthcare."</div>
+    <p class="case-body">By focusing on coordination rather than individual services, I was able to design an ecosystem that simplifies complexity, builds trust, and supports users throughout their healthcare journey.</p>
     <div style="text-align:center; margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
     </div>
@@ -1309,144 +782,61 @@
 <div class="modal-overlay" id="bestbuy-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-purple">
     <button class="modal-close" onclick="document.getElementById('bestbuy-modal').classList.remove('open')" aria-label="Close">✕</button>
-
-    <img class="case-hero-img" src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1000&q=80" alt="Internal communication platform homepage feed for Best Buy employees.">
-
+    <img class="case-hero-img" src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1000&q=80" alt="Best Buy platform.">
     <div class="case-eyebrow">01 - Why Best Buy Connect?</div>
     <h2 style="color:#153065;">Best Buy Connect</h2>
     <p class="modal-intro" style="font-weight:700;">Redesigning Internal Communication by Listening to What Employees Actually Needed</p>
     <p class="modal-intro">Large organizations rely on internal communication tools to keep employees informed, connected, and engaged.</p>
     <p class="modal-intro">At Best Buy, the existing employee platform served as a central hub for company information, but adoption remained low. Employees were increasingly turning to external tools and informal channels to communicate, share knowledge, and build community.</p>
     <p class="modal-intro">Our team set out to explore how Best Buy could create a more engaging internal experience that better supported employee communication and connection.</p>
-
     <div class="case-meta-grid">
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🏢</div>
-        <div class="case-meta-label">Client</div>
-        <div class="case-meta-value">Best Buy (Class Project)</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">⏱️</div>
-        <div class="case-meta-label">Timeline</div>
-        <div class="case-meta-value">12 Weeks</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🎨</div>
-        <div class="case-meta-label">My Role</div>
-        <div class="case-meta-value">UI/UX Designer &amp; Researcher</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🧭</div>
-        <div class="case-meta-label">Platform</div>
-        <div class="case-meta-value">Web Application</div>
-      </div>
+      <div class="case-meta-card"><div class="case-meta-icon">🏢</div><div class="case-meta-label">Client</div><div class="case-meta-value">Best Buy (Class Project)</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">12 Weeks</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">UI/UX Designer &amp; Researcher</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">🧭</div><div class="case-meta-label">Platform</div><div class="case-meta-value">Web Application</div></div>
     </div>
-
-    <!-- 02 The Challenge -->
     <div class="case-eyebrow">02 - The Challenge</div>
     <p class="case-body">When the project began, we assumed the problem was rooted in improving communication inside the store environment. Like many internal tools, the initial focus was on making information more accessible and improving day-to-day workflows.</p>
     <p class="case-body">However, after speaking directly with employees, we realized we were solving the wrong problem. The real challenge was not communication during work, it was communication outside of work.</p>
-    <p class="case-body">Employees wanted a space where they could connect with peers, share experiences, ask questions, and build relationships beyond their immediate teams. This insight completely changed the direction of the project.</p>
-    <div class="case-pullquote">
-      How might we create a platform that fosters community and connection across the entire Best Buy employee network?
-    </div>
-
-    <!-- 03 Research & Discovery -->
+    <div class="case-pullquote">How might we create a platform that fosters community and connection across the entire Best Buy employee network?</div>
     <div class="case-eyebrow">03 - Research &amp; Discovery</div>
-    <p class="case-body">Through user interviews, competitive analysis, and collaborative workshops, we explored how employees currently communicated and where existing tools were falling short. One theme emerged repeatedly: employees wanted connection, not just communication.</p>
-    <p class="case-body">Most internal platforms focused on company announcements and top-down messaging, while employees were looking for opportunities to learn from one another, participate in discussions, and engage with colleagues across locations. This finding became the foundation of the redesign.</p>
+    <p class="case-body">Through user interviews, competitive analysis, and collaborative workshops, we explored how employees currently communicated and where existing tools were falling short.</p>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">🔍</div>
-        <div class="solution-title">Competitive Analysis</div>
-        <p>Benchmarked Slack, Microsoft Teams, Meta Workplace, and Yammer to understand what made workplace communities succeed.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🎤</div>
-        <div class="solution-title">User Interviews</div>
-        <p>Employees wanted community and peer connection, not just top-down announcements from management.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🔄</div>
-        <div class="solution-title">The Pivot</div>
-        <p>Interview findings refocused the project from in-store tooling to an out-of-store community platform.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📋</div>
-        <div class="solution-title">CPS Framework</div>
-        <p>Morphological grids, dot voting, and decision charts helped the team evaluate and converge on ideas.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🔍</div><div class="solution-title">Competitive Analysis</div><p>Benchmarked Slack, Microsoft Teams, Meta Workplace, and Yammer.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎤</div><div class="solution-title">User Interviews</div><p>Employees wanted community and peer connection, not just top-down announcements.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔄</div><div class="solution-title">The Pivot</div><p>Interview findings refocused the project from in-store tooling to an out-of-store community platform.</p></div>
+      <div class="solution-card"><div class="solution-icon">📋</div><div class="solution-title">CPS Framework</div><p>Morphological grids, dot voting, and decision charts helped the team evaluate and converge on ideas.</p></div>
     </div>
-
-    <!-- 04 Reframing the Experience -->
     <div class="case-eyebrow">04 - Reframing the Experience</div>
-    <p class="case-body">Instead of creating another information-sharing tool, we shifted our focus toward building a community platform. The goal was to support both company communication and employee-driven interaction.</p>
-    <div class="case-pullquote">
-      People didn't need another channel for announcements. They needed a reason to open the app between shifts.
-    </div>
-    <p class="case-body">To better understand successful workplace communities, we analyzed platforms such as Slack, Microsoft Teams, Workplace, and Yammer. While each platform supported collaboration, we identified an opportunity to create a more community-centered experience tailored specifically to Best Buy employees.</p>
-
-    <!-- 05 The Design System -->
+    <div class="case-pullquote">People didn't need another channel for announcements. They needed a reason to open the app between shifts.</div>
     <div class="case-eyebrow">05 - The Design System</div>
-    <p class="case-body">With the direction set, we built a lightweight design system to keep the experience consistent across feeds, groups, and announcements, while giving the platform a warmer, more social feel than a typical corporate intranet.</p>
     <div class="journey-gallery" style="margin-top:1.2rem;">
-      <img class="wide" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700&q=80" alt="Design system components and style guide.">
-      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" alt="Color palette and typography swatches.">
-      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="UI component library in Figma.">
+      <img class="wide" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700&q=80" alt="Design system.">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" alt="Color palette.">
+      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="Component library.">
     </div>
-
-    <!-- 06 The Solution -->
     <div class="case-eyebrow">06 - The Solution</div>
-    <p class="case-body">The redesigned platform transforms Best Buy Connect into a space where employees can stay informed, build relationships, and share knowledge across teams and locations.</p>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">🏠</div>
-        <div class="solution-title">Community Feed</div>
-        <p>A central homepage surfaces company updates, team highlights, employee achievements, and ongoing conversations, creating a more dynamic and engaging experience.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">👥</div>
-        <div class="solution-title">Groups &amp; Communities</div>
-        <p>Employees can join discussion groups based on departments, interests, locations, or shared experiences, making it easier to connect beyond their immediate workplace.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📢</div>
-        <div class="solution-title">Announcements</div>
-        <p>Official updates remain accessible through dedicated manager-led communication channels, ensuring important information is easy to find without overwhelming community discussions.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🔒</div>
-        <div class="solution-title">Employee Privacy Controls</div>
-        <p>Recognizing that not every employee wants the same level of visibility, the platform includes customizable profile and privacy settings, allowing users to control how they participate.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🏠</div><div class="solution-title">Community Feed</div><p>A central homepage surfaces company updates, team highlights, employee achievements, and ongoing conversations.</p></div>
+      <div class="solution-card"><div class="solution-icon">👥</div><div class="solution-title">Groups &amp; Communities</div><p>Employees can join discussion groups based on departments, interests, locations, or shared experiences.</p></div>
+      <div class="solution-card"><div class="solution-icon">📢</div><div class="solution-title">Announcements</div><p>Official updates remain accessible through dedicated manager-led communication channels.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Employee Privacy Controls</div><p>Customizable profile and privacy settings, allowing users to control how they participate.</p></div>
     </div>
-
-    <!-- 07 Final Screens -->
     <div class="case-eyebrow">07 - Final Screens</div>
     <div class="journey-gallery" style="margin-top:1.2rem;">
-      <img class="wide" src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=700&q=80" alt="Final homepage feed screen for Best Buy Internal.">
-      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Final groups page screen.">
-      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&q=80" alt="Final announcements screen.">
+      <img class="wide" src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=700&q=80" alt="Homepage feed.">
+      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Groups page.">
+      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&q=80" alt="Announcements.">
     </div>
-
-    <!-- 08 Outcome & Impact -->
     <div class="case-eyebrow">08 - Outcome &amp; Impact</div>
-    <p class="case-body">The redesigned concept shifted Best Buy Connect from a static information portal to a community-driven platform. By focusing on peer connection rather than solely company communication, the experience better aligned with what employees actually valued and needed.</p>
     <ul class="case-list">
       <li>Reframed the platform around peer community rather than top-down announcements</li>
       <li>Designed a groups system that lets employees connect across departments and locations</li>
       <li>Separated official communication from community discussion to reduce noise</li>
       <li>Introduced privacy controls that respect varying comfort levels with visibility</li>
     </ul>
-    <p class="case-body">More importantly, the project demonstrated how research can uncover opportunities that are not immediately visible at the start of a design process.</p>
-
-    <!-- 09 What I Learned -->
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">
-      "Listening to users is the most important step in creating a solution that truly works. The pivot we made based on interview findings was the defining moment of the whole project."
-    </div>
-    <p class="case-body">This project reinforced one of the most important lessons in UX design: assumptions are rarely as valuable as user insight. The defining moment wasn't designing new features, it was realizing that our original problem statement was incomplete.</p>
-
+    <div class="case-pullquote">"Listening to users is the most important step in creating a solution that truly works. The pivot we made based on interview findings was the defining moment of the whole project."</div>
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">View Prototype</a>
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn outline">Documentation</a>
@@ -1458,164 +848,70 @@
 <div class="modal-overlay" id="cozymeal-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-orange">
     <button class="modal-close" onclick="document.getElementById('cozymeal-modal').classList.remove('open')" aria-label="Close">✕</button>
-
-    <img class="case-hero-img" src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=1000&q=80" alt="Cozymeal brand identity applied across packaging and print.">
-
+    <img class="case-hero-img" src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=1000&q=80" alt="Cozymeal brand identity.">
     <div class="case-eyebrow">01 - Why Rebrand Cozymeal?</div>
     <h2 style="color:#e78b24;">Cozymeal</h2>
     <p class="modal-intro" style="font-weight:700;">Reimagining a Culinary Marketplace Through a More Human and Memorable Brand Identity</p>
     <p class="modal-intro">While the platform offered a wide range of experiences, its brand identity did not fully capture what made those experiences special.</p>
-    <p class="modal-intro">The challenge was not simply creating a new logo.</p>
-    <p class="modal-intro">It was creating a brand that reflected the warmth, connection, and sense of discovery that people experience when sharing food with others.</p>
+    <p class="modal-intro">The challenge was not simply creating a new logo. It was creating a brand that reflected the warmth, connection, and sense of discovery that people experience when sharing food with others.</p>
     <p class="modal-intro">As a solo designer, I led a complete rebrand that included a new visual identity, website redesign, merchandise system, marketing assets, and brand guidelines.</p>
-
     <div class="case-meta-grid">
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🎨</div>
-        <div class="case-meta-label">My Role</div>
-        <div class="case-meta-value">Brand &amp; Visual Designer</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">⏱️</div>
-        <div class="case-meta-label">Timeline</div>
-        <div class="case-meta-value">Spring 2023</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">📦</div>
-        <div class="case-meta-label">Deliverables</div>
-        <div class="case-meta-value">Logo · Design System · Print &amp; Merch</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🧭</div>
-        <div class="case-meta-label">Scope</div>
-        <div class="case-meta-value">Brand Strategy · Visual Identity</div>
-      </div>
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">Brand &amp; Visual Designer</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">Spring 2023</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">📦</div><div class="case-meta-label">Deliverables</div><div class="case-meta-value">Logo · Design System · Print &amp; Merch</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">🧭</div><div class="case-meta-label">Scope</div><div class="case-meta-value">Brand Strategy · Visual Identity</div></div>
     </div>
-
-    <!-- 02 The Challenge -->
     <div class="case-eyebrow">02 - The Challenge</div>
-    <p class="case-body">Cozymeal's existing identity leaned heavily on stock food photography and generic marketplace styling, the kind of look that could belong to almost any food delivery or booking app.</p>
-    <p class="case-body">But Cozymeal isn't just a marketplace, it's a way for people to gather, learn, and share a meal together. The brand needed to feel as warm and human as the experiences it was selling.</p>
-    <div class="case-pullquote">
-      How might we design a brand identity that feels as personal and inviting as sitting down to a home-cooked meal?
-    </div>
-
-    <!-- 03 Brand Strategy -->
+    <div class="case-pullquote">How might we design a brand identity that feels as personal and inviting as sitting down to a home-cooked meal?</div>
     <div class="case-eyebrow">03 - Brand Strategy</div>
-    <p class="case-body">Before touching any visuals, I defined a set of brand principles to guide every design decision: warm over corporate, crafted over generic, and personal over transactional.</p>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">🍽️</div>
-        <div class="solution-title">Human, Not Corporate</div>
-        <p>Visuals that feel like an invitation from a friend, not a faceless platform.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">✏️</div>
-        <div class="solution-title">Crafted Details</div>
-        <p>Hand-touched textures and illustrative elements that nod to culinary craft.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🧡</div>
-        <div class="solution-title">Warm Palette</div>
-        <p>A palette inspired by spice, citrus, and tabletop tones rather than sterile app blues.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🔁</div>
-        <div class="solution-title">Memorable System</div>
-        <p>A flexible identity that scales from app icons to packaging and merchandise.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🍽️</div><div class="solution-title">Human, Not Corporate</div><p>Visuals that feel like an invitation from a friend, not a faceless platform.</p></div>
+      <div class="solution-card"><div class="solution-icon">✏️</div><div class="solution-title">Crafted Details</div><p>Hand-touched textures and illustrative elements that nod to culinary craft.</p></div>
+      <div class="solution-card"><div class="solution-icon">🧡</div><div class="solution-title">Warm Palette</div><p>A palette inspired by spice, citrus, and tabletop tones rather than sterile app blues.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔁</div><div class="solution-title">Memorable System</div><p>A flexible identity that scales from app icons to packaging and merchandise.</p></div>
     </div>
-
-    <!-- 04 Logo & Identity -->
     <div class="case-eyebrow">04 - Logo &amp; Identity</div>
-    <p class="case-body">The new logo mark draws from the idea of a table setting, simple, geometric, and instantly recognizable at any size. Paired with a warm, rounded wordmark, the identity feels friendly without losing credibility.</p>
-    <div class="solution-grid" style="grid-template-columns:repeat(2,1fr); padding:0; background:transparent; gap:1rem;">
-      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=600&q=80" alt="Cozymeal logo concepts and brand moodboard." style="width:100%; height:280px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Cozymeal logo applied to app icon and stationery." style="width:100%; height:280px; object-fit:cover; border-radius:14px;">
+    <div class="solution-grid" style="grid-template-columns:repeat(2,1fr); padding:0; gap:1rem;">
+      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=600&q=80" alt="Cozymeal logo concepts." style="width:100%; height:280px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Cozymeal logo applied." style="width:100%; height:280px; object-fit:cover; border-radius:14px;">
     </div>
-
-    <!-- 05 Color Palette -->
     <div class="case-eyebrow">05 - Color Palette</div>
-    <p class="case-body">The palette draws from fresh produce and warm tabletop tones, grounded, inviting, and distinct from the cool blues typical of marketplace apps.</p>
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="solution-card" style="background:#3a5f41; color:#fff; text-align:center; padding:1.6rem 1rem;">
-        <div style="font-weight:800; font-size:1.3rem; letter-spacing:.05em; margin-bottom:.6rem;">#3A5F41</div>
-        <div style="font-weight:700; margin-bottom:.3rem;">Leafy Green</div>
-        <p style="color:rgba(255,255,255,0.8);">Freshness, trust, and sustainability.</p>
-      </div>
-      <div class="solution-card" style="background:#c6dad0; color:#3a5f41; text-align:center; padding:1.6rem 1rem;">
-        <div style="font-weight:800; font-size:1.3rem; letter-spacing:.05em; margin-bottom:.6rem;">#C6DAD0</div>
-        <div style="font-weight:700; margin-bottom:.3rem;">Minty Green</div>
-        <p style="color:#5c7c70;">Light, airy, and calming.</p>
-      </div>
-      <div class="solution-card" style="background:#e78a24; color:#fff; text-align:center; padding:1.6rem 1rem;">
-        <div style="font-weight:800; font-size:1.3rem; letter-spacing:.05em; margin-bottom:.6rem;">#E78A24</div>
-        <div style="font-weight:700; margin-bottom:.3rem;">Burnt Orange</div>
-        <p style="color:rgba(255,255,255,0.85);">Energy, warmth, and gourmet appeal.</p>
-      </div>
+      <div class="solution-card" style="background:#3a5f41; color:#fff; text-align:center; padding:1.6rem 1rem;"><div style="font-weight:800; font-size:1.3rem; margin-bottom:.6rem;">#3A5F41</div><div style="font-weight:700; margin-bottom:.3rem;">Leafy Green</div><p style="color:rgba(255,255,255,0.8);">Freshness, trust, and sustainability.</p></div>
+      <div class="solution-card" style="background:#c6dad0; color:#3a5f41; text-align:center; padding:1.6rem 1rem;"><div style="font-weight:800; font-size:1.3rem; margin-bottom:.6rem;">#C6DAD0</div><div style="font-weight:700; margin-bottom:.3rem;">Minty Green</div><p style="color:#5c7c70;">Light, airy, and calming.</p></div>
+      <div class="solution-card" style="background:#e78a24; color:#fff; text-align:center; padding:1.6rem 1rem;"><div style="font-weight:800; font-size:1.3rem; margin-bottom:.6rem;">#E78A24</div><div style="font-weight:700; margin-bottom:.3rem;">Burnt Orange</div><p style="color:rgba(255,255,255,0.85);">Energy, warmth, and gourmet appeal.</p></div>
     </div>
-
-    <!-- 06 Print & Merchandise -->
     <div class="case-eyebrow">06 - Print &amp; Merchandise</div>
-    <p class="case-body">The identity was extended into real-world applications, packaging for chef kits, branded aprons and totes, and printed menus, to test how the system held up beyond the screen.</p>
-    <div class="solution-grid" style="grid-template-columns:repeat(2,1fr); padding:0; background:transparent; gap:1rem;">
-      <img src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=600&q=80" alt="Cozymeal packaging and printed materials." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Cozymeal branded merchandise including totes and aprons." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Cozymeal branded menu and table setting." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Cozymeal branded packaging detail." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+    <div class="solution-grid" style="grid-template-columns:repeat(2,1fr); padding:0; gap:1rem;">
+      <img src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=600&q=80" alt="Packaging." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Merchandise." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Menu." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Packaging detail." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
     </div>
-
-    <!-- 07 Social Media -->
     <div class="case-eyebrow">07 - Social Media Design</div>
-    <p class="case-body">A set of social templates brought the new identity into Cozymeal's day-to-day content, making the brand feel cohesive across every post, story, and promotion.</p>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">📱</div>
-        <div class="solution-title">Post Templates</div>
-        <p>Reusable layouts for chef spotlights, recipes, and event promotions.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🎞️</div>
-        <div class="solution-title">Story Highlights</div>
-        <p>Custom icon covers consistent with the new visual system.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🖼️</div>
-        <div class="solution-title">Campaign Visuals</div>
-        <p>Promotional graphics for seasonal experiences and launches.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🏷️</div>
-        <div class="solution-title">Brand Voice</div>
-        <p>Tone and messaging guidelines to match the warmer visual identity.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">📱</div><div class="solution-title">Post Templates</div><p>Reusable layouts for chef spotlights, recipes, and event promotions.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎞️</div><div class="solution-title">Story Highlights</div><p>Custom icon covers consistent with the new visual system.</p></div>
+      <div class="solution-card"><div class="solution-icon">🖼️</div><div class="solution-title">Campaign Visuals</div><p>Promotional graphics for seasonal experiences and launches.</p></div>
+      <div class="solution-card"><div class="solution-icon">🏷️</div><div class="solution-title">Brand Voice</div><p>Tone and messaging guidelines to match the warmer visual identity.</p></div>
     </div>
-    <div class="solution-grid" style="grid-template-columns:repeat(3,1fr); padding:0; background:transparent; gap:1rem; margin-top:1rem;">
-      <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=500&q=80" alt="Social media post template for chef spotlight." style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&q=80" alt="Social media story highlight covers." style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=500&q=80" alt="Promotional campaign visual for seasonal launch." style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" alt="Social media recipe post template." style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=500&q=80" alt="Branded event promotion graphic." style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80" alt="Social media campaign visual grid." style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
+    <div class="solution-grid" style="grid-template-columns:repeat(3,1fr); padding:0; gap:1rem; margin-top:1rem;">
+      <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=500&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=500&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=500&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80" style="width:100%; height:180px; object-fit:cover; border-radius:14px;">
     </div>
-
-    <!-- 08 Outcome & Impact -->
     <div class="case-eyebrow">08 - Outcome &amp; Impact</div>
-    <p class="case-body">The refreshed identity gave Cozymeal a distinct visual presence, one that feels personal, crafted, and easy to recognize across digital and physical touchpoints.</p>
     <ul class="case-list">
       <li>Developed a cohesive identity system spanning digital, print, and merchandise</li>
       <li>Replaced generic marketplace visuals with a warm, human brand language</li>
       <li>Created a flexible logo and color system that scales across applications</li>
       <li>Extended the brand into real-world touchpoints through packaging and social templates</li>
     </ul>
-
-    <!-- 09 What I Learned -->
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">
-      "A brand identity isn't just a logo, it's the feeling someone gets before they even read a word. For Cozymeal, that meant designing for warmth first and letting every detail follow from there."
-    </div>
-    <p class="case-body">This project reinforced how much small details, texture, color, type pairing, shape language, compound into a brand's overall feel. Designing system-first, rather than asset-first, made it possible to keep that feeling consistent everywhere the brand showed up.</p>
-
+    <div class="case-pullquote">"A brand identity isn't just a logo, it's the feeling someone gets before they even read a word. For Cozymeal, that meant designing for warmth first and letting every detail follow from there."</div>
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">Brand Style Guide</a>
     </div>
@@ -1626,185 +922,60 @@
 <div class="modal-overlay" id="heroflow-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-gold">
     <button class="modal-close" onclick="document.getElementById('heroflow-modal').classList.remove('open')" aria-label="Close">✕</button>
-
-    <img class="case-hero-img" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000&q=80" alt="AI-powered video platform dashboard for Lemonlight Studios.">
-
+    <img class="case-hero-img" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000&q=80" alt="HeroFlow dashboard.">
     <div class="case-eyebrow">01 - The Forgotten Footage Problem</div>
     <h2 style="color:#d4a018;">HeroFlow <span class="serif">for Lemonlight Studios</span></h2>
     <p class="modal-intro">Video production agencies generate enormous amounts of content.</p>
-    <p class="modal-intro">For Lemonlight Studios, years of client work had resulted in thousands of hours of footage spread across campaigns, brands, and projects.<br>While this archive held immense value, most of it remained effectively inaccessible.</p>
+    <p class="modal-intro">For Lemonlight Studios, years of client work had resulted in thousands of hours of footage spread across campaigns, brands, and projects. While this archive held immense value, most of it remained effectively inaccessible.</p>
     <p class="modal-intro">Teams often knew the footage existed. They just couldn't find it. What should have been a competitive advantage had become a bottleneck.</p>
-
     <div class="case-meta-grid">
-      <div class="case-meta-card">
-        <div class="case-meta-icon">🎨</div>
-        <div class="case-meta-label">My Role</div>
-        <div class="case-meta-value">Product Designer &amp; Researcher</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">👥</div>
-        <div class="case-meta-label">Team</div>
-        <div class="case-meta-value">5-Person Cross-Disciplinary</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">⏱️</div>
-        <div class="case-meta-label">Timeline</div>
-        <div class="case-meta-value">5-Day Product Sprint</div>
-      </div>
-      <div class="case-meta-card">
-        <div class="case-meta-icon">📦</div>
-        <div class="case-meta-label">Deliverables</div>
-        <div class="case-meta-value">Product Strategy · Prototype · Pitch Deck</div>
-      </div>
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">Product Designer &amp; Researcher</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">👥</div><div class="case-meta-label">Team</div><div class="case-meta-value">5-Person Cross-Disciplinary</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">5-Day Product Sprint</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">📦</div><div class="case-meta-label">Deliverables</div><div class="case-meta-value">Product Strategy · Prototype · Pitch Deck</div></div>
     </div>
-
-    <!-- 02 Challenge -->
     <div class="case-eyebrow">02 - The Challenge</div>
-    <p class="case-body">During stakeholder interviews, a recurring theme quickly emerged: the organization's search system wasn't built around how people think. Instead of searching for footage naturally, users needed to remember project names, folder structures, or rely on editors who knew where content lived.</p>
-    <div class="case-pullquote">
-      "I know we already shot something like this, but finding it takes longer than creating something new."
-    </div>
-    <p class="case-body">The problem wasn't a lack of content. It was a lack of accessibility.</p>
-    <div class="case-pullquote">
-      How might we help creative teams instantly discover, understand, and reuse existing footage through AI?
-    </div>
-
-    <!-- 03 Understanding the Workflow -->
+    <div class="case-pullquote">"I know we already shot something like this, but finding it takes longer than creating something new."</div>
+    <div class="case-pullquote">How might we help creative teams instantly discover, understand, and reuse existing footage through AI?</div>
     <div class="case-eyebrow">03 - Understanding the Workflow</div>
-    <p class="case-body">To better understand the problem, I mapped the content discovery journey and spoke with stakeholders responsible for managing campaigns and creative assets. One insight stood out immediately: teams had unintentionally turned people into search engines.</p>
     <ul class="case-list">
       <li>Editors became the source of truth for where footage lived, creating bottlenecks that didn't scale</li>
       <li>Metadata quality varied significantly between projects, making traditional search unreliable</li>
       <li>Even when footage was located, users had to watch clips individually to judge relevance</li>
     </ul>
-
-    <!-- 04 Reframing -->
     <div class="case-eyebrow">04 - Reframing the Opportunity</div>
-    <p class="case-body">As I synthesized research findings, I realized the challenge wasn't simply improving search. The real opportunity was reducing the gap between discovery and creation.</p>
-    <div class="case-pullquote">
-      Creative teams didn't just want to find footage. They wanted to immediately use it.
-    </div>
-    <p class="case-body">This shift in thinking transformed the project from a media management tool into an AI-powered creative workflow.</p>
-
-    <!-- 05 Solution -->
+    <div class="case-pullquote">Creative teams didn't just want to find footage. They wanted to immediately use it.</div>
     <div class="case-eyebrow">05 - Introducing HeroFlow</div>
     <h3 class="case-h3">An AI-powered video intelligence platform that helps teams discover, understand, and repurpose content through natural language.</h3>
-    <p class="case-body">Rather than forcing users to navigate folders and metadata manually, HeroFlow understands footage the same way users describe it.</p>
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="solution-card">
-        <div class="solution-icon">🔍</div>
-        <div class="solution-title">Semantic Search</div>
-        <p>Users search naturally, like "show me happy family moments from our summer campaign", and the platform surfaces relevant clips without manual tags.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📋</div>
-        <div class="solution-title">HeroFlow</div>
-        <p>AI-generated insights for every clip, scene description, emotional tone, subjects, and brand relevance, so teams evaluate content instantly.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">✂️</div>
-        <div class="solution-title">Prompt-Based Editing</div>
-        <p>From a creative brief, users generate a draft edit assembled from relevant footage, shrinking the gap between discovery and execution.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">🔍</div><div class="solution-title">Semantic Search</div><p>Users search naturally and the platform surfaces relevant clips without manual tags.</p></div>
+      <div class="solution-card"><div class="solution-icon">📋</div><div class="solution-title">HeroFlow</div><p>AI-generated insights for every clip — scene description, emotional tone, subjects, and brand relevance.</p></div>
+      <div class="solution-card"><div class="solution-icon">✂️</div><div class="solution-title">Prompt-Based Editing</div><p>From a creative brief, users generate a draft edit assembled from relevant footage.</p></div>
     </div>
-    <div class="journey-gallery" style="margin-top:1rem;">
-      <img class="wide" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=700&q=80" alt="HeroFlow dashboard showing semantic search results.">
-      <img src="https://images.unsplash.com/photo-1556742111-a301076d9d18?w=400&q=80" alt="Mobile screen showing HeroFlow clip insights.">
-      <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&q=80" alt="Screen showing a prompt-based draft edit.">
-    </div>
-
-    <!-- 06 User Journey -->
     <div class="case-eyebrow">06 - End-to-End User Journey</div>
     <div class="cps-steps" style="grid-template-columns:repeat(5,1fr);">
-      <div class="cps-step">
-        <div class="cps-num">01</div>
-        <div class="cps-title">Search</div>
-        <p>"Find lifestyle footage featuring families outdoors."</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">02</div>
-        <div class="cps-title">Discover</div>
-        <p>Semantic Search surfaces relevant clips across thousands of hours.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">03</div>
-        <div class="cps-title">Understand</div>
-        <p>HeroFlow surfaces metadata and contextual insights per clip.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">04</div>
-        <div class="cps-title">Create</div>
-        <p>User selects footage and generates a new edit through a prompt.</p>
-      </div>
-      <div class="cps-step">
-        <div class="cps-num">05</div>
-        <div class="cps-title">Ship</div>
-        <p>A reusable draft asset is ready within minutes, not hours.</p>
-      </div>
+      <div class="cps-step"><div class="cps-num">01</div><div class="cps-title">Search</div><p>"Find lifestyle footage featuring families outdoors."</p></div>
+      <div class="cps-step"><div class="cps-num">02</div><div class="cps-title">Discover</div><p>Semantic Search surfaces relevant clips across thousands of hours.</p></div>
+      <div class="cps-step"><div class="cps-num">03</div><div class="cps-title">Understand</div><p>HeroFlow surfaces metadata and contextual insights per clip.</p></div>
+      <div class="cps-step"><div class="cps-num">04</div><div class="cps-title">Create</div><p>User selects footage and generates a new edit through a prompt.</p></div>
+      <div class="cps-step"><div class="cps-num">05</div><div class="cps-title">Ship</div><p>A reusable draft asset is ready within minutes, not hours.</p></div>
     </div>
-
-
-    <!-- 06 Key Design Decisions -->
     <div class="case-eyebrow">07 - Key Design Decisions</div>
-    <p class="case-body">Throughout the sprint, one challenge surfaced repeatedly: trust. AI-generated metadata is valuable only if users believe it.</p>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">✅</div>
-        <div class="solution-title">Editable Metadata</div>
-        <p>Users can correct AI-generated tags, keeping the system accurate over time.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📊</div>
-        <div class="solution-title">Confidence Indicators</div>
-        <p>Visibility into how certain the system is about its recommendations.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">🔎</div>
-        <div class="solution-title">Search-First</div>
-        <p>Advanced functionality stays secondary, keeping the platform approachable.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">⚖️</div>
-        <div class="solution-title">AI + Control</div>
-        <p>These decisions balanced automation with user control throughout.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">✅</div><div class="solution-title">Editable Metadata</div><p>Users can correct AI-generated tags, keeping the system accurate over time.</p></div>
+      <div class="solution-card"><div class="solution-icon">📊</div><div class="solution-title">Confidence Indicators</div><p>Visibility into how certain the system is about its recommendations.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔎</div><div class="solution-title">Search-First</div><p>Advanced functionality stays secondary, keeping the platform approachable.</p></div>
+      <div class="solution-card"><div class="solution-icon">⚖️</div><div class="solution-title">AI + Control</div><p>These decisions balanced automation with user control throughout.</p></div>
     </div>
-
-    <!-- 07 Impact -->
     <div class="case-eyebrow">08 - Impact</div>
-    <p class="case-body">The concept positioned Lemonlight's growing content archive as a strategic asset rather than a storage problem. By combining discovery, contextual understanding, and content creation into a single workflow, HeroFlow demonstrated how AI could dramatically reduce the effort required to reuse existing footage.</p>
-    <h3 class="case-h3">Success Metrics</h3>
     <div class="solution-grid">
-      <div class="solution-card">
-        <div class="solution-icon">⏱️</div>
-        <div class="solution-title">6 hrs → 10 min</div>
-        <p>Target reduction in footage retrieval time per campaign.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">📈</div>
-        <div class="solution-title">DAU / WAU</div>
-        <p>Daily and weekly active users as primary retention signals.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">⭐</div>
-        <div class="solution-title">NPS Score</div>
-        <p>Net Promoter Score from agency and brand teams after onboarding.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon">♻️</div>
-        <div class="solution-title">Reuse Rate</div>
-        <p>Increase in repurposed video assets vs. newly produced content.</p>
-      </div>
+      <div class="solution-card"><div class="solution-icon">⏱️</div><div class="solution-title">6 hrs → 10 min</div><p>Target reduction in footage retrieval time per campaign.</p></div>
+      <div class="solution-card"><div class="solution-icon">📈</div><div class="solution-title">DAU / WAU</div><p>Daily and weekly active users as primary retention signals.</p></div>
+      <div class="solution-card"><div class="solution-icon">⭐</div><div class="solution-title">NPS Score</div><p>Net Promoter Score from agency and brand teams after onboarding.</p></div>
+      <div class="solution-card"><div class="solution-icon">♻️</div><div class="solution-title">Reuse Rate</div><p>Increase in repurposed video assets vs. newly produced content.</p></div>
     </div>
-    <p class="case-body">The concept was ultimately selected as the foundation for future exploration of Lemonlight's AI-powered content ecosystem.</p>
-
-    <!-- 08 Reflection -->
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">
-      "The most important challenge wasn't building AI features, it was designing trust around them. Successful AI experiences aren't defined by how much they automate, they're defined by how effectively they help people make decisions, stay in control, and move faster toward their goals."
-    </div>
-    <p class="case-body">By focusing on workflow integration rather than AI for its own sake, I was able to design a solution that felt both innovative and practical for creative teams.</p>
-
+    <div class="case-pullquote">"The most important challenge wasn't building AI features, it was designing trust around them. Successful AI experiences aren't defined by how much they automate, they're defined by how effectively they help people make decisions, stay in control, and move faster toward their goals."</div>
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn outline">Product Demo Video</a>
@@ -1813,35 +984,25 @@
 </div>
 
 <!-- CONNECT -->
-  <div class="contact-grid" id="connect">
-    <div class="contact-headline">Good design starts<br>with a conversation!</div>
-    <p style="color:#555; line-height:1.7; margin:0 auto 2rem; max-width:480px;">If you'd like to collaborate, discuss a project, or share a great coffee recommendation, let's connect!</p>
-    <div class="contact-buttons">
-      <a href="mailto:hello@example.com" class="contact-btn primary" target="_blank">Email Me</a>
-      <a href="resume.pdf" class="contact-btn" target="_blank">Resume</a>
-      <a href="https://www.linkedin.com/in/aashwini-vachhani/" class="contact-btn" target="_blank">LinkedIn</a>
-    </div>
+<div class="contact-grid" id="connect">
+  <div class="contact-headline">Good design starts<br>with a conversation!</div>
+  <p style="color:#555; line-height:1.7; margin:0 auto 2rem; max-width:480px;">If you'd like to collaborate, discuss a project, or share a great coffee recommendation, let's connect!</p>
+  <div class="contact-buttons">
+    <a href="mailto:hello@example.com" class="contact-btn primary" target="_blank">Email Me</a>
+    <a href="resume.pdf" class="contact-btn" target="_blank">Resume</a>
+    <a href="https://www.linkedin.com/in/aashwini-vachhani/" class="contact-btn" target="_blank">LinkedIn</a>
   </div>
-</section>
+</div>
 
 <script>
   (function(){
     var sections = ['hero','journey','connect'].map(function(id){return document.getElementById(id);}).filter(Boolean);
     var links = Array.from(document.querySelectorAll('nav a'));
-    function setActive(id){
-      links.forEach(function(a){
-        a.classList.toggle('active', a.getAttribute('href') === '#'+id);
-      });
-    }
+    function setActive(id){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});}
     function onScroll(){
       var current = sections[0].id;
       var triggerLine = window.innerHeight * 0.35;
-      sections.forEach(function(sec){
-        var rect = sec.getBoundingClientRect();
-        if(rect.top <= triggerLine){
-          current = sec.id;
-        }
-      });
+      sections.forEach(function(sec){var rect=sec.getBoundingClientRect(); if(rect.top<=triggerLine){current=sec.id;}});
       setActive(current);
     }
     window.addEventListener('scroll', onScroll, {passive:true});
