@@ -7,16 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sky:#cfe6f5;
-    --cream:#f7f2e9;
-    --yellow:#f6e34a;
-    --ink:#2b2b2b;
-    --soft:#6b6b6b;
-    --pink:#f6d6d6;
-    --purple:#e4d4f7;
-    --green:#d4f1d4;
-    --line:#e3ddd0;
-    --rose:#e8547a;
+    --sky:#cfe6f5; --cream:#f7f2e9; --yellow:#f6e34a; --ink:#2b2b2b;
+    --soft:#6b6b6b; --pink:#f6d6d6; --purple:#e4d4f7; --green:#d4f1d4;
+    --line:#e3ddd0; --rose:#e8547a;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Plus Jakarta Sans',sans-serif; color:var(--ink); background:var(--cream); overflow-x:hidden;}
@@ -24,33 +17,70 @@
   img{max-width:100%; display:block;}
 
   /* NAV */
-  nav{
-    position:sticky; top:0; z-index:50;
-    display:flex; justify-content:center; gap:.6rem;
-    padding:1.2rem 1rem;
-    background:linear-gradient(180deg,rgba(247,242,233,0.92),rgba(247,242,233,0));
-    flex-wrap:wrap;
-  }
-  nav a{
-    text-decoration:none; color:var(--ink);
-    background:rgba(255,255,255,0.75);
-    border:1px solid rgba(0,0,0,0.06);
-    padding:.5rem 1.1rem; border-radius:999px;
-    font-size:.85rem; font-weight:500; transition:.2s;
-  }
+  nav{position:sticky; top:0; z-index:50; display:flex; justify-content:center; gap:.6rem; padding:1.2rem 1rem; background:linear-gradient(180deg,rgba(247,242,233,0.92),rgba(247,242,233,0)); flex-wrap:wrap;}
+  nav a{text-decoration:none; color:var(--ink); background:rgba(255,255,255,0.75); border:1px solid rgba(0,0,0,0.06); padding:.5rem 1.1rem; border-radius:999px; font-size:.85rem; font-weight:500; transition:.2s;}
   nav a:hover{background:#fff; transform:translateY(-1px);}
   nav a.active{background:#e0ddd5;}
-  </style>
-</head>
-<body>
+
+  /* ===================== HERO ===================== */
+  .hero{position:relative; background:var(--cream); min-height:100vh; overflow:hidden; padding-bottom:4rem;}
+
+  .hero-inner{display:grid; grid-template-columns:260px 1fr 260px; gap:1.5rem; max-width:1300px; margin:0 auto; padding:2rem 3vw 0; align-items:start;}
+
+  /* LEFT */
+  .hero-left{display:flex; flex-direction:column; gap:1.2rem; padding-top:1rem;}
+  .hero-travel-photo{width:170px; background:#fff; border-radius:14px; padding:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.13); transform:rotate(-4deg); margin-bottom:.2rem;}
+  .hero-travel-photo img{width:100%; height:150px; object-fit:cover; border-radius:10px;}
+  .photo-caption{font-size:.68rem; color:var(--soft); text-align:center; margin-top:.35rem; font-style:italic; line-height:1.3;}
+  .info-card{background:#fff; border-radius:16px; padding:.85rem 1rem; display:flex; align-items:center; gap:.8rem; box-shadow:0 3px 14px rgba(0,0,0,0.07);}
+  .info-icon{width:42px; height:42px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0;}
+  .ic-pink{background:#fde8ef;} .ic-yellow{background:#fef6e4;} .ic-blue{background:#e8f0fe;} .ic-green{background:#e6f4ea;} .ic-purple{background:#f3eeff;}
+  .info-label{font-weight:800; font-size:.88rem; color:var(--ink);}
+  .info-sub{font-size:.75rem; color:var(--soft); margin-top:.1rem; line-height:1.35;}
+
+  /* Info card tilts */
+  .info-card:nth-child(2){transform:rotate(-1.5deg);}
+  .info-card:nth-child(3){transform:rotate(1.5deg);}
+  .info-card:nth-child(4){transform:rotate(-1deg);}
+  .info-card:nth-child(5){transform:rotate(1.2deg);}
+
+  /* CENTER */
+  .hero-center{display:flex; flex-direction:column; align-items:center; text-align:center;}
+  .hero-eyebrow{font-size:.95rem; letter-spacing:.5em; text-transform:uppercase; font-weight:600; color:var(--rose); margin-bottom:.25rem;}
+  .hero-h1{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(3rem,9vw,7rem); line-height:.92; letter-spacing:-0.02em; text-transform:uppercase; color:var(--ink);}
+  .hero-sub{font-family:'DM Serif Display',serif; font-style:italic; font-size:clamp(1.3rem,2.5vw,2rem); color:var(--ink); margin:.5rem 0 0; display:inline-block;}
+  .hero-sub-line{display:block; width:55%; margin:.2rem auto 0;}
+  .hero-sub-line svg{width:100%; height:auto;}
+
+  .hero-arch-wrap{position:relative; margin-top:1rem; display:flex; justify-content:center; width:100%; max-height:500px; overflow:hidden;}
+  .hero-arch-bg{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:320px; height:360px; background:linear-gradient(180deg,#fde8ef 0%,#fce4b0 100%); border-radius:180px 180px 0 0; z-index:0;}
+  .hero-photo{position:relative; z-index:1; width:min(34vw,340px); height:auto; object-fit:contain;}
+  .hero-bubble{position:absolute; right:-20px; top:30%; background:#fff; border-radius:18px 18px 4px 18px; padding:.7rem 1.1rem; box-shadow:0 6px 20px rgba(0,0,0,0.12); font-weight:700; font-size:.88rem; white-space:nowrap; z-index:10; color:var(--ink);}
+
+  .hero-tagline-box{background:#fff; border-radius:20px; padding:1.3rem 1.8rem; margin-top:0; box-shadow:0 4px 20px rgba(0,0,0,0.07); max-width:520px; text-align:center;}
+  .tagline-main{font-weight:800; font-size:1.15rem; color:var(--ink); line-height:1.35;}
+  .tagline-main span{color:var(--rose);}
+  .tagline-sub{font-size:.86rem; color:var(--soft); margin-top:.45rem; line-height:1.6;}
+  .hire-link{display:inline-block; margin-top:.85rem; font-weight:700; color:var(--rose); text-decoration:none; font-size:.92rem;}
+  .hire-link:hover{text-decoration:underline;}
+
+  /* RIGHT */
+  .hero-right{display:flex; flex-direction:column; gap:1.2rem; padding-top:4rem;}
+  .skill-card{background:#fff; border-radius:16px; padding:.85rem 1rem; display:flex; align-items:center; gap:.8rem; box-shadow:0 3px 14px rgba(0,0,0,0.07);}
+  .skill-icon{width:42px; height:42px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0;}
+  .skill-label{font-weight:800; font-size:.88rem; color:var(--ink);}
+  .skill-sub{font-size:.75rem; color:var(--soft); margin-top:.1rem; line-height:1.35;}
+
+  /* Skill card tilts */
+  .skill-card:nth-child(1){transform:rotate(1.5deg);}
+  .skill-card:nth-child(2){transform:rotate(-1.2deg);}
+  .skill-card:nth-child(3){transform:rotate(1deg);}
+
+  .hero-camera-photo{background:#fff; border-radius:14px; padding:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.13); transform:rotate(2deg); width:170px; align-self:flex-end; margin-top:.3rem;}
+  .hero-camera-photo img{width:100%; height:145px; object-fit:cover; border-radius:10px;}
 
   /* ===================== DESIGN WORK ===================== */
-  .work-layout{
-    max-width:1300px; margin:0 auto;
-    padding:2.5rem 6vw 6rem;
-    display:grid; grid-template-columns:340px 1fr;
-    gap:2.5rem; align-items:start;
-  }
+  .work-layout{max-width:1300px; margin:0 auto; padding:2.5rem 6vw 6rem; display:grid; grid-template-columns:340px 1fr; gap:2.5rem; align-items:start;}
   .work-sidebar{position:sticky; top:5rem; display:flex; flex-direction:column; gap:1.5rem;}
   .expertise-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.8rem;}
   .expertise-box h3{font-size:1.2rem; margin-bottom:.5rem;}
@@ -58,13 +88,11 @@
   .expertise-list{display:flex; flex-direction:column; gap:.7rem;}
   .expertise-item{text-align:center; font-weight:700; font-size:.95rem; background:var(--cream); border-radius:999px; padding:.8rem 1rem;}
   .expertise-item.lead{background:var(--pink); color:#b0436b;}
-
   .mystack-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.6rem;}
   .mystack-box h3{font-size:1.1rem; font-weight:700; margin-bottom:1rem;}
   .mystack-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;}
   .mystack-icon{width:75%; aspect-ratio:1; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin:0 auto;}
   .mystack-icon img{width:100%; height:100%; object-fit:cover; display:block;}
-
   .education-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.6rem; display:flex; flex-direction:column; gap:1rem;}
   .education-item{display:flex; align-items:center; gap:1rem;}
   .education-badge{width:48px; height:48px; border-radius:50%; flex-shrink:0; overflow:hidden; border:2px solid transparent;}
@@ -73,25 +101,17 @@
   .education-item:nth-child(2) .education-badge{border-color:#990000;}
   .education-info .degree{font-weight:700; font-size:.95rem;}
   .education-info .school{font-size:.85rem; color:var(--soft);}
-
   .location-card{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.4rem; position:relative;}
   .location-photo{border-radius:14px; overflow:hidden; position:relative;}
   .location-photo img{width:100%; height:170px; object-fit:cover;}
   .location-chat{position:absolute; bottom:.8rem; right:.8rem; display:flex; align-items:center; gap:.6rem;}
   .location-chat .bubble{background:var(--sky); color:#2b5d80; font-weight:700; border-radius:14px; padding:.6rem 1rem; font-size:.9rem; display:inline-block;}
-
   .work-entries{display:flex; flex-direction:column; gap:2.5rem;}
   .work-eyebrow{font-size:.85rem; letter-spacing:.3em; text-transform:uppercase; font-weight:700; color:var(--soft); margin-bottom:.5rem;}
   .journey-entry{background:#fff; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:2rem; position:relative;}
   .case-study-card{cursor:pointer; position:relative; transition:transform .2s ease, box-shadow .2s ease;}
   .case-study-card:hover{transform:translateY(-4px) scale(1.01); box-shadow:0 16px 40px rgba(0,0,0,0.12);}
-  .view-work-pill{
-    position:absolute; background:#294c2e; color:#fff;
-    font-weight:700; font-size:.95rem; padding:.7rem 1.6rem; border-radius:999px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.18); opacity:0; pointer-events:none;
-    transform:translate(-50%,-50%) scale(0.9); transition:opacity .15s ease, transform .15s ease;
-    z-index:10; white-space:nowrap;
-  }
+  .view-work-pill{position:absolute; background:#294c2e; color:#fff; font-weight:700; font-size:.95rem; padding:.7rem 1.6rem; border-radius:999px; box-shadow:0 8px 24px rgba(0,0,0,0.18); opacity:0; pointer-events:none; transform:translate(-50%,-50%) scale(0.9); transition:opacity .15s ease, transform .15s ease; z-index:10; white-space:nowrap;}
   .case-study-card:hover .view-work-pill{opacity:1; transform:translate(-50%,-50%) scale(1);}
   .klinos-card .view-work-pill{background:#498cb7;}
   .third-places-card .view-work-pill{background:#294c2e;}
@@ -207,6 +227,7 @@
 
 <!-- HERO -->
 <header class="hero" id="hero">
+  <div class="hero-inner">
 
     <!-- LEFT COLUMN -->
     <div class="hero-left">
@@ -254,30 +275,11 @@
           <path d="M 5 12 Q 50 2, 100 10 Q 150 18, 195 8" stroke="#e8547a" stroke-width="3" fill="none" stroke-linecap="round"/>
         </svg>
       </span>
-
       <div class="hero-arch-wrap">
         <div class="hero-arch-bg"></div>
         <img class="hero-photo" src="herophoto.png" alt="Portrait of Aashwini.">
-</div>
-      <div style="
-  position:relative;
-  align-self:flex-end;
-  margin-top:-180px;
-  margin-right:-60px;
-  background:#fff;
-  border-radius:18px 18px 4px 18px;
-  padding:.7rem 1.1rem;
-  box-shadow:0 6px 20px rgba(0,0,0,0.12);
-  font-weight:700;
-  font-size:.88rem;
-  white-space:nowrap;
-  z-index:10;
-  color:var(--ink);
-">
-  Hi, it's Aashwini!👋
-</div>
+        <div class="hero-bubble">Hi, it's Aashwini! 👋</div>
       </div>
-
       <div class="hero-tagline-box">
         <div class="tagline-main">UI/UX designer passionate about turning complex problems into simple, seamless experiences.</div>
         <div class="tagline-sub">By balancing user needs with business goals, I create intuitive digital products that are meaningful, easy to use, and built to make an impact. ✨</div>
@@ -308,7 +310,7 @@
           <div class="skill-sub">Exploring the future of intelligent experiences</div>
         </div>
       </div>
-      <div class="hero-camera-photo" style="align-self:flex-end; margin-top:.3rem;">
+      <div class="hero-camera-photo">
         <img src="mecamera.jpg" alt="Photographer">
         <div class="photo-caption">capturing moments, telling stories</div>
       </div>
@@ -543,10 +545,10 @@
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr); margin-top:1rem;">
       <div class="solution-card"><div class="solution-icon">🏠</div><div class="solution-title">Home Screen</div><p>Personalized feed based on vibe preferences and past visits.</p></div>
       <div class="solution-card"><div class="solution-icon">🗺️</div><div class="solution-title">Discovery Page</div><p>Map + list view with mood-based and amenity filters.</p></div>
-      <div class="solution-card"><div class="solution-icon">🎲</div><div class="solution-title">Roulette</div><p>Gives users a place recommendation upon spinning a virtual wheel — for when they want to try something new.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎲</div><div class="solution-title">Roulette</div><p>Gives users a place recommendation upon spinning a virtual wheel.</p></div>
     </div>
     <div class="case-eyebrow">07 - The Physical Solution</div>
-    <p class="case-body">The team believed the app alone wouldn't shift behavior. Physical touchpoints were prototyped to organically foster connection inside partner spaces: tote bags reading "linger longer," branded coffee cups with community messaging, and connection cards ("Find me at a third space!") with fields for name, favorite spot, and contact info.</p>
+    <p class="case-body">The team believed the app alone wouldn't shift behavior. Physical touchpoints were prototyped to organically foster connection inside partner spaces: tote bags reading "linger longer," branded coffee cups with community messaging, and connection cards with fields for name, favorite spot, and contact info.</p>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem;">
       <img src="agoratote.png" alt="Agora Tote" style="width:100%; height:380px; object-fit:cover; border-radius:10px;">
       <img src="agoracup.png" alt="Agora Cup" style="width:100%; height:380px; object-fit:cover; border-radius:10px;">
@@ -559,7 +561,7 @@
       <div class="solution-card"><div class="solution-icon">⭐</div><div class="solution-title">Rate</div><p>Satisfaction ratings per third place visited to drive quality.</p></div>
     </div>
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">"I learned that solutions to complex cultural challenges rarely achieve perfection, but by embracing collaboration and grounding design in user needs, we can craft a meaningful approach. Designing for both digital and physical touchpoints showed me that behavior change requires meeting people where they already are."</div>
+    <div class="case-pullquote">"I learned that solutions to complex cultural challenges rarely achieve perfection, but by embracing collaboration and grounding design in user needs, we can craft a meaningful approach."</div>
     <div style="text-align:center; margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="https://drive.google.com/file/d/1K9m2JkYRHlbuRORBYV-ue_rHUqe4fEQw/view?usp=sharing" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
     </div>
@@ -584,18 +586,15 @@
     </div>
     <div class="case-eyebrow">02 - The Challenge</div>
     <p class="case-body">During discovery, one challenge became immediately apparent: users didn't understand what made Klinos different.</p>
-    <p class="case-body">Most healthcare companies focus on individual services, while Klinos was offering something much larger, a coordinated healthcare ecosystem designed around prevention and long-term wellbeing.</p>
-    <p class="case-body">The challenge wasn't simply presenting information. It was helping users understand how multiple healthcare services could work together to create a better experience.</p>
+    <p class="case-body">Most healthcare companies focus on individual services, while Klinos was offering something much larger — a coordinated healthcare ecosystem designed around prevention and long-term wellbeing.</p>
     <div class="case-pullquote">How might we communicate a complex healthcare model in a way that feels intuitive, trustworthy, and valuable?</div>
     <div class="case-eyebrow">03 - Understanding the User</div>
     <p class="case-body">Through stakeholder discussions, market research, and competitor analysis, I identified a recurring pattern. People weren't frustrated by a lack of healthcare options, they were frustrated by the effort required to coordinate everything themselves.</p>
     <div class="case-pullquote">People don't need more healthcare services. They need a better way to navigate them.</div>
-    <p class="case-body">This shifted the focus from promoting services to designing a system that made healthcare feel simpler and more connected.</p>
     <div class="case-eyebrow">04 - Designing the Ecosystem</div>
-    <p class="case-body">A single touchpoint wouldn't support the entire healthcare journey. To address these needs, I designed both a website experience and a companion mobile application, each serving a unique role within the ecosystem.</p>
     <div class="solution-grid" style="grid-template-columns:repeat(2,1fr);">
-      <div class="solution-card"><div class="solution-icon">🌐</div><div class="solution-title">Website Experience</div><p>The first introduction to Klinos, focused on educating, building trust, and communicating the value of coordinated healthcare through outcomes rather than medical terminology.</p></div>
-      <div class="solution-card"><div class="solution-icon">📱</div><div class="solution-title">Mobile App Experience</div><p>A centralized hub where members access health information, manage appointments, view recommendations, and stay connected with their care team.</p></div>
+      <div class="solution-card"><div class="solution-icon">🌐</div><div class="solution-title">Website Experience</div><p>The first introduction to Klinos, focused on educating, building trust, and communicating the value of coordinated healthcare.</p></div>
+      <div class="solution-card"><div class="solution-icon">📱</div><div class="solution-title">Mobile App Experience</div><p>A centralized hub where members access health information, manage appointments, and stay connected with their care team.</p></div>
     </div>
     <div class="case-eyebrow">05 - Website Design Goals</div>
     <h3 class="case-h3">Transforming a complex healthcare model into a story users can easily understand and act on.</h3>
@@ -607,7 +606,7 @@
     </ul>
     <img src="klinoslaptop.png" alt="Klinos website homepage design." style="width:100%; height:auto; border-radius:10px; margin-top:1.2rem;">
     <div class="case-eyebrow">06 - Mobile App Experience</div>
-    <p class="case-body">While the website introduces users to Klinos, the mobile app supports them throughout their ongoing healthcare journey, reducing fragmentation and helping members stay engaged with their health over time.</p>
+    <p class="case-body">While the website introduces users to Klinos, the mobile app supports them throughout their ongoing healthcare journey.</p>
     <div class="solution-grid">
       <div class="solution-card"><div class="solution-icon">📊</div><div class="solution-title">Health Dashboard</div><p>Personalized overview of health status and goals.</p><img src="klinoshome.png" alt="Health Dashboard" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;"></div>
       <div class="solution-card"><div class="solution-icon">📅</div><div class="solution-title">Appointments</div><p>Scheduling and management across providers.</p><img src="klinosapts.png" alt="Appointments" style="width:100%; height:auto; border-radius:8px; margin-top:.8rem;"></div>
@@ -616,22 +615,20 @@
     </div>
     <div class="case-eyebrow">07 - Key Design Decisions</div>
     <div class="solution-grid">
-      <div class="solution-card"><div class="solution-icon">🎯</div><div class="solution-title">Outcomes Over Services</div><p>Structured content around user goals and health outcomes, so users understand not just what Klinos offers, but why it matters.</p></div>
-      <div class="solution-card"><div class="solution-icon">🧩</div><div class="solution-title">Simplifying Information</div><p>Used progressive disclosure, clear hierarchy, and simplified language without sacrificing credibility.</p></div>
-      <div class="solution-card"><div class="solution-icon">🤝</div><div class="solution-title">Trust Through Transparency</div><p>Educational content and straightforward navigation helped users feel confident in their decisions.</p></div>
-      <div class="solution-card"><div class="solution-icon">📐</div><div class="solution-title">Designing for Scale</div><p>A reusable design system supports consistency across web and mobile, and enables future growth.</p></div>
+      <div class="solution-card"><div class="solution-icon">🎯</div><div class="solution-title">Outcomes Over Services</div><p>Structured content around user goals and health outcomes.</p></div>
+      <div class="solution-card"><div class="solution-icon">🧩</div><div class="solution-title">Simplifying Information</div><p>Used progressive disclosure, clear hierarchy, and simplified language.</p></div>
+      <div class="solution-card"><div class="solution-icon">🤝</div><div class="solution-title">Trust Through Transparency</div><p>Educational content helped users feel confident in their decisions.</p></div>
+      <div class="solution-card"><div class="solution-icon">📐</div><div class="solution-title">Designing for Scale</div><p>A reusable design system supports consistency and future growth.</p></div>
     </div>
     <div class="case-eyebrow">08 - Outcome &amp; Impact</div>
-    <p class="case-body">The final experience transformed a complex healthcare business model into a clear and approachable digital ecosystem, communicating a unified vision of prevention, longevity, and coordinated care.</p>
     <ul class="case-list">
       <li>Established a unified digital ecosystem across web and mobile touchpoints</li>
-      <li>Improved understanding of healthcare services through simplified navigation and content architecture</li>
+      <li>Improved understanding of healthcare services through simplified navigation</li>
       <li>Built a scalable design system supporting future products and platform growth</li>
       <li>Strengthened trust through clear, educational design</li>
     </ul>
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">"This project taught me that some of the most important design challenges are not interface problems, they are communication problems. The challenge wasn't designing a healthcare website or a mobile app, it was helping people understand an entirely new way of experiencing healthcare."</div>
-    <p class="case-body">By focusing on coordination rather than individual services, I was able to design an ecosystem that simplifies complexity, builds trust, and supports users throughout their healthcare journey.</p>
+    <div class="case-pullquote">"This project taught me that some of the most important design challenges are not interface problems, they are communication problems."</div>
     <div style="text-align:center; margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
     </div>
@@ -648,7 +645,6 @@
     <p class="modal-intro" style="font-weight:700;">Redesigning Internal Communication by Listening to What Employees Actually Needed</p>
     <p class="modal-intro">Large organizations rely on internal communication tools to keep employees informed, connected, and engaged.</p>
     <p class="modal-intro">At Best Buy, the existing employee platform served as a central hub for company information, but adoption remained low. Employees were increasingly turning to external tools and informal channels to communicate, share knowledge, and build community.</p>
-    <p class="modal-intro">Our team set out to explore how Best Buy could create a more engaging internal experience that better supported employee communication and connection.</p>
     <div class="case-meta-grid">
       <div class="case-meta-card"><div class="case-meta-icon">🏢</div><div class="case-meta-label">Client</div><div class="case-meta-value">Best Buy (Class Project)</div></div>
       <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">12 Weeks</div></div>
@@ -656,16 +652,14 @@
       <div class="case-meta-card"><div class="case-meta-icon">🧭</div><div class="case-meta-label">Platform</div><div class="case-meta-value">Web Application</div></div>
     </div>
     <div class="case-eyebrow">02 - The Challenge</div>
-    <p class="case-body">When the project began, we assumed the problem was rooted in improving communication inside the store environment. Like many internal tools, the initial focus was on making information more accessible and improving day-to-day workflows.</p>
-    <p class="case-body">However, after speaking directly with employees, we realized we were solving the wrong problem. The real challenge was not communication during work, it was communication outside of work.</p>
+    <p class="case-body">The real challenge was not communication during work — it was communication outside of work. Employees wanted a space where they could connect with peers, share experiences, and build relationships beyond their immediate teams.</p>
     <div class="case-pullquote">How might we create a platform that fosters community and connection across the entire Best Buy employee network?</div>
     <div class="case-eyebrow">03 - Research &amp; Discovery</div>
-    <p class="case-body">Through user interviews, competitive analysis, and collaborative workshops, we explored how employees currently communicated and where existing tools were falling short.</p>
     <div class="solution-grid">
       <div class="solution-card"><div class="solution-icon">🔍</div><div class="solution-title">Competitive Analysis</div><p>Benchmarked Slack, Microsoft Teams, Meta Workplace, and Yammer.</p></div>
       <div class="solution-card"><div class="solution-icon">🎤</div><div class="solution-title">User Interviews</div><p>Employees wanted community and peer connection, not just top-down announcements.</p></div>
       <div class="solution-card"><div class="solution-icon">🔄</div><div class="solution-title">The Pivot</div><p>Interview findings refocused the project from in-store tooling to an out-of-store community platform.</p></div>
-      <div class="solution-card"><div class="solution-icon">📋</div><div class="solution-title">CPS Framework</div><p>Morphological grids, dot voting, and decision charts helped the team evaluate and converge on ideas.</p></div>
+      <div class="solution-card"><div class="solution-icon">📋</div><div class="solution-title">CPS Framework</div><p>Morphological grids, dot voting, and decision charts helped evaluate and converge on ideas.</p></div>
     </div>
     <div class="case-eyebrow">04 - Reframing the Experience</div>
     <div class="case-pullquote">People didn't need another channel for announcements. They needed a reason to open the app between shifts.</div>
@@ -677,10 +671,10 @@
     </div>
     <div class="case-eyebrow">06 - The Solution</div>
     <div class="solution-grid">
-      <div class="solution-card"><div class="solution-icon">🏠</div><div class="solution-title">Community Feed</div><p>A central homepage surfaces company updates, team highlights, employee achievements, and ongoing conversations.</p></div>
-      <div class="solution-card"><div class="solution-icon">👥</div><div class="solution-title">Groups &amp; Communities</div><p>Employees can join discussion groups based on departments, interests, locations, or shared experiences.</p></div>
-      <div class="solution-card"><div class="solution-icon">📢</div><div class="solution-title">Announcements</div><p>Official updates remain accessible through dedicated manager-led communication channels.</p></div>
-      <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Employee Privacy Controls</div><p>Customizable profile and privacy settings, allowing users to control how they participate.</p></div>
+      <div class="solution-card"><div class="solution-icon">🏠</div><div class="solution-title">Community Feed</div><p>A central homepage surfaces company updates, team highlights, and ongoing conversations.</p></div>
+      <div class="solution-card"><div class="solution-icon">👥</div><div class="solution-title">Groups &amp; Communities</div><p>Employees can join discussion groups based on departments, interests, and locations.</p></div>
+      <div class="solution-card"><div class="solution-icon">📢</div><div class="solution-title">Announcements</div><p>Official updates remain accessible through dedicated manager-led channels.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Employee Privacy Controls</div><p>Customizable settings allowing users to control how they participate.</p></div>
     </div>
     <div class="case-eyebrow">07 - Final Screens</div>
     <div class="journey-gallery" style="margin-top:1.2rem;">
@@ -727,7 +721,7 @@
     <div class="solution-grid">
       <div class="solution-card"><div class="solution-icon">🍽️</div><div class="solution-title">Human, Not Corporate</div><p>Visuals that feel like an invitation from a friend, not a faceless platform.</p></div>
       <div class="solution-card"><div class="solution-icon">✏️</div><div class="solution-title">Crafted Details</div><p>Hand-touched textures and illustrative elements that nod to culinary craft.</p></div>
-      <div class="solution-card"><div class="solution-icon">🧡</div><div class="solution-title">Warm Palette</div><p>A palette inspired by spice, citrus, and tabletop tones rather than sterile app blues.</p></div>
+      <div class="solution-card"><div class="solution-icon">🧡</div><div class="solution-title">Warm Palette</div><p>A palette inspired by spice, citrus, and tabletop tones.</p></div>
       <div class="solution-card"><div class="solution-icon">🔁</div><div class="solution-title">Memorable System</div><p>A flexible identity that scales from app icons to packaging and merchandise.</p></div>
     </div>
     <div class="case-eyebrow">04 - Logo &amp; Identity</div>
@@ -743,10 +737,10 @@
     </div>
     <div class="case-eyebrow">06 - Print &amp; Merchandise</div>
     <div class="solution-grid" style="grid-template-columns:repeat(2,1fr); padding:0; gap:1rem;">
-      <img src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=600&q=80" alt="Packaging." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Merchandise." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Menu." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
-      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="Packaging detail." style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1517632298201-22b0e7d3a4e6?w=600&q=80" style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" style="width:100%; height:220px; object-fit:cover; border-radius:14px;">
     </div>
     <div class="case-eyebrow">07 - Social Media Design</div>
     <div class="solution-grid">
@@ -785,8 +779,7 @@
     <img class="case-hero-img" src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000&q=80" alt="HeroFlow dashboard.">
     <div class="case-eyebrow">01 - The Forgotten Footage Problem</div>
     <h2 style="color:#d4a018;">HeroFlow <span class="serif">for Lemonlight Studios</span></h2>
-    <p class="modal-intro">Video production agencies generate enormous amounts of content.</p>
-    <p class="modal-intro">For Lemonlight Studios, years of client work had resulted in thousands of hours of footage spread across campaigns, brands, and projects. While this archive held immense value, most of it remained effectively inaccessible.</p>
+    <p class="modal-intro">Video production agencies generate enormous amounts of content. For Lemonlight Studios, years of client work had resulted in thousands of hours of footage spread across campaigns. While this archive held immense value, most of it remained effectively inaccessible.</p>
     <p class="modal-intro">Teams often knew the footage existed. They just couldn't find it. What should have been a competitive advantage had become a bottleneck.</p>
     <div class="case-meta-grid">
       <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">Product Designer &amp; Researcher</div></div>
@@ -835,7 +828,7 @@
       <div class="solution-card"><div class="solution-icon">♻️</div><div class="solution-title">Reuse Rate</div><p>Increase in repurposed video assets vs. newly produced content.</p></div>
     </div>
     <div class="case-eyebrow">09 - What I Learned</div>
-    <div class="case-pullquote">"The most important challenge wasn't building AI features, it was designing trust around them. Successful AI experiences aren't defined by how much they automate, they're defined by how effectively they help people make decisions, stay in control, and move faster toward their goals."</div>
+    <div class="case-pullquote">"The most important challenge wasn't building AI features, it was designing trust around them."</div>
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
       <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn outline">Product Demo Video</a>
