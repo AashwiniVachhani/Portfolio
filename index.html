@@ -55,7 +55,19 @@
   .hero-arch-wrap{position:relative; margin-top:1rem; display:flex; justify-content:center; width:100%; max-height:500px; overflow:hidden;}
   .hero-arch-bg{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:320px; height:360px; background:linear-gradient(180deg,#fde8ef 0%,#fce4b0 100%); border-radius:180px 180px 0 0; z-index:0;}
   .hero-photo{position:relative; z-index:1; width:min(34vw,340px); height:auto; object-fit:contain;}
-  .hero-bubble{position:absolute; right:10px; top:30%; background:#fff; border-radius:18px 18px 4px 18px; padding:.7rem 1.1rem; box-shadow:0 6px 20px rgba(0,0,0,0.12); font-weight:700; font-size:.88rem; white-space:nowrap; z-index:10; color:var(--ink);}
+  .hero-bubble{
+  position:absolute; left:10px; top:35%;
+  background:#fff; border-radius:18px 18px 18px 4px;
+  padding:.7rem 1.1rem;
+  box-shadow:0 6px 20px rgba(0,0,0,0.12);
+  font-weight:700; font-size:.88rem; white-space:nowrap;
+  z-index:10; color:var(--ink);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s both;
+}
+@keyframes popIn{
+  0%{opacity:0; transform:scale(0.5) translateY(10px);}
+  100%{opacity:1; transform:scale(1) translateY(0);}
+}
 
   .hero-tagline-box{background:#fff; border-radius:20px; padding:1.3rem 1.8rem; margin-top:0; box-shadow:0 4px 20px rgba(0,0,0,0.07); max-width:520px; text-align:center;}
   .tagline-main{font-weight:800; font-size:1.15rem; color:var(--ink); line-height:1.35;}
