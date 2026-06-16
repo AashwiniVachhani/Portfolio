@@ -17,7 +17,7 @@
   img{max-width:100%; display:block;}
 
   /* NAV */
-  nav{position:sticky; top:0; z-index:50; display:flex; justify-content:center; gap:.6rem; padding:1.2rem 1rem; background:linear-gradient(180deg,rgba(247,242,233,0.92),rgba(247,242,233,0)); flex-wrap:wrap;}
+  nav{position:sticky; top:0; z-index:50; display:flex; justify-content:center; gap:.6rem; padding:1.2rem 1rem; background:rgba(247,242,233,0.97); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(0,0,0,0.05); flex-wrap:wrap;}
   nav a{text-decoration:none; color:var(--ink); background:rgba(255,255,255,0.75); border:1px solid rgba(0,0,0,0.06); padding:.5rem 1.1rem; border-radius:999px; font-size:.85rem; font-weight:500; transition:.2s;}
   nav a:hover{background:#fff; transform:translateY(-1px);}
   nav a.active{background:#e0ddd5;}
@@ -126,6 +126,7 @@
   .heroflow-card .view-work-pill{background:#d4a018;}
   .bestbuy-card .view-work-pill{background:#153065;}
   .cozymeal-card .view-work-pill{background:#e78b24;}
+  .relay-card .view-work-pill{background:#89D957;}
 
   /* Themes */
   .theme-gold .case-eyebrow{color:#d4a018;} .theme-gold .cps-num{color:#d4a018;} .theme-gold .case-list li::before{color:#d4a018;} .theme-gold .mood-chip{background:#f7ecd2; color:#a07a10;} .theme-gold .case-pullquote{color:#a07a10; background:#f7ecd2; border-left-color:#d4a018;} .theme-gold .pitch-deck-btn{background:#d4a018;} .theme-gold .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(212,160,24,0.3);}
@@ -192,14 +193,27 @@
   .journey-gallery{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:.8rem; margin-bottom:1.2rem;}
   .journey-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px;}
   .journey-gallery .wide{grid-column:span 2;}
+
+  /* RELAY SLIDESHOW */
+  .relay-slideshow{position:relative; border-radius:10px; overflow:hidden; aspect-ratio:1100/560; background:#1E1E1E; margin-top:1rem;}
+  .relay-slide{position:absolute; inset:0; opacity:0; transition:opacity .35s ease; pointer-events:none;}
+  .relay-slide.active{opacity:1; pointer-events:auto;}
+  .relay-slide img{width:100%; height:100%; object-fit:contain; display:block;}
+  .relay-slide-arrow{position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.92); border:none; width:38px; height:38px; border-radius:50%; font-size:1.4rem; line-height:1; cursor:pointer; color:#1E1E1E; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.25); transition:background .2s, transform .2s; z-index:5;}
+  .relay-slide-arrow:hover{background:#fff; transform:translateY(-50%) scale(1.08);}
+  .relay-slide-arrow.prev{left:14px;}
+  .relay-slide-arrow.next{right:14px;}
+  .relay-slide-dots{position:absolute; bottom:14px; left:0; right:0; display:flex; justify-content:center; gap:7px; z-index:5;}
+  .relay-dot{width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.45); cursor:pointer; transition:background .2s, transform .2s;}
+  .relay-dot.active{background:#C9E265; transform:scale(1.3);}
   .journey-tags{display:flex; flex-wrap:wrap; gap:.5rem;}
   .journey-tag{font-size:.8rem; font-weight:600; padding:.4rem .9rem; border-radius:999px;}
-  .journey-entry:nth-child(2) .journey-logo{background:#498cb7;} .journey-entry:nth-child(2) .journey-tag{background:#dbe9f2; color:#498cb7;}
-  .journey-entry:nth-child(3) .journey-logo{background:#294c2e;} .journey-entry:nth-child(3) .journey-tag{background:#dfeee1; color:#294c2e;}
-  .journey-entry:nth-child(4) .journey-logo{background:#d4a018;} .journey-entry:nth-child(4) .journey-tag{background:#f7ecd2; color:#a07a10;}
-  .journey-entry:nth-child(5) .journey-logo{background:#153065;} .journey-entry:nth-child(5) .journey-tag{background:#dbe2ee; color:#153065;}
-  .journey-entry:nth-child(6) .journey-logo{background:#e78b24;} .journey-entry:nth-child(6) .journey-tag{background:#fbe6cf; color:#e78b24;}
-  .journey-entry:nth-child(7) .journey-logo{background:#1E1E1E;} .journey-entry:nth-child(7) .journey-tag{background:#EEF6D2; color:#6F7F1F;}
+  .klinos-card .journey-logo{background:#498cb7;} .klinos-card .journey-tag{background:#dbe9f2; color:#498cb7;}
+  .third-places-card .journey-logo{background:#294c2e;} .third-places-card .journey-tag{background:#dfeee1; color:#294c2e;}
+  .heroflow-card .journey-logo{background:#d4a018;} .heroflow-card .journey-tag{background:#f7ecd2; color:#a07a10;}
+  .bestbuy-card .journey-logo{background:#153065;} .bestbuy-card .journey-tag{background:#dbe2ee; color:#153065;}
+  .cozymeal-card .journey-logo{background:#e78b24;} .cozymeal-card .journey-tag{background:#fbe6cf; color:#e78b24;}
+  .relay-card .journey-logo{background:#1E1E1E;} .relay-card .journey-tag{background:#333333; color:#89D957;}
 
   /* CONTACT */
   .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
@@ -217,7 +231,8 @@
     .hero-travel-photo,.hero-camera-photo{display:none;}
     .hero-arch-bg{width:240px; height:260px;}
     .work-layout{grid-template-columns:1fr;}
-    .work-sidebar{position:static;}
+    .work-sidebar{position:static; order:2;}
+    .work-entries{order:1;}
     .journey-header{flex-direction:column;}
     .journey-gallery{grid-template-columns:repeat(2,1fr);}
     .journey-gallery .wide{grid-column:span 2;}
@@ -385,6 +400,26 @@
   <div class="work-entries">
     <div class="work-eyebrow">Design Work</div>
 
+    <!-- Relay -->
+    <div class="journey-entry case-study-card relay-card" onclick="document.getElementById('relay-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
+      <span class="view-work-pill">View Work</span>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="relaylogo.png" alt="Relay"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.6rem; color:#89D957;">Relay</div>
+          <div class="role" style="font-weight:400;">Carrying Context Across Your AI Tools, So You Stop Repeating Yourself</div>
+        </div>
+        <div class="journey-dates">Summer 2026</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Figma</span><span class="journey-tag">Diary Study</span><span class="journey-tag">Survey Research</span><span class="journey-tag">Competitive Analysis</span><span class="journey-tag">Usability Testing</span><span class="journey-tag">Concept Testing</span><span class="journey-tag">AI Products</span>
+      </div>
+      <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0; grid-template-columns:repeat(2,1fr);">
+        <img src="relaydashboard.png" alt="Relay dashboard screen.">
+        <img src="relayhandoff.png" alt="Relay handoff flow screen.">
+      </div>
+    </div>
+
     <!-- Klinos -->
     <div class="journey-entry case-study-card klinos-card" onclick="document.getElementById('klinos-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
@@ -485,26 +520,6 @@
         <img class="wide" src="cozymealcover.png" alt="Cozymeal packaging.">
         <img src="cozyweb.png" alt="Brand moodboard.">
         <img src="cozytote.png" alt="Merchandise.">
-      </div>
-    </div>
-
-    <!-- Relay -->
-    <div class="journey-entry case-study-card relay-card" onclick="document.getElementById('relay-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
-      <span class="view-work-pill">View Work</span>
-      <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="relaylogo.png" alt="Relay"></div>
-        <div class="journey-meta">
-          <div class="org" style="font-size:1.6rem; color:#89D957;">Relay</div>
-          <div class="role" style="font-weight:400;">Carrying Context Across Your AI Tools, So You Stop Repeating Yourself</div>
-        </div>
-        <div class="journey-dates">Summer 2026</div>
-      </div>
-      <div class="journey-tags">
-        <span class="journey-tag">Figma</span><span class="journey-tag">Diary Study</span><span class="journey-tag">Survey Research</span><span class="journey-tag">Competitive Analysis</span><span class="journey-tag">Usability Testing</span><span class="journey-tag">AI Products</span>
-      </div>
-      <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0; grid-template-columns:repeat(2,1fr);">
-        <img src="relaydashboard.png" alt="Relay dashboard screen.">
-        <img src="relaycover.png" alt="Relay handoff flow screen.">
       </div>
     </div>
   </div>
@@ -847,7 +862,7 @@
 <div class="modal-overlay" id="relay-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-lime">
     <button class="modal-close" onclick="document.getElementById('relay-modal').classList.remove('open')" aria-label="Close">✕</button>
-    <img class="case-hero-img" src="relaycover.png" alt="Relay dashboard screen.">
+    <img class="case-hero-img" src="relaydashboard.png" alt="Relay dashboard screen.">
     <div class="case-eyebrow">01 - It's 9pm and I'm Retyping Myself</div>
     <h2 style="color:#89D957;">Relay <span class="serif">— carrying context across your AI tools</span></h2>
     <p class="modal-intro">I'm explaining the same project background to Claude that I already explained to ChatGPT twenty minutes ago. Same context, same three paragraphs, different tab. I do this almost daily — one tool for writing, another for code, another for a quick fact-check — and every switch costs me five minutes of re-explaining myself before I can actually get to the task.</p>
@@ -899,9 +914,17 @@
 
     <div class="case-eyebrow">06 - Introducing Relay</div>
     <h3 class="case-h3">A dashboard that tracks your active AI conversations and lets you send context to another tool deliberately — reviewed and editable — instead of pasting blind.</h3>
-    <div class="journey-gallery" style="grid-template-columns:repeat(2,1fr); grid-auto-rows:260px;">
-      <img src="relaydashboard.png" alt="Relay dashboard screen.">
-      <img src="relayhandoff.png" alt="Relay handoff flow screen.">
+    <div class="relay-slideshow" id="relay-slideshow">
+      <div class="relay-slide active"><img src="relaydashboard.png" alt="Relay dashboard screen."></div>
+      <div class="relay-slide"><img src="relayhandoff.png" alt="Relay handoff flow screen."></div>
+      <div class="relay-slide"><img src="relaysettings.png" alt="Relay settings screen with capture controls."></div>
+      <button type="button" class="relay-slide-arrow prev" onclick="relaySlideMove(-1)" aria-label="Previous screen">‹</button>
+      <button type="button" class="relay-slide-arrow next" onclick="relaySlideMove(1)" aria-label="Next screen">›</button>
+      <div class="relay-slide-dots">
+        <span class="relay-dot active" onclick="relaySlideGoTo(0)" role="button" aria-label="Show dashboard screen"></span>
+        <span class="relay-dot" onclick="relaySlideGoTo(1)" role="button" aria-label="Show handoff screen"></span>
+        <span class="relay-dot" onclick="relaySlideGoTo(2)" role="button" aria-label="Show settings screen"></span>
+      </div>
     </div>
     <div class="solution-grid" style="margin-top:1rem;">
       <div class="solution-card"><div class="solution-icon">🗂️</div><div class="solution-title">Dashboard</div><p>Active threads, tagged by tool, with a freshness indicator.</p></div>
@@ -917,11 +940,7 @@
       <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Explicit Capture Control</div><p>No "everything, always" default — added directly from a usability finding below.</p></div>
     </div>
 
-    <div class="case-eyebrow">08 - Putting It In Front of People</div>
-    <p class="modal-intro">Three people clicked through a prototype of the dashboard and handoff flow. The thread list made sense instantly. The handoff preview didn't — until "Context package" became "What gets carried over," and suddenly it clicked. One person didn't want full transcripts captured by default, which is the whole reason Settings has explicit capture controls.</p>
-    <img src="relaysettings.png" alt="Relay settings screen with capture controls." style="width:100%; height:auto; border-radius:10px; margin-top:.5rem; display:block;">
-
-    <div class="case-eyebrow">09 - What I Learned</div>
+    <div class="case-eyebrow">08 - What I Learned</div>
     <div class="case-pullquote">This is a concept, not a shipped product. Four diary participants and a community survey are a starting signal, not proof — the next pass needs a real two-tool integration and a bigger, more varied sample before any of this gets treated as settled.</div>
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="relay-mockups.html" target="_blank" rel="noopener" class="pitch-deck-btn">View Interactive Prototype</a>
@@ -962,6 +981,18 @@
         });
       }
     });
+
+    // Relay slideshow
+    var relaySlideIndex = 0;
+    var relaySlideEls = document.querySelectorAll('#relay-slideshow .relay-slide');
+    var relayDotEls = document.querySelectorAll('#relay-slideshow .relay-dot');
+    function relaySlideShow(i){
+      relaySlideIndex = (i + relaySlideEls.length) % relaySlideEls.length;
+      relaySlideEls.forEach(function(s,idx){s.classList.toggle('active', idx===relaySlideIndex);});
+      relayDotEls.forEach(function(d,idx){d.classList.toggle('active', idx===relaySlideIndex);});
+    }
+    window.relaySlideMove = function(dir){ relaySlideShow(relaySlideIndex + dir); };
+    window.relaySlideGoTo = function(i){ relaySlideShow(i); };
   })();
 </script>
 
