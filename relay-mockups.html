@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relay — UI Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-base:#1E1E1E;
+    --bg-surface:#262626;
+    --bg-raised:#2F2F2F;
+    --hairline:#3D3D3D;
+    --text-primary:#EDEDED;
+    --text-secondary:#9A9A9A;
+    --accent:#C9E265;
+    --accent-soft:rgba(201,226,101,0.14);
+    --accent-dark:#7C8F2E;
+    --success:#6FCF97;
+    --tool-chatgpt:#74AA9C;
+    --tool-claude:#D9986B;
+    --tool-gemini:#6C8EF5;
+    --tool-code:#9D8CF2;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg-base);
+    color:var(--text-primary);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* ---- App shell ---- */
+  .app{display:flex; min-height:100vh;}
+
+  .rail{
+    width:220px;
+    flex-shrink:0;
+    background:var(--bg-surface);
+    border-right:1px solid var(--hairline);
+    padding:24px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+  }
+  .wordmark{display:flex; align-items:center; gap:8px; padding:0 8px;}
+  .wordmark .dot{width:10px; height:10px; border-radius:50%; background:var(--accent);}
+  .wordmark span{font-size:18px; letter-spacing:0.2px;}
+
+  .nav{display:flex; flex-direction:column; gap:2px;}
+  .nav button{
+    all:unset;
+    cursor:pointer;
+    padding:10px 12px;
+    border-radius:8px;
+    color:var(--text-secondary);
+    font-size:14px;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .nav button:hover{background:var(--bg-raised); color:var(--text-primary);}
+  .nav button.active{background:var(--accent-soft); color:var(--accent);}
+  .nav .tag{
+    margin-left:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    color:var(--text-secondary);
+    border:1px solid var(--hairline);
+    padding:1px 6px;
+    border-radius:4px;
+  }
+
+  .rail-foot{margin-top:auto; font-size:12px; color:var(--text-secondary); padding:0 8px;}
+
+  .main{flex:1; padding:32px 36px; overflow-x:hidden;}
+  .view{display:none;}
+  .view.active{display:block; animation:fadeIn .25s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+  .view-header{margin-bottom:24px;}
+  .view-header h1{font-size:22px;}
+  .view-header p{margin:6px 0 0; color:var(--text-secondary); font-size:14px;}
+
+  /* ---- tool tag ---- */
+  .tool-tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    color:var(--text-secondary);
+  }
+  .tool-tag .swatch{width:7px; height:7px; border-radius:50%;}
+  .swatch.chatgpt{background:var(--tool-chatgpt);}
+  .swatch.claude{background:var(--tool-claude);}
+  .swatch.gemini{background:var(--tool-gemini);}
+  .swatch.code{background:var(--tool-code);}
+
+  /* ---- Dashboard layout ---- */
+  .dash{display:flex; gap:20px; align-items:flex-start;}
+  .thread-list{
+    width:300px;
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .thread-card{
+    background:var(--bg-surface);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    padding:14px;
+    cursor:pointer;
+    transition:border-color .15s;
+  }
+  .thread-card:hover{border-color:#3a4250;}
+  .thread-card.selected{border-color:var(--accent); background:var(--bg-raised);}
+  .thread-card .top-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+  .thread-card .title{font-size:14px; font-weight:500; margin:4px 0 8px;}
+  .thread-card .meta{display:flex; justify-content:space-between; align-items:center;}
+  .thread-card .time{font-size:11px; color:var(--text-secondary); font-family:'IBM Plex Mono',monospace;}
+  .freshness{height:3px; width:60px; background:var(--hairline); border-radius:2px; overflow:hidden;}
+  .freshness span{display:block; height:100%; background:var(--success);}
+
+  .detail-pane{
+    flex:1;
+    background:var(--bg-surface);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    padding:24px;
+  }
+  .detail-pane .head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px;}
+  .detail-pane h2{font-size:18px;}
+  .summary-list{list-style:none; margin:14px 0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  .summary-list li{
+    font-size:13.5px;
+    color:var(--text-primary);
+    padding-left:16px;
+    position:relative;
+    line-height:1.5;
+  }
+  .summary-list li::before{
+    content:'';
+    position:absolute; left:0; top:7px;
+    width:6px; height:6px; border-radius:50%;
+    background:var(--accent);
+  }
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    color:var(--text-secondary);
+    margin:22px 0 8px;
+  }
+  .transcript{
+    background:var(--bg-base);
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:13px;
+    color:var(--text-secondary);
+  }
+  .btn{
+    all:unset;
+    cursor:pointer;
+    background:var(--accent);
+    color:#1E1E1E;
+    font-weight:600;
+    font-size:13.5px;
+    padding:10px 16px;
+    border-radius:8px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn:hover{filter:brightness(1.05);}
+  .btn.secondary{
+    background:transparent;
+    border:1px solid var(--hairline);
+    color:var(--text-primary);
+  }
+
+  /* ---- Handoff flow ---- */
+  .handoff-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .panel{
+    background:var(--bg-surface);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .panel h3{font-size:13px; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-secondary); font-family:'IBM Plex Mono',monospace; margin-bottom:14px;}
+  .thread-line-wrap{
+    grid-column:1 / -1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    padding:18px 0 6px;
+  }
+  .endpoint{
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  .endpoint .badge{
+    width:46px; height:46px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--hairline);
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px;
+  }
+  .endpoint .badge.claude{border-color:var(--tool-claude); color:var(--tool-claude);}
+  .endpoint .badge.code{border-color:var(--tool-code); color:var(--tool-code);}
+  .thread-line{
+    flex:1;
+    max-width:160px;
+    height:2px;
+    background:repeating-linear-gradient(90deg, var(--accent) 0 6px, transparent 6px 12px);
+    position:relative;
+  }
+  .dest-options{display:flex; flex-direction:column; gap:8px;}
+  .dest-option{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 12px;
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    font-size:13.5px;
+    cursor:pointer;
+  }
+  .dest-option.chosen{border-color:var(--tool-code); background:rgba(157,140,242,0.08);}
+  .context-pkg{
+    background:var(--bg-base);
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    padding:14px;
+    font-size:13px;
+    color:var(--text-primary);
+    line-height:1.6;
+  }
+  .context-pkg .edit-label{font-size:11px; color:var(--text-secondary); margin-bottom:10px; display:block;}
+  .context-pkg .pkg-line{margin-bottom:8px;}
+  .context-pkg .pkg-line:last-child{margin-bottom:0;}
+  .actions-row{grid-column:1/-1; display:flex; justify-content:flex-end; gap:10px; margin-top:4px;}
+
+  /* ---- Settings ---- */
+  .settings-block{
+    background:var(--bg-surface);
+    border:1px solid var(--hairline);
+    border-radius:var(--radius);
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .row:last-child{border-bottom:none;}
+  .row .label{font-size:14px;}
+  .row .sub{font-size:12px; color:var(--text-secondary); margin-top:2px;}
+  .toggle{
+    width:36px; height:20px; border-radius:10px;
+    background:var(--hairline);
+    position:relative;
+    cursor:pointer;
+  }
+  .toggle.on{background:var(--accent);}
+  .toggle .knob{
+    width:16px; height:16px; border-radius:50%;
+    background:#fff; position:absolute; top:2px; left:2px;
+    transition:left .15s;
+  }
+  .toggle.on .knob{left:18px;}
+  input[type="radio"]{accent-color:var(--accent);}
+  .radio-row{display:flex; align-items:flex-start; gap:10px; padding:10px 0;}
+  .radio-row input{margin-top:3px;}
+  .radio-row .t{font-size:13.5px;}
+  .radio-row .s{font-size:12px; color:var(--text-secondary); margin-top:2px;}
+
+  /* ---- Wireframe view ---- */
+  .wf-box{
+    border:1.5px dashed #4a525d;
+    border-radius:6px;
+    color:#5a6270;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:10px;
+  }
+  .wf-x{
+    background-image:repeating-linear-gradient(45deg, transparent 0 8px, #2a2f37 8px 9px);
+  }
+
+  @media (max-width:780px){
+    .rail{display:none;}
+    .dash, .handoff-grid{flex-direction:column; grid-template-columns:1fr;}
+    .thread-list{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="rail">
+    <div class="wordmark"><img src="relaylogo.png" alt="Relay" style="width:20px; height:20px; object-fit:contain;"><span>Relay</span></div>
+    <div class="nav">
+      <button class="nav-btn active" data-view="wireframe">Wireframe <span class="tag">v0</span></button>
+      <button class="nav-btn" data-view="dashboard">Threads</button>
+      <button class="nav-btn" data-view="handoff">Handoff</button>
+      <button class="nav-btn" data-view="settings">Settings</button>
+    </div>
+    <div class="rail-foot mono">jordan@relay.app</div>
+  </div>
+
+  <div class="main">
+
+    <!-- WIREFRAME VIEW -->
+    <div class="view active" id="view-wireframe">
+      <div class="view-header">
+        <h1>Low-fi wireframe — Dashboard</h1>
+        <p>Early pass establishing the two-pane layout before any visual design.</p>
+      </div>
+      <div style="display:flex; gap:16px;">
+        <div style="width:280px; display:flex; flex-direction:column; gap:10px;">
+          <div class="wf-box" style="height:54px;">Thread card</div>
+          <div class="wf-box" style="height:54px;">Thread card</div>
+          <div class="wf-box" style="height:54px;">Thread card</div>
+          <div class="wf-box" style="height:54px;">Thread card</div>
+        </div>
+        <div class="wf-box" style="flex:1; height:420px; flex-direction:column; align-items:stretch; justify-content:flex-start; padding:16px; gap:14px;">
+          <div class="wf-box" style="height:24px; width:160px;">Title</div>
+          <div class="wf-box" style="height:90px;">Summary bullets</div>
+          <div class="wf-box wf-x" style="height:120px;">Collapsed transcript</div>
+          <div class="wf-box" style="height:36px; width:140px; margin-left:auto;">Send to →</div>
+        </div>
+      </div>
+      <p style="color:var(--text-secondary); font-size:12.5px; margin-top:16px;">Goal of this pass: confirm thread list + detail pane could hold everything without a third panel. Validated with a quick paper-prototype walkthrough before moving to hi-fi.</p>
+    </div>
+
+    <!-- DASHBOARD VIEW -->
+    <div class="view" id="view-dashboard">
+      <div class="view-header">
+        <h1>Threads</h1>
+        <p>Every active conversation, across every tool, in one place.</p>
+      </div>
+      <div class="dash">
+        <div class="thread-list">
+          <div class="thread-card selected">
+            <div class="top-row">
+              <span class="tool-tag"><span class="swatch claude"></span>Claude</span>
+              <div class="freshness"><span style="width:90%"></span></div>
+            </div>
+            <div class="title">Q3 onboarding flow rewrite</div>
+            <div class="meta"><span class="time">active · 12m ago</span></div>
+          </div>
+          <div class="thread-card">
+            <div class="top-row">
+              <span class="tool-tag"><span class="swatch chatgpt"></span>ChatGPT</span>
+              <div class="freshness"><span style="width:40%"></span></div>
+            </div>
+            <div class="title">Brainstorm: pricing page copy</div>
+            <div class="meta"><span class="time">2h ago</span></div>
+          </div>
+          <div class="thread-card">
+            <div class="top-row">
+              <span class="tool-tag"><span class="swatch code"></span>Coding tool</span>
+              <div class="freshness"><span style="width:65%"></span></div>
+            </div>
+            <div class="title">Auth refactor — session handling</div>
+            <div class="meta"><span class="time">5h ago</span></div>
+          </div>
+          <div class="thread-card">
+            <div class="top-row">
+              <span class="tool-tag"><span class="swatch gemini"></span>Gemini</span>
+              <div class="freshness"><span style="width:15%"></span></div>
+            </div>
+            <div class="title">Competitor pricing lookup</div>
+            <div class="meta"><span class="time">yesterday</span></div>
+          </div>
+        </div>
+
+        <div class="detail-pane">
+          <div class="head">
+            <div>
+              <span class="tool-tag"><span class="swatch claude"></span>Claude · started 3 days ago</span>
+              <h2 style="margin-top:8px;">Q3 onboarding flow rewrite</h2>
+            </div>
+            <button class="btn" onclick="document.querySelector('[data-view=handoff]').click()">Send to → </button>
+          </div>
+
+          <div class="section-label">What's been decided</div>
+          <ul class="summary-list">
+            <li>Cutting the signup form from 5 fields to 2 (email + password only)</li>
+            <li>Moving plan selection to after first login, not before</li>
+            <li>Still undecided: whether to show a guided tour or let users skip it</li>
+          </ul>
+
+          <div class="section-label">Original conversation (collapsed)</div>
+          <div class="transcript">12 messages · last message: "Okay, let's also reconsider the empty state copy once the form change is live."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HANDOFF VIEW -->
+    <div class="view" id="view-handoff">
+      <div class="view-header">
+        <h1>Send to another tool</h1>
+        <p>Review what carries over before it sends — nothing leaves silently.</p>
+      </div>
+      <div class="handoff-grid">
+        <div class="thread-line-wrap">
+          <div class="endpoint">
+            <div class="badge claude">C</div>
+            <span class="tool-tag"><span class="swatch claude"></span>Claude</span>
+          </div>
+          <div class="thread-line"></div>
+          <div class="endpoint">
+            <div class="badge code">⌘</div>
+            <span class="tool-tag"><span class="swatch code"></span>Coding tool</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Destination</h3>
+          <div class="dest-options">
+            <div class="dest-option"><span class="tool-tag"><span class="swatch chatgpt"></span></span>ChatGPT</div>
+            <div class="dest-option chosen"><span class="tool-tag"><span class="swatch code"></span></span>Coding tool</div>
+            <div class="dest-option"><span class="tool-tag"><span class="swatch gemini"></span></span>Gemini</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>What gets carried over</h3>
+          <div class="context-pkg">
+            <div class="edit-label">Editable — remove anything you don't want sent</div>
+            <div class="pkg-line">• Goal: rewrite onboarding to cut signup friction</div>
+            <div class="pkg-line">• Decision: 2-field signup, plan selection moved post-login</div>
+            <div class="pkg-line">• Open question: guided tour vs. skip option</div>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button class="btn secondary">Cancel</button>
+          <button class="btn">Confirm & open in Coding tool</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS VIEW -->
+    <div class="view" id="view-settings">
+      <div class="view-header">
+        <h1>Settings</h1>
+        <p>Connected tools and what Relay is allowed to capture.</p>
+      </div>
+
+      <div class="settings-block">
+        <div class="row">
+          <div><div class="label">ChatGPT</div><div class="sub">Connected · capturing active threads</div></div>
+          <div class="toggle on"><div class="knob"></div></div>
+        </div>
+        <div class="row">
+          <div><div class="label">Claude</div><div class="sub">Connected · capturing active threads</div></div>
+          <div class="toggle on"><div class="knob"></div></div>
+        </div>
+        <div class="row">
+          <div><div class="label">Gemini</div><div class="sub">Not connected</div></div>
+          <div class="toggle"><div class="knob"></div></div>
+        </div>
+        <div class="row">
+          <div><div class="label">Coding tool</div><div class="sub">Connected · capturing active threads</div></div>
+          <div class="toggle on"><div class="knob"></div></div>
+        </div>
+      </div>
+
+      <div class="settings-block">
+        <h3 style="font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; color:var(--text-secondary); margin-bottom:4px;">What gets captured</h3>
+        <div class="radio-row">
+          <input type="radio" name="capture" checked>
+          <div><div class="t">Key facts and decisions only (recommended)</div><div class="s">Relay summarizes what mattered — not the raw transcript.</div></div>
+        </div>
+        <div class="radio-row">
+          <input type="radio" name="capture">
+          <div><div class="t">Full conversation transcript</div><div class="s">Carries everything, including messages you may not want repeated elsewhere.</div></div>
+        </div>
+        <div class="radio-row">
+          <input type="radio" name="capture">
+          <div><div class="t">Off — capture nothing automatically</div><div class="s">You'll build the context package manually each time.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('view-' + btn.dataset.view).classList.add('active');
+    });
+  });
+  document.querySelectorAll('.thread-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.thread-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    });
+  });
+</script>
+
+</body>
+</html>
