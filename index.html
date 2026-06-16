@@ -111,7 +111,7 @@
   .skill-card:nth-child(2){transform:rotate(-1.2deg);}
   .skill-card:nth-child(3){transform:rotate(1deg);}
 
-  .hero-camera-photo{background:#fff; border-radius:14px; padding:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.13); transform:rotate(2deg); width:170px; align-self:flex-end; margin-top:4rem;}
+  .hero-camera-photo{background:#fff; border-radius:14px; padding:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.13); transform:rotate(2deg); width:170px; align-self:flex-end; margin-top:1rem;}
   .hero-camera-photo img{width:100%; height:145px; object-fit:cover; border-radius:10px;}
 
   /* ===================== DESIGN WORK ===================== */
@@ -229,7 +229,7 @@
   /* CONTACT */
   .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
   .contact-headline{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(2.5rem,6vw,4rem); line-height:1.1; text-transform:uppercase; margin-bottom:1.5rem;}
-  .contact-buttons{display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-bottom:1rem;}
+  .contact-buttons{display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-bottom:0.5rem;}
   .contact-btn{text-decoration:none; font-weight:700; font-size:.95rem; padding:.9rem 1.8rem; border-radius:999px; border:2px solid var(--ink); color:var(--ink); transition:.2s;}
   .contact-btn.primary{background:var(--ink); color:#fff;}
   .contact-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
@@ -305,14 +305,13 @@
 
     <!-- CENTER COLUMN -->
     <div class="hero-center">
-      <div class="hero-eyebrow">Product</div>
-      <div class="hero-h1">Designer</div>
-      <span class="hero-sub">Designer. Thinker. Creator.</span>
-      <span class="hero-sub-line">
-  <svg viewBox="0 0 200 18" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M 5 12 Q 50 2, 100 10 Q 150 18, 195 8" stroke="#e8547a" stroke-width="3" fill="none" stroke-linecap="round"/>
-  </svg>
-</span>
+  <div class="hero-eyebrow">Product</div>
+  <div class="hero-h1">Designer</div>
+  <span class="hero-sub">
+    <span style="-webkit-text-stroke: 1.5px var(--rose); color: transparent;">Designer.</span>
+    <span style="-webkit-text-stroke: 1.5px var(--rose); color: transparent;">Thinker.</span>
+    <span style="-webkit-text-stroke: 1.5px var(--rose); color: transparent;">Creator.</span>
+  </span>
       <div class="hero-arch-wrap">
         <div class="hero-arch-bg"></div>
         <img class="hero-photo" src="herophoto.png" alt="Portrait of Aashwini.">
