@@ -132,6 +132,7 @@
   .theme-blue .case-eyebrow{color:#498cb7;} .theme-blue .cps-num{color:#498cb7;} .theme-blue .case-list li::before{color:#498cb7;} .theme-blue .mood-chip{background:#dbe9f2; color:#498cb7;} .theme-blue .case-pullquote{color:#498cb7; background:#dbe9f2; border-left-color:#498cb7;} .theme-blue .pitch-deck-btn{background:#498cb7;} .theme-blue .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(73,140,183,0.3);}
   .theme-purple .case-eyebrow{color:#153065;} .theme-purple .cps-num{color:#153065;} .theme-purple .case-list li::before{color:#153065;} .theme-purple .mood-chip{background:#dbe2ee; color:#153065;} .theme-purple .case-pullquote{color:#153065; background:#dbe2ee; border-left-color:#153065;} .theme-purple .pitch-deck-btn{background:#153065;} .theme-purple .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(21,48,101,0.3);} .theme-purple .pitch-deck-btn.outline{color:#153065; border-color:#153065; background:transparent;}
   .theme-orange .case-eyebrow{color:#e78b24;} .theme-orange .cps-num{color:#e78b24;} .theme-orange .case-list li::before{color:#e78b24;} .theme-orange .mood-chip{background:#fbe6cf; color:#b5651d;} .theme-orange .case-pullquote{color:#b5651d; background:#fbe6cf; border-left-color:#e78b24;} .theme-orange .pitch-deck-btn{background:#e78b24;} .theme-orange .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(231,139,36,0.3);} .theme-orange .pitch-deck-btn.outline{color:#b5651d; border-color:#e78b24; background:transparent;}
+  .theme-lime .case-eyebrow{color:#6F7F1F;} .theme-lime .cps-num{color:#6F7F1F;} .theme-lime .case-list li::before{color:#6F7F1F;} .theme-lime .mood-chip{background:#EEF6D2; color:#6F7F1F;} .theme-lime .case-pullquote{color:#5C6A1A; background:#EEF6D2; border-left-color:#C9E265;} .theme-lime .pitch-deck-btn{background:#C9E265; color:#1E1E1E;} .theme-lime .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(201,226,101,0.4);} .theme-lime .pitch-deck-btn.outline{color:#6F7F1F; border-color:#C9E265; background:transparent;}
 
   /* MODAL */
   .modal-overlay{position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s;}
@@ -198,6 +199,7 @@
   .journey-entry:nth-child(4) .journey-logo{background:#d4a018;} .journey-entry:nth-child(4) .journey-tag{background:#f7ecd2; color:#a07a10;}
   .journey-entry:nth-child(5) .journey-logo{background:#153065;} .journey-entry:nth-child(5) .journey-tag{background:#dbe2ee; color:#153065;}
   .journey-entry:nth-child(6) .journey-logo{background:#e78b24;} .journey-entry:nth-child(6) .journey-tag{background:#fbe6cf; color:#e78b24;}
+  .journey-entry:nth-child(7) .journey-logo{background:#1E1E1E;} .journey-entry:nth-child(7) .journey-tag{background:#EEF6D2; color:#6F7F1F;}
 
   /* CONTACT */
   .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
@@ -483,6 +485,26 @@
         <img class="wide" src="cozymealcover.png" alt="Cozymeal packaging.">
         <img src="cozyweb.png" alt="Brand moodboard.">
         <img src="cozytote.png" alt="Merchandise.">
+      </div>
+    </div>
+
+    <!-- Relay -->
+    <div class="journey-entry case-study-card relay-card" onclick="document.getElementById('relay-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
+      <span class="view-work-pill">View Work</span>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="relaylogo.png" alt="Relay"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.6rem; color:#89D957;">Relay</div>
+          <div class="role" style="font-weight:400;">Carrying Context Across Your AI Tools, So You Stop Repeating Yourself</div>
+        </div>
+        <div class="journey-dates">Summer 2026</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Figma</span><span class="journey-tag">Diary Study</span><span class="journey-tag">Survey Research</span><span class="journey-tag">Competitive Analysis</span><span class="journey-tag">Usability Testing</span><span class="journey-tag">AI Products</span>
+      </div>
+      <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0; grid-template-columns:repeat(2,1fr);">
+        <img src="relaydashboard.png" alt="Relay dashboard screen.">
+        <img src="relaycover.png" alt="Relay handoff flow screen.">
       </div>
     </div>
   </div>
@@ -817,6 +839,92 @@
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="https://drive.google.com/file/d/1llGTV6SnnaEVdiFAkza03NsJTzWDU6kw/view?usp=sharing" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
       <a href="https://drive.google.com/file/d/1xZ_lVLbTl3BRGuxdIhK99RZvnk-pwJ7L/view?usp=sharing" target="_blank" rel="noopener" class="pitch-deck-btn outline">Product Demo Video</a>
+    </div>
+  </div>
+</div>
+
+<!-- RELAY MODAL -->
+<div class="modal-overlay" id="relay-modal" onclick="if(event.target===this){this.classList.remove('open')}">
+  <div class="modal-window theme-lime">
+    <button class="modal-close" onclick="document.getElementById('relay-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <img class="case-hero-img" src="relaycover.png" alt="Relay dashboard screen.">
+    <div class="case-eyebrow">01 - It's 9pm and I'm Retyping Myself</div>
+    <h2 style="color:#89D957;">Relay <span class="serif">— carrying context across your AI tools</span></h2>
+    <p class="modal-intro">I'm explaining the same project background to Claude that I already explained to ChatGPT twenty minutes ago. Same context, same three paragraphs, different tab. I do this almost daily — one tool for writing, another for code, another for a quick fact-check — and every switch costs me five minutes of re-explaining myself before I can actually get to the task.</p>
+    <p class="modal-intro">I wanted to know if this was just my workflow being messy, or something most people juggling AI tools quietly deal with.</p>
+    <div class="case-meta-grid">
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">UX/UI Designer &amp; Researcher</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">3 Weeks</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">🛠️</div><div class="case-meta-label">Tools</div><div class="case-meta-value">Figma · Maze · Google Forms</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">📦</div><div class="case-meta-label">Type</div><div class="case-meta-value">Concept Project</div></div>
+    </div>
+
+    <div class="case-eyebrow">02 - What I Found</div>
+    <p class="modal-intro">I ran a 6-day diary study with 4 participants screened for one thing: using 2+ AI tools at least 3-4 times a week. I paired it with a short survey posted in two AI-enthusiast communities to see if the pattern held beyond four people.</p>
+    <p class="modal-intro" style="font-weight:700;">It wasn't just me:</p>
+    <ul class="case-list">
+      <li>Context loss, not capability, was the top complaint — the pain showed up after switching tools, re-establishing background the new one didn't have</li>
+      <li>Copy-paste was the default handoff, and it was lossy — people pasted a summary, rarely the full reasoning</li>
+      <li>Tool choice was task-based, not loyalty-based — everyone had a mental map of "which tool for what," with no way to carry anything between stops</li>
+      <li>Subscription fatigue was real, but ranked behind context loss as a daily frustration</li>
+      <li>The survey backed up the diary — a majority of respondents said they regularly re-explain themselves to a second tool in the same day</li>
+    </ul>
+
+    <div class="case-eyebrow">03 - Who This Is Really For</div>
+    <div class="case-persona">
+      <div style="width:64px;height:64px;border-radius:50%;background:#EEF6D2;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:#6F7F1F;flex-shrink:0;">J</div>
+      <div>
+        <div class="case-persona-name">Jordan, Software Engineer</div>
+        <div class="case-persona-sub">High comfort with every AI tool individually — the friction is entirely in the handoff between them.</div>
+      </div>
+    </div>
+    <p class="modal-intro" style="font-style:italic;">"I always have the right answer somewhere — I just can't remember which tab it's in."</p>
+    <div class="case-pullquote">How might we let people carry context between AI tools, without forcing them onto just one?</div>
+
+    <div class="case-eyebrow">04 - The Journey, Stage by Stage</div>
+    <div class="cps-steps" style="grid-template-columns:repeat(5,1fr);">
+      <div class="cps-step"><div class="cps-num">01</div><div class="cps-title">Working in Tool A</div><p>Drafting or coding, focused.</p></div>
+      <div class="cps-step"><div class="cps-num">02</div><div class="cps-title">Hits a Wall</div><p>Realizes another tool fits better.</p></div>
+      <div class="cps-step"><div class="cps-num">03</div><div class="cps-title">Opens Tool B</div><p>"What did I already tell the other one?"</p></div>
+      <div class="cps-step"><div class="cps-num">04</div><div class="cps-title">Re-explains</div><p>Pastes or retypes background, frustrated.</p></div>
+      <div class="cps-step"><div class="cps-num">05</div><div class="cps-title">Returns to Tool A</div><p>Low trust that nothing got lost.</p></div>
+    </div>
+
+    <div class="case-eyebrow">05 - Three Directions, One Decision</div>
+    <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="solution-card"><div class="solution-icon">🧩</div><div class="solution-title">Browser Extension</div><p>A context clipboard. Fast, but invisible and easy to forget.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔌</div><div class="solution-title">In-Tool Plugin</div><p>Cleanest integration, but needs buy-in from every tool vendor.</p></div>
+      <div class="solution-card" style="border:2px solid #C9E265;"><div class="solution-icon">🗂️</div><div class="solution-title">Standalone Dashboard</div><p>Chosen — sits alongside tools people already use, no vendor cooperation required.</p></div>
+    </div>
+
+    <div class="case-eyebrow">06 - Introducing Relay</div>
+    <h3 class="case-h3">A dashboard that tracks your active AI conversations and lets you send context to another tool deliberately — reviewed and editable — instead of pasting blind.</h3>
+    <div class="journey-gallery" style="grid-template-columns:repeat(2,1fr); grid-auto-rows:260px;">
+      <img src="relaydashboard.png" alt="Relay dashboard screen.">
+      <img src="relayhandoff.png" alt="Relay handoff flow screen.">
+    </div>
+    <div class="solution-grid" style="margin-top:1rem;">
+      <div class="solution-card"><div class="solution-icon">🗂️</div><div class="solution-title">Dashboard</div><p>Active threads, tagged by tool, with a freshness indicator.</p></div>
+      <div class="solution-card"><div class="solution-icon">📝</div><div class="solution-title">Thread Detail</div><p>Auto-summarized key facts, full transcript collapsed underneath.</p></div>
+      <div class="solution-card"><div class="solution-icon">↗️</div><div class="solution-title">Handoff Flow</div><p>Pick a destination, preview and edit what carries over, send.</p></div>
+      <div class="solution-card"><div class="solution-icon">⚙️</div><div class="solution-title">Settings</div><p>Connect tools, control exactly what Relay is allowed to capture.</p></div>
+    </div>
+
+    <div class="case-eyebrow">07 - Key Design Decisions</div>
+    <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="solution-card"><div class="solution-icon">🏷️</div><div class="solution-title">Tool-First Cards</div><p>Threads lead with the originating tool, not the task — that's how people actually navigate.</p></div>
+      <div class="solution-card"><div class="solution-icon">✏️</div><div class="solution-title">Editable Handoff</div><p>Copy-paste failed because nobody reviewed what carried over. Relay makes review the default.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Explicit Capture Control</div><p>No "everything, always" default — added directly from a usability finding below.</p></div>
+    </div>
+
+    <div class="case-eyebrow">08 - Putting It In Front of People</div>
+    <p class="modal-intro">Three people clicked through a prototype of the dashboard and handoff flow. The thread list made sense instantly. The handoff preview didn't — until "Context package" became "What gets carried over," and suddenly it clicked. One person didn't want full transcripts captured by default, which is the whole reason Settings has explicit capture controls.</p>
+    <img src="relaysettings.png" alt="Relay settings screen with capture controls." style="width:100%; height:auto; border-radius:10px; margin-top:.5rem; display:block;">
+
+    <div class="case-eyebrow">09 - What I Learned</div>
+    <div class="case-pullquote">This is a concept, not a shipped product. Four diary participants and a community survey are a starting signal, not proof — the next pass needs a real two-tool integration and a bigger, more varied sample before any of this gets treated as settled.</div>
+    <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
+      <a href="relay-mockups.html" target="_blank" rel="noopener" class="pitch-deck-btn">View Interactive Prototype</a>
     </div>
   </div>
 </div>
