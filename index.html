@@ -67,10 +67,11 @@
 }
 
 .hero-tagline-box{background:#fff; border-radius:20px; padding:1.3rem 1.8rem; margin-top:0; box-shadow:0 4px 20px rgba(0,0,0,0.07); max-width:450px; text-align:center;}
-.tagline-main{font-weight:800; font-size:1.15rem; color:var(--ink); line-height:1.35;}
+.tagline-main{font-weight:400; font-size:.95rem; color:var(--ink); line-height:1.4;}
+.tagline-main strong{font-weight:800;}
 .tagline-main span{color:var(--rose);}
 .tagline-sub{font-size:.86rem; color:var(--soft); margin-top:.45rem; line-height:1.6;}
-.hire-link{display:inline-block; margin-top:.85rem; font-weight:700; color:var(--rose); text-decoration:none; font-size:.92rem; transition:font-size 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s, letter-spacing 0.25s;}
+.hire-link{display:inline-block; margin-top:.85rem; font-weight:700; color:var(--rose); text-decoration:none; font-size:1.05rem; transition:font-size 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s, letter-spacing 0.25s;}
 .hire-link:hover{font-size:1.5rem; color:#c0324f; letter-spacing:0.01em; text-decoration:none;}
 
 /* RIGHT */
@@ -83,6 +84,7 @@
 .skill-card:nth-child(1){transform:rotate(1.5deg);}
 .skill-card:nth-child(2){transform:rotate(-1.2deg);}
 .skill-card:nth-child(3){transform:rotate(1deg);}
+.skill-card:nth-child(4){transform:rotate(-1deg);}
 
 .hero-camera-photo{background:#fff; border-radius:14px; padding:.5rem; box-shadow:0 8px 24px rgba(0,0,0,0.13); transform:rotate(2deg); width:170px; align-self:flex-end; margin-top:1rem;}
 .hero-camera-photo img{width:100%; height:145px; object-fit:cover; border-radius:10px;}
@@ -90,6 +92,8 @@
   /* ===================== DESIGN WORK ===================== */
   .work-layout{max-width:1300px; margin:0 auto; padding:2.5rem 6vw 6rem; display:grid; grid-template-columns:340px 1fr; gap:2.5rem; align-items:start;}
   .work-sidebar{position:sticky; top:5rem; display:flex; flex-direction:column; gap:1.5rem;}
+  .sidebar-panel{display:none; flex-direction:column; gap:1.5rem;}
+  .sidebar-panel.active{display:flex;}
   .expertise-box{background:#fdfbf6; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:1.8rem;}
   .expertise-box h3{font-size:1.2rem; margin-bottom:.5rem;}
   .expertise-box > p{font-size:.9rem; color:#666; line-height:1.6; margin-bottom:1.2rem;}
@@ -116,6 +120,15 @@
   .location-chat .bubble{background:var(--sky); color:#2b5d80; font-weight:700; border-radius:14px; padding:.6rem 1rem; font-size:.9rem; display:inline-block;}
   .work-entries{display:flex; flex-direction:column; gap:2.5rem;}
   .work-eyebrow{font-size:.85rem; letter-spacing:.3em; text-transform:uppercase; font-weight:700; color:var(--soft); margin-bottom:.5rem;}
+
+  /* WORK TABS */
+  .work-tabs{display:flex; gap:2rem; margin-bottom:1.5rem; flex-wrap:wrap;}
+  .work-tab{cursor:pointer; background:none; border:none; padding:0 0 .5rem; font-family:inherit; font-size:.85rem; letter-spacing:.3em; text-transform:uppercase; font-weight:700; color:var(--soft); border-bottom:2px solid transparent; transition:color .2s ease, border-color .2s ease;}
+  .work-tab:hover{color:var(--ink);}
+  .work-tab.active{color:var(--rose); border-bottom-color:var(--rose);}
+  .work-panel{display:none;}
+  .work-panel.active{display:flex; flex-direction:column; gap:2.5rem;}
+
   .journey-entry{background:#fff; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:2rem; position:relative;}
   .case-study-card{cursor:pointer; position:relative; transition:transform .2s ease, box-shadow .2s ease;}
   .case-study-card:hover{transform:translateY(-4px) scale(1.01); box-shadow:0 16px 40px rgba(0,0,0,0.12);}
@@ -127,6 +140,13 @@
   .bestbuy-card .view-work-pill{background:#153065;}
   .cozymeal-card .view-work-pill{background:#e78b24;}
   .relay-card .view-work-pill{background:#89D957;}
+
+  /* CONTENT CREATION placeholder cards */
+  .content-placeholder{border:2px dashed var(--line); background:#fdfbf6; box-shadow:none;}
+  .content-placeholder-body{display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:.6rem; padding:2.5rem 1.5rem;}
+  .content-placeholder-icon{width:52px; height:52px; border-radius:50%; background:var(--pink); display:flex; align-items:center; justify-content:center; font-size:1.3rem;}
+  .content-placeholder-title{font-weight:800; font-size:1.1rem;}
+  .content-placeholder-sub{font-size:.85rem; color:var(--soft); max-width:360px; line-height:1.6;}
 
   /* Themes */
   .theme-gold .case-eyebrow{color:#d4a018;} .theme-gold .cps-num{color:#d4a018;} .theme-gold .case-list li::before{color:#d4a018;} .theme-gold .mood-chip{background:#f7ecd2; color:#a07a10;} .theme-gold .case-pullquote{color:#a07a10; background:#f7ecd2; border-left-color:#d4a018;} .theme-gold .pitch-deck-btn{background:#d4a018;} .theme-gold .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(212,160,24,0.3);}
@@ -190,6 +210,9 @@
   .journey-meta .org{font-size:1.2rem; font-weight:700;}
   .journey-meta .role{font-size:.95rem; font-weight:600; color:#555; margin:.2rem 0 .6rem;}
   .journey-dates{font-size:.85rem; color:var(--soft); white-space:nowrap; flex-shrink:0;}
+  .journey-ig-link{position:absolute; top:-16px; right:-16px; width:44px; height:44px; border-radius:50%; background:#fff; box-shadow:0 4px 14px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:center; color:var(--rose); z-index:5; transition:transform .2s ease, box-shadow .2s ease;}
+  .journey-ig-link:hover{transform:scale(1.1) rotate(-4deg); box-shadow:0 6px 18px rgba(0,0,0,0.2);}
+  .journey-ig-link svg{width:24px; height:24px;}
   .journey-gallery{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:.8rem; margin-bottom:1.2rem;}
   .journey-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px;}
   .journey-gallery .wide{grid-column:span 2;}
@@ -214,6 +237,11 @@
   .bestbuy-card .journey-logo{background:#153065;} .bestbuy-card .journey-tag{background:#dbe2ee; color:#153065;}
   .cozymeal-card .journey-logo{background:#e78b24;} .cozymeal-card .journey-tag{background:#fbe6cf; color:#e78b24;}
   .relay-card .journey-logo{background:#1E1E1E;} .relay-card .journey-tag{background:#333333; color:#89D957;}
+  .rossier-card .journey-tag{background:#f5dcdc; color:#990000;}
+  .ais-card .journey-tag{background:#d6f0e6; color:#1a7a5e;}
+  .bidc-card .journey-tag{background:#f2ead9; color:#8a7238;}
+  .caso-card .journey-tag{background:#dbe9f2; color:#2f6690;}
+  .lievebe-card .journey-tag{background:#f0e3f9; color:#7a4b8a;}
 
   /* CONTACT */
   .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
@@ -249,7 +277,7 @@
 
 <nav aria-label="Main navigation">
   <a href="#hero" class="active">Hi!</a>
-  <a href="#journey">Design Work</a>
+  <a href="#journey">Work</a>
   <a href="#connect">Connect</a>
 </nav>
 
@@ -305,8 +333,7 @@
         <div class="hero-bubble">Hi, it's Aashwini!👋</div>
       </div>
       <div class="hero-tagline-box">
-        <div class="tagline-main">UI/UX designer passionate about turning complex problems into simple, seamless experiences.</div>
-        <div class="tagline-sub">By balancing user needs with business goals, I create intuitive digital products that are meaningful, easy to use, and built to make an impact.</div>
+        <div class="tagline-main"><strong>Designer and content strategist</strong> passionate about turning complex problems into simple, seamless experiences.</div>
         <a href="#connect" class="hire-link">Let's connect!</a>
       </div>
     </div>
@@ -334,6 +361,13 @@
           <div class="skill-sub">Exploring the future of intelligent experiences</div>
         </div>
       </div>
+      <div class="skill-card">
+        <div class="skill-icon ic-green">📱</div>
+        <div>
+          <div class="skill-label">Content Strategist</div>
+          <div class="skill-sub">Platform-native campaigns that grow engagement</div>
+        </div>
+      </div>
       <div class="hero-camera-photo">
         <img src="mecamera.jpg" alt="Photographer">
         <div class="photo-caption">capturing moments, telling stories</div>
@@ -346,31 +380,62 @@
 <!-- DESIGN WORK -->
 <section class="work-layout" id="journey">
   <aside class="work-sidebar">
-    <div class="expertise-box">
-      <h3>Core Expertise</h3>
-      <p>Design, strategy, and storytelling, built to make brands move.</p>
-      <div class="expertise-list">
-        <span class="expertise-item lead">UI/UX Design</span>
-        <span class="expertise-item">Digital Design</span>
-        <span class="expertise-item">Website &amp; App Design</span>
-        <span class="expertise-item">Branding &amp; Visual Identity</span>
-        <span class="expertise-item">Social Media &amp; Content Creation</span>
-        <span class="expertise-item">Photography &amp; Video Editing</span>
-        <span class="expertise-item">AI Optimization</span>
+    <div class="sidebar-panel active" id="sidebar-uiux">
+      <div class="expertise-box">
+        <h3>Core Expertise</h3>
+        <p>Design, strategy, and storytelling, built to make brands move.</p>
+        <div class="expertise-list">
+          <span class="expertise-item lead">UI/UX Design</span>
+          <span class="expertise-item">Digital Design</span>
+          <span class="expertise-item">Website &amp; App Design</span>
+          <span class="expertise-item">Branding &amp; Visual Identity</span>
+          <span class="expertise-item">Social Media &amp; Content Creation</span>
+          <span class="expertise-item">Photography &amp; Video Editing</span>
+          <span class="expertise-item">AI Optimization</span>
+        </div>
+      </div>
+      <div class="mystack-box">
+        <h3>My Stack</h3>
+        <div class="mystack-grid">
+          <div class="mystack-icon"><img src="figma.png" alt="Figma"></div>
+          <div class="mystack-icon"><img src="photoshop.png" alt="Photoshop"></div>
+          <div class="mystack-icon"><img src="illustrator.png" alt="Illustrator"></div>
+          <div class="mystack-icon"><img src="canva.png" alt="Canva"></div>
+          <div class="mystack-icon"><img src="claude.png" alt="Claude"></div>
+          <div class="mystack-icon"><img src="chatgpt.png" alt="ChatGPT"></div>
+          <div class="mystack-icon"><img src="gemini.png" alt="Gemini"></div>
+          <div class="mystack-icon"><img src="googlelab.png" alt="Google Labs"></div>
+          <div class="mystack-icon"><img src="notion.png" alt="Notion"></div>
+        </div>
       </div>
     </div>
-    <div class="mystack-box">
-      <h3>My Stack</h3>
-      <div class="mystack-grid">
-        <div class="mystack-icon"><img src="figma.png" alt="Figma"></div>
-        <div class="mystack-icon"><img src="photoshop.png" alt="Photoshop"></div>
-        <div class="mystack-icon"><img src="illustrator.png" alt="Illustrator"></div>
-        <div class="mystack-icon"><img src="canva.png" alt="Canva"></div>
-        <div class="mystack-icon"><img src="claude.png" alt="Claude"></div>
-        <div class="mystack-icon"><img src="chatgpt.png" alt="ChatGPT"></div>
-        <div class="mystack-icon"><img src="gemini.png" alt="Gemini"></div>
-        <div class="mystack-icon"><img src="googlelab.png" alt="Google Labs"></div>
-        <div class="mystack-icon"><img src="notion.png" alt="Notion"></div>
+    <div class="sidebar-panel" id="sidebar-content">
+      <div class="expertise-box">
+        <h3>Core Expertise</h3>
+        <p>Turning platform trends into culturally relevant, brand-building content.</p>
+        <div class="expertise-list">
+          <span class="expertise-item lead">Social Media Strategy &amp; Management</span>
+          <span class="expertise-item">Content Calendar Planning</span>
+          <span class="expertise-item">Social-First Creative Production</span>
+          <span class="expertise-item">Photography &amp; Videography</span>
+          <span class="expertise-item">Campaign &amp; Performance Analytics</span>
+          <span class="expertise-item">Cross-Functional Collaboration</span>
+          <span class="expertise-item">Event Marketing &amp; Community Engagement</span>
+        </div>
+      </div>
+      <div class="mystack-box">
+        <h3>My Stack</h3>
+        <div class="mystack-grid">
+          <div class="mystack-icon"><img src="photoshop.png" alt="Photoshop"></div>
+          <div class="mystack-icon"><img src="lightroom.jpg" alt="Lightroom"></div>
+          <div class="mystack-icon"><img src="canva.png" alt="Canva"></div>
+          <div class="mystack-icon"><img src="fcp.jpeg" alt="Final Cut Pro"></div>
+          <div class="mystack-icon"><img src="googlelab.png" alt="Google Labs"></div>
+          <div class="mystack-icon"><img src="sprout.wbep" alt="Sprout Social"></div>
+          <div class="mystack-icon"><img src="claude.png" alt="Claude"></div>
+          <div class="mystack-icon"><img src="ig.svg" alt="Instagram"></div>
+          <div class="mystack-icon"><img src="yt.avif" alt="YouTube"></div>
+        </div>
       </div>
     </div>
     <div class="education-box">
@@ -398,7 +463,12 @@
   </aside>
 
   <div class="work-entries">
-    <div class="work-eyebrow">Design Work</div>
+    <div class="work-tabs" role="tablist" aria-label="Design work categories">
+      <button type="button" class="work-tab active" id="tab-uiux" role="tab" aria-selected="true" aria-controls="panel-uiux" onclick="switchWorkTab('uiux')">UI/UX</button>
+      <button type="button" class="work-tab" id="tab-content" role="tab" aria-selected="false" aria-controls="panel-content" onclick="switchWorkTab('content')">Content Creation</button>
+    </div>
+
+    <div class="work-panel active" id="panel-uiux" role="tabpanel" aria-labelledby="tab-uiux">
 
     <!-- Relay -->
     <div class="journey-entry case-study-card relay-card" onclick="document.getElementById('relay-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
@@ -521,6 +591,114 @@
         <img src="cozyweb.png" alt="Brand moodboard.">
         <img src="cozytote.png" alt="Merchandise.">
       </div>
+    </div>
+
+    </div>
+
+    <div class="work-panel" id="panel-content" role="tabpanel" aria-labelledby="tab-content">
+
+    <!-- Digital Communications Assistant, USC Rossier -->
+    <div class="journey-entry rossier-card">
+      <a class="journey-ig-link" href="https://www.instagram.com/uscrossier/" target="_blank" rel="noopener" aria-label="View USC Rossier on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="rossier.jpg" alt="USC Rossier"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.2rem;">USC Rossier School of Education</div>
+          <div class="role">Digital Communications Assistant</div>
+        </div>
+        <div class="journey-dates">Los Angeles, CA<br>Oct 2025 – May 2026</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Content Calendars</span><span class="journey-tag">Meta Business Suite</span><span class="journey-tag">SEO</span><span class="journey-tag">Canva</span><span class="journey-tag">Adobe Creative Suite</span>
+      </div>
+      <ul class="case-list">
+        <li>Planned, created, and managed platform-specific content across <strong>Instagram, Facebook, LinkedIn, and YouTube</strong>, developing <strong>monthly content calendars</strong> and optimizing campaigns using <strong>Meta Business Suite, Instagram Insights, SEO</strong>, and performance analytics.</li>
+        <li>Collaborated with marketing and creative teams to produce <strong>social-first graphics, photography, and video content</strong> using <strong>Canva and Adobe Creative Suite</strong>, strengthening brand consistency while increasing audience engagement.</li>
+      </ul>
+    </div>
+
+    <!-- Content Director, AIS USC -->
+    <div class="journey-entry ais-card">
+      <a class="journey-ig-link" href="https://www.instagram.com/aisusc/" target="_blank" rel="noopener" aria-label="View AIS USC on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="ais.jpg" alt="Association of Indian Students USC"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.2rem;">Association of Indian Students, USC</div>
+          <div class="role">Content Director</div>
+        </div>
+        <div class="journey-dates">Los Angeles, CA<br>Sep 2024 – Apr 2026</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Social Media Strategy</span><span class="journey-tag">Content Calendars</span><span class="journey-tag">Reels &amp; Carousels</span><span class="journey-tag">Campaign Management</span><span class="journey-tag">Brand Identity</span>
+      </div>
+      <ul class="case-list">
+        <li>Led <strong>social media strategy and creative direction</strong> for USC's largest Indian student organization by developing <strong>content calendars</strong>, producing <strong>reels, stories, carousels, and campaign assets</strong> that increased community engagement and event visibility.</li>
+        <li>Partnered with executive leadership, sponsorship, hospitality, and events teams to execute <strong>integrated marketing campaigns</strong>, manage creative deliverables, and maintain a cohesive <strong>brand identity</strong> across all digital channels.</li>
+      </ul>
+    </div>
+
+    <!-- Media Supervisor / Social Media Manager, BIDC Purdue (combined) -->
+    <div class="journey-entry bidc-card">
+      <a class="journey-ig-link" href="https://www.instagram.com/purduebechtel/" target="_blank" rel="noopener" aria-label="View BIDC on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="bidc.jpg" alt="BIDC Purdue"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.2rem;">Bechtel Innovation Design Center (BIDC), Purdue</div>
+          <div class="role">Media Supervisor &amp; Social Media Manager</div>
+        </div>
+        <div class="journey-dates">West Lafayette, IN<br>Dec 2021 – Jan 2024</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Photography</span><span class="journey-tag">Videography</span><span class="journey-tag">Team Leadership</span><span class="journey-tag">Visual Storytelling</span><span class="journey-tag">Content Production</span>
+      </div>
+      <ul class="case-list">
+        <li>Managed daily <strong>social media content production</strong> by overseeing <strong>photography, videography</strong>, publishing schedules, and creative workflows while ensuring consistent visual branding across multiple digital platforms.</li>
+        <li>Led a team of student content creators, coordinating production timelines and maintaining high-quality <strong>visual storytelling</strong> that strengthened the center's online presence.</li>
+        <li>Built and maintained a consistent social media presence by creating and publishing <strong>platform-native photo and video content</strong> showcasing innovation projects, campus events, and community initiatives.</li>
+        <li>Captured, edited, and optimized visual assets while monitoring <strong>audience engagement</strong> and adapting creative content to improve reach, storytelling, and brand consistency.</li>
+      </ul>
+    </div>
+
+    <!-- Head of Events & Marketing, CASO Purdue -->
+    <div class="journey-entry caso-card">
+      <a class="journey-ig-link" href="https://www.instagram.com/caso.purdue/" target="_blank" rel="noopener" aria-label="View CASO on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="caso.jpg" alt="CASO Purdue"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.2rem;">Cricket and Social Outreach (CASO), Purdue</div>
+          <div class="role">Head of Events &amp; Marketing</div>
+        </div>
+        <div class="journey-dates">West Lafayette, IN<br>Sep 2022 – Nov 2023</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Event Marketing</span><span class="journey-tag">Campaign Creative</span><span class="journey-tag">Print Design</span><span class="journey-tag">Event Logistics</span><span class="journey-tag">Cross-Functional Collaboration</span>
+      </div>
+      <ul class="case-list">
+        <li>Planned and executed <strong>marketing campaigns</strong> for campus events by creating <strong>promotional social media content, print materials, and digital assets</strong> that increased event awareness and student participation.</li>
+        <li>Managed <strong>event logistics</strong>, cross-functional collaboration, and execution from planning through completion, ensuring seamless experiences for attendees and stakeholders.</li>
+      </ul>
+    </div>
+
+    <!-- Photographer, Content Creator & Visual Designer, Lieve Be -->
+    <div class="journey-entry lievebe-card">
+      <a class="journey-ig-link" href="https://www.instagram.com/jinalkagathara_/" target="_blank" rel="noopener" aria-label="View Lieve Be on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="lievebe.jpg" alt="Lieve Be"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.2rem;">Lieve Be (Luxury Indian Fashion)</div>
+          <div class="role">Photographer, Content Creator &amp; Visual Designer</div>
+        </div>
+        <div class="journey-dates">Rajkot, India<br>Mar 2021 – Dec 2021</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Editorial Photography</span><span class="journey-tag">Videography</span><span class="journey-tag">Brand Campaigns</span><span class="journey-tag">Instagram Content</span><span class="journey-tag">Creative Direction</span>
+      </div>
+      <ul class="case-list">
+        <li>Directed and produced <strong>editorial-style photography, videography, and social-first creative</strong> for a luxury fashion brand, translating seasonal collections into cohesive <strong>visual campaigns</strong> aligned with premium brand aesthetics.</li>
+        <li>Designed <strong>Instagram content, marketing assets, and brand visuals</strong> while collaborating with leadership on creative direction, strengthening <strong>digital storytelling</strong> and brand identity.</li>
+      </ul>
+    </div>
+
     </div>
   </div>
 </section>
@@ -953,9 +1131,12 @@
   <div class="contact-headline">Good design starts<br>with a conversation!</div>
   <p style="color:#555; line-height:1.7; margin:0 auto 2rem; max-width:480px;">If you'd like to collaborate, discuss a project, or share a great coffee recommendation, let's connect!</p>
   <div class="contact-buttons">
-    <a href="mailto:hello@example.com" class="contact-btn primary" target="_blank">Email</a>
-    <a href="https://drive.google.com/file/d/1J3aoGJoMHpCFSCTAcau03QhKKaf52dfO/view?usp=sharing" class="contact-btn" target="_blank">Resume</a>
+    <a href="mailto:hello@example.com" class="contact-btn" target="_blank">Email</a>
     <a href="https://www.linkedin.com/in/aashwini-vachhani/" class="contact-btn" target="_blank">LinkedIn</a>
+  </div>
+  <div class="contact-buttons" style="margin-top:1rem;">
+    <a href="https://drive.google.com/file/d/1J3aoGJoMHpCFSCTAcau03QhKKaf52dfO/view?usp=sharing" class="contact-btn" target="_blank">UI/UX Experience</a>
+    <a href="#" class="contact-btn" target="_blank">Content Strategist Experience</a>
   </div>
 </div>
 
@@ -993,6 +1174,20 @@
     }
     window.relaySlideMove = function(dir){ relaySlideShow(relaySlideIndex + dir); };
     window.relaySlideGoTo = function(i){ relaySlideShow(i); };
+
+    // Work tabs (UI/UX vs Content Creation)
+    window.switchWorkTab = function(which){
+      var tabs = {uiux: document.getElementById('tab-uiux'), content: document.getElementById('tab-content')};
+      var panels = {uiux: document.getElementById('panel-uiux'), content: document.getElementById('panel-content')};
+      var sidebars = {uiux: document.getElementById('sidebar-uiux'), content: document.getElementById('sidebar-content')};
+      Object.keys(tabs).forEach(function(key){
+        var isActive = key === which;
+        tabs[key].classList.toggle('active', isActive);
+        tabs[key].setAttribute('aria-selected', isActive ? 'true' : 'false');
+        panels[key].classList.toggle('active', isActive);
+        sidebars[key].classList.toggle('active', isActive);
+      });
+    };
   })();
 </script>
 
