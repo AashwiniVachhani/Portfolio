@@ -236,6 +236,11 @@
   .journey-gallery img{width:100%; height:100%; object-fit:cover; border-radius:10px;}
   .journey-gallery .wide{grid-column:span 2;}
 
+  /* CONTENT CREATION gallery (added below bullet lists) */
+  .content-gallery{grid-template-columns:repeat(3,1fr) !important; grid-auto-rows:180px; margin-top:1.2rem; margin-bottom:0;}
+  .content-gallery img{border-radius:10px;}
+  @media(max-width:1000px){ .content-gallery{grid-template-columns:repeat(2,1fr) !important;} }
+
   /* RELAY SLIDESHOW */
   .relay-slideshow{position:relative; border-radius:10px; overflow:hidden; aspect-ratio:1100/560; background:#1E1E1E; margin-top:1rem;}
   .relay-slide{position:absolute; inset:0; opacity:0; transition:opacity .35s ease; pointer-events:none;}
@@ -634,6 +639,11 @@
         <li>Planned, created, and managed platform-specific content across <strong>Instagram, Facebook, LinkedIn, and YouTube</strong>, developing <strong>monthly content calendars</strong> and optimizing campaigns using <strong>Meta Business Suite, Instagram Insights, SEO</strong>, and performance analytics.</li>
         <li>Collaborated with marketing and creative teams to produce <strong>social-first graphics, photography, and video content</strong> using <strong>Canva and Adobe Creative Suite</strong>, strengthening brand consistency while increasing audience engagement.</li>
       </ul>
+      <div class="journey-gallery content-gallery">
+        <img src="rossier1.jpg" alt="USC Rossier content sample 1.">
+        <img src="rossier2.jpg" alt="USC Rossier content sample 2.">
+        <img src="rossier3.jpg" alt="USC Rossier content sample 3.">
+      </div>
     </div>
 
     <!-- Content Director, AIS USC -->
@@ -654,6 +664,11 @@
         <li>Led <strong>social media strategy and creative direction</strong> for USC's largest Indian student organization by developing <strong>content calendars</strong>, producing <strong>reels, stories, carousels, and campaign assets</strong> that increased community engagement and event visibility.</li>
         <li>Partnered with executive leadership, sponsorship, hospitality, and events teams to execute <strong>integrated marketing campaigns</strong>, manage creative deliverables, and maintain a cohesive <strong>brand identity</strong> across all digital channels.</li>
       </ul>
+      <div class="journey-gallery content-gallery">
+        <img src="ais1.jpg" alt="AIS USC content sample 1.">
+        <img src="ais2.jpg" alt="AIS USC content sample 2.">
+        <img src="ais3.jpg" alt="AIS USC content sample 3.">
+      </div>
     </div>
 
     <!-- Media Supervisor / Social Media Manager, BIDC Purdue (combined) -->
@@ -676,6 +691,11 @@
         <li>Built and maintained a consistent social media presence by creating and publishing <strong>platform-native photo and video content</strong> showcasing innovation projects, campus events, and community initiatives.</li>
         <li>Captured, edited, and optimized visual assets while monitoring <strong>audience engagement</strong> and adapting creative content to improve reach, storytelling, and brand consistency.</li>
       </ul>
+      <div class="journey-gallery content-gallery">
+        <img src="bidc1.jpg" alt="BIDC Purdue content sample 1.">
+        <img src="bidc2.jpg" alt="BIDC Purdue content sample 2.">
+        <img src="bidc3.jpg" alt="BIDC Purdue content sample 3.">
+      </div>
     </div>
 
     <!-- Head of Events & Marketing, CASO Purdue -->
@@ -696,6 +716,11 @@
         <li>Planned and executed <strong>marketing campaigns</strong> for campus events by creating <strong>promotional social media content, print materials, and digital assets</strong> that increased event awareness and student participation.</li>
         <li>Managed <strong>event logistics</strong>, cross-functional collaboration, and execution from planning through completion, ensuring seamless experiences for attendees and stakeholders.</li>
       </ul>
+      <div class="journey-gallery content-gallery">
+        <img src="caso1.jpg" alt="CASO Purdue content sample 1.">
+        <img src="caso2.jpg" alt="CASO Purdue content sample 2.">
+        <img src="caso3.jpg" alt="CASO Purdue content sample 3.">
+      </div>
     </div>
 
     <!-- Photographer, Content Creator & Visual Designer, Lieve Be -->
@@ -716,6 +741,11 @@
         <li>Directed and produced <strong>editorial-style photography, videography, and social-first creative</strong> for a luxury fashion brand, translating seasonal collections into cohesive <strong>visual campaigns</strong> aligned with premium brand aesthetics.</li>
         <li>Designed <strong>Instagram content, marketing assets, and brand visuals</strong> while collaborating with leadership on creative direction, strengthening <strong>digital storytelling</strong> and brand identity.</li>
       </ul>
+      <div class="journey-gallery content-gallery">
+        <img src="lievebe1.jpg" alt="Lieve Be content sample 1.">
+        <img src="lievebe2.jpg" alt="Lieve Be content sample 2.">
+        <img src="lievebe3.jpg" alt="Lieve Be content sample 3.">
+      </div>
     </div>
 
     </div>
@@ -870,7 +900,7 @@
     </ul>
     <div class="case-eyebrow">09 - What I Learned</div>
     <div class="case-pullquote">"This project taught me that some of the most important design challenges are not interface problems, they are communication problems."</div>
-    </div> -->
+    </div>
   </div>
 </div>
 
@@ -932,7 +962,6 @@
 <div class="modal-overlay" id="cozymeal-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-orange">
     <button class="modal-close" onclick="document.getElementById('cozymeal-modal').classList.remove('open')" aria-label="Close">✕</button>
-    <!-- FIX 4: Replace Unsplash placeholder with local cozymealcover.png to match other modals -->
     <img class="case-hero-img" src="cozymealcover.png" alt="Cozymeal brand identity.">
     <div class="case-eyebrow">01 - Why Rebrand Cozymeal?</div>
     <h2 style="color:#e78b24;">Cozymeal</h2>
@@ -1023,7 +1052,6 @@
       <div class="solution-card"><div class="solution-icon">✂️</div><div class="solution-title">Prompt-Based Editing</div><p>From a creative brief, users generate a draft edit assembled from relevant footage.</p></div>
     </div>
     <div class="case-eyebrow">06 - End-to-End User Journey</div>
-    <!-- FIX 5: Moved heroflowphases.png OUTSIDE the cps-steps grid so it doesn't become a misplaced grid cell -->
     <div class="cps-steps" style="grid-template-columns:repeat(5,1fr);">
       <div class="cps-step"><div class="cps-num">01</div><div class="cps-title">Search</div><p>"Find lifestyle footage featuring families outdoors."</p></div>
       <div class="cps-step"><div class="cps-num">02</div><div class="cps-title">Discover</div><p>Semantic Search surfaces relevant clips across thousands of hours.</p></div>
