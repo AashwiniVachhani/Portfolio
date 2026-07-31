@@ -279,6 +279,28 @@
   .caso-card .journey-tag{background:#dbe9f2; color:#2f6690;}
   .lievebe-card .journey-tag{background:#f0e3f9; color:#7a4b8a;}
 
+  /* GRAPHICS gallery grid (2 rows x 6 columns) */
+  .graphics-panel{display:flex; flex-direction:column; gap:1.5rem;}
+  .graphics-intro{max-width:640px;}
+  .graphics-intro h3{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.8rem; margin-bottom:.5rem;}
+  .graphics-intro p{color:#555; line-height:1.7; font-size:.95rem;}
+  .graphics-grid{display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:190px; gap:.9rem;}
+  .graphics-grid-item{position:relative; display:block; border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.08); cursor:pointer;}
+  .graphics-grid-item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;}
+  .graphics-grid-item:hover img{transform:scale(1.06);}
+  .graphics-grid-item::after{
+    content:"View";
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,0.4);
+    color:#fff; font-weight:700; letter-spacing:.05em; text-transform:uppercase; font-size:.8rem;
+    opacity:0; transition:opacity .2s ease;
+    pointer-events:none;
+  }
+  .graphics-grid-item:hover::after{opacity:1;}
+  @media(max-width:1000px){ .graphics-grid{grid-template-columns:repeat(3,1fr); grid-auto-rows:150px;} }
+  @media(max-width:600px){ .graphics-grid{grid-template-columns:repeat(2,1fr);} }
+
   /* CONTACT */
   .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
   .contact-headline{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(2.5rem,6vw,4rem); line-height:1.1; text-transform:uppercase; margin-bottom:1.5rem;}
@@ -474,6 +496,31 @@
         </div>
       </div>
     </div>
+    <div class="sidebar-panel" id="sidebar-graphics">
+      <div class="expertise-box">
+        <h3>Core Expertise</h3>
+        <p>Visual design work spanning digital graphics, print, and brand collateral.</p>
+        <div class="expertise-list">
+          <span class="expertise-item lead">Graphic Design</span>
+          <span class="expertise-item">Illustration</span>
+          <span class="expertise-item">Layout &amp; Typography</span>
+          <span class="expertise-item">Poster &amp; Print Design</span>
+          <span class="expertise-item">Social Media Graphics</span>
+          <span class="expertise-item">Branding Collateral</span>
+        </div>
+      </div>
+      <div class="mystack-box">
+        <h3>My Stack</h3>
+        <div class="mystack-grid">
+          <div class="mystack-icon"><img src="photoshop.png" alt="Photoshop"></div>
+          <div class="mystack-icon"><img src="illustrator.png" alt="Illustrator"></div>
+          <div class="mystack-icon"><img src="canva.png" alt="Canva"></div>
+          <div class="mystack-icon"><img src="figma.png" alt="Figma"></div>
+          <div class="mystack-icon"><img src="claude.png" alt="Claude"></div>
+          <div class="mystack-icon"><img src="googlelab.png" alt="Google Labs"></div>
+        </div>
+      </div>
+    </div>
     <div class="education-box">
       <div class="education-item">
         <div class="education-badge"><img src="purdue.png" alt="Purdue"></div>
@@ -502,6 +549,7 @@
     <div class="work-tabs" role="tablist" aria-label="Design work categories">
       <button type="button" class="work-tab active" id="tab-uiux" role="tab" aria-selected="true" aria-controls="panel-uiux" onclick="switchWorkTab('uiux')">UI/UX</button>
       <button type="button" class="work-tab" id="tab-content" role="tab" aria-selected="false" aria-controls="panel-content" onclick="switchWorkTab('content')">Content Creation</button>
+      <button type="button" class="work-tab" id="tab-graphics" role="tab" aria-selected="false" aria-controls="panel-graphics" onclick="switchWorkTab('graphics')">Graphics</button>
     </div>
 
     <div class="work-panel active" id="panel-uiux" role="tabpanel" aria-labelledby="tab-uiux">
@@ -612,7 +660,7 @@
     <div class="journey-entry case-study-card cozymeal-card" onclick="document.getElementById('cozymeal-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="cozymeallogo.png" alt="Cozymeal"></div>
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="cozylogo.png" alt="Cozymeal"></div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#e78b24;">Cozymeal</div>
           <div class="role" style="font-weight:400;">Reimagining a Culinary Marketplace Through a More Human and Memorable Brand Identity</div>
@@ -761,6 +809,30 @@
     </div>
 
     </div>
+
+    <div class="work-panel" id="panel-graphics" role="tabpanel" aria-labelledby="tab-graphics">
+      <div class="graphics-panel">
+        <div class="graphics-intro">
+          <h3>Graphic Design</h3>
+          <p>A collection of standalone graphic design work — posters, social graphics, illustrations, and print pieces created outside of larger case studies.</p>
+        </div>
+        <div class="graphics-grid">
+          <a class="graphics-grid-item" href="graphic1.jpg" target="_blank" rel="noopener"><img src="graphic1.jpg" alt="Graphic design piece 1."></a>
+          <a class="graphics-grid-item" href="graphic2.jpg" target="_blank" rel="noopener"><img src="graphic2.jpg" alt="Graphic design piece 2."></a>
+          <a class="graphics-grid-item" href="graphic3.jpg" target="_blank" rel="noopener"><img src="graphic3.jpg" alt="Graphic design piece 3."></a>
+          <a class="graphics-grid-item" href="graphic4.jpg" target="_blank" rel="noopener"><img src="graphic4.jpg" alt="Graphic design piece 4."></a>
+          <a class="graphics-grid-item" href="graphic5.jpg" target="_blank" rel="noopener"><img src="graphic5.jpg" alt="Graphic design piece 5."></a>
+          <a class="graphics-grid-item" href="graphic6.jpg" target="_blank" rel="noopener"><img src="graphic6.jpg" alt="Graphic design piece 6."></a>
+          <a class="graphics-grid-item" href="graphic7.jpg" target="_blank" rel="noopener"><img src="graphic7.jpg" alt="Graphic design piece 7."></a>
+          <a class="graphics-grid-item" href="graphic8.jpg" target="_blank" rel="noopener"><img src="graphic8.jpg" alt="Graphic design piece 8."></a>
+          <a class="graphics-grid-item" href="graphic9.jpg" target="_blank" rel="noopener"><img src="graphic9.jpg" alt="Graphic design piece 9."></a>
+          <a class="graphics-grid-item" href="graphic10.jpg" target="_blank" rel="noopener"><img src="graphic10.jpg" alt="Graphic design piece 10."></a>
+          <a class="graphics-grid-item" href="graphic11.jpg" target="_blank" rel="noopener"><img src="graphic11.jpg" alt="Graphic design piece 11."></a>
+          <a class="graphics-grid-item" href="graphic12.jpg" target="_blank" rel="noopener"><img src="graphic12.jpg" alt="Graphic design piece 12."></a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1236,9 +1308,9 @@
 
     // Work tabs (UI/UX vs Content Strategist)
     window.switchWorkTab = function(which){
-      var tabs = {uiux: document.getElementById('tab-uiux'), content: document.getElementById('tab-content')};
-      var panels = {uiux: document.getElementById('panel-uiux'), content: document.getElementById('panel-content')};
-      var sidebars = {uiux: document.getElementById('sidebar-uiux'), content: document.getElementById('sidebar-content')};
+      var tabs = {uiux: document.getElementById('tab-uiux'), content: document.getElementById('tab-content'), graphics: document.getElementById('tab-graphics')};
+      var panels = {uiux: document.getElementById('panel-uiux'), content: document.getElementById('panel-content'), graphics: document.getElementById('panel-graphics')};
+      var sidebars = {uiux: document.getElementById('sidebar-uiux'), content: document.getElementById('sidebar-content'), graphics: document.getElementById('sidebar-graphics')};
       Object.keys(tabs).forEach(function(key){
         var isActive = key === which;
         tabs[key].classList.toggle('active', isActive);
