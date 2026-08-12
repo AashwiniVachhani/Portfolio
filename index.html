@@ -154,6 +154,7 @@
   .theme-purple .case-eyebrow{color:#153065;} .theme-purple .cps-num{color:#153065;} .theme-purple .case-list li::before{color:#153065;} .theme-purple .mood-chip{background:#dbe2ee; color:#153065;} .theme-purple .case-pullquote{color:#153065; background:#dbe2ee; border-left-color:#153065;} .theme-purple .pitch-deck-btn{background:#153065;} .theme-purple .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(21,48,101,0.3);} .theme-purple .pitch-deck-btn.outline{color:#153065; border-color:#153065; background:transparent;}
   .theme-orange .case-eyebrow{color:#e78b24;} .theme-orange .cps-num{color:#e78b24;} .theme-orange .case-list li::before{color:#e78b24;} .theme-orange .mood-chip{background:#fbe6cf; color:#b5651d;} .theme-orange .case-pullquote{color:#b5651d; background:#fbe6cf; border-left-color:#e78b24;} .theme-orange .pitch-deck-btn{background:#e78b24;} .theme-orange .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(231,139,36,0.3);} .theme-orange .pitch-deck-btn.outline{color:#b5651d; border-color:#e78b24; background:transparent;}
   .theme-lime .case-eyebrow{color:#6F7F1F;} .theme-lime .cps-num{color:#6F7F1F;} .theme-lime .case-list li::before{color:#6F7F1F;} .theme-lime .mood-chip{background:#EEF6D2; color:#6F7F1F;} .theme-lime .case-pullquote{color:#5C6A1A; background:#EEF6D2; border-left-color:#C9E265;} .theme-lime .pitch-deck-btn{background:#C9E265; color:#1E1E1E;} .theme-lime .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(201,226,101,0.4);} .theme-lime .pitch-deck-btn.outline{color:#6F7F1F; border-color:#C9E265; background:transparent;}
+  .theme-teal .case-eyebrow{color:#A68EB4;} .theme-teal .cps-num{color:#A68EB4;} .theme-teal .case-list li::before{color:#A68EB4;} .theme-teal .mood-chip{background:#F2EEF4; color:#A68EB4;} .theme-teal .case-pullquote{color:#A68EB4; background:#F2EEF4; border-left-color:#A68EB4;} .theme-teal .pitch-deck-btn{background:#A68EB4;} .theme-teal .pitch-deck-btn:hover{box-shadow:0 8px 20px rgba(166,142,180,0.3);} .theme-teal .pitch-deck-btn.outline{color:#A68EB4; border-color:#A68EB4; background:transparent;}
 
   /* MODAL */
   .modal-overlay{position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s;}
@@ -163,8 +164,9 @@
   .modal-window h2{font-family:'DM Serif Display',serif; font-weight:400; font-size:2.6rem; margin-bottom:1rem; line-height:1.1;}
   .modal-intro{line-height:1.75; color:#444; margin-bottom:.9rem; font-size:1rem;}
 
-  /* FIX 1: Modal close button — simple absolute positioning, reliable on all viewports */
-  .modal-close{position:absolute; top:1rem; right:1rem; background:rgba(0,0,0,0.06); border:none; font-size:1rem; cursor:pointer; color:var(--ink); width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:background .2s; z-index:10;}
+  /* FIX 1: Modal close button, simple absolute positioning, reliable on all viewports */
+  .modal-close-wrap{position:sticky; top:0; height:0; z-index:15;}
+  .modal-close{position:absolute; top:1rem; right:1rem; background:rgba(0,0,0,0.06); border:none; font-size:1rem; cursor:pointer; color:var(--ink); width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:background .2s; z-index:10; backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);}
   .modal-close:hover{background:rgba(0,0,0,0.12);}
 
   .case-hero-img{width:calc(100% + 5rem); max-width:none; margin:-2.5rem -2.5rem 1.5rem; height:500px; object-fit:cover; border-radius:12px 12px 0 0;}
@@ -273,6 +275,8 @@
   .bestbuy-card .journey-logo{background:#153065;} .bestbuy-card .journey-tag{background:#dbe2ee; color:#153065;}
   .cozymeal-card .journey-logo{background:#e78b24;} .cozymeal-card .journey-tag{background:#fbe6cf; color:#e78b24;}
   .relay-card .journey-logo{background:#1E1E1E;} .relay-card .journey-tag{background:#333333; color:#89D957;}
+  .onekind-card .journey-logo{background:#18283f;} .onekind-card .journey-tag{background:#F2EEF4; color:#A68EB4;}
+  .onekind-card .view-work-pill{background:#A68EB4;}
   .rossier-card .journey-tag{background:#f5dcdc; color:#990000;}
   .ais-card .journey-tag{background:#d6f0e6; color:#1a7a5e;}
   .bidc-card .journey-tag{background:#f2ead9; color:#8a7238;}
@@ -555,6 +559,26 @@
 
     <div class="work-panel active" id="panel-uiux" role="tabpanel" aria-labelledby="tab-uiux">
 
+    <!-- Onekind Reimagined -->
+    <div class="journey-entry case-study-card onekind-card" onclick="document.getElementById('onekind-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
+      <span class="view-work-pill">View Work</span>
+      <div class="journey-header" style="align-items:stretch;">
+        <div class="journey-logo" style="width:80px; height:auto;"><img src="OnekindNewLogo.png" alt="Onekind"></div>
+        <div class="journey-meta">
+          <div class="org" style="font-size:1.6rem; color:#A68EB4;">Onekind Reimagined</div>
+          <div class="role" style="font-weight:400;">Rebranding a Sensitive-Skincare Line Around the Idea That No Two Skins Are Alike</div>
+        </div>
+        <div class="journey-dates">Summer 2026</div>
+      </div>
+      <div class="journey-tags">
+        <span class="journey-tag">Rebranding</span><span class="journey-tag">Brand Strategy</span><span class="journey-tag">Visual Identity</span><span class="journey-tag">Typography</span><span class="journey-tag">Packaging</span><span class="journey-tag">Campaign Design</span>
+      </div>
+      <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0; grid-template-columns:repeat(2,1fr);">
+        <img src="onekindcover.jpg" alt="Onekind Reimagined cover.">
+        <img src="onekindlogo.jpg" alt="Onekind logo and packaging system.">
+      </div>
+    </div>
+
     <!-- Relay -->
     <div class="journey-entry case-study-card relay-card" onclick="document.getElementById('relay-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
@@ -834,10 +858,101 @@
   </div>
 </section>
 
+<!-- ONEKIND MODAL -->
+<div class="modal-overlay" id="onekind-modal" onclick="if(event.target===this){this.classList.remove('open')}">
+  <div class="modal-window theme-teal">
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('onekind-modal').classList.remove('open')" aria-label="Close">✕</button></div>
+    <img class="case-hero-img" src="onekindcover.jpg" alt="Onekind Reimagined cover.">
+    <div class="case-eyebrow">01 - Why Reimagine Onekind?</div>
+    <h2 style="color:#A68EB4;">Onekind <span class="serif">Reimagined</span></h2>
+    <p class="modal-intro">Onekind is a sensitive-skincare line built on a simple promise: skincare that respects your skin. But "sensitive" as a category tends to get flattened in most skincare branding: clinical, cautious, a little cold.</p>
+    <p class="modal-intro">I set out to design a visual and digital identity around a sharper idea: skin isn't static. It reacts, recovers, hydrates, stresses, and changes, sometimes all in the same week. No two skins, and no two skin days, are exactly alike.</p>
+    <p class="modal-intro">The result is <strong>The Skin Aura</strong>, a system built to feel personal, adaptive, and sensory rather than clinical and one-size-fits-all.</p>
+    <div class="case-pullquote">"Sensitive, not fragile."</div>
+    <div class="case-meta-grid">
+      <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">Brand &amp; Visual Designer</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">⏱️</div><div class="case-meta-label">Timeline</div><div class="case-meta-value">Summer 2026</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">📦</div><div class="case-meta-label">Deliverables</div><div class="case-meta-value">Identity System · Packaging · Campaigns</div></div>
+      <div class="case-meta-card"><div class="case-meta-icon">🧭</div><div class="case-meta-label">Scope</div><div class="case-meta-value">Brand Strategy · Visual Identity</div></div>
+    </div>
+
+    <div class="case-eyebrow">02 - The Challenge</div>
+    <p class="case-body">Most "sensitive skin" skincare brands lean on one of two extremes: sterile and clinical, or soft to the point of forgettable. Neither reflects how sensitive skin actually behaves day to day, or how the people living with it want to be spoken to.</p>
+    <div class="case-pullquote">How might we build an identity that feels as individual, adaptive, and alive as skin itself?</div>
+
+    <div class="case-eyebrow">03 - The Concept: The Skin Aura</div>
+    <h3 class="case-h3">A visual identity as individual as your skin.</h3>
+    <p class="case-body">Skin isn't static: it reacts, recovers, hydrates, stresses, changes. The Skin Aura translates that truth into a design system: every "aura" is different, but every expression is still recognizably Onekind.</p>
+    <div class="mood-grid">
+      <div class="mood-chip">Personal</div><div class="mood-chip">Adaptive</div><div class="mood-chip">Sensory</div>
+    </div>
+    <img src="onekindconcept.jpg" alt="The Skin Aura concept board." style="width:100%; height:auto; border-radius:10px; margin-top:1.2rem; display:block;">
+
+    <div class="case-eyebrow">04 - Design Principles</div>
+    <p class="case-body">The system lives in four tensions:</p>
+    <div class="solution-grid">
+      <div class="solution-card"><div class="solution-icon">🌤️</div><div class="solution-title">Soft, not sleepy</div><p>Warm neutrals create calm; expressive color gives the brand energy.</p></div>
+      <div class="solution-card"><div class="solution-icon">🧪</div><div class="solution-title">Scientific, not sterile</div><p>Clinical credibility is paired with tactile, human imagery.</p></div>
+      <div class="solution-card"><div class="solution-icon">🫆</div><div class="solution-title">Personal, not prescriptive</div><p>We talk about how skin feels, not fixed categories.</p></div>
+      <div class="solution-card"><div class="solution-icon">🌊</div><div class="solution-title">Expressive, not chaotic</div><p>The aura changes, but the system stays recognizable.</p></div>
+    </div>
+
+    <div class="case-eyebrow">05 - Color Strategy</div>
+    <h3 class="case-h3">Soft foundations. Unexpected energy.</h3>
+    <p class="case-body">A warm, mineral neutral base grounded in skin-like tones, elevated by an aura of soft, functional color that maps to how skin feels: Powder Blue for calm, Apricot for repair, Lavender for hydration, Teal for stress, Butter Yellow for protection, Deep Plum for overnight recovery.</p>
+    <img src="onekindpalette.jpg" alt="Onekind color strategy and palette." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">06 - Typography</div>
+    <h3 class="case-h3">Editorial warmth. Clinical clarity.</h3>
+    <p class="case-body">Canela brings expressive, emotional resonance to headlines and key moments, while Söhne carries everyday clarity across body copy, UI, and product labeling, a pairing built for contrast between feeling and function.</p>
+    <img src="onekindtype.jpg" alt="Onekind typography system." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">07 - Brand Voice</div>
+    <h3 class="case-h3">Talk like skin actually feels.</h3>
+    <p class="case-body" style="font-weight:700; letter-spacing:.05em;">WARM. SMART. DIRECT. SLIGHTLY WITTY.</p>
+    <ul class="case-list">
+      <li>Human before technical: explain benefits in normal language first</li>
+      <li>Confident without fear: never make sensitive skin feel damaged or weak</li>
+      <li>Playful without being unserious: humor creates personality, science creates trust</li>
+      <li>Concise: say less, mean more</li>
+    </ul>
+    <img src="onekindvoice.jpg" alt="Onekind brand voice guide." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">08 - Photography Direction</div>
+    <h3 class="case-h3">Skin as landscape.</h3>
+    <p class="case-body">The photography treats skin as a living landscape, nuanced, resilient, and deeply individual. Real texture, natural light, and the quiet beauty of sensitive skin take priority over retouched perfection: freckles, creases, and goosebumps included.</p>
+    <img src="onekindphoto.jpg" alt="Onekind photography direction." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">09 - Logo &amp; Packaging System</div>
+    <p class="case-body">The "o." mark is designed to be customizable by expression: circular, stretched, irregular, organic. One icon carrying many moods, echoed in the aura-tinted packaging across the full product line.</p>
+    <img src="onekindlogo.jpg" alt="Onekind logo and packaging system." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">10 - Campaign 01: Skin Status x Solution</div>
+    <p class="case-body">Turns everyday skin feelings into instantly recognizable product matches: Reactive, Thirsty, Tired, and Sun-stressed, each paired with the product built to answer it.</p>
+    <img src="onekindcampaign1.jpg" alt="Skin Status x Solution campaign." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">11 - Campaign 02: One of One</div>
+    <p class="case-body">A real-skin, real-stories campaign celebrating freckles, texture, acne, lines, and pigmentation across every age, each portrait paired with its own aura, because every person's skin is one of one.</p>
+    <img src="onekindcampaign2.jpg" alt="One of One campaign portraits." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">12 - Website Redesign</div>
+    <h3 class="case-h3">Bringing The Skin Aura to the homepage.</h3>
+    <p class="case-body">The identity had to hold up online first. The homepage translates the Skin Aura system directly into the browser, with Canela and Söhne carrying the type hierarchy, an aura gradient standing in for hero photography, and the same soft, rounded UI language used across packaging.</p>
+    <img src="onekindwebsite.jpg" alt="Onekind website redesign homepage." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+
+    <div class="case-eyebrow">13 - What I Learned</div>
+    <div class="case-pullquote">"Sensitive skincare doesn't need to sound clinical to feel credible. The hardest part of this rebrand was proving that warmth and science could share the same sentence."</div>
+    <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
+      <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn">Pitch Deck</a>
+      <a href="#" target="_blank" rel="noopener" class="pitch-deck-btn outline">Website Redesign</a>
+    </div>
+  </div>
+</div>
+
 <!-- THIRD PLACES MODAL -->
 <div class="modal-overlay" id="third-places-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window">
-    <button class="modal-close" onclick="document.getElementById('third-places-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('third-places-modal').classList.remove('open')" aria-label="Close">✕</button></div>
     <img class="case-hero-img" src="agoracover.png" alt="Agora cover.">
     <div class="case-eyebrow">01 - Why Third Places?</div>
     <h2 style="color:#294c2e;">Agora <span class="serif">- Third Places</span></h2>
@@ -923,7 +1038,7 @@
 <!-- KLINOS MODAL -->
 <div class="modal-overlay" id="klinos-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-blue">
-    <button class="modal-close" onclick="document.getElementById('klinos-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('klinos-modal').classList.remove('open')" aria-label="Close">✕</button></div>
     <img class="case-hero-img" src="klinosmodal.png" alt="Klinos dashboard.">
     <div class="case-eyebrow">01 - Why Klinos?</div>
     <h2 style="color:#498cb7;">Klinos</h2>
@@ -938,7 +1053,7 @@
     </div>
     <div class="case-eyebrow">02 - The Challenge</div>
     <p class="case-body">During discovery, one challenge became immediately apparent: users didn't understand what made Klinos different.</p>
-    <p class="case-body">Most healthcare companies focus on individual services, while Klinos was offering something much larger — a coordinated healthcare ecosystem designed around prevention and long-term wellbeing.</p>
+    <p class="case-body">Most healthcare companies focus on individual services, while Klinos was offering something much larger: a coordinated healthcare ecosystem designed around prevention and long-term wellbeing.</p>
     <div class="case-pullquote">How might we communicate a complex healthcare model in a way that feels intuitive, trustworthy, and valuable?</div>
     <div class="case-eyebrow">03 - Understanding the User</div>
     <p class="case-body">Through stakeholder discussions, market research, and competitor analysis, I identified a recurring pattern. People weren't frustrated by a lack of healthcare options, they were frustrated by the effort required to coordinate everything themselves.</p>
@@ -989,7 +1104,7 @@
 <!-- BEST BUY MODAL -->
 <div class="modal-overlay" id="bestbuy-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-purple">
-    <button class="modal-close" onclick="document.getElementById('bestbuy-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('bestbuy-modal').classList.remove('open')" aria-label="Close">✕</button></div>
     <img class="case-hero-img" src="bbcoverpic.png" alt="Best Buy platform.">
     <div class="case-eyebrow">01 - Why Best Buy Connect?</div>
     <h2 style="color:#153065;">Best Buy Connect</h2>
@@ -1003,7 +1118,7 @@
       <div class="case-meta-card"><div class="case-meta-icon">🧭</div><div class="case-meta-label">Platform</div><div class="case-meta-value">Web Application</div></div>
     </div>
     <div class="case-eyebrow">02 - The Challenge</div>
-    <p class="case-body">The real challenge was not communication during work — it was communication outside of work. Employees wanted a space where they could connect with peers, share experiences, and build relationships beyond their immediate teams.</p>
+    <p class="case-body">The real challenge was not communication during work. It was communication outside of work. Employees wanted a space where they could connect with peers, share experiences, and build relationships beyond their immediate teams.</p>
     <div class="case-pullquote">How might we create a platform that fosters community and connection across the entire Best Buy employee network?</div>
     <div class="case-eyebrow">03 - Research &amp; Discovery</div>
     <div class="solution-grid">
@@ -1043,7 +1158,7 @@
 <!-- COZYMEAL MODAL -->
 <div class="modal-overlay" id="cozymeal-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-orange">
-    <button class="modal-close" onclick="document.getElementById('cozymeal-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('cozymeal-modal').classList.remove('open')" aria-label="Close">✕</button></div>
     <img class="case-hero-img" src="cozymealcover.png" alt="Cozymeal brand identity.">
     <div class="case-eyebrow">01 - Why Rebrand Cozymeal?</div>
     <h2 style="color:#e78b24;">Cozymeal</h2>
@@ -1102,7 +1217,7 @@
 <!-- HEROFLOW MODAL -->
 <div class="modal-overlay" id="heroflow-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-gold">
-    <button class="modal-close" onclick="document.getElementById('heroflow-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('heroflow-modal').classList.remove('open')" aria-label="Close">✕</button></div>
     <img class="case-hero-img" src="lemonlightcover.png" alt="lemonlight cover">
     <div class="case-eyebrow">01 - The Forgotten Footage Problem</div>
     <h2 style="color:#d4a018;">HeroFlow <span class="serif">for Lemonlight Studios</span></h2>
@@ -1130,7 +1245,7 @@
     <img src="heroflowlogo.png" alt="HeroFlow logo." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
       <div class="solution-card"><div class="solution-icon">🔍</div><div class="solution-title">Semantic Search</div><p>Users search naturally and the platform surfaces relevant clips without manual tags.</p></div>
-      <div class="solution-card"><div class="solution-icon">📋</div><div class="solution-title">HeroFlow</div><p>AI-generated insights for every clip — scene description, emotional tone, subjects, and brand relevance.</p></div>
+      <div class="solution-card"><div class="solution-icon">📋</div><div class="solution-title">HeroFlow</div><p>AI-generated insights for every clip: scene description, emotional tone, subjects, and brand relevance.</p></div>
       <div class="solution-card"><div class="solution-icon">✂️</div><div class="solution-title">Prompt-Based Editing</div><p>From a creative brief, users generate a draft edit assembled from relevant footage.</p></div>
     </div>
     <div class="case-eyebrow">06 - End-to-End User Journey</div>
@@ -1168,11 +1283,11 @@
 <!-- RELAY MODAL -->
 <div class="modal-overlay" id="relay-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-lime">
-    <button class="modal-close" onclick="document.getElementById('relay-modal').classList.remove('open')" aria-label="Close">✕</button>
+    <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('relay-modal').classList.remove('open')" aria-label="Close">✕</button></div>
     <img class="case-hero-img" src="relaycover.png" alt="Relay dashboard screen.">
     <div class="case-eyebrow">01 - It's 9pm and I'm Retyping Myself</div>
-    <h2 style="color:#89D957;">Relay <span class="serif">— carrying context across your AI tools</span></h2>
-    <p class="modal-intro">I'm explaining the same project background to Claude that I already explained to ChatGPT twenty minutes ago. Same context, same three paragraphs, different tab. I do this almost daily — one tool for writing, another for code, another for a quick fact-check — and every switch costs me five minutes of re-explaining myself before I can actually get to the task.</p>
+    <h2 style="color:#89D957;">Relay <span class="serif">carrying context across your AI tools</span></h2>
+    <p class="modal-intro">I'm explaining the same project background to Claude that I already explained to ChatGPT twenty minutes ago. Same context, same three paragraphs, different tab. I do this almost daily, one tool for writing, another for code, another for a quick fact-check, and every switch costs me five minutes of re-explaining myself before I can actually get to the task.</p>
     <p class="modal-intro">I wanted to know if this was just my workflow being messy, or something most people juggling AI tools quietly deal with.</p>
     <div class="case-meta-grid">
       <div class="case-meta-card"><div class="case-meta-icon">🎨</div><div class="case-meta-label">My Role</div><div class="case-meta-value">UX/UI Designer &amp; Researcher</div></div>
@@ -1185,11 +1300,11 @@
     <p class="modal-intro">I ran a 6-day diary study with 4 participants screened for one thing: using 2+ AI tools at least 3-4 times a week. I paired it with a short survey posted in two AI-enthusiast communities to see if the pattern held beyond four people.</p>
     <p class="modal-intro" style="font-weight:700;">It wasn't just me:</p>
     <ul class="case-list">
-      <li>Context loss, not capability, was the top complaint — the pain showed up after switching tools, re-establishing background the new one didn't have</li>
-      <li>Copy-paste was the default handoff, and it was lossy — people pasted a summary, rarely the full reasoning</li>
-      <li>Tool choice was task-based, not loyalty-based — everyone had a mental map of "which tool for what," with no way to carry anything between stops</li>
+      <li>Context loss, not capability, was the top complaint: the pain showed up after switching tools, re-establishing background the new one didn't have</li>
+      <li>Copy-paste was the default handoff, and it was lossy: people pasted a summary, rarely the full reasoning</li>
+      <li>Tool choice was task-based, not loyalty-based: everyone had a mental map of "which tool for what," with no way to carry anything between stops</li>
       <li>Subscription fatigue was real, but ranked behind context loss as a daily frustration</li>
-      <li>The survey backed up the diary — a majority of respondents said they regularly re-explain themselves to a second tool in the same day</li>
+      <li>The survey backed up the diary: a majority of respondents said they regularly re-explain themselves to a second tool in the same day</li>
     </ul>
 
     <div class="case-eyebrow">03 - Who This Is Really For</div>
@@ -1197,10 +1312,10 @@
       <div style="width:64px;height:64px;border-radius:50%;background:#EEF6D2;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:#6F7F1F;flex-shrink:0;">J</div>
       <div>
         <div class="case-persona-name">Jordan, Software Engineer</div>
-        <div class="case-persona-sub">High comfort with every AI tool individually — the friction is entirely in the handoff between them.</div>
+        <div class="case-persona-sub">High comfort with every AI tool individually. The friction is entirely in the handoff between them.</div>
       </div>
     </div>
-    <p class="modal-intro" style="font-style:italic;">"I always have the right answer somewhere — I just can't remember which tab it's in."</p>
+    <p class="modal-intro" style="font-style:italic;">"I always have the right answer somewhere, I just can't remember which tab it's in."</p>
     <div class="case-pullquote">How might we let people carry context between AI tools, without forcing them onto just one?</div>
 
     <div class="case-eyebrow">04 - The Journey, Stage by Stage</div>
@@ -1216,11 +1331,11 @@
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
       <div class="solution-card"><div class="solution-icon">🧩</div><div class="solution-title">Browser Extension</div><p>A context clipboard. Fast, but invisible and easy to forget.</p></div>
       <div class="solution-card"><div class="solution-icon">🔌</div><div class="solution-title">In-Tool Plugin</div><p>Cleanest integration, but needs buy-in from every tool vendor.</p></div>
-      <div class="solution-card" style="border:2px solid #C9E265;"><div class="solution-icon">🗂️</div><div class="solution-title">Standalone Dashboard</div><p>Chosen — sits alongside tools people already use, no vendor cooperation required.</p></div>
+      <div class="solution-card" style="border:2px solid #C9E265;"><div class="solution-icon">🗂️</div><div class="solution-title">Standalone Dashboard</div><p>Chosen: sits alongside tools people already use, no vendor cooperation required.</p></div>
     </div>
 
     <div class="case-eyebrow">06 - Introducing Relay</div>
-    <h3 class="case-h3">A dashboard that tracks your active AI conversations and lets you send context to another tool deliberately — reviewed and editable — instead of pasting blind.</h3>
+    <h3 class="case-h3">A dashboard that tracks your active AI conversations and lets you send context to another tool deliberately, reviewed and editable, instead of pasting blind.</h3>
     <div class="relay-slideshow" id="relay-slideshow">
       <div class="relay-slide active"><img src="relaydashboard.png" alt="Relay dashboard screen."></div>
       <div class="relay-slide"><img src="relayhandoff.png" alt="Relay handoff flow screen."></div>
@@ -1242,13 +1357,13 @@
 
     <div class="case-eyebrow">07 - Key Design Decisions</div>
     <div class="solution-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="solution-card"><div class="solution-icon">🏷️</div><div class="solution-title">Tool-First Cards</div><p>Threads lead with the originating tool, not the task — that's how people actually navigate.</p></div>
+      <div class="solution-card"><div class="solution-icon">🏷️</div><div class="solution-title">Tool-First Cards</div><p>Threads lead with the originating tool, not the task, that's how people actually navigate.</p></div>
       <div class="solution-card"><div class="solution-icon">✏️</div><div class="solution-title">Editable Handoff</div><p>Copy-paste failed because nobody reviewed what carried over. Relay makes review the default.</p></div>
-      <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Explicit Capture Control</div><p>No "everything, always" default — added directly from a usability finding below.</p></div>
+      <div class="solution-card"><div class="solution-icon">🔒</div><div class="solution-title">Explicit Capture Control</div><p>No "everything, always" default. Added directly from a usability finding below.</p></div>
     </div>
 
     <div class="case-eyebrow">08 - Next Steps</div>
-    <div class="case-pullquote">This is a concept, not a shipped product. Four diary participants and a community survey are a starting signal, not proof — the next pass needs a real two-tool integration and a bigger, more varied sample before any of this gets treated as settled.</div>
+    <div class="case-pullquote">This is a concept, not a shipped product. Four diary participants and a community survey are a starting signal, not proof. The next pass needs a real two-tool integration and a bigger, more varied sample before any of this gets treated as settled.</div>
     <div class="case-btn-group" style="margin-top:2.5rem; padding-top:1.6rem; border-top:1px solid var(--line);">
       <a href="relay-mockups.html" target="_blank" rel="noopener" class="pitch-deck-btn">View Interactive Prototype</a>
     </div>
