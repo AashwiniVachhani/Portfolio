@@ -563,7 +563,9 @@
     <div class="journey-entry case-study-card onekind-card" onclick="document.getElementById('onekind-modal').classList.add('open')" onmousemove="var r=this.getBoundingClientRect(); var p=this.querySelector('.view-work-pill'); p.style.left=(event.clientX-r.left)+'px'; p.style.top=(event.clientY-r.top)+'px';" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){this.click()}">
       <span class="view-work-pill">View Work</span>
       <div class="journey-header" style="align-items:stretch;">
-        <div class="journey-logo" style="width:80px; height:auto;"><img src="OnekindNewLogo.png" alt="Onekind"></div>
+        <div class="journey-logo" style="width:80px; height:80px; overflow:hidden; border-radius:10px;">
+        <img src="OnekindNewLogo.png" alt="Onekind logo" style="width:100%; height:100%; object-fit:cover; transform:scale(1.4);">
+        </div>
         <div class="journey-meta">
           <div class="org" style="font-size:1.6rem; color:#A68EB4;">Onekind Reimagined</div>
           <div class="role" style="font-weight:400;">Rebranding a Sensitive-Skincare Line Around the Idea That No Two Skins Are Alike</div>
@@ -571,11 +573,11 @@
         <div class="journey-dates">Summer 2026</div>
       </div>
       <div class="journey-tags">
-        <span class="journey-tag">Rebranding</span><span class="journey-tag">Brand Strategy</span><span class="journey-tag">Visual Identity</span><span class="journey-tag">Typography</span><span class="journey-tag">Packaging</span><span class="journey-tag">Campaign Design</span>
+        <span class="journey-tag">Rebranding</span><span class="journey-tag">Brand Strategy</span><span class="journey-tag">Visual Identity</span><span class="journey-tag">Typography</span><span class="journey-tag">Packaging</span><span class="journey-tag">Campaign Design</span>span class="journey-tag">Competitor Research</span>span class="journey-tag">Website Design</span>span class="journey-tag">Brand System</span>span class="journey-tag">Design Guide</span>
       </div>
       <div class="journey-gallery" style="margin-top:1.2rem; margin-bottom:0; grid-template-columns:repeat(2,1fr);">
-        <img src="Onekind Reimagined cover.png" alt="Onekind Reimagined cover.">
-        <img src="The Skin Aura concept board.png" alt="Onekind skin aura concept board">
+        <img src="Onekind Reimagined cover.png" alt="Onekind Reimagined cover" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;">
+        <img src="Onekind product mockups.png" alt="Onekind product mockups" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;">
       </div>
     </div>
 
@@ -862,7 +864,7 @@
 <div class="modal-overlay" id="onekind-modal" onclick="if(event.target===this){this.classList.remove('open')}">
   <div class="modal-window theme-teal">
     <div class="modal-close-wrap"><button class="modal-close" onclick="document.getElementById('onekind-modal').classList.remove('open')" aria-label="Close">✕</button></div>
-    <img class="case-hero-img" src="Onekind Reimagined cover.png" alt="Onekind Reimagined cover.">
+    <img class="case-hero-img" src="Onekind Reimagined cover.png" alt="Onekind Reimagined cover." style="width:100%; aspect-ratio:16/9; object-fit:cover;">
     <div class="case-eyebrow">01 - Why Reimagine Onekind?</div>
     <h2 style="color:#A68EB4;">Onekind <span class="serif">Reimagined</span></h2>
     <p class="modal-intro"><a href="https://onekind.us/" target="_blank" rel="noopener" style="color:#A68EB4; text-decoration:underline;">Onekind</a> is a sensitive-skincare line built on a simple promise: skincare that respects your skin. But "sensitive" as a category tends to get flattened in most skincare branding: clinical, cautious, a little cold.</p>
@@ -886,7 +888,7 @@
     <div class="mood-grid">
       <div class="mood-chip">Personal</div><div class="mood-chip">Adaptive</div><div class="mood-chip">Sensory</div>
     </div>
-    <img src="The Skin Aura concept board.png" alt="The Skin Aura concept board." style="width:100%; height:auto; border-radius:10px; margin-top:1.2rem; display:block;">
+    <img src="The Skin Aura concept board.png" alt="The Skin Aura concept board." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">04 - Design Principles</div>
     <p class="case-body">The system lives in four tensions:</p>
@@ -895,18 +897,18 @@
       <div class="solution-card"><div class="solution-icon">🧪</div><div class="solution-title">Scientific, not sterile</div><p>Clinical credibility is paired with tactile, human imagery.</p></div>
       <div class="solution-card"><div class="solution-icon">🫆</div><div class="solution-title">Personal, not prescriptive</div><p>We talk about how skin feels, not fixed categories.</p></div>
       <div class="solution-card"><div class="solution-icon">🌊</div><div class="solution-title">Expressive, not chaotic</div><p>The aura changes, but the system stays recognizable.</p></div>
-      <img src="Design Principles.png" alt="Design Principles" style="width:100%; height:auto; border-radius:10px; margin-top:1.2rem; display:block;">
+      <img src="Design Principles.png" alt="Design Principles" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
     </div>
 
     <div class="case-eyebrow">05 - Color Strategy</div>
     <h3 class="case-h3">Soft foundations. Unexpected energy.</h3>
     <p class="case-body">A warm, mineral neutral base grounded in skin-like tones, elevated by an aura of soft, functional color that maps to how skin feels: Powder Blue for calm, Apricot for repair, Lavender for hydration, Teal for stress, Butter Yellow for protection, Deep Plum for overnight recovery.</p>
-    <img src="Onekind color strategy and palette.png" alt="Onekind color strategy and palette." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Onekind color strategy and palette.png" alt="Onekind color strategy and palette." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">06 - Typography</div>
     <h3 class="case-h3">Editorial warmth. Clinical clarity.</h3>
     <p class="case-body">Canela brings expressive, emotional resonance to headlines and key moments, while Söhne carries everyday clarity across body copy, UI, and product labeling, a pairing built for contrast between feeling and function.</p>
-    <img src="Onekind typography system.png" alt="Onekind typography system." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Onekind typography system.png" alt="Onekind typography system." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">07 - Brand Voice</div>
     <h3 class="case-h3">Talk like skin actually feels.</h3>
@@ -917,29 +919,29 @@
       <li>Playful without being unserious: humor creates personality, science creates trust</li>
       <li>Concise: say less, mean more</li>
     </ul>
-    <img src="Onekind brand voice guide.png" alt="Onekind brand voice guide." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Onekind brand voice guide.png" alt="Onekind brand voice guide." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">08 - Photography Direction</div>
     <h3 class="case-h3">Skin as landscape.</h3>
     <p class="case-body">The photography treats skin as a living landscape, nuanced, resilient, and deeply individual. Real texture, natural light, and the quiet beauty of sensitive skin take priority over retouched perfection: freckles, creases, and goosebumps included.</p>
-    <img src="Onekind photography direction.png" alt="Onekind photography direction." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Onekind photography direction.png" alt="Onekind photography direction." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">09 - Logo &amp; Packaging System</div>
     <p class="case-body">The "o." mark is designed to be customizable by expression: circular, stretched, irregular, organic. One icon carrying many moods, echoed in the aura-tinted packaging across the full product line.</p>
-    <img src="Onekind logo and packaging system.png" alt="Onekind logo and packaging system." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Onekind logo and packaging system.png" alt="Onekind logo and packaging system." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">10 - Campaign 01: Skin Status x Solution</div>
     <p class="case-body">Turns everyday skin feelings into instantly recognizable product matches: Reactive, Thirsty, Tired, and Sun-stressed, each paired with the product built to answer it.</p>
-    <img src="Skin Status x Solution campaign.png" alt="Skin Status x Solution campaign." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Skin Status x Solution campaign.png" alt="Skin Status x Solution campaign." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">11 - Campaign 02: One of One</div>
     <p class="case-body">A real-skin, real-stories campaign celebrating freckles, texture, acne, lines, and pigmentation across every age, each portrait paired with its own aura, because every person's skin is one of one.</p>
-    <img src="One of one campaign.png" alt="One of One campaign portraits." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="One of one campaign.png" alt="One of One campaign portraits." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">12 - Website Redesign</div>
     <h3 class="case-h3">Bringing The Skin Aura to the homepage.</h3>
     <p class="case-body">The identity had to hold up online first. The homepage translates the Skin Aura system directly into the browser, with Canela and Söhne carrying the type hierarchy, an aura gradient standing in for hero photography, and the same soft, rounded UI language used across packaging.</p>
-    <img src="Onekind website redesign.png" alt="Onekind website redesign homepage." style="width:100%; height:auto; border-radius:10px; margin-top:1rem; display:block;">
+    <img src="Onekind website redesign.png" alt="Onekind website redesign homepage." style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px; margin-top:1.2rem; display:block;">
 
     <div class="case-eyebrow">13 - What I Learned</div>
     <div class="case-pullquote">"Sensitive skincare doesn't need to sound clinical to feel credible. The hardest part of this rebrand was proving that warmth and science could share the same sentence."</div>
