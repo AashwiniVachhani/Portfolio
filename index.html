@@ -306,6 +306,17 @@
 @media(max-width:1000px){ .graphics-grid{grid-template-columns:repeat(3,1fr); gap:1.4rem;} }
 @media(max-width:600px){ .graphics-grid{grid-template-columns:repeat(2,1fr); gap:1.1rem;} }
 
+  /* THE SECOND LOOK BLOG */
+  #tab-blog.active{color:#4a4a4a; border-bottom-color:#4a4a4a;}
+  .blog-intro{max-width:640px; margin-bottom:1.5rem;}
+  .blog-intro h3{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.8rem; margin-bottom:.6rem; color:#4a4a4a;}
+  .blog-intro p{color:#555; line-height:1.7; font-size:.95rem;}
+  .blog-entries{display:flex; flex-direction:column; gap:2rem;}
+  .blog-entry{background:#fff; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:2rem;}
+  .blog-title{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.6rem; color:var(--ink); margin-bottom:.4rem;}
+  .blog-subtitle{font-size:.95rem; color:var(--soft); line-height:1.6; margin-bottom:1.2rem;}
+  .blog-image{width:100%; aspect-ratio:1200/627; object-fit:cover; border-radius:12px; display:block;}
+
   /* CONTACT */
   .contact-grid{max-width:1300px; margin:0 auto; padding:4rem 6vw 10rem; text-align:center;}
   .contact-headline{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:clamp(2.5rem,6vw,4rem); line-height:1.1; text-transform:uppercase; margin-bottom:1.5rem;}
@@ -532,6 +543,18 @@
         </div>
       </div>
     </div>
+    <div class="sidebar-panel" id="sidebar-blog">
+      <div class="expertise-box">
+        <h3>Core Expertise</h3>
+        <p>Rethinking existing UI/UX, product, and brand work through a redesign lens.</p>
+        <div class="expertise-list">
+          <span class="expertise-item lead">UX Critique &amp; Redesign</span>
+          <span class="expertise-item">Interaction Design</span>
+          <span class="expertise-item">Branding &amp; Rebranding</span>
+          <span class="expertise-item">Visual Identity</span>
+        </div>
+      </div>
+    </div>
     <div class="education-box">
       <div class="education-item">
         <div class="education-badge"><img src="purdue.png" alt="Purdue"></div>
@@ -561,6 +584,7 @@
       <button type="button" class="work-tab active" id="tab-uiux" role="tab" aria-selected="true" aria-controls="panel-uiux" onclick="switchWorkTab('uiux')">UI/UX</button>
       <button type="button" class="work-tab" id="tab-content" role="tab" aria-selected="false" aria-controls="panel-content" onclick="switchWorkTab('content')">Content Creation</button>
       <button type="button" class="work-tab" id="tab-graphics" role="tab" aria-selected="false" aria-controls="panel-graphics" onclick="switchWorkTab('graphics')">Graphics</button>
+      <button type="button" class="work-tab" id="tab-blog" role="tab" aria-selected="false" aria-controls="panel-blog" onclick="switchWorkTab('blog')">The Second Look Blog</button>
     </div>
 
     <div class="work-panel active" id="panel-uiux" role="tabpanel" aria-labelledby="tab-uiux">
@@ -858,6 +882,47 @@
           <a class="graphics-grid-item" href="agora_cup.png" target="_blank" rel="noopener"><img src="agora_cup.png" alt="Graphic design piece 10."></a>
           <a class="graphics-grid-item" href="klinoscoverlogo.png" target="_blank" rel="noopener"><img src="klinoscoverlogo.png" alt="Graphic design piece 11."></a>
           <a class="graphics-grid-item" href="klinos_mug.png" target="_blank" rel="noopener"><img src="klinos_mug.png" alt="Graphic design piece 12."></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-panel" id="panel-blog" role="tabpanel" aria-labelledby="tab-blog">
+      <div class="blog-intro">
+        <h3>The Second Look Blog</h3>
+        <p>A series where I rethink things that already exist, from UI/UX and product experiences to branding, rebranding, and visual identities. Not because they're "wrong," but because there's always something interesting to uncover by asking "what if we approached this differently?"</p>
+      </div>
+      <div class="blog-entries">
+        <div class="blog-entry">
+          <div class="blog-title">Redesigning Duolingo's Streak-Freeze Screen</div>
+          <div class="blog-subtitle">The interface didn’t change. The feeling did.
+
+I redesigned a Duolingo streak screen as an exercise in something designers often underestimate: how much psychology lives in microcopy and visual hierarchy.
+
+The functionality is the same.
+The information is the same.
+But the emotional framing is different.
+
+Before:
+“Don’t lose your 1,337-day streak!”
+
+After:
+“1,337 days. Look how far you’ve built this.”
+
+One creates urgency around what you might lose.
+The other reminds you of what you’ve already accomplished.
+
+I also changed the hierarchy:
+
+→ “Keep going” becomes the primary action.
+→ The paid Streak Freeze option is still there, but becomes secondary.
+→ The reassurance gets its own moment instead of being buried in the supporting copy.
+
+Nothing about the product mechanic changed. But the screen now nudges you toward a different feeling: pride instead of pressure.
+
+And that's what I find interesting about product design.
+Sometimes the biggest UX changes aren't new features or complex flows. 
+They're a sentence. A button. A few pixels of hierarchy.</div>
+          <img class="blog-image" src="duolingoredesign.png" alt="Duolingo streak freeze screen redesign, before and after.">
         </div>
       </div>
     </div>
@@ -1428,11 +1493,11 @@
     window.relaySlideMove = function(dir){ relaySlideShow(relaySlideIndex + dir); };
     window.relaySlideGoTo = function(i){ relaySlideShow(i); };
 
-    // Work tabs (UI/UX vs Content Strategist)
+    // Work tabs (UI/UX vs Content Strategist vs Graphics vs Blog)
     window.switchWorkTab = function(which){
-      var tabs = {uiux: document.getElementById('tab-uiux'), content: document.getElementById('tab-content'), graphics: document.getElementById('tab-graphics')};
-      var panels = {uiux: document.getElementById('panel-uiux'), content: document.getElementById('panel-content'), graphics: document.getElementById('panel-graphics')};
-      var sidebars = {uiux: document.getElementById('sidebar-uiux'), content: document.getElementById('sidebar-content'), graphics: document.getElementById('sidebar-graphics')};
+      var tabs = {uiux: document.getElementById('tab-uiux'), content: document.getElementById('tab-content'), graphics: document.getElementById('tab-graphics'), blog: document.getElementById('tab-blog')};
+      var panels = {uiux: document.getElementById('panel-uiux'), content: document.getElementById('panel-content'), graphics: document.getElementById('panel-graphics'), blog: document.getElementById('panel-blog')};
+      var sidebars = {uiux: document.getElementById('sidebar-uiux'), content: document.getElementById('sidebar-content'), graphics: document.getElementById('sidebar-graphics'), blog: document.getElementById('sidebar-blog')};
       Object.keys(tabs).forEach(function(key){
         var isActive = key === which;
         tabs[key].classList.toggle('active', isActive);
