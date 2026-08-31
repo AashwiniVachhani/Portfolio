@@ -307,14 +307,27 @@
 @media(max-width:600px){ .graphics-grid{grid-template-columns:repeat(2,1fr); gap:1.1rem;} }
 
   /* THE SECOND LOOK BLOG */
-  #tab-blog.active{color:#4a4a4a; border-bottom-color:#4a4a4a;}
+  #tab-blog{color:#3a3a3a;}
   .blog-intro{max-width:640px; margin-bottom:1.5rem;}
-  .blog-intro h3{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.8rem; margin-bottom:.6rem; color:#4a4a4a;}
+  .blog-intro h3{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.8rem; margin-bottom:.6rem; color:#3a3a3a;}
+  .blog-lead{font-size:1.05rem; color:var(--soft); line-height:1.6; margin-bottom:1rem; font-weight:600;}
+  .blog-details{margin-bottom:1.4rem;}
+  .blog-details summary{cursor:pointer; font-weight:700; font-size:.9rem; color:#4a4a4a; padding:.6rem 0; list-style:none; display:flex; align-items:center; gap:.4rem;}
+  .blog-details summary::-webkit-details-marker{display:none;}
+  .blog-details summary::before{content:"▸"; font-size:.8rem; transition:transform .2s ease;}
+  .blog-details[open] summary::before{transform:rotate(90deg);}
+  .blog-details .blog-body{margin-top:.8rem;}
   .blog-intro p{color:#555; line-height:1.7; font-size:.95rem;}
   .blog-entries{display:flex; flex-direction:column; gap:2rem;}
-  .blog-entry{background:#fff; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:2rem;}
+  .blog-entry{background:#fff; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.06); padding:2rem; position:relative;}
+  .blog-square-link{position:absolute; top:-16px; right:-16px; width:50px; height:50px; border-radius:12px; background:#fff; box-shadow:0 4px 14px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:center; color:var(--rose); z-index:5; transition:transform .2s ease, box-shadow .2s ease;}
+  .blog-square-link:hover{transform:scale(1.08) rotate(-2deg); box-shadow:0 6px 18px rgba(0,0,0,0.2);}
+  .blog-square-link svg{width:26px; height:26px;}
   .blog-title{font-family:'DM Serif Display',serif; font-weight:400; font-size:1.6rem; color:var(--ink); margin-bottom:.4rem;}
-  .blog-subtitle{font-size:.95rem; color:var(--soft); line-height:1.6; margin-bottom:1.2rem;}
+  .blog-subtitle{font-size:.95rem; color:#444; line-height:1.75; margin-bottom:1.2rem; max-width:640px;}
+  .blog-body{font-size:.95rem; color:#444; line-height:1.75; max-width:640px; margin-bottom:1.2rem;}
+  .blog-body p{margin-bottom:1rem;}
+  .blog-body p:last-child{margin-bottom:0;}
   .blog-image{width:100%; aspect-ratio:1200/627; object-fit:cover; border-radius:12px; display:block;}
 
   /* CONTACT */
@@ -868,7 +881,6 @@
 
     <div class="work-panel" id="panel-graphics" role="tabpanel" aria-labelledby="tab-graphics">
       <div class="graphics-panel">
-        </div>
         <div class="graphics-grid">
           <a class="graphics-grid-item" href="cozymeallogo.png" target="_blank" rel="noopener"><img src="cozymeallogo.png" alt="Graphic design piece 1."></a>
           <a class="graphics-grid-item" href="cozy_bag.png" target="_blank" rel="noopener"><img src="cozy_bag.png" alt="Graphic design piece 2."></a>
@@ -889,39 +901,27 @@
     <div class="work-panel" id="panel-blog" role="tabpanel" aria-labelledby="tab-blog">
       <div class="blog-intro">
         <h3>The Second Look Blog</h3>
-        <p>A series where I rethink things that already exist, from UI/UX and product experiences to branding, rebranding, and visual identities. Not because they're "wrong," but because there's always something interesting to uncover by asking "what if we approached this differently?"</p>
+        <p>A series, where rethink things that already exist — from UI/UX and product experiences to branding, rebranding, and visual identities. Not because they're "wrong," but because there's always something interesting to uncover by asking "what if we approached this differently?"</p>
       </div>
       <div class="blog-entries">
         <div class="blog-entry">
-          <div class="blog-title">Redesigning Duolingo's Streak-Freeze Screen</div>
-          <div class="blog-subtitle">The interface didn’t change. The feeling did.
-
-I redesigned a Duolingo streak screen as an exercise in something designers often underestimate: how much psychology lives in microcopy and visual hierarchy.
-
-The functionality is the same.
-The information is the same.
-But the emotional framing is different.
-
-Before:
-“Don’t lose your 1,337-day streak!”
-
-After:
-“1,337 days. Look how far you’ve built this.”
-
-One creates urgency around what you might lose.
-The other reminds you of what you’ve already accomplished.
-
-I also changed the hierarchy:
-
-→ “Keep going” becomes the primary action.
-→ The paid Streak Freeze option is still there, but becomes secondary.
-→ The reassurance gets its own moment instead of being buried in the supporting copy.
-
-Nothing about the product mechanic changed. But the screen now nudges you toward a different feeling: pride instead of pressure.
-
-And that's what I find interesting about product design.
-Sometimes the biggest UX changes aren't new features or complex flows. 
-They're a sentence. A button. A few pixels of hierarchy.</div>
+<a class="blog-square-link" href="https://www.duolingo.com/" target="_blank" rel="noopener" aria-label="View post"><img src="duolingologo.png" alt="Duolingo logo"></a>          <div class="blog-title">Redesigning Duolingo's Streak-Freeze Screen</div>
+          <p class="blog-lead">The interface didn't change. The feeling did.</p>
+          <details class="blog-details">
+            <summary>Read the full breakdown</summary>
+            <div class="blog-body">
+              <p>I redesigned a Duolingo streak screen as an exercise in something designers often underestimate: how much psychology lives in microcopy and visual hierarchy.</p>
+              <p>The functionality is the same.<br>The information is the same.<br>But the emotional framing is different.</p>
+              <p>Before:<br>&ldquo;Don't lose your 1,337-day streak!&rdquo;</p>
+              <p>After:<br>&ldquo;1,337 days. Look how far you've built this.&rdquo;</p>
+              <p>One creates urgency around what you might lose.<br>The other reminds you of what you've already accomplished.</p>
+              <p>I also changed the hierarchy:</p>
+              <p>→ &ldquo;Keep going&rdquo; becomes the primary action.<br>→ The paid Streak Freeze option is still there, but becomes secondary.<br>→ The reassurance gets its own moment instead of being buried in the supporting copy.</p>
+              <p>Nothing about the product mechanic changed. But the screen now nudges you toward a different feeling: pride instead of pressure.</p>
+              <p>And that's what I find interesting about product design.<br>Sometimes the biggest UX changes aren't new features or complex flows.</p>
+              <p>They're a sentence. A button. A few pixels of hierarchy.</p>
+            </div>
+          </details>
           <img class="blog-image" src="duolingoredesign.png" alt="Duolingo streak freeze screen redesign, before and after.">
         </div>
       </div>
